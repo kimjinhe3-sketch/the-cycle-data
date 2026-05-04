@@ -76,6 +76,29 @@ def fetch_index(index_code: str, start: str, end: str) -> pd.DataFrame:
         return pd.DataFrame()
 
 
+def verify_asset_names() -> list[str]:
+    """assets.json 에 적힌 우리 이름과 KRX 공식 종목명을 대조해서 mismatch 출력.
+    반환값은 mismatch 라인 리스트 (public/asset_name_audit.json 으로도 떨어뜨림)."""
+    mismatches: list[str] = []
+    for asset in ASSETS:
+        code = asset["code"]
+        our_name = asset["name"]
+        try:
+            krx_name = stock.get_market_ticker_name(code)
+        except Exception as exc:  # noqa: BLE001
+            mismatches.append(f"{code} [{our_name}] → KRX lookup 실패: {exc}")
+            continue
+        if not krx_name:
+            mismatches.append(f"{code} [{our_name}] → KRX 에서 못 찾음")
+            continue
+        # 정확 일치는 어렵고, 보통 회사명에 공백/괄호 차이만 있는 정도.
+        norm_a = our_name.replace(" ", "").replace("(주)", "").lower()
+        norm_b = krx_name.replace(" ", "").replace("(주)", "").lower()
+        if norm_a != norm_b:
+            mismatches.append(f"{code}: 우리={our_name!r} / KRX={krx_name!r}")
+    return mismatches
+
+
 def collect_all(start: str, end: str) -> dict[str, pd.DataFrame]:
     out: dict[str, pd.DataFrame] = {}
     for asset in ASSETS:
@@ -380,6 +403,17 @@ def main() -> int:
     start = (now - timedelta(days=110)).strftime("%Y%m%d")  # 영업일 ~75일 확보
 
     print(f"[INFO] fetch range {start} ~ {end}, assets={len(ASSETS)}")
+
+    # 매핑 검증 (KRX 공식명 vs 우리 매핑) — fetch 전에 출력해서 잘못된 코드 잡기.
+    audit = verify_asset_names()
+    write_json(
+        PUBLIC_DIR / "asset_name_audit.json",
+        {"generated_at": now.isoformat(timespec="seconds"), "mismatches": audit},
+    )
+    if audit:
+        print(f"[AUDIT] {len(audit)} mismatch(es):", file=sys.stderr)
+        for line in audit:
+            print(f"  {line}", file=sys.stderr)
 
     try:
         ohlcv_map = collect_all(start, end)
