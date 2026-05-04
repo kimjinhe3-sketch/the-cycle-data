@@ -47,12 +47,15 @@ SECTORS: list[dict] = load_json(DATA_DIR / "sectors.json")
 ASSETS: list[dict] = load_json(DATA_DIR / "assets.json")
 
 # 사용자 큐레이션 '매의 눈' 픽 — representative_assets 우선 후보.
+# 일단 OFF. 다시 켜려면 HAWK_EYE_ENABLED = True.
+HAWK_EYE_ENABLED = False
 try:
     _hawk_raw = json.loads((DATA_DIR / "hawk_eye.json").read_text(encoding="utf-8"))
-    HAWK_EYE: dict[str, list[str]] = _hawk_raw.get("picks", {})
+    _hawk_picks: dict[str, list[str]] = _hawk_raw.get("picks", {})
 except Exception as _exc:  # noqa: BLE001
     print(f"[WARN] hawk_eye.json load fail (continuing with empty): {_exc}", file=sys.stderr)
-    HAWK_EYE = {}
+    _hawk_picks = {}
+HAWK_EYE: dict[str, list[str]] = _hawk_picks if HAWK_EYE_ENABLED else {}
 
 
 def write_json(path: Path, payload) -> None:
