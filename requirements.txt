@@ -1,1 +1,4 @@
-pykrx==1.0.45
+# Python 3.12+ 부터 setuptools 가 기본 미포함이지만 pykrx 가 pkg_resources 를
+# import 하므로 명시.
+setuptools>=70
+pykrx>=1.0.45
