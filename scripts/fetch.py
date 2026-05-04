@@ -67,8 +67,13 @@ def fetch_ohlcv(ticker: str, start: str, end: str) -> pd.DataFrame:
 
 
 def fetch_index(index_code: str, start: str, end: str) -> pd.DataFrame:
-    df = stock.get_index_ohlcv_by_date(start, end, index_code)
-    return df
+    """KOSPI(1001)/KOSDAQ(2001) 지수 OHLCV. pykrx 일부 버전에서 내부 '지수명'
+    lookup 이 깨지는 경우가 있어 항상 try/except 로 감싼다."""
+    try:
+        return stock.get_index_ohlcv_by_date(start, end, index_code)
+    except Exception as exc:  # noqa: BLE001
+        print(f"[WARN] index {index_code} fetch fail: {exc}", file=sys.stderr)
+        return pd.DataFrame()
 
 
 def collect_all(start: str, end: str) -> dict[str, pd.DataFrame]:
@@ -104,12 +109,16 @@ def build_market_summary(start: str, end: str) -> dict:
     kosdaq = fetch_index(KOSDAQ_INDEX, start, end)
 
     def last_change(df: pd.DataFrame) -> tuple[float, float]:
-        if df.empty or len(df) < 2:
+        if df is None or df.empty or len(df) < 2 or "종가" not in df.columns:
             return (0.0, 0.0)
-        last = float(df["종가"].iloc[-1])
-        prev = float(df["종가"].iloc[-2])
-        pct = ((last - prev) / prev) * 100 if prev > 0 else 0.0
-        return (last, pct)
+        try:
+            last = float(df["종가"].iloc[-1])
+            prev = float(df["종가"].iloc[-2])
+            pct = ((last - prev) / prev) * 100 if prev > 0 else 0.0
+            return (last, pct)
+        except Exception as exc:  # noqa: BLE001
+            print(f"[WARN] last_change fail: {exc}", file=sys.stderr)
+            return (0.0, 0.0)
 
     kospi_v, kospi_pct = last_change(kospi)
     kosdaq_v, kosdaq_pct = last_change(kosdaq)
