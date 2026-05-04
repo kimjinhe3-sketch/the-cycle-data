@@ -329,6 +329,49 @@ def build_candidates(meta: dict, rows: list[dict]) -> dict:
     return {**meta, "horizon": 10, "candidates": candidates}
 
 
+def build_universe() -> dict:
+    """KRX 전종목 (KOSPI + KOSDAQ) 코드/이름/시장 한 번에 빌드.
+    FinanceDataReader.StockListing('KRX') 가 단일 호출로 ~2,500 행을 반환.
+    앱의 종목 검색 / 태깅 UI 가 이 파일을 가지고 검색 인덱스 만든다.
+    """
+    if fdr is None:
+        return {"as_of": "", "count": 0, "tickers": [], "error": "fdr unavailable"}
+
+    try:
+        df = fdr.StockListing("KRX")
+    except Exception as exc:  # noqa: BLE001
+        return {"as_of": "", "count": 0, "tickers": [], "error": f"StockListing fail: {exc}"}
+
+    # 컬럼명은 fdr 버전에 따라 'Code'/'Symbol' 등 변할 수 있어 정규화.
+    code_col = next((c for c in ["Code", "Symbol", "code"] if c in df.columns), None)
+    name_col = next((c for c in ["Name", "name"] if c in df.columns), None)
+    market_col = next((c for c in ["Market", "market"] if c in df.columns), None)
+    if not code_col or not name_col:
+        return {
+            "as_of": "",
+            "count": 0,
+            "tickers": [],
+            "error": f"unexpected columns: {list(df.columns)}",
+        }
+
+    tickers = []
+    for _, row in df.iterrows():
+        code = str(row[code_col]).strip()
+        name = str(row[name_col]).strip()
+        market = str(row[market_col]).strip() if market_col else ""
+        if not code or not name:
+            continue
+        # 우선주 / SPAC / ETN 등은 일단 포함. 향후 필터링 옵션 추가.
+        tickers.append({"code": code, "name": name, "market": market})
+
+    now = datetime.now(KST)
+    return {
+        "as_of": now.isoformat(timespec="seconds"),
+        "count": len(tickers),
+        "tickers": tickers,
+    }
+
+
 def build_quotes(ohlcv_map: dict[str, pd.DataFrame]) -> dict:
     """전 종목 마지막 종가 + 1일 등락률을 한 파일에 모아둠. 앱이 검색·후보 카드 등
     개별 종목 시세를 빠르게 lookup 할 수 있도록."""
@@ -485,6 +528,11 @@ def main() -> int:
     write_json(PUBLIC_DIR / "rotation_map.json", build_rotation_map(meta, rows))
     write_json(PUBLIC_DIR / "candidates.json", build_candidates(meta, rows))
     write_json(PUBLIC_DIR / "quotes.json", build_quotes(ohlcv_map))
+
+    # KRX 전종목 universe (앱 검색/태깅 UI 용). FDR 한 번 호출 ~수 초.
+    universe = build_universe()
+    write_json(PUBLIC_DIR / "universe.json", universe)
+    print(f"[INFO] universe: {universe.get('count', 0)} tickers")
 
     compare = build_compare_per_code(ohlcv_map)
     for code, payload in compare.items():
