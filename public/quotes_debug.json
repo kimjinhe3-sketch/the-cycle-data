@@ -37,12 +37,20 @@
     "by_ticker KOSDAQ: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\"",
     "wrapper KOSDAQ: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\""
   ],
+  "fdr_added": 2881,
+  "fdr_cols": {
+    "close": "Close",
+    "code": "Code",
+    "mcap": "Marcap",
+    "pct": "ChagesRatio",
+    "vol": "Volume"
+  },
   "pykrx_funcs_present": {
     "get_etf_ohlcv_by_ticker": true,
     "get_market_ohlcv": true,
     "get_market_ohlcv_by_date": true,
     "get_market_ohlcv_by_ticker": true
   },
-  "quotes_count": 97,
+  "quotes_count": 2893,
   "trade_date": "2026-05-04"
 }
