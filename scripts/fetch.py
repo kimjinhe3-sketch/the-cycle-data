@@ -46,6 +46,14 @@ def load_json(path: Path) -> list:
 SECTORS: list[dict] = load_json(DATA_DIR / "sectors.json")
 ASSETS: list[dict] = load_json(DATA_DIR / "assets.json")
 
+# 사용자 큐레이션 '매의 눈' 픽 — representative_assets 우선 후보.
+try:
+    _hawk_raw = json.loads((DATA_DIR / "hawk_eye.json").read_text(encoding="utf-8"))
+    HAWK_EYE: dict[str, list[str]] = _hawk_raw.get("picks", {})
+except Exception as _exc:  # noqa: BLE001
+    print(f"[WARN] hawk_eye.json load fail (continuing with empty): {_exc}", file=sys.stderr)
+    HAWK_EYE = {}
+
 
 def write_json(path: Path, payload) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -194,8 +202,18 @@ def assets_in_sector(sector_id: str) -> list[dict]:
 
 def representative_assets(sector_id: str) -> list[dict]:
     in_sector = assets_in_sector(sector_id)
-    stocks = [a for a in in_sector if a["type"] == "stock"][:3]
     etf = next((a for a in in_sector if a["type"] == "etf"), None)
+
+    # 매의 눈 픽이 있으면 그게 우선 (사용자 큐레이션).
+    picks = HAWK_EYE.get(sector_id, [])
+    if picks:
+        by_code = {a["code"]: a for a in in_sector}
+        hawk_assets = [by_code[c] for c in picks if c in by_code]
+        if hawk_assets:
+            return hawk_assets + ([etf] if etf else [])
+
+    # 폴백: 섹터 내 첫 3개 종목 + ETF.
+    stocks = [a for a in in_sector if a["type"] == "stock"][:3]
     return stocks + ([etf] if etf else [])
 
 
@@ -346,6 +364,8 @@ def build_universe() -> dict:
     code_col = next((c for c in ["Code", "Symbol", "code"] if c in df.columns), None)
     name_col = next((c for c in ["Name", "name"] if c in df.columns), None)
     market_col = next((c for c in ["Market", "market"] if c in df.columns), None)
+    sector_col = next((c for c in ["Sector", "sector"] if c in df.columns), None)
+    industry_col = next((c for c in ["Industry", "industry"] if c in df.columns), None)
     if not code_col or not name_col:
         return {
             "as_of": "",
@@ -354,15 +374,28 @@ def build_universe() -> dict:
             "error": f"unexpected columns: {list(df.columns)}",
         }
 
+    def _clean(v) -> str:
+        if v is None:
+            return ""
+        s = str(v).strip()
+        return "" if s.lower() in ("nan", "none") else s
+
     tickers = []
     for _, row in df.iterrows():
-        code = str(row[code_col]).strip()
-        name = str(row[name_col]).strip()
-        market = str(row[market_col]).strip() if market_col else ""
+        code = _clean(row[code_col])
+        name = _clean(row[name_col])
+        market = _clean(row[market_col]) if market_col else ""
+        sector = _clean(row[sector_col]) if sector_col else ""
+        industry = _clean(row[industry_col]) if industry_col else ""
         if not code or not name:
             continue
         # 우선주 / SPAC / ETN 등은 일단 포함. 향후 필터링 옵션 추가.
-        tickers.append({"code": code, "name": name, "market": market})
+        entry = {"code": code, "name": name, "market": market}
+        if sector:
+            entry["sector"] = sector
+        if industry:
+            entry["industry"] = industry
+        tickers.append(entry)
 
     now = datetime.now(KST)
     return {
@@ -372,30 +405,59 @@ def build_universe() -> dict:
     }
 
 
-def build_quotes(ohlcv_map: dict[str, pd.DataFrame]) -> dict:
-    """전 종목 마지막 종가 + 1일 등락률을 한 파일에 모아둠. 앱이 검색·후보 카드 등
-    개별 종목 시세를 빠르게 lookup 할 수 있도록."""
+def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dict:
+    """KRX 전종목 (KOSPI+KOSDAQ) 마지막 종가/등락률/거래대금을 한 파일에 모음.
+    pykrx 의 get_market_ohlcv(date, market=...) 배치 API 1콜씩이라 빠름.
+    실패 시 큐레이션 ohlcv_map 으로 폴백."""
     quotes: dict[str, dict] = {}
-    last_date = ""
+
+    # 입력 trade_date_str 은 "YYYY-MM-DD" → pykrx 는 "YYYYMMDD" 받음.
+    yyyymmdd = trade_date_str.replace("-", "") if trade_date_str else ""
+
+    if yyyymmdd:
+        for market in ("KOSPI", "KOSDAQ"):
+            try:
+                df = stock.get_market_ohlcv(yyyymmdd, market=market)
+            except Exception as exc:  # noqa: BLE001
+                print(f"[WARN] get_market_ohlcv({yyyymmdd},{market}) fail: {exc}", file=sys.stderr)
+                continue
+            if df is None or df.empty:
+                continue
+            for code, row in df.iterrows():
+                try:
+                    close = int(row["종가"])
+                    if close <= 0:
+                        continue
+                    pct = float(row["등락률"]) if "등락률" in df.columns else 0.0
+                    tv = int(row["거래대금"]) if "거래대금" in df.columns else 0
+                    quotes[str(code)] = {
+                        "close": close,
+                        "change_pct": round(pct, 2),
+                        "trade_date": trade_date_str,
+                        "trading_value": tv,
+                    }
+                except Exception as exc:  # noqa: BLE001
+                    print(f"[WARN] quotes row {code} skip: {exc}", file=sys.stderr)
+
+    # 큐레이션 종목이 배치에서 누락된 경우(신상장/거래정지 등) 폴백.
     for code, df in ohlcv_map.items():
-        if df is None or df.empty:
+        if code in quotes or df is None or df.empty:
             continue
         last = df.iloc[-1]
         prev_close = float(df.iloc[-2]["종가"]) if len(df) >= 2 else float(last["종가"])
         close = int(last["종가"])
         change_pct = ((close - prev_close) / prev_close) * 100 if prev_close > 0 else 0.0
         idx = df.index[-1]
-        trade_date = idx.strftime("%Y-%m-%d") if hasattr(idx, "strftime") else str(idx)
+        td = idx.strftime("%Y-%m-%d") if hasattr(idx, "strftime") else str(idx)
         quotes[code] = {
             "close": close,
             "change_pct": round(change_pct, 2),
-            "trade_date": trade_date,
+            "trade_date": td,
             "trading_value": int(last["거래대금"]) if "거래대금" in df.columns else 0,
         }
-        last_date = trade_date
 
     return {
-        "as_of": f"{last_date}T15:30:00+09:00" if last_date else "",
+        "as_of": f"{trade_date_str}T15:30:00+09:00" if trade_date_str else "",
         "source": "pykrx",
         "quotes": quotes,
     }
@@ -527,7 +589,9 @@ def main() -> int:
     write_json(PUBLIC_DIR / "dashboard.json", build_dashboard(meta, market_summary, rows))
     write_json(PUBLIC_DIR / "rotation_map.json", build_rotation_map(meta, rows))
     write_json(PUBLIC_DIR / "candidates.json", build_candidates(meta, rows))
-    write_json(PUBLIC_DIR / "quotes.json", build_quotes(ohlcv_map))
+    # quotes 는 KRX 전종목 — health 의 trade_date 기준으로 pykrx 배치.
+    quotes_trade_date = health["samsung_005930"]["trade_date"] if health.get("ok") else ""
+    write_json(PUBLIC_DIR / "quotes.json", build_quotes(ohlcv_map, quotes_trade_date))
 
     # KRX 전종목 universe (앱 검색/태깅 UI 용). FDR 한 번 호출 ~수 초.
     universe = build_universe()

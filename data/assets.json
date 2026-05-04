@@ -8,6 +8,9 @@
   { "code": "000990", "name": "DB하이텍",         "type": "stock", "sectorIds": ["power_semi"] },
   { "code": "092220", "name": "KEC",              "type": "stock", "sectorIds": ["power_semi"] },
   { "code": "095340", "name": "ISC",              "type": "stock", "sectorIds": ["power_semi"] },
+  { "code": "009150", "name": "삼성전기",         "type": "stock", "sectorIds": ["power_semi"] },
+  { "code": "005070", "name": "코스모신소재",     "type": "stock", "sectorIds": ["power_semi"] },
+  { "code": "001820", "name": "삼화콘덴서",       "type": "stock", "sectorIds": ["power_semi"] },
 
   { "code": "035420", "name": "NAVER",            "type": "stock", "sectorIds": ["ai"] },
   { "code": "035720", "name": "카카오",           "type": "stock", "sectorIds": ["ai"] },
@@ -26,6 +29,7 @@
   { "code": "052690", "name": "한전기술",         "type": "stock", "sectorIds": ["nuclear"] },
   { "code": "015760", "name": "한국전력",         "type": "stock", "sectorIds": ["nuclear"] },
   { "code": "083650", "name": "비에이치아이",     "type": "stock", "sectorIds": ["nuclear"] },
+  { "code": "105840", "name": "우진",             "type": "stock", "sectorIds": ["nuclear"] },
 
   { "code": "010120", "name": "LS ELECTRIC",      "type": "stock", "sectorIds": ["power_equip"] },
   { "code": "267260", "name": "HD현대일렉트릭",   "type": "stock", "sectorIds": ["power_equip"] },
@@ -41,7 +45,8 @@
   { "code": "247540", "name": "에코프로비엠",     "type": "stock", "sectorIds": ["ess"] },
   { "code": "086520", "name": "에코프로",         "type": "stock", "sectorIds": ["ess"] },
   { "code": "003670", "name": "포스코퓨처엠",     "type": "stock", "sectorIds": ["ess"] },
-  { "code": "322000", "name": "HD현대에너지솔루션", "type": "stock", "sectorIds": ["ess"] },
+  { "code": "322000", "name": "HD현대에너지솔루션", "type": "stock", "sectorIds": ["ess", "solar"] },
+  { "code": "066970", "name": "엘앤에프",         "type": "stock", "sectorIds": ["ess"] },
 
   { "code": "009830", "name": "한화솔루션",       "type": "stock", "sectorIds": ["solar"] },
   { "code": "010060", "name": "OCI홀딩스",        "type": "stock", "sectorIds": ["solar"] },
@@ -52,6 +57,8 @@
   { "code": "100130", "name": "동국S&C",          "type": "stock", "sectorIds": ["wind"] },
   { "code": "336260", "name": "두산퓨얼셀",       "type": "stock", "sectorIds": ["wind"] },
   { "code": "018000", "name": "유니슨",           "type": "stock", "sectorIds": ["wind"] },
+  { "code": "475150", "name": "SK이터닉스",       "type": "stock", "sectorIds": ["wind"] },
+  { "code": "100090", "name": "SK오션플랜트",     "type": "stock", "sectorIds": ["wind"] },
 
   { "code": "036460", "name": "한국가스공사",     "type": "stock", "sectorIds": ["lng"] },
   { "code": "018670", "name": "SK가스",           "type": "stock", "sectorIds": ["lng"] },
@@ -69,7 +76,7 @@
   { "code": "028050", "name": "삼성E&A",          "type": "stock", "sectorIds": ["construction"] },
   { "code": "375500", "name": "DL이앤씨",         "type": "stock", "sectorIds": ["construction"] },
 
-  { "code": "017670", "name": "SK텔레콤",         "type": "stock", "sectorIds": ["telecom"] },
+  { "code": "017670", "name": "SK텔레콤",         "type": "stock", "sectorIds": ["telecom", "ai"] },
   { "code": "030200", "name": "KT",               "type": "stock", "sectorIds": ["telecom"] },
   { "code": "032640", "name": "LG유플러스",       "type": "stock", "sectorIds": ["telecom"] },
 
@@ -78,6 +85,7 @@
   { "code": "016360", "name": "삼성증권",         "type": "stock", "sectorIds": ["securities"] },
   { "code": "039490", "name": "키움증권",         "type": "stock", "sectorIds": ["securities"] },
   { "code": "006800", "name": "미래에셋증권",     "type": "stock", "sectorIds": ["securities"] },
+  { "code": "071050", "name": "한국금융지주",     "type": "stock", "sectorIds": ["securities"] },
 
   { "code": "023530", "name": "롯데쇼핑",         "type": "stock", "sectorIds": ["department"] },
   { "code": "069960", "name": "현대백화점",       "type": "stock", "sectorIds": ["department"] },
@@ -89,6 +97,14 @@
   { "code": "012330", "name": "현대모비스",       "type": "stock", "sectorIds": ["auto", "robotics"] },
   { "code": "018880", "name": "한온시스템",       "type": "stock", "sectorIds": ["auto"] },
   { "code": "307950", "name": "현대오토에버",     "type": "stock", "sectorIds": ["auto", "robotics"] },
+
+  { "code": "001440", "name": "대한전선",         "type": "stock", "sectorIds": ["cable"] },
+  { "code": "103590", "name": "일진전기",         "type": "stock", "sectorIds": ["cable"] },
+  { "code": "000500", "name": "가온전선",         "type": "stock", "sectorIds": ["cable"] },
+
+  { "code": "010170", "name": "대한광통신",       "type": "stock", "sectorIds": ["comm_equip"] },
+  { "code": "115440", "name": "우리넷",           "type": "stock", "sectorIds": ["comm_equip"] },
+  { "code": "056360", "name": "코위버",           "type": "stock", "sectorIds": ["comm_equip"] },
 
   { "code": "069500", "name": "KODEX 200",           "type": "etf", "sectorIds": [] },
   { "code": "102110", "name": "TIGER 200",           "type": "etf", "sectorIds": [] },
