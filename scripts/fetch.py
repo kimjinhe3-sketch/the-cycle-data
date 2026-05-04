@@ -414,15 +414,25 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
     # 입력 trade_date_str 은 "YYYY-MM-DD" → pykrx 는 "YYYYMMDD" 받음.
     yyyymmdd = trade_date_str.replace("-", "") if trade_date_str else ""
 
+    batch_fail_reasons: list[str] = []
     if yyyymmdd:
         for market in ("KOSPI", "KOSDAQ"):
+            df = None
+            # 1차: 명시적 by_ticker (pykrx 1.0.45+ 표준 batch).
             try:
-                df = stock.get_market_ohlcv(yyyymmdd, market=market)
+                df = stock.get_market_ohlcv_by_ticker(yyyymmdd, market=market)
             except Exception as exc:  # noqa: BLE001
-                print(f"[WARN] get_market_ohlcv({yyyymmdd},{market}) fail: {exc}", file=sys.stderr)
-                continue
+                batch_fail_reasons.append(f"by_ticker {market}: {exc}")
+                # 2차: 래퍼 시도 (구버전 호환).
+                try:
+                    df = stock.get_market_ohlcv(yyyymmdd, market=market)
+                except Exception as exc2:  # noqa: BLE001
+                    batch_fail_reasons.append(f"wrapper {market}: {exc2}")
+                    continue
             if df is None or df.empty:
+                batch_fail_reasons.append(f"{market}: empty df")
                 continue
+            print(f"[INFO] batch {market} {yyyymmdd}: {len(df)} rows", file=sys.stderr)
             for code, row in df.iterrows():
                 try:
                     close = int(row["종가"])
@@ -438,6 +448,33 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
                     }
                 except Exception as exc:  # noqa: BLE001
                     print(f"[WARN] quotes row {code} skip: {exc}", file=sys.stderr)
+    if batch_fail_reasons:
+        print(f"[WARN] batch quote fails: {'; '.join(batch_fail_reasons[:5])}", file=sys.stderr)
+
+    # ETF 는 pykrx 의 별도 API 가 필요. 종목 batch 와 동일 shape 으로 합침.
+    if yyyymmdd:
+        try:
+            etf_df = stock.get_etf_ohlcv_by_ticker(yyyymmdd)
+        except Exception as exc:  # noqa: BLE001
+            print(f"[WARN] get_etf_ohlcv_by_ticker fail: {exc}", file=sys.stderr)
+            etf_df = None
+        if etf_df is not None and not etf_df.empty:
+            print(f"[INFO] ETF batch {yyyymmdd}: {len(etf_df)} rows", file=sys.stderr)
+            for code, row in etf_df.iterrows():
+                try:
+                    close = int(row["종가"])
+                    if close <= 0:
+                        continue
+                    pct = float(row["등락률"]) if "등락률" in etf_df.columns else 0.0
+                    tv = int(row["거래대금"]) if "거래대금" in etf_df.columns else 0
+                    quotes[str(code)] = {
+                        "close": close,
+                        "change_pct": round(pct, 2),
+                        "trade_date": trade_date_str,
+                        "trading_value": tv,
+                    }
+                except Exception as exc:  # noqa: BLE001
+                    print(f"[WARN] etf row {code} skip: {exc}", file=sys.stderr)
 
     # 큐레이션 종목이 배치에서 누락된 경우(신상장/거래정지 등) 폴백.
     for code, df in ohlcv_map.items():
