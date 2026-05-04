@@ -416,6 +416,54 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
     yyyymmdd = trade_date_str.replace("-", "") if trade_date_str else ""
 
     batch_fail_reasons: list[str] = []
+
+    # 우선순위 1: fdr.StockListing("KRX") 한 방으로 전종목 종가+등락률.
+    # pykrx batch 가 KRX 응답 스키마 변경에 취약해서 unstable → fdr 가 더 안정적.
+    if fdr is not None:
+        try:
+            fdr_df = fdr.StockListing("KRX")
+            close_col = next((c for c in ["Close", "close", "종가"] if c in fdr_df.columns), None)
+            pct_col = next((c for c in ["ChagesRatio", "ChangesRatio", "ChangeRatio", "등락률", "Change"] if c in fdr_df.columns), None)
+            code_col = next((c for c in ["Code", "Symbol", "code"] if c in fdr_df.columns), None)
+            vol_col = next((c for c in ["Volume", "거래량"] if c in fdr_df.columns), None)
+            mcap_col = next((c for c in ["Marcap", "시가총액"] if c in fdr_df.columns), None)
+            debug["fdr_cols"] = {"close": close_col, "pct": pct_col, "code": code_col, "vol": vol_col, "mcap": mcap_col}
+            if code_col and close_col:
+                added = 0
+                for _, row in fdr_df.iterrows():
+                    try:
+                        code = str(row[code_col]).strip()
+                        if not code:
+                            continue
+                        close_v = row[close_col]
+                        if close_v is None or pd.isna(close_v):
+                            continue
+                        close = int(float(close_v))
+                        if close <= 0:
+                            continue
+                        pct = float(row[pct_col]) if pct_col and not pd.isna(row[pct_col]) else 0.0
+                        # ChagesRatio 가 보통 % (예: 5.4) 로 옴 — 그대로 사용.
+                        # 거래대금 = close × volume (fdr 는 보통 거래대금 컬럼 없음).
+                        vol = int(row[vol_col]) if vol_col and not pd.isna(row[vol_col]) else 0
+                        tv = close * vol
+                        quotes[code] = {
+                            "close": close,
+                            "change_pct": round(pct, 2),
+                            "trade_date": trade_date_str,
+                            "trading_value": tv,
+                        }
+                        added += 1
+                    except Exception:  # noqa: BLE001
+                        continue
+                debug["fdr_added"] = added
+                print(f"[INFO] fdr StockListing batch: {added} quotes", file=sys.stderr)
+            else:
+                batch_fail_reasons.append(f"fdr cols missing: {list(fdr_df.columns)[:10]}")
+        except Exception as exc:  # noqa: BLE001
+            batch_fail_reasons.append(f"fdr StockListing fail: {exc}")
+            debug["fdr_error"] = repr(exc)
+
+    # 우선순위 2: pykrx batch (보조 — fdr 가 누락한 종목 메우기).
     if yyyymmdd:
         # pykrx 버전/함수명 확인용 — 디버그 파일에 기록.
         debug["pykrx_funcs_present"] = {
