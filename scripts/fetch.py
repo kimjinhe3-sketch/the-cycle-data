@@ -271,6 +271,35 @@ def build_candidates(meta: dict, rows: list[dict]) -> dict:
     return {**meta, "horizon": 10, "candidates": candidates}
 
 
+def build_quotes(ohlcv_map: dict[str, pd.DataFrame]) -> dict:
+    """전 종목 마지막 종가 + 1일 등락률을 한 파일에 모아둠. 앱이 검색·후보 카드 등
+    개별 종목 시세를 빠르게 lookup 할 수 있도록."""
+    quotes: dict[str, dict] = {}
+    last_date = ""
+    for code, df in ohlcv_map.items():
+        if df is None or df.empty:
+            continue
+        last = df.iloc[-1]
+        prev_close = float(df.iloc[-2]["종가"]) if len(df) >= 2 else float(last["종가"])
+        close = int(last["종가"])
+        change_pct = ((close - prev_close) / prev_close) * 100 if prev_close > 0 else 0.0
+        idx = df.index[-1]
+        trade_date = idx.strftime("%Y-%m-%d") if hasattr(idx, "strftime") else str(idx)
+        quotes[code] = {
+            "close": close,
+            "change_pct": round(change_pct, 2),
+            "trade_date": trade_date,
+            "trading_value": int(last["거래대금"]) if "거래대금" in df.columns else 0,
+        }
+        last_date = trade_date
+
+    return {
+        "as_of": f"{last_date}T15:30:00+09:00" if last_date else "",
+        "source": "pykrx",
+        "quotes": quotes,
+    }
+
+
 def build_compare_per_code(ohlcv_map: dict[str, pd.DataFrame]) -> dict[str, dict]:
     """종목별 60일 시계열을 rebased return 으로 가공."""
     out: dict[str, dict] = {}
@@ -382,12 +411,13 @@ def main() -> int:
     write_json(PUBLIC_DIR / "dashboard.json", build_dashboard(meta, market_summary, rows))
     write_json(PUBLIC_DIR / "rotation_map.json", build_rotation_map(meta, rows))
     write_json(PUBLIC_DIR / "candidates.json", build_candidates(meta, rows))
+    write_json(PUBLIC_DIR / "quotes.json", build_quotes(ohlcv_map))
 
     compare = build_compare_per_code(ohlcv_map)
     for code, payload in compare.items():
         write_json(COMPARE_DIR / f"{code}.json", payload)
 
-    print(f"[OK] wrote dashboard/rotation_map/candidates + compare/{len(compare)}")
+    print(f"[OK] wrote dashboard/rotation_map/candidates/quotes + compare/{len(compare)}")
     return 0
 
 
