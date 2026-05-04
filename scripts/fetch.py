@@ -22,6 +22,11 @@ from typing import Iterable
 import pandas as pd
 from pykrx import stock
 
+try:
+    import FinanceDataReader as fdr
+except Exception:  # noqa: BLE001
+    fdr = None  # 없어도 fetch 자체는 진행 (KOSPI/KOSDAQ 만 0 으로 떨어짐)
+
 import scoring
 
 KST = timezone(timedelta(hours=9))
@@ -67,12 +72,28 @@ def fetch_ohlcv(ticker: str, start: str, end: str) -> pd.DataFrame:
 
 
 def fetch_index(index_code: str, start: str, end: str) -> pd.DataFrame:
-    """KOSPI(1001)/KOSDAQ(2001) 지수 OHLCV. pykrx 일부 버전에서 내부 '지수명'
-    lookup 이 깨지는 경우가 있어 항상 try/except 로 감싼다."""
+    """KOSPI(1001)/KOSDAQ(2001) 지수 OHLCV.
+    - pykrx 의 get_index_ohlcv_by_date 는 일부 버전에서 '지수명' KeyError 로 죽음.
+    - 우선 FinanceDataReader 로 시도 (KS11=KOSPI, KQ11=KOSDAQ), 실패시 pykrx 시도.
+    """
+    fdr_symbol = {"1001": "KS11", "2001": "KQ11"}.get(index_code)
+    if fdr is not None and fdr_symbol:
+        try:
+            start_iso = f"{start[:4]}-{start[4:6]}-{start[6:]}"
+            end_iso = f"{end[:4]}-{end[4:6]}-{end[6:]}"
+            df = fdr.DataReader(fdr_symbol, start_iso, end_iso)
+            if not df.empty:
+                # 우리 코드는 '종가' 컬럼명을 기대하므로 매핑.
+                if "Close" in df.columns and "종가" not in df.columns:
+                    df = df.rename(columns={"Close": "종가"})
+                return df
+        except Exception as exc:  # noqa: BLE001
+            print(f"[WARN] fdr index {fdr_symbol} fail: {exc}", file=sys.stderr)
+
     try:
         return stock.get_index_ohlcv_by_date(start, end, index_code)
     except Exception as exc:  # noqa: BLE001
-        print(f"[WARN] index {index_code} fetch fail: {exc}", file=sys.stderr)
+        print(f"[WARN] pykrx index {index_code} fail: {exc}", file=sys.stderr)
         return pd.DataFrame()
 
 
@@ -154,8 +175,17 @@ def build_market_summary(start: str, end: str) -> dict:
     }
 
 
+def asset_sector_ids(asset: dict) -> list[str]:
+    """멀티태그(sectorIds) 우선, 없으면 단일 sectorId 폴백."""
+    if isinstance(asset.get("sectorIds"), list):
+        return asset["sectorIds"]
+    if asset.get("sectorId"):
+        return [asset["sectorId"]]
+    return []
+
+
 def assets_in_sector(sector_id: str) -> list[dict]:
-    return [a for a in ASSETS if a.get("sectorId") == sector_id]
+    return [a for a in ASSETS if sector_id in asset_sector_ids(a)]
 
 
 def representative_assets(sector_id: str) -> list[dict]:

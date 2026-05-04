@@ -2,4 +2,7 @@
 # import 하므로 명시.
 setuptools>=70
 pykrx>=1.0.45
+# pykrx 의 index API('지수명' KeyError) 가 GA 환경에서 깨지는 케이스가 있어
+# KOSPI/KOSDAQ 지수만 별도 라이브러리로 fetch.
+finance-datareader>=0.9.50
 pandas>=2.0
