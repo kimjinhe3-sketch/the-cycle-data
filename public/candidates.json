@@ -2,31 +2,31 @@
   "as_of": "2026-05-04T15:30:00+09:00",
   "candidates": [
     {
-      "ai_summary": "증권 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "high",
-      "probability": 65.6,
+      "probability": 75.1,
       "representative_assets": [
         {
-          "code": "005940",
-          "name": "NH투자증권",
+          "code": "001440",
+          "name": "대한전선",
           "sectorIds": [
-            "securities"
+            "cable"
           ],
           "type": "stock"
         },
         {
-          "code": "003540",
-          "name": "대신증권",
+          "code": "103590",
+          "name": "일진전기",
           "sectorIds": [
-            "securities"
+            "cable"
           ],
           "type": "stock"
         },
         {
-          "code": "016360",
-          "name": "삼성증권",
+          "code": "000500",
+          "name": "가온전선",
           "sectorIds": [
-            "securities"
+            "cable"
           ],
           "type": "stock"
         }
@@ -39,15 +39,15 @@
           "label": "글로벌 매크로 변수"
         }
       ],
-      "sector_id": "securities",
-      "sector_name": "증권",
+      "sector_id": "cable",
+      "sector_name": "케이블",
       "signals": [
         {
-          "detail": "가격강도 55점",
+          "detail": "가격강도 99점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 238%",
+          "detail": "20일 평균 대비 119%",
           "label": "거래대금 확장"
         },
         {
@@ -55,12 +55,12 @@
           "label": "수급 전환"
         }
       ],
-      "state": "neutral"
+      "state": "overheated"
     },
     {
       "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "medium",
-      "probability": 61.5,
+      "probability": 60.4,
       "representative_assets": [
         {
           "code": "010120",
@@ -99,7 +99,7 @@
       "sector_name": "전력기기",
       "signals": [
         {
-          "detail": "가격강도 94점",
+          "detail": "가격강도 91점",
           "label": "가격강도 상위"
         },
         {
@@ -114,9 +114,65 @@
       "state": "overheated"
     },
     {
+      "ai_summary": "증권 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "medium",
+      "probability": 55.4,
+      "representative_assets": [
+        {
+          "code": "006800",
+          "name": "미래에셋증권",
+          "sectorIds": [
+            "securities"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "071050",
+          "name": "한국금융지주",
+          "sectorIds": [
+            "securities"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "016360",
+          "name": "삼성증권",
+          "sectorIds": [
+            "securities"
+          ],
+          "type": "stock"
+        }
+      ],
+      "risks": [
+        {
+          "label": "단기 변동성 확대"
+        },
+        {
+          "label": "글로벌 매크로 변수"
+        }
+      ],
+      "sector_id": "securities",
+      "sector_name": "증권",
+      "signals": [
+        {
+          "detail": "가격강도 49점",
+          "label": "가격강도 상위"
+        },
+        {
+          "detail": "20일 평균 대비 213%",
+          "label": "거래대금 확장"
+        },
+        {
+          "detail": "외국인/기관 순매수 전환",
+          "label": "수급 전환"
+        }
+      ],
+      "state": "early"
+    },
+    {
       "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "medium",
-      "probability": 51.0,
+      "probability": 46.2,
       "representative_assets": [
         {
           "code": "005930",
@@ -130,15 +186,6 @@
         {
           "code": "000660",
           "name": "SK하이닉스",
-          "sectorIds": [
-            "memory_semi",
-            "ai"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "042700",
-          "name": "한미반도체",
           "sectorIds": [
             "memory_semi",
             "ai"
@@ -166,7 +213,7 @@
       "sector_name": "메모리반도체",
       "signals": [
         {
-          "detail": "가격강도 69점",
+          "detail": "가격강도 66점",
           "label": "가격강도 상위"
         },
         {
@@ -181,68 +228,9 @@
       "state": "expanding"
     },
     {
-      "ai_summary": "로보틱스 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "low",
-      "probability": 44.6,
-      "representative_assets": [
-        {
-          "code": "108490",
-          "name": "로보티즈",
-          "sectorIds": [
-            "robotics"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "064350",
-          "name": "현대로템",
-          "sectorIds": [
-            "defense",
-            "robotics",
-            "nuclear"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "005380",
-          "name": "현대차",
-          "sectorIds": [
-            "auto",
-            "robotics"
-          ],
-          "type": "stock"
-        }
-      ],
-      "risks": [
-        {
-          "label": "단기 변동성 확대"
-        },
-        {
-          "label": "글로벌 매크로 변수"
-        }
-      ],
-      "sector_id": "robotics",
-      "sector_name": "로보틱스",
-      "signals": [
-        {
-          "detail": "가격강도 55점",
-          "label": "가격강도 상위"
-        },
-        {
-          "detail": "20일 평균 대비 -6%",
-          "label": "거래대금 확장"
-        },
-        {
-          "detail": "외국인/기관 순매수 전환",
-          "label": "수급 전환"
-        }
-      ],
-      "state": "neutral"
-    },
-    {
       "ai_summary": "자동차 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "low",
-      "probability": 40.4,
+      "probability": 39.0,
       "representative_assets": [
         {
           "code": "005380",
@@ -291,7 +279,7 @@
       "sector_name": "자동차",
       "signals": [
         {
-          "detail": "가격강도 47점",
+          "detail": "가격강도 42점",
           "label": "가격강도 상위"
         },
         {
