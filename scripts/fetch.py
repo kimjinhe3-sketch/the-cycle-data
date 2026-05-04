@@ -25,27 +25,46 @@ def fetch_health() -> dict:
     # 최근 14일 범위로 받아서 가장 마지막 거래일 행을 사용 — 단일 날짜 호출보다 안정적.
     start = (now - timedelta(days=14)).strftime("%Y%m%d")
 
+    # 1차 — 단일 종목 일별 OHLCV (단일 종목 API 는 거래대금 컬럼이 빠져있음)
     ohlcv = stock.get_market_ohlcv_by_date(start, end, SAMSUNG)
     if ohlcv.empty:
         raise RuntimeError("OHLCV 결과가 비어있음")
-    last_row = ohlcv.iloc[-1]
     last_idx = ohlcv.index[-1]
-    trade_date = last_idx.strftime("%Y-%m-%d") if hasattr(last_idx, "strftime") else str(last_idx)
+    last_row = ohlcv.iloc[-1]
+    trade_date_compact = (
+        last_idx.strftime("%Y%m%d") if hasattr(last_idx, "strftime") else str(last_idx)
+    )
+    trade_date = (
+        last_idx.strftime("%Y-%m-%d") if hasattr(last_idx, "strftime") else trade_date_compact
+    )
 
-    # 일부 환경에서 OHLCV 의 '거래대금' 컬럼이 비어 있을 수 있어, 보강용으로
-    # 시가총액 API 를 같이 호출해서 거래대금/거래량 을 보충한다.
-    cap_df = stock.get_market_cap_by_date(start, end, SAMSUNG)
-    cap_row = cap_df.iloc[-1] if not cap_df.empty else None
-
-    def num(d, key):
+    def num(series, key):
         try:
-            return int(d[key]) if key in d.index else 0
+            return int(series[key]) if key in series.index else 0
         except Exception:  # noqa: BLE001
             return 0
 
     close = num(last_row, "종가")
-    volume = num(last_row, "거래량") or (num(cap_row, "거래량") if cap_row is not None else 0)
-    trading_value = num(last_row, "거래대금") or (num(cap_row, "거래대금") if cap_row is not None else 0)
+    volume = num(last_row, "거래량")
+
+    # 2차 — 같은 날짜의 전종목 OHLCV 스냅샷에서 005930 행 뽑기.
+    # 이 API 는 거래대금 컬럼을 포함함.
+    trading_value = 0
+    snapshot_columns: list[str] = []
+    try:
+        snap = stock.get_market_ohlcv_by_ticker(trade_date_compact)
+        snapshot_columns = list(snap.columns)
+        if SAMSUNG in snap.index:
+            trading_value = num(snap.loc[SAMSUNG], "거래대금")
+    except Exception:  # noqa: BLE001
+        pass
+
+    # 3차 fallback — 거래대금 = 종가 × 거래량 근사값 (VWAP 가 아니라 정확하진 않지만
+    # 같은 자릿수 추정). 위 두 단계가 모두 실패했을 때만 사용.
+    approximated = False
+    if trading_value == 0 and close > 0 and volume > 0:
+        trading_value = close * volume
+        approximated = True
 
     return {
         "ok": True,
@@ -55,9 +74,12 @@ def fetch_health() -> dict:
             "close_krw": close,
             "volume": volume,
             "trading_value_krw": trading_value,
+            "trading_value_approximated": approximated,
         },
-        "ohlcv_columns": list(ohlcv.columns),
-        "cap_columns": list(cap_df.columns) if not cap_df.empty else [],
+        "debug": {
+            "ohlcv_columns": list(ohlcv.columns),
+            "snapshot_columns": snapshot_columns,
+        },
         "source": "pykrx",
     }
 
