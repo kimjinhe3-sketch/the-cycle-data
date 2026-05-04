@@ -99,10 +99,14 @@ def fetch_index(index_code: str, start: str, end: str) -> pd.DataFrame:
 
 def verify_asset_names() -> list[str]:
     """assets.json 에 적힌 우리 이름과 KRX 공식 종목명을 대조해서 mismatch 출력.
-    pykrx 신버전에서 get_market_ticker_name 이 KRX 로그인 요구하는 경우가 있어
-    각 호출을 안전하게 감싼다. 결과가 str 이 아니면 무조건 skip."""
+    - ETF 는 pykrx 의 get_market_ticker_name 으로 조회 안 되므로 skip.
+    - 일부 종목 (신상장 등) 도 KRX 응답이 비정상일 수 있는데 진짜 매핑 오류와 구분
+      하기 위해 별도 prefix 로 라벨링."""
     mismatches: list[str] = []
     for asset in ASSETS:
+        if asset.get("type") == "etf":
+            # ETF 는 pykrx get_market_ticker_name 대상 아님.
+            continue
         code = asset["code"]
         our_name = asset["name"]
         try:
@@ -110,14 +114,14 @@ def verify_asset_names() -> list[str]:
         except Exception as exc:  # noqa: BLE001
             mismatches.append(f"{code} [{our_name}] → KRX lookup 실패: {exc}")
             continue
-        # KRX 미인증 / 빈 응답 / DataFrame 등 비정상 결과는 그냥 skip.
         if not isinstance(krx_name, str) or not krx_name.strip():
-            mismatches.append(f"{code} [{our_name}] → KRX 응답 비정상 (auth/network 가능성)")
+            # 신상장/특수 종목은 KRX 응답이 비어 올 수 있음 — info 레벨로만.
+            mismatches.append(f"INFO {code} [{our_name}]: KRX 응답 비정상 (신상장/auth 가능성)")
             continue
         norm_a = our_name.replace(" ", "").replace("(주)", "").lower()
         norm_b = krx_name.replace(" ", "").replace("(주)", "").lower()
         if norm_a != norm_b:
-            mismatches.append(f"{code}: 우리={our_name!r} / KRX={krx_name!r}")
+            mismatches.append(f"MISMATCH {code}: 우리={our_name!r} / KRX={krx_name!r}")
     return mismatches
 
 
