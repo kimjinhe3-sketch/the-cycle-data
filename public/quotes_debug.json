@@ -1,0 +1,48 @@
+{
+  "batch_attempts": [
+    {
+      "market": "KOSPI",
+      "tries": [
+        {
+          "err": "KeyError(\"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\")",
+          "fn": "by_ticker",
+          "ok": false
+        },
+        {
+          "err": "KeyError(\"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\")",
+          "fn": "wrapper",
+          "ok": false
+        }
+      ]
+    },
+    {
+      "market": "KOSDAQ",
+      "tries": [
+        {
+          "err": "KeyError(\"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\")",
+          "fn": "by_ticker",
+          "ok": false
+        },
+        {
+          "err": "KeyError(\"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\")",
+          "fn": "wrapper",
+          "ok": false
+        }
+      ]
+    }
+  ],
+  "fail_reasons": [
+    "by_ticker KOSPI: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\"",
+    "wrapper KOSPI: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\"",
+    "by_ticker KOSDAQ: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\"",
+    "wrapper KOSDAQ: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\""
+  ],
+  "pykrx_funcs_present": {
+    "get_etf_ohlcv_by_ticker": true,
+    "get_market_ohlcv": true,
+    "get_market_ohlcv_by_date": true,
+    "get_market_ohlcv_by_ticker": true
+  },
+  "quotes_count": 97,
+  "trade_date": "2026-05-04"
+}
