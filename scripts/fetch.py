@@ -78,7 +78,8 @@ def fetch_index(index_code: str, start: str, end: str) -> pd.DataFrame:
 
 def verify_asset_names() -> list[str]:
     """assets.json 에 적힌 우리 이름과 KRX 공식 종목명을 대조해서 mismatch 출력.
-    반환값은 mismatch 라인 리스트 (public/asset_name_audit.json 으로도 떨어뜨림)."""
+    pykrx 신버전에서 get_market_ticker_name 이 KRX 로그인 요구하는 경우가 있어
+    각 호출을 안전하게 감싼다. 결과가 str 이 아니면 무조건 skip."""
     mismatches: list[str] = []
     for asset in ASSETS:
         code = asset["code"]
@@ -88,10 +89,10 @@ def verify_asset_names() -> list[str]:
         except Exception as exc:  # noqa: BLE001
             mismatches.append(f"{code} [{our_name}] → KRX lookup 실패: {exc}")
             continue
-        if not krx_name:
-            mismatches.append(f"{code} [{our_name}] → KRX 에서 못 찾음")
+        # KRX 미인증 / 빈 응답 / DataFrame 등 비정상 결과는 그냥 skip.
+        if not isinstance(krx_name, str) or not krx_name.strip():
+            mismatches.append(f"{code} [{our_name}] → KRX 응답 비정상 (auth/network 가능성)")
             continue
-        # 정확 일치는 어렵고, 보통 회사명에 공백/괄호 차이만 있는 정도.
         norm_a = our_name.replace(" ", "").replace("(주)", "").lower()
         norm_b = krx_name.replace(" ", "").replace("(주)", "").lower()
         if norm_a != norm_b:
@@ -405,15 +406,19 @@ def main() -> int:
     print(f"[INFO] fetch range {start} ~ {end}, assets={len(ASSETS)}")
 
     # 매핑 검증 (KRX 공식명 vs 우리 매핑) — fetch 전에 출력해서 잘못된 코드 잡기.
-    audit = verify_asset_names()
-    write_json(
-        PUBLIC_DIR / "asset_name_audit.json",
-        {"generated_at": now.isoformat(timespec="seconds"), "mismatches": audit},
-    )
-    if audit:
-        print(f"[AUDIT] {len(audit)} mismatch(es):", file=sys.stderr)
-        for line in audit:
-            print(f"  {line}", file=sys.stderr)
+    # GA 환경에서 KRX 로그인 못 하면 죽을 수 있으니 전체를 try/except 로 격리.
+    try:
+        audit = verify_asset_names()
+        write_json(
+            PUBLIC_DIR / "asset_name_audit.json",
+            {"generated_at": now.isoformat(timespec="seconds"), "mismatches": audit},
+        )
+        if audit:
+            print(f"[AUDIT] {len(audit)} mismatch(es):", file=sys.stderr)
+            for line in audit[:20]:
+                print(f"  {line}", file=sys.stderr)
+    except Exception as exc:  # noqa: BLE001
+        print(f"[WARN] audit step failed (continuing): {exc}", file=sys.stderr)
 
     try:
         ohlcv_map = collect_all(start, end)
