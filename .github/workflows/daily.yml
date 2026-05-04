@@ -1,0 +1,48 @@
+name: daily-fetch
+
+on:
+  # 매일 17:30 KST = 08:30 UTC, 평일(월~금)만.
+  # KRX 정정 마감 (보통 16:30 KST) 이후로 잡아 가장 최신 일봉이 반영되도록.
+  schedule:
+    - cron: "30 8 * * 1-5"
+  # GitHub UI > Actions 탭에서 수동 트리거 가능.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run fetch
+        run: python scripts/fetch.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "data: refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
