@@ -410,25 +410,40 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
     pykrx 의 get_market_ohlcv(date, market=...) 배치 API 1콜씩이라 빠름.
     실패 시 큐레이션 ohlcv_map 으로 폴백."""
     quotes: dict[str, dict] = {}
+    debug: dict = {"trade_date": trade_date_str, "batch_attempts": []}
 
     # 입력 trade_date_str 은 "YYYY-MM-DD" → pykrx 는 "YYYYMMDD" 받음.
     yyyymmdd = trade_date_str.replace("-", "") if trade_date_str else ""
 
     batch_fail_reasons: list[str] = []
     if yyyymmdd:
+        # pykrx 버전/함수명 확인용 — 디버그 파일에 기록.
+        debug["pykrx_funcs_present"] = {
+            n: hasattr(stock, n) for n in (
+                "get_market_ohlcv", "get_market_ohlcv_by_ticker",
+                "get_market_ohlcv_by_date", "get_etf_ohlcv_by_ticker",
+            )
+        }
         for market in ("KOSPI", "KOSDAQ"):
             df = None
+            attempt = {"market": market, "tries": []}
             # 1차: 명시적 by_ticker (pykrx 1.0.45+ 표준 batch).
             try:
                 df = stock.get_market_ohlcv_by_ticker(yyyymmdd, market=market)
+                attempt["tries"].append({"fn": "by_ticker", "ok": True, "rows": int(len(df)) if df is not None else 0, "cols": list(df.columns) if df is not None and not df.empty else []})
             except Exception as exc:  # noqa: BLE001
+                attempt["tries"].append({"fn": "by_ticker", "ok": False, "err": repr(exc)})
                 batch_fail_reasons.append(f"by_ticker {market}: {exc}")
                 # 2차: 래퍼 시도 (구버전 호환).
                 try:
                     df = stock.get_market_ohlcv(yyyymmdd, market=market)
+                    attempt["tries"].append({"fn": "wrapper", "ok": True, "rows": int(len(df)) if df is not None else 0})
                 except Exception as exc2:  # noqa: BLE001
+                    attempt["tries"].append({"fn": "wrapper", "ok": False, "err": repr(exc2)})
                     batch_fail_reasons.append(f"wrapper {market}: {exc2}")
+                    debug["batch_attempts"].append(attempt)
                     continue
+            debug["batch_attempts"].append(attempt)
             if df is None or df.empty:
                 batch_fail_reasons.append(f"{market}: empty df")
                 continue
@@ -492,6 +507,13 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
             "trade_date": td,
             "trading_value": int(last["거래대금"]) if "거래대금" in df.columns else 0,
         }
+
+    debug["quotes_count"] = len(quotes)
+    debug["fail_reasons"] = batch_fail_reasons
+    try:
+        write_json(PUBLIC_DIR / "quotes_debug.json", debug)
+    except Exception as exc:  # noqa: BLE001
+        print(f"[WARN] write quotes_debug fail: {exc}", file=sys.stderr)
 
     return {
         "as_of": f"{trade_date_str}T15:30:00+09:00" if trade_date_str else "",
