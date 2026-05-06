@@ -48,7 +48,7 @@ ASSETS: list[dict] = load_json(DATA_DIR / "assets.json")
 
 # 사용자 큐레이션 '매의 눈' 픽 — representative_assets 우선 후보.
 # 일단 OFF. 다시 켜려면 HAWK_EYE_ENABLED = True.
-HAWK_EYE_ENABLED = False
+HAWK_EYE_ENABLED = True
 try:
     _hawk_raw = json.loads((DATA_DIR / "hawk_eye.json").read_text(encoding="utf-8"))
     _hawk_picks: dict[str, list[str]] = _hawk_raw.get("picks", {})
@@ -220,13 +220,13 @@ def representative_assets(sector_id: str) -> list[dict]:
     return stocks + ([etf] if etf else [])
 
 
-def build_sector_rows(ohlcv_map: dict[str, pd.DataFrame]) -> list[dict]:
-    """17 개 섹터 각각에 대해 종목 features 를 뽑고 → 섹터 점수로 집계."""
+def build_sector_rows(ohlcv_map: dict[str, pd.DataFrame], lookback: int = 20) -> list[dict]:
+    """모든 섹터에 대해 lookback 일 윈도우로 features → 섹터 점수 집계."""
     # 시장 전체 분포 (모든 종목 features) 를 미리 만들어 백분위 계산용으로 사용
     all_features: dict[str, dict] = {}
     for code, df in ohlcv_map.items():
-        all_features[code] = scoring.stock_features(df)
-    market_ret_dist = [f["ret20"] for f in all_features.values()]
+        all_features[code] = scoring.stock_features(df, lookback=lookback)
+    market_ret_dist = [f["ret_main"] for f in all_features.values()]
     market_tv_dist = [f["tv_ratio"] for f in all_features.values()]
 
     rows: list[dict] = []
@@ -307,19 +307,74 @@ def build_dashboard(meta: dict, market_summary: dict, rows: list[dict]) -> dict:
     }
 
 
-def build_rotation_map(meta: dict, rows: list[dict]) -> dict:
-    sorted_rows = sorted(rows, key=lambda r: r["scores"]["total"], reverse=True)
-    timeline = []
-    for i, r in enumerate(sorted_rows[:6]):
-        date = (datetime.now(KST) - timedelta(days=(i + 1) * 5)).strftime("%Y-%m-%d")
-        timeline.append({"date": date, "sector_id": r["sector"]["id"], "sector_name": r["sector"]["name"]})
-    timeline.reverse()
+def _truncate_to_date(ohlcv_map: dict[str, pd.DataFrame], end_date) -> dict[str, pd.DataFrame]:
+    """OHLCV 를 특정 날짜 (포함) 까지로 자른 새 dict 반환."""
+    out: dict[str, pd.DataFrame] = {}
+    for code, df in ohlcv_map.items():
+        if df is None or df.empty:
+            continue
+        truncated = df.loc[df.index <= end_date]
+        if not truncated.empty:
+            out[code] = truncated
+    return out
+
+
+def build_rotation_timeline(ohlcv_map: dict[str, pd.DataFrame], lookback: int = 20,
+                            points: int = 6, gap_days: int = 5) -> list[dict]:
+    """과거 5일/10일/15일... 시점에 실제 1위/꼴찌 섹터를 계산해 추이로 반환.
+    - points: 데이터 포인트 개수 (기본 6 = 약 30일치)
+    - gap_days: 포인트 사이 간격 (영업일 기준 5일)
+    """
+    if not ohlcv_map:
+        return []
+
+    # 가장 최근 거래일 인덱스 (OHLCV 의 max date)
+    all_dates = sorted({d for df in ohlcv_map.values() for d in df.index})
+    if len(all_dates) < lookback + gap_days:
+        return []
+
+    timeline: list[dict] = []
+    for i in range(points):
+        offset_from_end = i * gap_days
+        end_idx = len(all_dates) - 1 - offset_from_end
+        if end_idx < lookback:
+            break
+        anchor = all_dates[end_idx]
+        truncated = _truncate_to_date(ohlcv_map, anchor)
+        rows = build_sector_rows(truncated, lookback=lookback)
+        if not rows:
+            continue
+        top = max(rows, key=lambda r: r["scores"]["total"])
+        bottom = min(rows, key=lambda r: r["scores"]["total"])
+        timeline.append({
+            "date": anchor.strftime("%Y-%m-%d") if hasattr(anchor, "strftime") else str(anchor)[:10],
+            "leading": {"sector_id": top["sector"]["id"], "sector_name": top["sector"]["name"]},
+            "lagging": {"sector_id": bottom["sector"]["id"], "sector_name": bottom["sector"]["name"]},
+        })
+
+    timeline.reverse()  # 오래된 → 최신 순
+    return timeline
+
+
+def build_rotation_map(meta: dict, rows_by_period: dict[int, list[dict]],
+                       timeline: list[dict]) -> dict:
+    """기간별 점수 + 진짜 timeline. rows 는 default(20일) 그대로 둠 (호환성)."""
+    default_period = 20
+    default_rows = sorted(
+        rows_by_period.get(default_period, []),
+        key=lambda r: r["scores"]["total"],
+        reverse=True,
+    )
     return {
         **meta,
         "market": "all",
-        "period": 20,
+        "period": default_period,
         "sort": "score",
-        "rows": sorted_rows,
+        "rows": default_rows,
+        "rows_by_period": {
+            str(p): sorted(rs, key=lambda r: r["scores"]["total"], reverse=True)
+            for p, rs in rows_by_period.items()
+        },
         "timeline": timeline,
     }
 
@@ -694,10 +749,16 @@ def main() -> int:
 
     meta = build_meta(as_of_iso)
     market_summary = build_market_summary(start, end)
-    rows = build_sector_rows(ohlcv_map)
+
+    # 기간별 점수 (5/20/60일). 20일 = 기본.
+    rows_by_period: dict[int, list[dict]] = {}
+    for lb in (5, 20, 60):
+        rows_by_period[lb] = build_sector_rows(ohlcv_map, lookback=lb)
+    rows = rows_by_period[20]
+    timeline = build_rotation_timeline(ohlcv_map, lookback=20, points=6, gap_days=5)
 
     write_json(PUBLIC_DIR / "dashboard.json", build_dashboard(meta, market_summary, rows))
-    write_json(PUBLIC_DIR / "rotation_map.json", build_rotation_map(meta, rows))
+    write_json(PUBLIC_DIR / "rotation_map.json", build_rotation_map(meta, rows_by_period, timeline))
     write_json(PUBLIC_DIR / "candidates.json", build_candidates(meta, rows))
     # quotes 는 KRX 전종목 — health 의 trade_date 기준으로 pykrx 배치.
     quotes_trade_date = health["samsung_005930"]["trade_date"] if health.get("ok") else ""

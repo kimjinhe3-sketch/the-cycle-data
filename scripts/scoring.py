@@ -71,38 +71,40 @@ def _safe_pct(curr: float, base: float) -> float:
     return ((curr - base) / base) * 100
 
 
-def stock_features(df: pd.DataFrame) -> dict:
-    """단일 종목 OHLCV(시가총액 포함) DataFrame 으로부터 1차 지표 추출.
+def stock_features(df: pd.DataFrame, lookback: int = 20) -> dict:
+    """단일 종목 OHLCV DataFrame 에서 1차 지표 추출.
+    `lookback` 으로 메인 윈도우 (5/20/60 등) 결정. 단기 윈도우는 lookback/4.
     df 의 인덱스는 날짜, 컬럼은 ['종가', '거래량', '거래대금'] 가정.
     """
+    short = max(2, lookback // 4)
     if df.empty:
-        return {"ret20": 0.0, "ret5": 0.0, "tv_ratio": 1.0, "rsi": 50.0, "tv_z": 0.0}
+        return {"ret_main": 0.0, "ret_short": 0.0, "tv_ratio": 1.0, "rsi": 50.0, "tv_z": 0.0}
 
     closes = df["종가"].astype(float).tolist()
     tv = df["거래대금"].astype(float).tolist() if "거래대금" in df.columns else []
 
     last = closes[-1]
-    ret20 = _safe_pct(last, closes[-21]) if len(closes) >= 21 else 0.0
-    ret5 = _safe_pct(last, closes[-6]) if len(closes) >= 6 else 0.0
+    ret_main = _safe_pct(last, closes[-(lookback + 1)]) if len(closes) >= lookback + 1 else 0.0
+    ret_short = _safe_pct(last, closes[-(short + 1)]) if len(closes) >= short + 1 else 0.0
 
-    if len(tv) >= 20:
-        tv_avg5 = sum(tv[-5:]) / 5
-        tv_avg20 = sum(tv[-20:]) / 20
-        tv_ratio = tv_avg5 / tv_avg20 if tv_avg20 > 0 else 1.0
+    if len(tv) >= lookback:
+        tv_avg_short = sum(tv[-short:]) / short
+        tv_avg_long = sum(tv[-lookback:]) / lookback
+        tv_ratio = tv_avg_short / tv_avg_long if tv_avg_long > 0 else 1.0
     else:
         tv_ratio = 1.0
 
     rsi = _rsi(closes)
 
-    if len(tv) >= 20:
-        mean = sum(tv[-20:]) / 20
-        var = sum((v - mean) ** 2 for v in tv[-20:]) / 20
+    if len(tv) >= lookback:
+        mean = sum(tv[-lookback:]) / lookback
+        var = sum((v - mean) ** 2 for v in tv[-lookback:]) / lookback
         std = var**0.5
         tv_z = (tv[-1] - mean) / std if std > 0 else 0.0
     else:
         tv_z = 0.0
 
-    return {"ret20": ret20, "ret5": ret5, "tv_ratio": tv_ratio, "rsi": rsi, "tv_z": tv_z}
+    return {"ret_main": ret_main, "ret_short": ret_short, "tv_ratio": tv_ratio, "rsi": rsi, "tv_z": tv_z}
 
 
 def aggregate_sector_scores(
@@ -117,16 +119,16 @@ def aggregate_sector_scores(
     if not sector_features:
         return SectorScores(50, 50, 50, 50, 50, 50)
 
-    # rs: 평균 20일 수익률을 시장 분포에서 백분위로 변환
-    avg_ret20 = sum(f["ret20"] for f in sector_features) / len(sector_features)
-    rs = _percentile_rank(avg_ret20, market_ret_distribution)
+    # rs: 평균 N일 수익률을 시장 분포에서 백분위로 변환
+    avg_ret_main = sum(f["ret_main"] for f in sector_features) / len(sector_features)
+    rs = _percentile_rank(avg_ret_main, market_ret_distribution)
 
     # flow: 평균 거래대금 비율 → 백분위
     avg_tv_ratio = sum(f["tv_ratio"] for f in sector_features) / len(sector_features)
     flow = _percentile_rank(avg_tv_ratio, market_tv_ratio_distribution)
 
-    # breadth: 5일 수익률 양수 비중
-    pos_count = sum(1 for f in sector_features if f["ret5"] > 0)
+    # breadth: 단기 수익률 양수 비중
+    pos_count = sum(1 for f in sector_features if f["ret_short"] > 0)
     breadth = (pos_count / len(sector_features)) * 100
 
     # fatigue: 평균 RSI 가 50 이상이면 그 거리만큼 피로도 증가
