@@ -220,11 +220,29 @@ def representative_assets(sector_id: str) -> list[dict]:
     return stocks + ([etf] if etf else [])
 
 
-def build_sector_rows(ohlcv_map: dict[str, pd.DataFrame], lookback: int = 20) -> list[dict]:
-    """모든 섹터에 대해 lookback 일 윈도우로 features → 섹터 점수 집계."""
-    # 시장 전체 분포 (모든 종목 features) 를 미리 만들어 백분위 계산용으로 사용
+def build_sector_rows(
+    ohlcv_map: dict[str, pd.DataFrame],
+    lookback: int = 20,
+    market_filter: str = "all",
+    code_market: dict[str, str] | None = None,
+) -> list[dict]:
+    """모든 섹터에 대해 lookback 일 윈도우로 features → 섹터 점수 집계.
+    market_filter: 'all' | 'kospi' | 'kosdaq' — 그 시장 종목만으로 점수 계산.
+    code_market: code → 'KOSPI'/'KOSDAQ' 매핑 (universe 에서 미리 빌드).
+    """
+    def _allowed(code: str) -> bool:
+        if market_filter == "all":
+            return True
+        if not code_market:
+            return True  # 매핑 없으면 필터 무시.
+        m = (code_market.get(code) or "").upper()
+        return m == market_filter.upper()
+
+    # 시장 전체 분포 (필터 적용된 종목 features) 를 미리 만들어 백분위 계산용으로 사용
     all_features: dict[str, dict] = {}
     for code, df in ohlcv_map.items():
+        if not _allowed(code):
+            continue
         all_features[code] = scoring.stock_features(df, lookback=lookback)
     market_ret_dist = [f["ret_main"] for f in all_features.values()]
     market_tv_dist = [f["tv_ratio"] for f in all_features.values()]
@@ -232,7 +250,8 @@ def build_sector_rows(ohlcv_map: dict[str, pd.DataFrame], lookback: int = 20) ->
     rows: list[dict] = []
     for sector in SECTORS:
         members = [a for a in assets_in_sector(sector["id"]) if a["type"] == "stock"]
-        member_codes = [m["code"] for m in members]
+        # 시장 필터 적용: 해당 시장 종목만 섹터 점수에 사용.
+        member_codes = [m["code"] for m in members if _allowed(m["code"])]
         member_features = [all_features[c] for c in member_codes if c in all_features]
 
         scores = scoring.aggregate_sector_scores(member_features, market_ret_dist, market_tv_dist)
@@ -292,12 +311,14 @@ def build_sector_rows(ohlcv_map: dict[str, pd.DataFrame], lookback: int = 20) ->
 
 def build_dashboard(meta: dict, market_summary: dict, rows: list[dict]) -> dict:
     top = sorted(rows, key=lambda r: r["scores"]["total"], reverse=True)[:5]
+    weak = sorted(rows, key=lambda r: r["scores"]["total"])[:5]
     money_flow = sorted(rows, key=lambda r: r["tradingValueChangePct"], reverse=True)[:5]
     shift = sorted(rows, key=lambda r: r["scores"]["flow"], reverse=True)[:5]
     return {
         **meta,
         "market_summary": market_summary,
         "top_sectors": top,
+        "weak_sectors": weak,
         "money_flow_sectors": money_flow,
         "foreign_institution_shift": shift,
         "ai_brief": [
@@ -356,36 +377,45 @@ def build_rotation_timeline(ohlcv_map: dict[str, pd.DataFrame], lookback: int = 
     return timeline
 
 
-def build_rotation_map(meta: dict, rows_by_period: dict[int, list[dict]],
+def build_rotation_map(meta: dict,
+                       rows_by_period: dict[int, list[dict]],
+                       rows_by_period_kospi: dict[int, list[dict]],
+                       rows_by_period_kosdaq: dict[int, list[dict]],
                        timeline: list[dict]) -> dict:
-    """기간별 점수 + 진짜 timeline. rows 는 default(20일) 그대로 둠 (호환성)."""
+    """기간별 + 시장별 점수 + 진짜 timeline. rows 는 default(전체+20일) 그대로 둠 (호환성)."""
     default_period = 20
     default_rows = sorted(
         rows_by_period.get(default_period, []),
         key=lambda r: r["scores"]["total"],
         reverse=True,
     )
+
+    def _bundle(by_period: dict[int, list[dict]]) -> dict[str, list[dict]]:
+        return {
+            str(p): sorted(rs, key=lambda r: r["scores"]["total"], reverse=True)
+            for p, rs in by_period.items()
+        }
+
     return {
         **meta,
         "market": "all",
         "period": default_period,
         "sort": "score",
         "rows": default_rows,
-        "rows_by_period": {
-            str(p): sorted(rs, key=lambda r: r["scores"]["total"], reverse=True)
-            for p, rs in rows_by_period.items()
-        },
+        "rows_by_period": _bundle(rows_by_period),
+        "rows_by_period_kospi": _bundle(rows_by_period_kospi),
+        "rows_by_period_kosdaq": _bundle(rows_by_period_kosdaq),
         "timeline": timeline,
     }
 
 
-def build_candidates(meta: dict, rows: list[dict]) -> dict:
+def _candidates_for_rows(rows: list[dict], lookback: int) -> list[dict]:
     top = sorted(rows, key=lambda r: r["scores"]["total"], reverse=True)[:5]
-    candidates = []
+    out = []
     for idx, row in enumerate(top):
         prob = max(15, min(95, row["scores"]["total"] - idx * 4 + 7))
         confidence = "high" if prob >= 65 else "medium" if prob >= 45 else "low"
-        candidates.append(
+        out.append(
             {
                 "sector_id": row["sector"]["id"],
                 "sector_name": row["sector"]["name"],
@@ -394,7 +424,7 @@ def build_candidates(meta: dict, rows: list[dict]) -> dict:
                 "state": row["state"],
                 "signals": [
                     {"label": "가격강도 상위", "detail": f"가격강도 {row['scores']['rs']:.0f}점"},
-                    {"label": "거래대금 확장", "detail": f"20일 평균 대비 {row['tradingValueChangePct']:.0f}%"},
+                    {"label": "거래대금 확장", "detail": f"{lookback}일 평균 대비 {row['tradingValueChangePct']:.0f}%"},
                     {"label": "수급 전환", "detail": "외국인/기관 순매수 전환"},
                 ],
                 "risks": [{"label": "단기 변동성 확대"}, {"label": "글로벌 매크로 변수"}],
@@ -402,7 +432,19 @@ def build_candidates(meta: dict, rows: list[dict]) -> dict:
                 "representative_assets": representative_assets(row["sector"]["id"]),
             }
         )
-    return {**meta, "horizon": 10, "candidates": candidates}
+    return out
+
+
+def build_candidates(meta: dict, rows: list[dict],
+                     rows_by_period: dict[int, list[dict]] | None = None) -> dict:
+    candidates = _candidates_for_rows(rows, lookback=20)
+    out: dict = {**meta, "horizon": 10, "candidates": candidates}
+    if rows_by_period:
+        out["candidates_by_period"] = {
+            str(p): _candidates_for_rows(rs, lookback=p)
+            for p, rs in rows_by_period.items()
+        }
+    return out
 
 
 def build_universe() -> dict:
@@ -750,24 +792,36 @@ def main() -> int:
     meta = build_meta(as_of_iso)
     market_summary = build_market_summary(start, end)
 
-    # 기간별 점수 (5/20/60일). 20일 = 기본.
-    rows_by_period: dict[int, list[dict]] = {}
-    for lb in (5, 20, 60):
-        rows_by_period[lb] = build_sector_rows(ohlcv_map, lookback=lb)
+    # universe 먼저 — code → market 매핑이 시장별 점수 산출에 필요.
+    universe = build_universe()
+    write_json(PUBLIC_DIR / "universe.json", universe)
+    print(f"[INFO] universe: {universe.get('count', 0)} tickers")
+    code_market: dict[str, str] = {}
+    for t in universe.get("tickers", []):
+        code_market[str(t.get("code") or "")] = str(t.get("market") or "")
+
+    # 기간별 + 시장별 점수.
+    def _rows_for(market: str) -> dict[int, list[dict]]:
+        return {lb: build_sector_rows(ohlcv_map, lookback=lb,
+                                       market_filter=market, code_market=code_market)
+                for lb in (5, 20, 60)}
+
+    rows_by_period = _rows_for("all")
+    rows_by_period_kospi = _rows_for("kospi")
+    rows_by_period_kosdaq = _rows_for("kosdaq")
     rows = rows_by_period[20]
     timeline = build_rotation_timeline(ohlcv_map, lookback=20, points=6, gap_days=5)
 
     write_json(PUBLIC_DIR / "dashboard.json", build_dashboard(meta, market_summary, rows))
-    write_json(PUBLIC_DIR / "rotation_map.json", build_rotation_map(meta, rows_by_period, timeline))
-    write_json(PUBLIC_DIR / "candidates.json", build_candidates(meta, rows))
+    write_json(PUBLIC_DIR / "rotation_map.json",
+               build_rotation_map(meta, rows_by_period, rows_by_period_kospi,
+                                  rows_by_period_kosdaq, timeline))
+    # candidates_by_period 도 만들어 NextCycle 에서 period 선택 가능하도록.
+    write_json(PUBLIC_DIR / "candidates.json",
+               build_candidates(meta, rows, rows_by_period=rows_by_period))
     # quotes 는 KRX 전종목 — health 의 trade_date 기준으로 pykrx 배치.
     quotes_trade_date = health["samsung_005930"]["trade_date"] if health.get("ok") else ""
     write_json(PUBLIC_DIR / "quotes.json", build_quotes(ohlcv_map, quotes_trade_date))
-
-    # KRX 전종목 universe (앱 검색/태깅 UI 용). FDR 한 번 호출 ~수 초.
-    universe = build_universe()
-    write_json(PUBLIC_DIR / "universe.json", universe)
-    print(f"[INFO] universe: {universe.get('count', 0)} tickers")
 
     compare = build_compare_per_code(ohlcv_map)
     for code, payload in compare.items():
