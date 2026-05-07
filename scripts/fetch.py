@@ -481,6 +481,7 @@ def build_universe() -> dict:
         return "" if s.lower() in ("nan", "none") else s
 
     tickers = []
+    seen_codes: set[str] = set()
     for _, row in df.iterrows():
         code = _clean(row[code_col])
         name = _clean(row[name_col])
@@ -490,12 +491,45 @@ def build_universe() -> dict:
         if not code or not name:
             continue
         # 우선주 / SPAC / ETN 등은 일단 포함. 향후 필터링 옵션 추가.
-        entry = {"code": code, "name": name, "market": market}
+        entry: dict = {"code": code, "name": name, "market": market, "type": "stock"}
         if sector:
             entry["sector"] = sector
         if industry:
             entry["industry"] = industry
         tickers.append(entry)
+        seen_codes.add(code)
+
+    # ETF 추가 (KRX ETF 시장 ~900개). pykrx 의 get_etf_ticker_list / get_etf_ticker_name 사용.
+    etf_added = 0
+    try:
+        # 최근 거래일 기준 — fetch.py 메인이 health 의 trade_date 를 알지만 build_universe 는 독립.
+        # pykrx 가 inactive date 면 빈 리스트 줄 수 있어 weekday loop 으로 fallback.
+        from datetime import timedelta as _td
+        for back in range(0, 10):
+            d = datetime.now(KST).date() - _td(days=back)
+            ymd = d.strftime("%Y%m%d")
+            try:
+                etf_codes = stock.get_etf_ticker_list(ymd)
+            except Exception:
+                etf_codes = []
+            if etf_codes:
+                for code in etf_codes:
+                    code = str(code).strip()
+                    if not code or code in seen_codes:
+                        continue
+                    try:
+                        name = stock.get_etf_ticker_name(code)
+                    except Exception:
+                        name = ""
+                    if not name:
+                        continue
+                    tickers.append({"code": code, "name": name, "market": "ETF", "type": "etf"})
+                    seen_codes.add(code)
+                    etf_added += 1
+                break
+        print(f"[INFO] universe ETF added: {etf_added}", file=sys.stderr)
+    except Exception as exc:  # noqa: BLE001
+        print(f"[WARN] universe ETF enrichment fail: {exc}", file=sys.stderr)
 
     now = datetime.now(KST)
     return {
@@ -614,13 +648,25 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
     if batch_fail_reasons:
         print(f"[WARN] batch quote fails: {'; '.join(batch_fail_reasons[:5])}", file=sys.stderr)
 
-    # ETF 는 pykrx 의 별도 API 가 필요. 종목 batch 와 동일 shape 으로 합침.
+    # ETF 는 pykrx 의 별도 API. 직전 빌드에서 12개만 잡혔던 원인 — 단일 trade_date_str 가
+    # ETF 응답에 비어 있는 경우. 며칠 거슬러 올라가며 재시도.
     if yyyymmdd:
-        try:
-            etf_df = stock.get_etf_ohlcv_by_ticker(yyyymmdd)
-        except Exception as exc:  # noqa: BLE001
-            print(f"[WARN] get_etf_ohlcv_by_ticker fail: {exc}", file=sys.stderr)
-            etf_df = None
+        from datetime import timedelta as _td
+        etf_df = None
+        for back in range(0, 7):
+            d = datetime.strptime(yyyymmdd, "%Y%m%d") - _td(days=back)
+            try_ymd = d.strftime("%Y%m%d")
+            try:
+                cand = stock.get_etf_ohlcv_by_ticker(try_ymd)
+            except Exception as exc:  # noqa: BLE001
+                cand = None
+                if back == 0:
+                    print(f"[WARN] get_etf_ohlcv_by_ticker {try_ymd} fail: {exc}", file=sys.stderr)
+            if cand is not None and not cand.empty and len(cand) > 50:
+                etf_df = cand
+                debug["etf_trade_date"] = try_ymd
+                break
+        debug["etf_count"] = int(len(etf_df)) if etf_df is not None else 0
         if etf_df is not None and not etf_df.empty:
             print(f"[INFO] ETF batch {yyyymmdd}: {len(etf_df)} rows", file=sys.stderr)
             for code, row in etf_df.iterrows():
