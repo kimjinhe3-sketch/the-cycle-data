@@ -992,6 +992,84 @@ def build_compare_per_code(ohlcv_map: dict[str, pd.DataFrame]) -> dict[str, dict
 # (후행 ranker = rotation_map.json 그대로 유지. 이 블록은 선행 분석용 신규.)
 # --------------------------------------------------------------------------
 
+def backfill_score_history(
+    ohlcv_map: dict[str, pd.DataFrame],
+    target_window: int = 80,
+    skip_if_history_at_least: int = 30,
+) -> int:
+    """history 가 비었거나 짧으면 ohlcv_map (60+일 OHLCV) 으로 매일의 sector total 점수를
+    reconstruct 해 score_history.json 을 일괄 채움. 이미 30일+ 누적되어있으면 skip.
+
+    빈 시작 (Day 0) 부터 lead-lag 분석을 즉시 의미 있게 만들기 위함. 첫 cron 한번만 돌면
+    n_observations 이 단번에 60+ 으로 점프 — Next Cycle 화면 진행 막대 100% 도달.
+
+    Returns: 새로 채운 entry 수 (skip 시 0).
+    """
+    path = PUBLIC_DIR / "score_history.json"
+    try:
+        existing = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        existing = {"history": []}
+    if len(existing.get("history", [])) >= skip_if_history_at_least:
+        return 0
+
+    # 영업일 set: ohlcv 의 모든 종목 dates 합집합 (truncate 가 어차피 그날까지)
+    all_dates = sorted({d for df in ohlcv_map.values() for d in df.index})
+    if len(all_dates) < 25:
+        return 0
+
+    take_from = max(0, len(all_dates) - target_window)
+    selected_dates = all_dates[take_from:]
+
+    new_history: list[dict] = []
+    for d in selected_dates:
+        truncated = _truncate_to_date(ohlcv_map, d)
+        rows = build_sector_rows(truncated, lookback=20)
+        if not rows:
+            continue
+        date_str = d.strftime("%Y-%m-%d") if hasattr(d, "strftime") else str(d)[:10]
+        scores: dict[str, float] = {}
+        for r in rows:
+            sid = r.get("sector", {}).get("id")
+            if sid:
+                scores[sid] = r["scores"]["total"]
+        # broad market 일별 변동률(%) — d-1 vs d 의 종가
+        for label, ticker in BROAD_MARKET_ETFS.items():
+            df = ohlcv_map.get(ticker)
+            if df is None or df.empty:
+                continue
+            mask = df.index <= d
+            tail2 = df.loc[mask].tail(2)
+            if len(tail2) < 2:
+                continue
+            try:
+                prev = float(tail2.iloc[0]["종가"])
+                cur = float(tail2.iloc[1]["종가"])
+                if prev > 0:
+                    scores[label] = round((cur - prev) / prev * 100, 2)
+            except Exception:  # noqa: BLE001
+                pass
+        new_history.append({"date": date_str, "scores": scores})
+
+    new_history.reverse()  # latest first
+
+    new_dates = {e["date"] for e in new_history}
+    merged = new_history + [
+        e for e in existing.get("history", []) if e.get("date") not in new_dates
+    ]
+    merged = merged[:120]
+
+    if not merged:
+        return 0
+
+    write_json(path, {
+        "as_of": f"{merged[0]['date']}T15:30:00+09:00",
+        "window_days": 120,
+        "history": merged,
+    })
+    return len(new_history)
+
+
 def update_score_history(
     rows: list[dict],
     quotes_data: dict,
@@ -1226,6 +1304,11 @@ def main() -> int:
 
     # === Phase 1 백엔드 — 시계열 누적 + 상관/lead-lag + next_cycle ===
     try:
+        # 빈 시작 또는 부족 (history<30) 시 ohlcv 60+일로 일괄 backfill — Day 0 부터 의미 있는 신호.
+        n_back = backfill_score_history(ohlcv_map, target_window=80, skip_if_history_at_least=30)
+        if n_back > 0:
+            print(f"[INFO] backfill_score_history: {n_back} entries filled")
+
         update_score_history(rows, quotes_data, quotes_trade_date)
         hist_data = json.loads((PUBLIC_DIR / "score_history.json").read_text(encoding="utf-8"))
         hist = hist_data.get("history", [])
