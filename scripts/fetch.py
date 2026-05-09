@@ -46,6 +46,18 @@ def load_json(path: Path) -> list:
 SECTORS: list[dict] = load_json(DATA_DIR / "sectors.json")
 ASSETS: list[dict] = load_json(DATA_DIR / "assets.json")
 
+# 섹터 계층 (대/중/소). Cycle Map drill-down + macro/meso 점수 집계용.
+try:
+    _hier = json.loads((DATA_DIR / "sector_hierarchy.json").read_text(encoding="utf-8"))
+    HIERARCHY: dict = _hier
+    MICRO_TO_MESO: dict[str, str] = _hier.get("micro_to_meso", {})
+    MESO_TO_MACRO: dict[str, str] = {m["id"]: m.get("macro", "") for m in _hier.get("meso", [])}
+    MESO_LIST: list[dict] = _hier.get("meso", [])
+    MACRO_LIST: list[dict] = _hier.get("macro", [])
+except Exception as _exc:  # noqa: BLE001
+    print(f"[WARN] sector_hierarchy.json load fail: {_exc}", file=sys.stderr)
+    HIERARCHY, MICRO_TO_MESO, MESO_TO_MACRO, MESO_LIST, MACRO_LIST = {}, {}, {}, [], []
+
 # 사용자 큐레이션 '매의 눈' 픽 — representative_assets 우선 후보.
 # 일단 OFF. 다시 켜려면 HAWK_EYE_ENABLED = True.
 HAWK_EYE_ENABLED = True
@@ -138,16 +150,19 @@ def verify_asset_names() -> list[str]:
 
 def collect_all(start: str, end: str) -> dict[str, pd.DataFrame]:
     out: dict[str, pd.DataFrame] = {}
-    for asset in ASSETS:
+    total = len(ASSETS)
+    for i, asset in enumerate(ASSETS):
         # ETF 와 종목 모두 같은 OHLCV API 통과 가능
         code = asset["code"]
         try:
             df = fetch_ohlcv(code, start, end)
             if not df.empty:
                 out[code] = df
-            time.sleep(0.05)  # KRX 부드럽게
+            time.sleep(0.02)  # KRX 부드럽게 (extended assets 700+ 고려 sleep 단축)
         except Exception as exc:  # noqa: BLE001
             print(f"[WARN] {code} fetch fail: {exc}", file=sys.stderr)
+        if (i + 1) % 100 == 0:
+            print(f"[INFO] collect_all progress {i+1}/{total}", file=sys.stderr)
     return out
 
 
@@ -377,12 +392,91 @@ def build_rotation_timeline(ohlcv_map: dict[str, pd.DataFrame], lookback: int = 
     return timeline
 
 
+def aggregate_to_meso(micro_rows: list[dict]) -> list[dict]:
+    """micro 점수를 meso 로 weighted average (가중치: tradingValue). MESO_LIST 순서 유지."""
+    by_meso: dict[str, list[dict]] = {}
+    for r in micro_rows:
+        meso = MICRO_TO_MESO.get(r["sector"]["id"])
+        if not meso:
+            continue
+        by_meso.setdefault(meso, []).append(r)
+
+    meso_meta_by_id = {m["id"]: m for m in MESO_LIST}
+    out: list[dict] = []
+    for meso_id, children in by_meso.items():
+        meta = meso_meta_by_id.get(meso_id, {"id": meso_id, "name": meso_id, "shortName": meso_id})
+        # 가중치 = tradingValue. 0 이면 동일가중.
+        total_w = sum(c.get("tradingValue", 0) for c in children) or len(children)
+        def wavg(field: str) -> float:
+            if total_w == 0:
+                return 0.0
+            return sum(c["scores"][field] * (c.get("tradingValue") or 1) for c in children) / total_w
+        scores = {f: round(wavg(f), 2) for f in ("rs", "flow", "breadth", "fatigue", "catalyst", "total")}
+        sector_tv = sum(c.get("tradingValue", 0) for c in children)
+        sector_tv_chg = sum(c.get("tradingValueChangePct", 0) * (c.get("tradingValue") or 1) for c in children) / total_w
+        change1d = sum(c.get("change1d", 0) * (c.get("tradingValue") or 1) for c in children) / total_w
+        rs5d = sum(c.get("rs5d", 0) * (c.get("tradingValue") or 1) for c in children) / total_w
+        # state 는 hottest child 의 state.
+        state = max(children, key=lambda c: c["scores"]["total"]).get("state", "neutral")
+        out.append({
+            "sector": {"id": meta["id"], "name": meta.get("name", meta["id"]), "shortName": meta.get("shortName", meta["id"])},
+            "scores": scores,
+            "change1d": round(change1d, 2),
+            "rs5d": round(rs5d, 2),
+            "tradingValue": int(sector_tv),
+            "tradingValueChangePct": round(sector_tv_chg, 2),
+            "state": state,
+            "macro": meta.get("macro"),
+            "child_micro_ids": [c["sector"]["id"] for c in children],
+        })
+    return out
+
+
+def aggregate_to_macro(meso_rows: list[dict]) -> list[dict]:
+    """meso → macro weighted average."""
+    by_macro: dict[str, list[dict]] = {}
+    for r in meso_rows:
+        macro = r.get("macro") or MESO_TO_MACRO.get(r["sector"]["id"])
+        if not macro:
+            continue
+        by_macro.setdefault(macro, []).append(r)
+
+    macro_meta_by_id = {m["id"]: m for m in MACRO_LIST}
+    out: list[dict] = []
+    for macro_id, children in by_macro.items():
+        meta = macro_meta_by_id.get(macro_id, {"id": macro_id, "name": macro_id, "shortName": macro_id})
+        total_w = sum(c.get("tradingValue", 0) for c in children) or len(children)
+        def wavg(field: str) -> float:
+            if total_w == 0:
+                return 0.0
+            return sum(c["scores"][field] * (c.get("tradingValue") or 1) for c in children) / total_w
+        scores = {f: round(wavg(f), 2) for f in ("rs", "flow", "breadth", "fatigue", "catalyst", "total")}
+        sector_tv = sum(c.get("tradingValue", 0) for c in children)
+        sector_tv_chg = sum(c.get("tradingValueChangePct", 0) * (c.get("tradingValue") or 1) for c in children) / total_w
+        change1d = sum(c.get("change1d", 0) * (c.get("tradingValue") or 1) for c in children) / total_w
+        rs5d = sum(c.get("rs5d", 0) * (c.get("tradingValue") or 1) for c in children) / total_w
+        state = max(children, key=lambda c: c["scores"]["total"]).get("state", "neutral")
+        out.append({
+            "sector": {"id": meta["id"], "name": meta.get("name", meta["id"]), "shortName": meta.get("shortName", meta["id"])},
+            "scores": scores,
+            "change1d": round(change1d, 2),
+            "rs5d": round(rs5d, 2),
+            "tradingValue": int(sector_tv),
+            "tradingValueChangePct": round(sector_tv_chg, 2),
+            "state": state,
+            "child_meso_ids": [c["sector"]["id"] for c in children],
+        })
+    return out
+
+
 def build_rotation_map(meta: dict,
                        rows_by_period: dict[int, list[dict]],
                        rows_by_period_kospi: dict[int, list[dict]],
                        rows_by_period_kosdaq: dict[int, list[dict]],
-                       timeline: list[dict]) -> dict:
-    """기간별 + 시장별 점수 + 진짜 timeline. rows 는 default(전체+20일) 그대로 둠 (호환성)."""
+                       timeline: list[dict],
+                       meso_rows_by_period: dict[int, list[dict]] | None = None,
+                       macro_rows_by_period: dict[int, list[dict]] | None = None) -> dict:
+    """기간별 + 시장별 점수 + 진짜 timeline + 계층(meso/macro) 점수. rows 는 default(전체+20일+소분류) 호환성 유지."""
     default_period = 20
     default_rows = sorted(
         rows_by_period.get(default_period, []),
@@ -396,7 +490,7 @@ def build_rotation_map(meta: dict,
             for p, rs in by_period.items()
         }
 
-    return {
+    out = {
         **meta,
         "market": "all",
         "period": default_period,
@@ -407,6 +501,13 @@ def build_rotation_map(meta: dict,
         "rows_by_period_kosdaq": _bundle(rows_by_period_kosdaq),
         "timeline": timeline,
     }
+    if meso_rows_by_period:
+        out["meso_rows_by_period"] = _bundle(meso_rows_by_period)
+    if macro_rows_by_period:
+        out["macro_rows_by_period"] = _bundle(macro_rows_by_period)
+    if HIERARCHY:
+        out["hierarchy"] = HIERARCHY
+    return out
 
 
 def _candidates_for_rows(rows: list[dict], lookback: int) -> list[dict]:
@@ -466,6 +567,9 @@ def build_universe() -> dict:
     market_col = next((c for c in ["Market", "market"] if c in df.columns), None)
     sector_col = next((c for c in ["Sector", "sector"] if c in df.columns), None)
     industry_col = next((c for c in ["Industry", "industry"] if c in df.columns), None)
+    marcap_col = next((c for c in ["Marcap", "marcap", "MarketCap", "market_cap"] if c in df.columns), None)
+    close_col_uni = next((c for c in ["Close", "close", "종가"] if c in df.columns), None)
+    volume_col_uni = next((c for c in ["Volume", "거래량"] if c in df.columns), None)
     if not code_col or not name_col:
         return {
             "as_of": "",
@@ -482,6 +586,8 @@ def build_universe() -> dict:
 
     tickers = []
     seen_codes: set[str] = set()
+    marcap_map: dict[str, int] = {}
+    tv_map: dict[str, int] = {}  # trading_value 근사 (Close × Volume)
     for _, row in df.iterrows():
         code = _clean(row[code_col])
         name = _clean(row[name_col])
@@ -496,8 +602,31 @@ def build_universe() -> dict:
             entry["sector"] = sector
         if industry:
             entry["industry"] = industry
+        # 시가총액 + 거래대금 추정 (build_extended_assets 가 cutoff 에 사용).
+        if marcap_col:
+            try:
+                mc = row[marcap_col]
+                if pd.notna(mc):
+                    mc_int = int(float(mc))
+                    if mc_int > 0:
+                        marcap_map[code] = mc_int
+                        entry["marcap"] = mc_int
+            except Exception:  # noqa: BLE001
+                pass
+        if close_col_uni and volume_col_uni:
+            try:
+                cv, vv = row[close_col_uni], row[volume_col_uni]
+                if pd.notna(cv) and pd.notna(vv):
+                    tv = int(float(cv) * float(vv))
+                    if tv > 0:
+                        tv_map[code] = tv
+            except Exception:  # noqa: BLE001
+                pass
         tickers.append(entry)
         seen_codes.add(code)
+    # 모듈 글로벌에 임시 보관 (build_extended_assets 가 사용).
+    globals()['_LAST_MARCAP_MAP'] = marcap_map
+    globals()['_LAST_TV_MAP'] = tv_map
 
     # ETF 추가 (KRX ETF 시장 ~900개). pykrx 의 get_etf_ticker_list / get_etf_ticker_name 사용.
     etf_added = 0
@@ -537,6 +666,94 @@ def build_universe() -> dict:
         "count": len(tickers),
         "tickers": tickers,
     }
+
+
+def build_extended_assets(
+    universe: dict,
+    curated: list[dict],
+    hawk_eye_codes: set[str],
+    marcap_cutoff: int = 500_000_000_000,  # 5,000억
+    tv_cutoff: int = 5_000_000_000,         # 50억 (단일일 추정)
+) -> list[dict]:
+    """분석 모집단을 시총+거래대금 cutoff 로 자동 확장.
+    - cutoff: marcap (FDR Marcap) AND tv (FDR Close * Volume 추정)
+    - cutoff 통과 + classify_stock 으로 sector 분류 (etc/빈값 제외) 종목 추가
+    - 큐레이션 ASSETS + 매의 눈 픽은 cutoff 무시하고 강제 포함
+    - 같은 코드는 큐레이션 sectorIds 우선 (자동 분류 sector 는 보조)
+    """
+    # late import — classify_sectors 가 같은 dir 에 있음.
+    try:
+        from classify_sectors import classify_stock
+    except Exception as exc:  # noqa: BLE001
+        print(f"[WARN] classify_sectors import fail: {exc} — 자동 확장 skip", file=sys.stderr)
+        return list(curated)
+
+    marcap_map: dict[str, int] = globals().get('_LAST_MARCAP_MAP') or {}
+    tv_map: dict[str, int] = globals().get('_LAST_TV_MAP') or {}
+
+    # by_code 에 큐레이션 + 매의 눈 강제 포함부터 채움.
+    by_code: dict[str, dict] = {}
+    for a in curated:
+        c = a.get("code")
+        if c:
+            by_code[c] = dict(a)
+            by_code[c].setdefault("type", "stock")
+
+    # universe stocks 순회.
+    debug_count = {"candidates": 0, "passed": 0, "classified": 0}
+    for t in universe.get("tickers", []):
+        if t.get("type") == "etf":
+            continue
+        code = t.get("code")
+        name = t.get("name", "")
+        if not code:
+            continue
+        # 강제 포함 (이미 들어가 있어도 sectorIds 결손이면 채움)
+        is_forced = code in by_code or code in hawk_eye_codes
+        if not is_forced:
+            mc = marcap_map.get(code, 0) or t.get("marcap", 0)
+            tv = tv_map.get(code, 0)
+            debug_count["candidates"] += 1
+            if mc < marcap_cutoff or tv < tv_cutoff:
+                continue
+            debug_count["passed"] += 1
+            sector_id, _conf, _kw = classify_stock(name)
+            if not sector_id or sector_id == "etc":
+                continue
+            debug_count["classified"] += 1
+            by_code[code] = {
+                "code": code,
+                "name": name,
+                "type": "stock",
+                "sectorIds": [sector_id],
+                "auto": True,
+            }
+        else:
+            # 강제 포함 → 큐레이션 sectorIds 없으면 auto 채워줌.
+            entry = by_code.get(code)
+            if entry and not entry.get("sectorIds") and not entry.get("sectorId"):
+                sector_id, _c, _k = classify_stock(name)
+                if sector_id and sector_id != "etc":
+                    entry["sectorIds"] = [sector_id]
+                    entry["auto"] = True
+
+    print(f"[INFO] extended_assets: candidates={debug_count['candidates']}, passed cutoff={debug_count['passed']}, "
+          f"classified={debug_count['classified']}, total={len(by_code)}", file=sys.stderr)
+
+    extended = list(by_code.values())
+    # 디버그 파일.
+    try:
+        write_json(PUBLIC_DIR / "assets_extended.json", {
+            "as_of": datetime.now(KST).isoformat(timespec="seconds"),
+            "count": len(extended),
+            "cutoff": {"marcap_won": marcap_cutoff, "trading_value_won": tv_cutoff},
+            "debug": debug_count,
+            "assets": extended,
+        })
+    except Exception as exc:  # noqa: BLE001
+        print(f"[WARN] write assets_extended.json fail: {exc}", file=sys.stderr)
+
+    return extended
 
 
 def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dict:
@@ -795,7 +1012,7 @@ def main() -> int:
     end = now.strftime("%Y%m%d")
     start = (now - timedelta(days=110)).strftime("%Y%m%d")  # 영업일 ~75일 확보
 
-    print(f"[INFO] fetch range {start} ~ {end}, assets={len(ASSETS)}")
+    print(f"[INFO] fetch range {start} ~ {end}, curated assets={len(ASSETS)}")
 
     # 매핑 검증 (KRX 공식명 vs 우리 매핑) — fetch 전에 출력해서 잘못된 코드 잡기.
     # GA 환경에서 KRX 로그인 못 하면 죽을 수 있으니 전체를 try/except 로 격리.
@@ -812,6 +1029,26 @@ def main() -> int:
     except Exception as exc:  # noqa: BLE001
         print(f"[WARN] audit step failed (continuing): {exc}", file=sys.stderr)
 
+    # === 1) Universe 먼저 호출. marcap/tv 맵을 globals 에 저장. ===
+    universe = build_universe()
+    write_json(PUBLIC_DIR / "universe.json", universe)
+    print(f"[INFO] universe: {universe.get('count', 0)} tickers")
+    code_market: dict[str, str] = {}
+    for t in universe.get("tickers", []):
+        code_market[str(t.get("code") or "")] = str(t.get("market") or "")
+
+    # === 2) 분석 모집단 자동 확장 (시총+거래대금 cutoff). ===
+    curated_assets = list(ASSETS)
+    hawk_eye_codes: set[str] = set()
+    for picks in HAWK_EYE.values():
+        for c in picks:
+            hawk_eye_codes.add(c)
+    extended_assets = build_extended_assets(universe, curated_assets, hawk_eye_codes)
+    # 글로벌 ASSETS 교체 → assets_in_sector / representative_assets / build_compare_per_code 자동 적용.
+    globals()['ASSETS'] = extended_assets
+    print(f"[INFO] ASSETS replaced: curated {len(curated_assets)} → extended {len(extended_assets)}")
+
+    # === 3) collect_all (extended ASSETS 기반 — 여러 종목 OHLCV) ===
     try:
         ohlcv_map = collect_all(start, end)
     except Exception as exc:  # noqa: BLE001
@@ -838,15 +1075,7 @@ def main() -> int:
     meta = build_meta(as_of_iso)
     market_summary = build_market_summary(start, end)
 
-    # universe 먼저 — code → market 매핑이 시장별 점수 산출에 필요.
-    universe = build_universe()
-    write_json(PUBLIC_DIR / "universe.json", universe)
-    print(f"[INFO] universe: {universe.get('count', 0)} tickers")
-    code_market: dict[str, str] = {}
-    for t in universe.get("tickers", []):
-        code_market[str(t.get("code") or "")] = str(t.get("market") or "")
-
-    # 기간별 + 시장별 점수.
+    # 기간별 + 시장별 점수 (소분류 49개 micro 기준).
     def _rows_for(market: str) -> dict[int, list[dict]]:
         return {lb: build_sector_rows(ohlcv_map, lookback=lb,
                                        market_filter=market, code_market=code_market)
@@ -858,10 +1087,21 @@ def main() -> int:
     rows = rows_by_period[20]
     timeline = build_rotation_timeline(ohlcv_map, lookback=20, points=6, gap_days=5)
 
+    # 계층 집계 (meso/macro) per period.
+    meso_rows_by_period: dict[int, list[dict]] = {}
+    macro_rows_by_period: dict[int, list[dict]] = {}
+    if HIERARCHY:
+        for lb, micro_rows in rows_by_period.items():
+            meso = aggregate_to_meso(micro_rows)
+            meso_rows_by_period[lb] = meso
+            macro_rows_by_period[lb] = aggregate_to_macro(meso)
+
     write_json(PUBLIC_DIR / "dashboard.json", build_dashboard(meta, market_summary, rows))
     write_json(PUBLIC_DIR / "rotation_map.json",
                build_rotation_map(meta, rows_by_period, rows_by_period_kospi,
-                                  rows_by_period_kosdaq, timeline))
+                                  rows_by_period_kosdaq, timeline,
+                                  meso_rows_by_period=meso_rows_by_period or None,
+                                  macro_rows_by_period=macro_rows_by_period or None))
     # candidates_by_period 도 만들어 NextCycle 에서 period 선택 가능하도록.
     write_json(PUBLIC_DIR / "candidates.json",
                build_candidates(meta, rows, rows_by_period=rows_by_period))

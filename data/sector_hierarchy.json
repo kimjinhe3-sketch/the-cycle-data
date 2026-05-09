@@ -1,0 +1,98 @@
+{
+  "macro": [
+    { "id": "energy_materials",   "name": "에너지·소재",   "shortName": "에너지" },
+    { "id": "tech_semi",          "name": "IT·반도체",     "shortName": "IT" },
+    { "id": "industrial",         "name": "산업재",         "shortName": "산업" },
+    { "id": "healthcare",         "name": "헬스케어",       "shortName": "헬스" },
+    { "id": "consumer_cyclical",  "name": "경기소비재",     "shortName": "소비재" },
+    { "id": "consumer_defensive", "name": "필수소비재",     "shortName": "필수소비" },
+    { "id": "financial",          "name": "금융",           "shortName": "금융" },
+    { "id": "misc",               "name": "기타",           "shortName": "기타" }
+  ],
+  "meso": [
+    { "id": "oil_gas",            "name": "석유·가스",      "shortName": "석유가스",  "macro": "energy_materials" },
+    { "id": "renewable",          "name": "신재생",         "shortName": "신재생",    "macro": "energy_materials" },
+    { "id": "chemicals",          "name": "화학",           "shortName": "화학",      "macro": "energy_materials" },
+    { "id": "metals",             "name": "금속",           "shortName": "금속",      "macro": "energy_materials" },
+
+    { "id": "semiconductor",      "name": "반도체",         "shortName": "반도체",    "macro": "tech_semi" },
+    { "id": "display_grp",        "name": "디스플레이",     "shortName": "디스플레이","macro": "tech_semi" },
+    { "id": "network_eq",         "name": "네트워크장비",   "shortName": "네트워크",  "macro": "tech_semi" },
+    { "id": "telecom_svc",        "name": "통신서비스",     "shortName": "통신",      "macro": "tech_semi" },
+    { "id": "ai_sw",              "name": "AI·소프트웨어",  "shortName": "AI",        "macro": "tech_semi" },
+    { "id": "game_content",       "name": "게임·콘텐츠",    "shortName": "게임콘텐츠","macro": "tech_semi" },
+
+    { "id": "defense_ship",       "name": "방산·조선",      "shortName": "방산조선",  "macro": "industrial" },
+    { "id": "auto_mobility",      "name": "모빌리티",       "shortName": "모빌리티",  "macro": "industrial" },
+    { "id": "power_grp",          "name": "전력",           "shortName": "전력",      "macro": "industrial" },
+    { "id": "construction_grp",   "name": "건설·건자재",    "shortName": "건설",      "macro": "industrial" },
+    { "id": "transport_grp",      "name": "운송·물류",      "shortName": "운송",      "macro": "industrial" },
+    { "id": "trading_grp",        "name": "종합상사",       "shortName": "상사",      "macro": "industrial" },
+
+    { "id": "bio_pharma",         "name": "바이오·제약",    "shortName": "바이오",    "macro": "healthcare" },
+    { "id": "med_device_grp",     "name": "의료기기",       "shortName": "의료기기",  "macro": "healthcare" },
+
+    { "id": "cosmetics_grp",      "name": "화장품",         "shortName": "화장품",    "macro": "consumer_cyclical" },
+    { "id": "fashion_grp",        "name": "패션",           "shortName": "패션",      "macro": "consumer_cyclical" },
+    { "id": "hospitality_grp",    "name": "호텔·관광",      "shortName": "호텔관광",  "macro": "consumer_cyclical" },
+    { "id": "home_grp",           "name": "가전·가구",      "shortName": "가전가구",  "macro": "consumer_cyclical" },
+    { "id": "retail_grp",         "name": "유통·백화점",    "shortName": "유통",      "macro": "consumer_cyclical" },
+    { "id": "education_grp",      "name": "교육",           "shortName": "교육",      "macro": "consumer_cyclical" },
+
+    { "id": "food_grp",           "name": "식음료·농축산",  "shortName": "식음료",    "macro": "consumer_defensive" },
+    { "id": "paper_grp",          "name": "종이",           "shortName": "종이",      "macro": "consumer_defensive" },
+
+    { "id": "banking",            "name": "은행·보험",      "shortName": "은행보험",  "macro": "financial" },
+    { "id": "securities_grp",     "name": "증권",           "shortName": "증권",      "macro": "financial" },
+    { "id": "fintech_grp",        "name": "핀테크",         "shortName": "핀테크",    "macro": "financial" },
+    { "id": "reit_grp",           "name": "리츠",           "shortName": "리츠",      "macro": "financial" },
+
+    { "id": "holdings_grp",       "name": "지주회사",       "shortName": "지주",      "macro": "misc" },
+    { "id": "environment_grp",    "name": "환경",           "shortName": "환경",      "macro": "misc" },
+    { "id": "security_grp",       "name": "보안",           "shortName": "보안",      "macro": "misc" },
+    { "id": "etc_grp",            "name": "미분류",         "shortName": "미분류",    "macro": "misc" }
+  ],
+  "micro_to_meso": {
+    "oil": "oil_gas", "lng": "oil_gas",
+    "solar": "renewable", "wind": "renewable",
+    "chemical": "chemicals",
+    "mining": "metals", "steel": "metals",
+
+    "memory_semi": "semiconductor", "power_semi": "semiconductor",
+    "display": "display_grp",
+    "cable": "network_eq", "comm_equip": "network_eq",
+    "telecom": "telecom_svc",
+    "ai": "ai_sw",
+    "game": "game_content", "entertainment": "game_content", "media": "game_content",
+
+    "defense": "defense_ship", "shipbuilding": "defense_ship",
+    "auto": "auto_mobility", "robotics": "auto_mobility",
+    "power_equip": "power_grp", "nuclear": "power_grp", "liquid_cooling": "power_grp", "ess": "power_grp",
+    "construction": "construction_grp", "cement": "construction_grp",
+    "transport": "transport_grp",
+    "trading": "trading_grp",
+
+    "bio": "bio_pharma",
+    "medical_device": "med_device_grp",
+
+    "cosmetics": "cosmetics_grp",
+    "fashion": "fashion_grp",
+    "hotel_tourism": "hospitality_grp",
+    "home_appliance": "home_grp", "furniture": "home_grp",
+    "department": "retail_grp",
+    "education": "education_grp",
+
+    "food": "food_grp", "agri_livestock": "food_grp",
+    "paper": "paper_grp",
+
+    "finance": "banking",
+    "securities": "securities_grp",
+    "fintech": "fintech_grp",
+    "real_estate": "reit_grp",
+
+    "holdings": "holdings_grp",
+    "environment": "environment_grp",
+    "security": "security_grp",
+    "etc": "etc_grp"
+  }
+}
