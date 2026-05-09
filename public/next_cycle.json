@@ -1,9 +1,122 @@
 {
-  "anchor_sectors": [],
+  "anchor_sectors": [
+    {
+      "confidence_note": "통계 표본 60일. 상관성 ≠ 인과성. 투자 권유 아님.",
+      "macro": "ai_infra",
+      "meso": "ai_grid",
+      "predictions": {
+        "co_movement": [
+          {
+            "correlation": 0.82,
+            "sector_id": "home_appliance",
+            "sector_name": "가전"
+          },
+          {
+            "correlation": 0.793,
+            "sector_id": "robotics",
+            "sector_name": "로보틱스"
+          },
+          {
+            "correlation": 0.78,
+            "sector_id": "holdings",
+            "sector_name": "지주회사"
+          }
+        ],
+        "lag_10d": [],
+        "lag_5d": [
+          {
+            "best_lag": 5,
+            "correlation": -0.769,
+            "hit_rate": 0.133,
+            "n_signals": 15,
+            "sector_id": "construction",
+            "sector_name": "건설"
+          }
+        ]
+      },
+      "sector_id": "cable",
+      "sector_name": "케이블",
+      "today_score": 63.49
+    },
+    {
+      "confidence_note": "통계 표본 60일. 상관성 ≠ 인과성. 투자 권유 아님.",
+      "macro": "k_cmr",
+      "meso": "cmr_capital",
+      "predictions": {
+        "co_movement": [
+          {
+            "correlation": 0.802,
+            "sector_id": "finance",
+            "sector_name": "금융"
+          },
+          {
+            "correlation": 0.751,
+            "sector_id": "holdings",
+            "sector_name": "지주회사"
+          },
+          {
+            "correlation": 0.743,
+            "sector_id": "furniture",
+            "sector_name": "가구인테리어"
+          }
+        ],
+        "lag_10d": [
+          {
+            "best_lag": 10,
+            "correlation": 0.657,
+            "hit_rate": 0.167,
+            "n_signals": 12,
+            "sector_id": "oil",
+            "sector_name": "정유"
+          },
+          {
+            "best_lag": 10,
+            "correlation": -0.673,
+            "hit_rate": 0.083,
+            "n_signals": 12,
+            "sector_id": "hotel_tourism",
+            "sector_name": "호텔관광"
+          }
+        ],
+        "lag_5d": []
+      },
+      "sector_id": "securities",
+      "sector_name": "증권",
+      "today_score": 59.23
+    },
+    {
+      "confidence_note": "통계 표본 60일. 상관성 ≠ 인과성. 투자 권유 아님.",
+      "macro": "k_cmr",
+      "meso": "cmr_auto",
+      "predictions": {
+        "co_movement": [
+          {
+            "correlation": 0.855,
+            "sector_id": "robotics",
+            "sector_name": "로보틱스"
+          },
+          {
+            "correlation": 0.829,
+            "sector_id": "holdings",
+            "sector_name": "지주회사"
+          },
+          {
+            "correlation": 0.727,
+            "sector_id": "cable",
+            "sector_name": "케이블"
+          }
+        ],
+        "lag_10d": [],
+        "lag_5d": []
+      },
+      "sector_id": "auto",
+      "sector_name": "자동차",
+      "today_score": 58.2
+    }
+  ],
   "as_of": "2026-05-08T15:30:00+09:00",
   "market_session": "closed",
-  "n_observations": 1,
-  "note": "통계 누적 중 (1/60거래일). 60일 채워지면 의미 있는 lead-lag 신호 산출.",
+  "n_observations": 60,
   "source": "pykrx",
   "stale": false
 }
