@@ -211,6 +211,16 @@ def main() -> int:
     except Exception:
         quotes = {}
 
+    # 계층 정보 — 각 micro → meso → macro 한 줄에 같이 노출.
+    try:
+        hier = json.loads((ROOT / "data" / "sector_hierarchy.json").read_text(encoding="utf-8"))
+        MICRO_TO_MESO = hier.get("micro_to_meso", {})
+        MESO_TO_MACRO = {m["id"]: m.get("macro", "") for m in hier.get("meso", [])}
+        MACRO_NAME = {m["id"]: m["name"] for m in hier.get("macro", [])}
+        MESO_NAME = {m["id"]: m["name"] for m in hier.get("meso", [])}
+    except Exception:
+        MICRO_TO_MESO, MESO_TO_MACRO, MACRO_NAME, MESO_NAME = {}, {}, {}, {}
+
     rows: list[dict] = []
     seen: set[str] = set()
     # universe 먼저 (KOSPI/KOSDAQ/KONEX 종목)
@@ -226,13 +236,17 @@ def main() -> int:
             classify_etf(name) if ttype == "etf" else classify_stock(name)
         )
         q = quotes.get(code, {})
+        meso_id = MICRO_TO_MESO.get(sector_id or "", "")
+        macro_id = MESO_TO_MACRO.get(meso_id, "")
         rows.append({
             "코드": code,
             "종목명": name,
             "시장": market,
             "타입": ttype,
-            "자동섹터ID": sector_id or "",
-            "자동섹터명": SECTOR_NAMES.get(sector_id or "", ""),
+            "대분류": MACRO_NAME.get(macro_id, ""),
+            "중분류": MESO_NAME.get(meso_id, ""),
+            "소분류": SECTOR_NAMES.get(sector_id or "", ""),
+            "소분류ID": sector_id or "",
             "신뢰도": conf,
             "매칭키워드": matched,
             "종가": q.get("close", ""),
@@ -259,13 +273,17 @@ def main() -> int:
         # 큐레이션이면 그 sectorIds 도 같이 표기
         curated_sectors = ",".join(meta.get("sectorIds", []) or [])
         q = quotes.get(code, {})
+        meso_id = MICRO_TO_MESO.get(sector_id or "", "")
+        macro_id = MESO_TO_MACRO.get(meso_id, "")
         rows.append({
             "코드": code,
             "종목명": name,
             "시장": "ETF" if ttype == "etf" else "?",
             "타입": ttype,
-            "자동섹터ID": sector_id or "",
-            "자동섹터명": SECTOR_NAMES.get(sector_id or "", ""),
+            "대분류": MACRO_NAME.get(macro_id, ""),
+            "중분류": MESO_NAME.get(meso_id, ""),
+            "소분류": SECTOR_NAMES.get(sector_id or "", ""),
+            "소분류ID": sector_id or "",
             "신뢰도": conf,
             "매칭키워드": matched,
             "종가": q.get("close", ""),
@@ -277,12 +295,12 @@ def main() -> int:
     df = pd.DataFrame(rows)
     # 통계 출력
     total = len(df)
-    classified_real = (df["자동섹터ID"].ne("") & df["자동섹터ID"].ne("etc")).sum()
-    etc_count = (df["자동섹터ID"] == "etc").sum()
+    classified_real = (df["소분류ID"].ne("") & df["소분류ID"].ne("etc")).sum()
+    etc_count = (df["소분류ID"] == "etc").sum()
     print(f"[INFO] 총 {total} / 실분류 {classified_real} ({classified_real/total*100:.1f}%) / 기타 {etc_count}")
     print()
-    print("섹터별 분류 수:")
-    counts = df[df["자동섹터ID"] != ""]["자동섹터명"].value_counts()
+    print("소분류별 카운트:")
+    counts = df[df["소분류ID"] != ""]["소분류"].value_counts()
     for k, v in counts.items():
         print(f"  {k:12s} {v}")
 
@@ -290,16 +308,26 @@ def main() -> int:
     # 거래대금 컬럼은 string 일 수도 있어 안전하게 numeric.
     df["거래대금_정렬용"] = pd.to_numeric(df["거래대금"], errors="coerce").fillna(0)
 
-    # 시트1: 전체 — 자동섹터명 → 거래대금 desc 순. (검토 시 같은 섹터 묶어서 보기 편함)
-    full = df.sort_values(by=["자동섹터명", "거래대금_정렬용"], ascending=[True, False]).drop(columns=["거래대금_정렬용"])
-    # 시트2: 기타만 — 거래대금 desc.  (룰 보강 candidates 우선순위)
-    etc_df = df[df["자동섹터ID"] == "etc"].sort_values(by="거래대금_정렬용", ascending=False).drop(columns=["거래대금_정렬용"])
-    # 시트3: 섹터 카운트 요약
-    summary = df["자동섹터명"].value_counts().reset_index()
-    summary.columns = ["섹터", "종목수"]
+    # 시트1: 전체 — 대 → 중 → 소 → 거래대금 desc.
+    full = df.sort_values(
+        by=["대분류", "중분류", "소분류", "거래대금_정렬용"],
+        ascending=[True, True, True, False],
+    ).drop(columns=["거래대금_정렬용"])
+    # 시트2: 기타만 — 거래대금 desc.
+    etc_df = df[df["소분류ID"] == "etc"].sort_values(by="거래대금_정렬용", ascending=False).drop(columns=["거래대금_정렬용"])
+    # 시트3: 대분류 요약
+    macro_summary = df["대분류"].value_counts().reset_index()
+    macro_summary.columns = ["대분류", "종목수"]
+    # 시트4: 중분류 요약
+    meso_summary = df.groupby(["대분류", "중분류"]).size().reset_index(name="종목수").sort_values(["대분류", "종목수"], ascending=[True, False])
+    # 시트5: 소분류 요약
+    micro_summary = df["소분류"].value_counts().reset_index()
+    micro_summary.columns = ["소분류", "종목수"]
 
     with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
-        summary.to_excel(writer, index=False, sheet_name="요약")
+        macro_summary.to_excel(writer, index=False, sheet_name="대분류요약")
+        meso_summary.to_excel(writer, index=False, sheet_name="중분류요약")
+        micro_summary.to_excel(writer, index=False, sheet_name="소분류요약")
         full.to_excel(writer, index=False, sheet_name="전체분류")
         etc_df.to_excel(writer, index=False, sheet_name="기타_검토대상")
     print(f"[OK] saved {out_path}")

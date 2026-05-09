@@ -1,98 +1,104 @@
 {
+  "_comment": "K-Cycle Taxonomy v6.1 (Hybrid): 49 micros → 20 meso → 4 macro. thesis 메가테마 (AI인프라/방산/K-CMR) + 기타.",
   "macro": [
-    { "id": "energy_materials",   "name": "에너지·소재",   "shortName": "에너지" },
-    { "id": "tech_semi",          "name": "IT·반도체",     "shortName": "IT" },
-    { "id": "industrial",         "name": "산업재",         "shortName": "산업" },
-    { "id": "healthcare",         "name": "헬스케어",       "shortName": "헬스" },
-    { "id": "consumer_cyclical",  "name": "경기소비재",     "shortName": "소비재" },
-    { "id": "consumer_defensive", "name": "필수소비재",     "shortName": "필수소비" },
-    { "id": "financial",          "name": "금융",           "shortName": "금융" },
-    { "id": "misc",               "name": "기타",           "shortName": "기타" }
+    { "id": "ai_infra",  "name": "AI 인프라",   "shortName": "AI인프라" },
+    { "id": "defense",   "name": "방산",         "shortName": "방산" },
+    { "id": "k_cmr",     "name": "K-CMR",       "shortName": "K-CMR" },
+    { "id": "general",   "name": "일반산업",     "shortName": "일반" }
   ],
   "meso": [
-    { "id": "oil_gas",            "name": "석유·가스",      "shortName": "석유가스",  "macro": "energy_materials" },
-    { "id": "renewable",          "name": "신재생",         "shortName": "신재생",    "macro": "energy_materials" },
-    { "id": "chemicals",          "name": "화학",           "shortName": "화학",      "macro": "energy_materials" },
-    { "id": "metals",             "name": "금속",           "shortName": "금속",      "macro": "energy_materials" },
+    { "id": "ai_energy",         "name": "에너지 (원전·LNG·신재생)", "shortName": "에너지",   "macro": "ai_infra" },
+    { "id": "ai_grid",           "name": "송배전 (전력기기·전선·ESS)", "shortName": "송배전", "macro": "ai_infra" },
+    { "id": "ai_dc",             "name": "데이터센터 (냉각·건설)",   "shortName": "DC",       "macro": "ai_infra" },
+    { "id": "ai_semi_main",      "name": "반도체 (메모리·HBM)",     "shortName": "반도체",   "macro": "ai_infra" },
+    { "id": "ai_semi_power",     "name": "전력반도체",               "shortName": "전력반도체","macro": "ai_infra" },
+    { "id": "ai_network",        "name": "네트워크 (광통신·통신장비)","shortName": "네트워크",  "macro": "ai_infra" },
+    { "id": "ai_service",        "name": "AI 서비스·통신",           "shortName": "AI서비스", "macro": "ai_infra" },
+    { "id": "ai_physical",       "name": "피지컬 AI·로봇",           "shortName": "피지컬AI", "macro": "ai_infra" },
 
-    { "id": "semiconductor",      "name": "반도체",         "shortName": "반도체",    "macro": "tech_semi" },
-    { "id": "display_grp",        "name": "디스플레이",     "shortName": "디스플레이","macro": "tech_semi" },
-    { "id": "network_eq",         "name": "네트워크장비",   "shortName": "네트워크",  "macro": "tech_semi" },
-    { "id": "telecom_svc",        "name": "통신서비스",     "shortName": "통신",      "macro": "tech_semi" },
-    { "id": "ai_sw",              "name": "AI·소프트웨어",  "shortName": "AI",        "macro": "tech_semi" },
-    { "id": "game_content",       "name": "게임·콘텐츠",    "shortName": "게임콘텐츠","macro": "tech_semi" },
+    { "id": "def_main",          "name": "방산",                     "shortName": "방산",     "macro": "defense" },
 
-    { "id": "defense_ship",       "name": "방산·조선",      "shortName": "방산조선",  "macro": "industrial" },
-    { "id": "auto_mobility",      "name": "모빌리티",       "shortName": "모빌리티",  "macro": "industrial" },
-    { "id": "power_grp",          "name": "전력",           "shortName": "전력",      "macro": "industrial" },
-    { "id": "construction_grp",   "name": "건설·건자재",    "shortName": "건설",      "macro": "industrial" },
-    { "id": "transport_grp",      "name": "운송·물류",      "shortName": "운송",      "macro": "industrial" },
-    { "id": "trading_grp",        "name": "종합상사",       "shortName": "상사",      "macro": "industrial" },
+    { "id": "cmr_capital",       "name": "자본시장 (증권·금융·일반지주)", "shortName": "자본시장", "macro": "k_cmr" },
+    { "id": "cmr_other_finance", "name": "기타금융 (보험·핀테크·리츠)",  "shortName": "기타금융", "macro": "k_cmr" },
+    { "id": "cmr_dist",          "name": "백화점·면세·유통",          "shortName": "유통",     "macro": "k_cmr" },
+    { "id": "cmr_leisure",       "name": "여가 (호텔·카지노·항공)",    "shortName": "여가",     "macro": "k_cmr" },
+    { "id": "cmr_beauty_fashion","name": "뷰티·패션·럭셔리",          "shortName": "뷰티패션", "macro": "k_cmr" },
+    { "id": "cmr_food",          "name": "F&B·식음료",               "shortName": "F&B",      "macro": "k_cmr" },
+    { "id": "cmr_content",       "name": "K-콘텐츠 (음악·미디어·게임·캐릭터)", "shortName": "K콘텐츠", "macro": "k_cmr" },
+    { "id": "cmr_auto",          "name": "자동차",                   "shortName": "자동차",   "macro": "k_cmr" },
 
-    { "id": "bio_pharma",         "name": "바이오·제약",    "shortName": "바이오",    "macro": "healthcare" },
-    { "id": "med_device_grp",     "name": "의료기기",       "shortName": "의료기기",  "macro": "healthcare" },
-
-    { "id": "cosmetics_grp",      "name": "화장품",         "shortName": "화장품",    "macro": "consumer_cyclical" },
-    { "id": "fashion_grp",        "name": "패션",           "shortName": "패션",      "macro": "consumer_cyclical" },
-    { "id": "hospitality_grp",    "name": "호텔·관광",      "shortName": "호텔관광",  "macro": "consumer_cyclical" },
-    { "id": "home_grp",           "name": "가전·가구",      "shortName": "가전가구",  "macro": "consumer_cyclical" },
-    { "id": "retail_grp",         "name": "유통·백화점",    "shortName": "유통",      "macro": "consumer_cyclical" },
-    { "id": "education_grp",      "name": "교육",           "shortName": "교육",      "macro": "consumer_cyclical" },
-
-    { "id": "food_grp",           "name": "식음료·농축산",  "shortName": "식음료",    "macro": "consumer_defensive" },
-    { "id": "paper_grp",          "name": "종이",           "shortName": "종이",      "macro": "consumer_defensive" },
-
-    { "id": "banking",            "name": "은행·보험",      "shortName": "은행보험",  "macro": "financial" },
-    { "id": "securities_grp",     "name": "증권",           "shortName": "증권",      "macro": "financial" },
-    { "id": "fintech_grp",        "name": "핀테크",         "shortName": "핀테크",    "macro": "financial" },
-    { "id": "reit_grp",           "name": "리츠",           "shortName": "리츠",      "macro": "financial" },
-
-    { "id": "holdings_grp",       "name": "지주회사",       "shortName": "지주",      "macro": "misc" },
-    { "id": "environment_grp",    "name": "환경",           "shortName": "환경",      "macro": "misc" },
-    { "id": "security_grp",       "name": "보안",           "shortName": "보안",      "macro": "misc" },
-    { "id": "etc_grp",            "name": "미분류",         "shortName": "미분류",    "macro": "misc" }
+    { "id": "gen_health",        "name": "헬스케어",                 "shortName": "헬스",     "macro": "general" },
+    { "id": "gen_materials",     "name": "소재 (화학·철강·종이)",     "shortName": "소재",     "macro": "general" },
+    { "id": "gen_industrial",    "name": "기타 산업·서비스",          "shortName": "산업기타", "macro": "general" }
   ],
   "micro_to_meso": {
-    "oil": "oil_gas", "lng": "oil_gas",
-    "solar": "renewable", "wind": "renewable",
-    "chemical": "chemicals",
-    "mining": "metals", "steel": "metals",
+    "nuclear": "ai_energy",
+    "lng": "ai_energy",
+    "solar": "ai_energy",
+    "wind": "ai_energy",
+    "oil": "ai_energy",
 
-    "memory_semi": "semiconductor", "power_semi": "semiconductor",
-    "display": "display_grp",
-    "cable": "network_eq", "comm_equip": "network_eq",
-    "telecom": "telecom_svc",
-    "ai": "ai_sw",
-    "game": "game_content", "entertainment": "game_content", "media": "game_content",
+    "power_equip": "ai_grid",
+    "cable": "ai_grid",
+    "mining": "ai_grid",
+    "ess": "ai_grid",
 
-    "defense": "defense_ship", "shipbuilding": "defense_ship",
-    "auto": "auto_mobility", "robotics": "auto_mobility",
-    "power_equip": "power_grp", "nuclear": "power_grp", "liquid_cooling": "power_grp", "ess": "power_grp",
-    "construction": "construction_grp", "cement": "construction_grp",
-    "transport": "transport_grp",
-    "trading": "trading_grp",
+    "liquid_cooling": "ai_dc",
+    "construction": "ai_dc",
+    "cement": "ai_dc",
 
-    "bio": "bio_pharma",
-    "medical_device": "med_device_grp",
+    "memory_semi": "ai_semi_main",
 
-    "cosmetics": "cosmetics_grp",
-    "fashion": "fashion_grp",
-    "hotel_tourism": "hospitality_grp",
-    "home_appliance": "home_grp", "furniture": "home_grp",
-    "department": "retail_grp",
-    "education": "education_grp",
+    "power_semi": "ai_semi_power",
 
-    "food": "food_grp", "agri_livestock": "food_grp",
-    "paper": "paper_grp",
+    "comm_equip": "ai_network",
 
-    "finance": "banking",
-    "securities": "securities_grp",
-    "fintech": "fintech_grp",
-    "real_estate": "reit_grp",
+    "ai": "ai_service",
+    "telecom": "ai_service",
 
-    "holdings": "holdings_grp",
-    "environment": "environment_grp",
-    "security": "security_grp",
-    "etc": "etc_grp"
+    "robotics": "ai_physical",
+
+    "defense": "def_main",
+
+    "securities": "cmr_capital",
+    "finance": "cmr_capital",
+    "holdings": "cmr_capital",
+
+    "real_estate": "cmr_other_finance",
+    "fintech": "cmr_other_finance",
+
+    "department": "cmr_dist",
+
+    "hotel_tourism": "cmr_leisure",
+    "transport": "cmr_leisure",
+
+    "cosmetics": "cmr_beauty_fashion",
+    "fashion": "cmr_beauty_fashion",
+
+    "food": "cmr_food",
+    "agri_livestock": "cmr_food",
+
+    "entertainment": "cmr_content",
+    "game": "cmr_content",
+    "media": "cmr_content",
+
+    "auto": "cmr_auto",
+
+    "bio": "gen_health",
+    "medical_device": "gen_health",
+
+    "chemical": "gen_materials",
+    "steel": "gen_materials",
+    "paper": "gen_materials",
+
+    "shipbuilding": "gen_industrial",
+    "display": "gen_industrial",
+    "education": "gen_industrial",
+    "environment": "gen_industrial",
+    "security": "gen_industrial",
+    "home_appliance": "gen_industrial",
+    "furniture": "gen_industrial",
+    "trading": "gen_industrial",
+    "etc": "gen_industrial"
   }
 }
