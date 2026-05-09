@@ -1081,6 +1081,58 @@ def backfill_score_history(
     return len(new_history)
 
 
+def compute_stock_score_map(
+    ohlcv_map: dict[str, pd.DataFrame],
+    lookback: int = 20,
+) -> dict[str, dict]:
+    """Phase 4 — 종목별 5축 점수 + change1d + tradingValue + state 일괄 계산.
+    assets_extended.json 의 각 asset 에 inline 해서 frontend 의 4-level (asset 단계) heatmap/bubble 가능.
+    종목 단위 percentile 분포는 시장 전체 종목 features 분포 사용 (sector aggregate 와 동일 분포).
+    """
+    if not ohlcv_map:
+        return {}
+
+    all_features: dict[str, dict] = {}
+    for code, df in ohlcv_map.items():
+        if df is None or df.empty:
+            continue
+        all_features[code] = scoring.stock_features(df, lookback=lookback)
+
+    market_ret_dist = [f["ret_main"] for f in all_features.values()]
+    market_tv_dist = [f["tv_ratio"] for f in all_features.values()]
+
+    out: dict[str, dict] = {}
+    for code, feat in all_features.items():
+        df = ohlcv_map.get(code)
+        if df is None or df.empty:
+            continue
+        try:
+            scores = scoring.compute_stock_scores(feat, market_ret_dist, market_tv_dist)
+            closes = df["종가"].astype(float).tolist()
+            change1d = (
+                ((closes[-1] - closes[-2]) / closes[-2] * 100)
+                if len(closes) >= 2 and closes[-2] > 0 else 0.0
+            )
+            tv = int(df["거래대금"].iloc[-1]) if "거래대금" in df.columns else 0
+            state = scoring.derive_state(scores)
+            out[code] = {
+                "scores": {
+                    "rs": round(scores.rs, 2),
+                    "flow": round(scores.flow, 2),
+                    "breadth": round(scores.breadth, 2),
+                    "fatigue": round(scores.fatigue, 2),
+                    "catalyst": round(scores.catalyst, 2),
+                    "total": round(scores.total, 2),
+                },
+                "change1d": round(change1d, 2),
+                "tradingValue": tv,
+                "state": state,
+            }
+        except Exception as exc:  # noqa: BLE001
+            print(f"[WARN] stock score {code} skip: {exc}", file=sys.stderr)
+    return out
+
+
 def update_score_history(
     rows: list[dict],
     quotes_data: dict,
@@ -1316,8 +1368,8 @@ def main() -> int:
     rows_by_period_kospi: dict[int, list[dict]] = {}
     rows_by_period_kosdaq: dict[int, list[dict]] = {}
     rows = rows_by_period[20]
-    # 주도/소외 timeline 일별 (gap_days=1, points=20일).
-    timeline = build_rotation_timeline(ohlcv_map, lookback=20, points=20, gap_days=1)
+    # 주도/소외 timeline 일별. frontend 가 client-side stride 로 1/5/10/15/20일 간격 선택.
+    timeline = build_rotation_timeline(ohlcv_map, lookback=20, points=100, gap_days=1)
 
     # 계층 집계 (meso/macro) per period.
     meso_rows_by_period: dict[int, list[dict]] = {}
@@ -1375,6 +1427,25 @@ def main() -> int:
     compare = build_compare_per_code(ohlcv_map)
     for code, payload in compare.items():
         write_json(COMPARE_DIR / f"{code}.json", payload)
+
+    # === Phase 4 — 종목별 5축 점수 inline (assets_extended.json) ===
+    try:
+        stock_scores = compute_stock_score_map(ohlcv_map, lookback=20)
+        ext_path = PUBLIC_DIR / "assets_extended.json"
+        if ext_path.exists():
+            ext_data = json.loads(ext_path.read_text(encoding="utf-8"))
+            inlined = 0
+            for asset in ext_data.get("assets", []):
+                code = asset.get("code")
+                if code and code in stock_scores:
+                    asset.update(stock_scores[code])
+                    inlined += 1
+            write_json(ext_path, ext_data)
+            print(f"[OK] phase4 stock scores: {inlined}/{len(ext_data.get('assets', []))} stocks scored")
+    except Exception as exc:  # noqa: BLE001
+        import traceback as _tb
+        print(f"[ERROR] phase4 stock scores failed: {exc}", file=sys.stderr)
+        print(_tb.format_exc(), file=sys.stderr)
 
     print(f"[OK] wrote dashboard/rotation_map/candidates/quotes + compare/{len(compare)}")
     return 0

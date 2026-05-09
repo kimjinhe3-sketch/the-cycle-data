@@ -144,6 +144,24 @@ def aggregate_sector_scores(
     return SectorScores(rs, flow, breadth, fatigue, catalyst, total)
 
 
+def compute_stock_scores(
+    features: dict,
+    market_ret_distribution: list[float],
+    market_tv_ratio_distribution: list[float],
+) -> SectorScores:
+    """단일 종목의 features (stock_features 출력) 를 받아 5축 점수로 환산.
+    sector aggregate 와 같은 shape (SectorScores) — frontend 가 동일 차트 (heatmap/bubble)
+    에서 자산 row 도 표시 가능. 종목 단위라 breadth/catalyst 는 binary (0/100).
+    """
+    rs = _percentile_rank(features.get("ret_main", 0.0), market_ret_distribution)
+    flow = _percentile_rank(features.get("tv_ratio", 1.0), market_tv_ratio_distribution)
+    breadth = 100.0 if features.get("ret_short", 0.0) > 0 else 0.0
+    fatigue = _clamp((features.get("rsi", 50.0) - 50.0) * 2.5)
+    catalyst = 100.0 if features.get("tv_z", 0.0) > 1.0 else 0.0
+    total = _clamp(0.30 * rs + 0.25 * flow + 0.20 * breadth - 0.15 * fatigue + 0.10 * catalyst)
+    return SectorScores(rs, flow, breadth, fatigue, catalyst, total)
+
+
 def derive_state(scores: SectorScores) -> str:
     if scores.fatigue > 75 and scores.rs > 60:
         return "overheated"
