@@ -1140,6 +1140,8 @@ def build_next_cycle(
         return {"anchor_sectors": [], "n_observations": n_obs, "note": progress_note}
 
     sector_name_by_id = {s["id"]: s.get("name", s["id"]) for s in SECTORS}
+    meso_name_by_id = {m["id"]: m.get("name", m["id"]) for m in MESO_LIST}
+    macro_name_by_id = {m["id"]: m.get("name", m["id"]) for m in MACRO_LIST}
 
     def _enrich(arr: list[dict]) -> list[dict]:
         for f in arr:
@@ -1150,7 +1152,7 @@ def build_next_cycle(
     for row in sorted_rows[:top_anchors]:
         sid = row["sector"]["id"]
         sname = row["sector"].get("name", sid)
-        meso_id = MICRO_TO_MESO.get(sid)
+        meso_id = MICRO_TO_MESO.get(sid, "")
         macro_id = MESO_TO_MACRO.get(meso_id, "") if meso_id else ""
 
         out_anchors.append({
@@ -1158,13 +1160,15 @@ def build_next_cycle(
             "sector_name": sname,
             "today_score": row["scores"]["total"],
             "meso": meso_id,
+            "meso_name": meso_name_by_id.get(meso_id, ""),
             "macro": macro_id,
+            "macro_name": macro_name_by_id.get(macro_id, ""),
             "predictions": {
                 "co_movement": _enrich(corr_mod.co_movers(correlation, sid, threshold=0.6, top=3)),
                 "lag_5d": _enrich(corr_mod.followers_at_lag(lead_lag, sid, target_lag=5, top=3)),
                 "lag_10d": _enrich(corr_mod.followers_at_lag(lead_lag, sid, target_lag=10, top=3)),
             },
-            "confidence_note": f"통계 표본 {n_obs}일. 상관성 ≠ 인과성. 투자 권유 아님.",
+            "confidence_note": f"최근 {n_obs}일 통계 기준. 미래를 보장하지 않습니다.",
         })
 
     return {"anchor_sectors": out_anchors, "n_observations": n_obs}
