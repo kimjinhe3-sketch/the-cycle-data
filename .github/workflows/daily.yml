@@ -52,7 +52,8 @@ jobs:
         # 실패해도 워크플로우 통과 — 그때는 자연 만료(12h) 까지 stale 노출됨.
         if: always()
         run: |
-          for f in dashboard.json rotation_map.json candidates.json quotes.json universe.json health.json; do
+          for f in dashboard.json rotation_map.json candidates.json quotes.json universe.json health.json \
+                   score_history.json correlation_matrix.json lead_lag_matrix.json next_cycle.json; do
             curl -sS -o /dev/null -w "purge $f → %{http_code}\n" \
               "https://purge.jsdelivr.net/gh/kimjinhe3-sketch/the-cycle-data@main/public/$f" || true
           done

@@ -998,7 +998,7 @@ def backfill_score_history(
     skip_if_history_at_least: int = 30,
 ) -> int:
     """history 가 비었거나 짧으면 ohlcv_map (60+일 OHLCV) 으로 매일의 sector total 점수를
-    reconstruct 해 score_history.json 을 일괄 채움. 이미 30일+ 누적되어있으면 skip.
+    reconstruct 해 score_history.json 을 일괄 채움. 이미 N일+ 누적되어있으면 skip.
 
     빈 시작 (Day 0) 부터 lead-lag 분석을 즉시 의미 있게 만들기 위함. 첫 cron 한번만 돌면
     n_observations 이 단번에 60+ 으로 점프 — Next Cycle 화면 진행 막대 100% 도달.
@@ -1010,48 +1010,58 @@ def backfill_score_history(
         existing = json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         existing = {"history": []}
-    if len(existing.get("history", [])) >= skip_if_history_at_least:
+    cur_len = len(existing.get("history", []))
+    print(f"[INFO] backfill: existing history len={cur_len}, target_window={target_window}", file=sys.stderr)
+    if cur_len >= skip_if_history_at_least:
+        print(f"[INFO] backfill: skip (history>={skip_if_history_at_least})", file=sys.stderr)
         return 0
 
     # 영업일 set: ohlcv 의 모든 종목 dates 합집합 (truncate 가 어차피 그날까지)
     all_dates = sorted({d for df in ohlcv_map.values() for d in df.index})
+    print(f"[INFO] backfill: all_dates={len(all_dates)} ohlcv_map={len(ohlcv_map)}", file=sys.stderr)
     if len(all_dates) < 25:
+        print("[WARN] backfill: not enough trading days (<25), abort", file=sys.stderr)
         return 0
 
     take_from = max(0, len(all_dates) - target_window)
     selected_dates = all_dates[take_from:]
+    print(f"[INFO] backfill: selected {len(selected_dates)} dates", file=sys.stderr)
 
     new_history: list[dict] = []
-    for d in selected_dates:
-        truncated = _truncate_to_date(ohlcv_map, d)
-        rows = build_sector_rows(truncated, lookback=20)
-        if not rows:
-            continue
-        date_str = d.strftime("%Y-%m-%d") if hasattr(d, "strftime") else str(d)[:10]
-        scores: dict[str, float] = {}
-        for r in rows:
-            sid = r.get("sector", {}).get("id")
-            if sid:
-                scores[sid] = r["scores"]["total"]
-        # broad market 일별 변동률(%) — d-1 vs d 의 종가
-        for label, ticker in BROAD_MARKET_ETFS.items():
-            df = ohlcv_map.get(ticker)
-            if df is None or df.empty:
+    for i, d in enumerate(selected_dates):
+        try:
+            truncated = _truncate_to_date(ohlcv_map, d)
+            rows = build_sector_rows(truncated, lookback=20)
+            if not rows:
                 continue
-            mask = df.index <= d
-            tail2 = df.loc[mask].tail(2)
-            if len(tail2) < 2:
-                continue
-            try:
-                prev = float(tail2.iloc[0]["종가"])
-                cur = float(tail2.iloc[1]["종가"])
-                if prev > 0:
-                    scores[label] = round((cur - prev) / prev * 100, 2)
-            except Exception:  # noqa: BLE001
-                pass
-        new_history.append({"date": date_str, "scores": scores})
+            date_str = d.strftime("%Y-%m-%d") if hasattr(d, "strftime") else str(d)[:10]
+            scores: dict[str, float] = {}
+            for r in rows:
+                sid = r.get("sector", {}).get("id")
+                if sid:
+                    scores[sid] = r["scores"]["total"]
+            # broad market 일별 변동률(%) — d-1 vs d 의 종가
+            for label, ticker in BROAD_MARKET_ETFS.items():
+                df = ohlcv_map.get(ticker)
+                if df is None or df.empty:
+                    continue
+                mask = df.index <= d
+                tail2 = df.loc[mask].tail(2)
+                if len(tail2) < 2:
+                    continue
+                try:
+                    prev = float(tail2.iloc[0]["종가"])
+                    cur = float(tail2.iloc[1]["종가"])
+                    if prev > 0:
+                        scores[label] = round((cur - prev) / prev * 100, 2)
+                except Exception:  # noqa: BLE001
+                    pass
+            new_history.append({"date": date_str, "scores": scores})
+        except Exception as exc:  # noqa: BLE001
+            print(f"[WARN] backfill date {d} skipped: {exc}", file=sys.stderr)
 
     new_history.reverse()  # latest first
+    print(f"[INFO] backfill: new entries={len(new_history)}", file=sys.stderr)
 
     new_dates = {e["date"] for e in new_history}
     merged = new_history + [
@@ -1060,6 +1070,7 @@ def backfill_score_history(
     merged = merged[:120]
 
     if not merged:
+        print("[WARN] backfill: merged empty, skip write", file=sys.stderr)
         return 0
 
     write_json(path, {
@@ -1113,17 +1124,19 @@ def update_score_history(
     })
 
 
+NEXT_CYCLE_WINDOWS: list[int] = [5, 10, 15, 30, 60, 120]
+
+
 def build_next_cycle(
     rows: list[dict],
-    lead_lag: dict,
-    correlation: dict,
+    history: list[dict],
     top_anchors: int = 3,
 ) -> dict:
-    """오늘 강세 micro top N 을 anchor 로 잡고 lead-lag/co-movement 패턴 매칭.
-    통계 표본 30일 미만이면 anchor_sectors=[] + 진행 안내.
+    """오늘 강세 micro top N 을 anchor 로 잡고 6개 window (5/10/15/30/60/120) 별로
+    co-movement + lead-lag 패턴 매칭. 각 window 가 데이터 부족 (<10) 이면 그 window 만 빈 결과.
     """
-    n_obs = correlation.get("n_observations", 0)
-    progress_note = f"통계 누적 중 ({n_obs}/60거래일). 60일 채워지면 의미 있는 lead-lag 신호 산출."
+    n_total = len(history)
+    progress_note = f"데이터 모으는 중 ({n_total}/120일). 윈도우별로 점차 의미 있는 신호."
 
     # broad market 노드는 anchor 후보에서 제외
     micro_rows = [
@@ -1136,9 +1149,6 @@ def build_next_cycle(
         reverse=True,
     )
 
-    if n_obs < 30 or not lead_lag.get("leaders"):
-        return {"anchor_sectors": [], "n_observations": n_obs, "note": progress_note}
-
     sector_name_by_id = {s["id"]: s.get("name", s["id"]) for s in SECTORS}
     meso_name_by_id = {m["id"]: m.get("name", m["id"]) for m in MESO_LIST}
     macro_name_by_id = {m["id"]: m.get("name", m["id"]) for m in MACRO_LIST}
@@ -1148,12 +1158,31 @@ def build_next_cycle(
             f["sector_name"] = sector_name_by_id.get(f["sector_id"], f["sector_id"])
         return arr
 
+    # window 별 correlation + lead-lag 미리 계산 (모든 anchor 가 공유)
+    matrices_by_window: dict[int, dict] = {}
+    for w in NEXT_CYCLE_WINDOWS:
+        corr_w = corr_mod.compute_correlation_matrix(history, window=w)
+        ll_w = corr_mod.compute_lead_lag_matrix(history, window=w)
+        matrices_by_window[w] = {"corr": corr_w, "ll": ll_w}
+        print(f"[INFO] next_cycle window={w}: n_obs={corr_w.get('n_observations', 0)}", file=sys.stderr)
+
     out_anchors: list[dict] = []
     for row in sorted_rows[:top_anchors]:
         sid = row["sector"]["id"]
         sname = row["sector"].get("name", sid)
         meso_id = MICRO_TO_MESO.get(sid, "")
         macro_id = MESO_TO_MACRO.get(meso_id, "") if meso_id else ""
+
+        predictions_by_window: dict[str, dict] = {}
+        for w in NEXT_CYCLE_WINDOWS:
+            mats = matrices_by_window[w]
+            n_w = mats["corr"].get("n_observations", 0)
+            predictions_by_window[str(w)] = {
+                "n_observations": n_w,
+                "co_movement": _enrich(corr_mod.co_movers(mats["corr"], sid, threshold=0.6, top=3)),
+                "lag_5d": _enrich(corr_mod.followers_at_lag(mats["ll"], sid, target_lag=5, top=3)),
+                "lag_10d": _enrich(corr_mod.followers_at_lag(mats["ll"], sid, target_lag=10, top=3)),
+            }
 
         out_anchors.append({
             "sector_id": sid,
@@ -1163,15 +1192,16 @@ def build_next_cycle(
             "meso_name": meso_name_by_id.get(meso_id, ""),
             "macro": macro_id,
             "macro_name": macro_name_by_id.get(macro_id, ""),
-            "predictions": {
-                "co_movement": _enrich(corr_mod.co_movers(correlation, sid, threshold=0.6, top=3)),
-                "lag_5d": _enrich(corr_mod.followers_at_lag(lead_lag, sid, target_lag=5, top=3)),
-                "lag_10d": _enrich(corr_mod.followers_at_lag(lead_lag, sid, target_lag=10, top=3)),
-            },
-            "confidence_note": f"최근 {n_obs}일 통계 기준. 미래를 보장하지 않습니다.",
+            "predictions_by_window": predictions_by_window,
+            "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
         })
 
-    return {"anchor_sectors": out_anchors, "n_observations": n_obs}
+    return {
+        "anchor_sectors": out_anchors,
+        "n_observations": n_total,
+        "windows": NEXT_CYCLE_WINDOWS,
+        "note": progress_note,
+    }
 
 
 # --------------------------------------------------------------------------
@@ -1206,7 +1236,8 @@ def build_health(ohlcv_map: dict[str, pd.DataFrame]) -> dict:
 def main() -> int:
     now = datetime.now(KST)
     end = now.strftime("%Y%m%d")
-    start = (now - timedelta(days=110)).strftime("%Y%m%d")  # 영업일 ~75일 확보
+    # lookback 120 + backfill 충분량 위해 220일 fetch (영업일 ~150일).
+    start = (now - timedelta(days=220)).strftime("%Y%m%d")
 
     print(f"[INFO] fetch range {start} ~ {end}, curated assets={len(ASSETS)}")
 
@@ -1271,17 +1302,22 @@ def main() -> int:
     meta = build_meta(as_of_iso)
     market_summary = build_market_summary(start, end)
 
-    # 기간별 + 시장별 점수 (소분류 49개 micro 기준).
+    # 기간별 점수 (소분류 49개 micro). lookback 7개 — frontend 노출은 6개 (20 제외)
+    # 이지만 backend 는 default 20 호환 위해 같이 계산.
+    SECTOR_PERIODS = (5, 10, 15, 20, 30, 60, 120)
+
     def _rows_for(market: str) -> dict[int, list[dict]]:
         return {lb: build_sector_rows(ohlcv_map, lookback=lb,
                                        market_filter=market, code_market=code_market)
-                for lb in (5, 20, 60)}
+                for lb in SECTOR_PERIODS}
 
     rows_by_period = _rows_for("all")
-    rows_by_period_kospi = _rows_for("kospi")
-    rows_by_period_kosdaq = _rows_for("kosdaq")
+    # KOSPI/KOSDAQ market filter 는 frontend 에서 옵션 제거 — 빈 dict 로 둠 (호환).
+    rows_by_period_kospi: dict[int, list[dict]] = {}
+    rows_by_period_kosdaq: dict[int, list[dict]] = {}
     rows = rows_by_period[20]
-    timeline = build_rotation_timeline(ohlcv_map, lookback=20, points=6, gap_days=5)
+    # 주도/소외 timeline 일별 (gap_days=1, points=20일).
+    timeline = build_rotation_timeline(ohlcv_map, lookback=20, points=20, gap_days=1)
 
     # 계층 집계 (meso/macro) per period.
     meso_rows_by_period: dict[int, list[dict]] = {}
@@ -1309,7 +1345,7 @@ def main() -> int:
     # === Phase 1 백엔드 — 시계열 누적 + 상관/lead-lag + next_cycle ===
     try:
         # 빈 시작 또는 부족 (history<30) 시 ohlcv 60+일로 일괄 backfill — Day 0 부터 의미 있는 신호.
-        n_back = backfill_score_history(ohlcv_map, target_window=80, skip_if_history_at_least=30)
+        n_back = backfill_score_history(ohlcv_map, target_window=110, skip_if_history_at_least=30)
         if n_back > 0:
             print(f"[INFO] backfill_score_history: {n_back} entries filled")
 
@@ -1323,7 +1359,8 @@ def main() -> int:
         ll_matrix = corr_mod.compute_lead_lag_matrix(hist, window=60)
         write_json(PUBLIC_DIR / "lead_lag_matrix.json", {**meta, **ll_matrix})
 
-        nc_payload = build_next_cycle(rows, ll_matrix, corr_matrix, top_anchors=3)
+        # 6 window (5/10/15/30/60/120) 의 predictions 일괄. anchor 는 today_score 기준 top 3.
+        nc_payload = build_next_cycle(rows, hist, top_anchors=3)
         write_json(PUBLIC_DIR / "next_cycle.json", {**meta, **nc_payload})
 
         print(
@@ -1331,7 +1368,9 @@ def main() -> int:
             f"ll_leaders={len(ll_matrix.get('leaders', {}))}, anchors={len(nc_payload.get('anchor_sectors', []))}"
         )
     except Exception as exc:  # noqa: BLE001
+        import traceback as _tb
         print(f"[ERROR] phase1 backend pipeline failed: {exc}", file=sys.stderr)
+        print(_tb.format_exc(), file=sys.stderr)
 
     compare = build_compare_per_code(ohlcv_map)
     for code, payload in compare.items():
