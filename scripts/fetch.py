@@ -28,6 +28,7 @@ except Exception:  # noqa: BLE001
     fdr = None  # 없어도 fetch 자체는 진행 (KOSPI/KOSDAQ 만 0 으로 떨어짐)
 
 import scoring
+import correlation as corr_mod
 
 KST = timezone(timedelta(hours=9))
 ROOT = Path(__file__).resolve().parent.parent
@@ -37,6 +38,14 @@ DATA_DIR = ROOT / "data"
 
 KOSPI_INDEX = "1001"
 KOSDAQ_INDEX = "2001"
+
+# Broad-market ETF tickers used as leader-only nodes in score_history / lead-lag.
+# Phase 1 후행/선행 분리 plan — 시장 전체 vs 섹터 분리 detect 용. sector ETF 는 underlying micro 와
+# redundant 라 의도적으로 포함 안 함. 일별 변동률(%) 만 저장. follower 로는 사용 안 함.
+BROAD_MARKET_ETFS: dict[str, str] = {
+    "_market_kodex200": "069500",   # KODEX 200 — KOSPI 200 추종, 가장 큰 거래량
+    "_market_tiger200": "102110",   # TIGER 200 — 보조 reference
+}
 
 
 def load_json(path: Path) -> list:
@@ -979,6 +988,111 @@ def build_compare_per_code(ohlcv_map: dict[str, pd.DataFrame]) -> dict[str, dict
 
 
 # --------------------------------------------------------------------------
+# Phase 1 백엔드 — 시계열 누적 + 상관/lead-lag 기반 next_cycle
+# (후행 ranker = rotation_map.json 그대로 유지. 이 블록은 선행 분석용 신규.)
+# --------------------------------------------------------------------------
+
+def update_score_history(
+    rows: list[dict],
+    quotes_data: dict,
+    trade_date_str: str,
+    rolling_window: int = 120,
+) -> None:
+    """오늘의 micro sector total + broad market ETF 변동률을 score_history.json 에 append.
+    동일 trade_date 가 이미 있으면 교체 (cron 재실행 안전).
+    """
+    if not trade_date_str:
+        print("[WARN] update_score_history: empty trade_date_str — skip", file=sys.stderr)
+        return
+    path = PUBLIC_DIR / "score_history.json"
+    try:
+        existing = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        existing = {"history": []}
+
+    scores: dict[str, float] = {}
+    for r in rows:
+        sid = r.get("sector", {}).get("id")
+        if sid:
+            scores[sid] = r["scores"]["total"]
+
+    quotes = (quotes_data or {}).get("quotes", {})
+    for label, ticker in BROAD_MARKET_ETFS.items():
+        q = quotes.get(ticker) or {}
+        chg = q.get("change_pct")
+        if chg is not None:
+            scores[label] = float(chg)
+
+    today_entry = {"date": trade_date_str, "scores": scores}
+    history = [e for e in existing.get("history", []) if e.get("date") != trade_date_str]
+    history.insert(0, today_entry)
+    history = history[:rolling_window]
+
+    write_json(path, {
+        "as_of": f"{trade_date_str}T15:30:00+09:00",
+        "window_days": rolling_window,
+        "history": history,
+    })
+
+
+def build_next_cycle(
+    rows: list[dict],
+    lead_lag: dict,
+    correlation: dict,
+    top_anchors: int = 3,
+) -> dict:
+    """오늘 강세 micro top N 을 anchor 로 잡고 lead-lag/co-movement 패턴 매칭.
+    통계 표본 30일 미만이면 anchor_sectors=[] + 진행 안내.
+    """
+    n_obs = correlation.get("n_observations", 0)
+    progress_note = f"통계 누적 중 ({n_obs}/60거래일). 60일 채워지면 의미 있는 lead-lag 신호 산출."
+
+    # broad market 노드는 anchor 후보에서 제외
+    micro_rows = [
+        r for r in rows
+        if not (r.get("sector", {}).get("id") or "").startswith("_market")
+    ]
+    sorted_rows = sorted(
+        micro_rows,
+        key=lambda r: r.get("scores", {}).get("total", 0),
+        reverse=True,
+    )
+
+    if n_obs < 30 or not lead_lag.get("leaders"):
+        return {"anchor_sectors": [], "n_observations": n_obs, "note": progress_note}
+
+    sector_name_by_id = {s["id"]: s.get("name", s["id"]) for s in SECTORS}
+
+    def _enrich(arr: list[dict]) -> list[dict]:
+        for f in arr:
+            f["sector_name"] = sector_name_by_id.get(f["sector_id"], f["sector_id"])
+        return arr
+
+    out_anchors: list[dict] = []
+    for row in sorted_rows[:top_anchors]:
+        sid = row["sector"]["id"]
+        sname = row["sector"].get("name", sid)
+        meso_id = MICRO_TO_MESO.get(sid)
+        macro_id = MESO_TO_MACRO.get(meso_id, "") if meso_id else ""
+
+        out_anchors.append({
+            "sector_id": sid,
+            "sector_name": sname,
+            "today_score": row["scores"]["total"],
+            "meso": meso_id,
+            "macro": macro_id,
+            "predictions": {
+                "co_movement": _enrich(corr_mod.co_movers(correlation, sid, threshold=0.6, top=3)),
+                "lag_5d": _enrich(corr_mod.followers_at_lag(lead_lag, sid, target_lag=5, top=3)),
+                "lag_10d": _enrich(corr_mod.followers_at_lag(lead_lag, sid, target_lag=10, top=3)),
+            },
+            "confidence_note": f"통계 표본 {n_obs}일. 상관성 ≠ 인과성. 투자 권유 아님.",
+        })
+
+    return {"anchor_sectors": out_anchors, "n_observations": n_obs}
+
+
+# --------------------------------------------------------------------------
 # health 단일 산출
 # --------------------------------------------------------------------------
 
@@ -1107,7 +1221,30 @@ def main() -> int:
                build_candidates(meta, rows, rows_by_period=rows_by_period))
     # quotes 는 KRX 전종목 — health 의 trade_date 기준으로 pykrx 배치.
     quotes_trade_date = health["samsung_005930"]["trade_date"] if health.get("ok") else ""
-    write_json(PUBLIC_DIR / "quotes.json", build_quotes(ohlcv_map, quotes_trade_date))
+    quotes_data = build_quotes(ohlcv_map, quotes_trade_date)
+    write_json(PUBLIC_DIR / "quotes.json", quotes_data)
+
+    # === Phase 1 백엔드 — 시계열 누적 + 상관/lead-lag + next_cycle ===
+    try:
+        update_score_history(rows, quotes_data, quotes_trade_date)
+        hist_data = json.loads((PUBLIC_DIR / "score_history.json").read_text(encoding="utf-8"))
+        hist = hist_data.get("history", [])
+
+        corr_matrix = corr_mod.compute_correlation_matrix(hist, window=60)
+        write_json(PUBLIC_DIR / "correlation_matrix.json", {**meta, **corr_matrix})
+
+        ll_matrix = corr_mod.compute_lead_lag_matrix(hist, window=60)
+        write_json(PUBLIC_DIR / "lead_lag_matrix.json", {**meta, **ll_matrix})
+
+        nc_payload = build_next_cycle(rows, ll_matrix, corr_matrix, top_anchors=3)
+        write_json(PUBLIC_DIR / "next_cycle.json", {**meta, **nc_payload})
+
+        print(
+            f"[OK] phase1 backend: history={len(hist)}, corr_n={corr_matrix.get('n_observations', 0)}, "
+            f"ll_leaders={len(ll_matrix.get('leaders', {}))}, anchors={len(nc_payload.get('anchor_sectors', []))}"
+        )
+    except Exception as exc:  # noqa: BLE001
+        print(f"[ERROR] phase1 backend pipeline failed: {exc}", file=sys.stderr)
 
     compare = build_compare_per_code(ohlcv_map)
     for code, payload in compare.items():
