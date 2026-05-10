@@ -1032,15 +1032,21 @@ def backfill_score_history(
     cur_len = len(existing.get("history", []))
     print(f"[INFO] backfill: existing history len={cur_len}, target_window={target_window}", file=sys.stderr)
 
-    # Broad market key 추가됐는지 체크 — 새 BROAD_MARKET_ETFS 키 (예: _market_kosdaq150) 가
-    # 옛 history entry 에 missing 이면 force rebuild. _residualize 가 모든 entry 에 같은
-    # market key 있어야 동작.
+    # Broad market key 추가됐는지 체크 — _residualize 는 모든 entry 가 같은 length 시리즈
+    # 가져야 동작. 단 한 entry 라도 missing 이면 그 시리즈 drop 되어 fallback.
+    # → ALL entries 검사. 하나라도 missing 이면 force rebuild + existing 통째 drop.
+    force_rebuild = False
     if cur_len > 0:
-        first_entry_scores = existing["history"][0].get("scores", {})
-        missing = [k for k in BROAD_MARKET_ETFS if k not in first_entry_scores]
-        if missing:
-            print(f"[INFO] backfill: missing market keys {missing} → force rebuild", file=sys.stderr)
-            cur_len = 0  # treat as empty
+        missing_in_any = set()
+        for entry in existing["history"]:
+            scores = entry.get("scores", {})
+            for k in BROAD_MARKET_ETFS:
+                if k not in scores:
+                    missing_in_any.add(k)
+        if missing_in_any:
+            print(f"[INFO] backfill: missing market keys in some entries {missing_in_any} → force rebuild", file=sys.stderr)
+            cur_len = 0
+            force_rebuild = True
 
     if cur_len >= skip_if_history_at_least:
         print(f"[INFO] backfill: skip (history>={skip_if_history_at_least})", file=sys.stderr)
@@ -1094,9 +1100,13 @@ def backfill_score_history(
     print(f"[INFO] backfill: new entries={len(new_history)}", file=sys.stderr)
 
     new_dates = {e["date"] for e in new_history}
-    merged = new_history + [
-        e for e in existing.get("history", []) if e.get("date") not in new_dates
-    ]
+    if force_rebuild:
+        # force rebuild 시 existing 통째 drop — missing market key 가진 옛 entry 안 섞임.
+        merged = list(new_history)
+    else:
+        merged = new_history + [
+            e for e in existing.get("history", []) if e.get("date") not in new_dates
+        ]
     merged = merged[:120]
 
     if not merged:
