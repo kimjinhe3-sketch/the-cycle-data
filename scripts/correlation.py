@@ -27,6 +27,74 @@ def pearson(x: list[float], y: list[float]) -> float:
     return num / (dx * dy)
 
 
+def rank(values: list[float]) -> list[float]:
+    """Average rank with ties (mid-rank). Spearman 용. 1-indexed.
+    예: [3, 1, 4, 1, 5] → [3, 1.5, 4, 1.5, 5] (1 두 개는 1·2 평균 = 1.5).
+    """
+    n = len(values)
+    if n == 0:
+        return []
+    indexed = sorted(range(n), key=lambda i: values[i])
+    ranks = [0.0] * n
+    i = 0
+    while i < n:
+        j = i
+        while j + 1 < n and values[indexed[j + 1]] == values[indexed[i]]:
+            j += 1
+        avg = (i + j) / 2.0 + 1.0  # 1-indexed mid-rank
+        for k in range(i, j + 1):
+            ranks[indexed[k]] = avg
+        i = j + 1
+    return ranks
+
+
+def spearman(x: list[float], y: list[float]) -> float:
+    """순위 기반 Pearson — outlier 와 비선형 단조 관계에 robust."""
+    return pearson(rank(x), rank(y))
+
+
+def two_factor_regress(
+    y: list[float], x1: list[float], x2: list[float]
+) -> tuple[float, float, float, list[float]]:
+    """OLS y = α + β1·x1 + β2·x2 + ε. Returns (α, β1, β2, residuals).
+    Normal equation 직접 풀이 (numpy 안 씀).
+    """
+    n = len(y)
+    if n < 3 or len(x1) != n or len(x2) != n:
+        return 0.0, 0.0, 0.0, list(y)
+    my = sum(y) / n
+    m1 = sum(x1) / n
+    m2 = sum(x2) / n
+    yc = [yi - my for yi in y]
+    xc1 = [a - m1 for a in x1]
+    xc2 = [a - m2 for a in x2]
+    s11 = sum(a * a for a in xc1)
+    s22 = sum(a * a for a in xc2)
+    s12 = sum(a * b for a, b in zip(xc1, xc2))
+    s1y = sum(a * b for a, b in zip(xc1, yc))
+    s2y = sum(a * b for a, b in zip(xc2, yc))
+    det = s11 * s22 - s12 * s12
+    if abs(det) < 1e-10:
+        return my, 0.0, 0.0, [yi - my for yi in y]
+    beta1 = (s22 * s1y - s12 * s2y) / det
+    beta2 = (s11 * s2y - s12 * s1y) / det
+    alpha = my - beta1 * m1 - beta2 * m2
+    residuals = [yi - alpha - beta1 * a - beta2 * b for yi, a, b in zip(y, x1, x2)]
+    return alpha, beta1, beta2, residuals
+
+
+def vasicek_shrink(beta: float, sample_mean: float = 1.0, weight: float = 0.5) -> float:
+    """β 추정 noise 줄이려고 sample mean (default 1.0) 쪽으로 부분 끌어당김.
+    weight=1 이면 그대로, 0 이면 완전 mean. 기본 0.5 (절반).
+    """
+    return weight * beta + (1.0 - weight) * sample_mean
+
+
+def diff(values: list[float]) -> list[float]:
+    """First difference: [v_t - v_{t-1}]. 길이 n-1."""
+    return [values[i] - values[i - 1] for i in range(1, len(values))]
+
+
 def percentile(values: list[float], p: float) -> float:
     """p 분위수 (0~1). values 가 비면 0.0. linear interpolation."""
     if not values:
@@ -65,23 +133,95 @@ def _build_series(history: list[dict], window: int) -> tuple[list[str], dict[str
     return sectors, series
 
 
+def _residualize(
+    series: dict[str, list[float]],
+    market_keys: tuple[str, str] = ("_market_kodex200", "_market_kosdaq150"),
+) -> dict[str, list[float]] | None:
+    """각 sector 의 차분 시계열을 두 시장 (KOSPI 200, KOSDAQ 150) 차분에 회귀해 잔차 반환.
+    Vasicek shrinkage 로 β 안정화. market 시계열이 없으면 None — caller fallback.
+    """
+    m1_key, m2_key = market_keys
+    if m1_key not in series or m2_key not in series:
+        return None
+    m1 = diff(series[m1_key])
+    m2 = diff(series[m2_key])
+    if len(m1) < 5 or len(m2) < 5:
+        return None
+
+    # 1차 패스 — 모든 sector 의 β 추정 (sample mean β 산출용).
+    diffs: dict[str, list[float]] = {}
+    raw_betas: dict[str, tuple[float, float]] = {}
+    for sid, vals in series.items():
+        if sid in (m1_key, m2_key):
+            continue
+        d = diff(vals)
+        if len(d) != len(m1):
+            continue
+        diffs[sid] = d
+        _, b1, b2, _ = two_factor_regress(d, m1, m2)
+        raw_betas[sid] = (b1, b2)
+
+    if not raw_betas:
+        return None
+
+    # Sample mean β (sector-population). Vasicek 의 prior.
+    mean_b1 = sum(b[0] for b in raw_betas.values()) / len(raw_betas)
+    mean_b2 = sum(b[1] for b in raw_betas.values()) / len(raw_betas)
+
+    # 2차 패스 — Vasicek shrunken β 로 잔차 재계산.
+    residuals: dict[str, list[float]] = {}
+    for sid, d in diffs.items():
+        b1_raw, b2_raw = raw_betas[sid]
+        b1 = vasicek_shrink(b1_raw, mean_b1, 0.5)
+        b2 = vasicek_shrink(b2_raw, mean_b2, 0.5)
+        # α 도 shrunken β 로 재계산.
+        my = sum(d) / len(d)
+        mm1 = sum(m1) / len(m1)
+        mm2 = sum(m2) / len(m2)
+        alpha = my - b1 * mm1 - b2 * mm2
+        eps = [yi - alpha - b1 * a - b2 * b for yi, a, b in zip(d, m1, m2)]
+        residuals[sid] = eps
+    return residuals
+
+
 def compute_correlation_matrix(history: list[dict], window: int = 60) -> dict:
+    """시장 효과 제거된 sector 간 상관 (정확도 pipeline):
+    1. 차분 (first difference) — stationary 한 변화량 시계열.
+    2. Two-factor 회귀 (KOSPI 200 + KOSDAQ 150 차분) → 잔차.
+    3. Vasicek shrinkage on β (sample mean 50%).
+    4. Spearman rank correlation on 잔차.
+
+    market 시계열 없으면 fallback: 원시 점수 시계열 + Pearson (옛 동작).
+    """
     sectors, series = _build_series(history, window)
     n_obs = len(series[sectors[0]]) if sectors else len(history[:window])
 
     if n_obs < 30 or not sectors:
         return {"window_days": window, "n_observations": n_obs, "matrix": {}}
 
+    residuals = _residualize(series)
+    use_residuals = residuals is not None
+    follower_pool = [s for s in sectors if not s.startswith("_market")]
+
     matrix: dict[str, dict[str, float]] = {}
-    for s1 in sectors:
+    for s1 in follower_pool:
         matrix[s1] = {}
-        for s2 in sectors:
+        for s2 in follower_pool:
             if s1 == s2:
                 matrix[s1][s2] = 1.0
+                continue
+            if use_residuals and residuals is not None:
+                r = spearman(residuals[s1], residuals[s2])
             else:
-                matrix[s1][s2] = round(pearson(series[s1], series[s2]), 3)
+                r = pearson(series[s1], series[s2])
+            matrix[s1][s2] = round(r, 3)
 
-    return {"window_days": window, "n_observations": n_obs, "matrix": matrix}
+    return {
+        "window_days": window,
+        "n_observations": n_obs,
+        "matrix": matrix,
+        "method": "partial_spearman" if use_residuals else "raw_pearson",
+    }
 
 
 def compute_lead_lag_matrix(
@@ -110,54 +250,66 @@ def compute_lead_lag_matrix(
             "leaders": {},
         }
 
-    # 일별 변화 (delta) 시계열 + sector 별 임계값 사전 계산
-    deltas: dict[str, list[float]] = {}
-    thresholds: dict[str, float] = {}
-    for sid, vals in series.items():
-        d = [vals[i] - vals[i - 1] for i in range(1, len(vals))]
-        deltas[sid] = d
-        thresholds[sid] = percentile(d, hit_threshold_percentile)
+    # 정확도 pipeline: 차분 + two-factor 잔차 + spearman lag.
+    # 잔차 시계열 자체가 이미 차분 후 잔차 (length n-1).
+    residuals = _residualize(series)
+    use_residuals = residuals is not None
 
-    # follower 후보: micro sector 만 (broad market `_market_*` 는 leader 로만 쓰고 follower 제외)
     follower_pool = [s for s in sectors if not s.startswith("_market")]
 
+    # leader 의 잔차 변화량 분포로 hit threshold (signal 시점) 결정 — 시장 효과 제거 후의 진짜 강세 시점.
+    if use_residuals and residuals is not None:
+        thresholds: dict[str, float] = {
+            sid: percentile(eps, hit_threshold_percentile) for sid, eps in residuals.items()
+        }
+    else:
+        # fallback — 원시 점수 차분 분포.
+        deltas: dict[str, list[float]] = {
+            sid: [vals[i] - vals[i - 1] for i in range(1, len(vals))]
+            for sid, vals in series.items()
+        }
+        thresholds = {sid: percentile(d, hit_threshold_percentile) for sid, d in deltas.items()}
+
     leaders: dict[str, dict] = {}
-    for leader in sectors:
-        leader_vals = series[leader]
-        leader_deltas = deltas[leader]
+    for leader in follower_pool:  # leader 도 micro 만 (broad market 제외 — anchor 안 됨)
+        leader_eps = residuals[leader] if use_residuals and residuals is not None else None
+        if leader_eps is None and not use_residuals:
+            leader_eps = [series[leader][i] - series[leader][i - 1] for i in range(1, len(series[leader]))]
+        if leader_eps is None:
+            continue
         leader_thr = thresholds[leader]
 
         followers_out: list[dict] = []
         for follower in follower_pool:
             if follower == leader:
                 continue
-            f_vals = series[follower]
-            f_deltas = deltas[follower]
+            f_eps = residuals[follower] if use_residuals and residuals is not None else None
+            if f_eps is None and not use_residuals:
+                f_eps = [series[follower][i] - series[follower][i - 1] for i in range(1, len(series[follower]))]
+            if f_eps is None:
+                continue
             f_thr = thresholds[follower]
 
             best = {"lag": lags[0], "correlation": 0.0, "hit_rate": 0.0, "n_signals": 0}
             best_abs = -1.0
             for k in lags:
-                if k >= len(leader_vals):
+                if k >= len(leader_eps):
                     continue
-                # cross-correlation: leader[0..n-k-1] vs follower[k..n-1]
-                lx = leader_vals[: len(leader_vals) - k]
-                fy = f_vals[k:]
-                corr = pearson(lx, fy)
+                # cross-correlation on residuals (잔차 시계열 lag).
+                lx = leader_eps[: len(leader_eps) - k]
+                fy = f_eps[k:]
+                corr = spearman(lx, fy) if use_residuals else pearson(lx, fy)
 
-                # hit rate: leader_deltas index t → leader 의 (t→t+1) 변화. delta length = n-1.
-                # 그 시점 t 에 follower 의 (t+k → t+k+1) 변화는 f_deltas[t+k] (가 존재해야).
-                signal_indices = [
-                    t for t, d in enumerate(leader_deltas) if d > leader_thr
-                ]
+                # hit rate: leader 잔차 변화 상위 25% 시점 → follower 도 t+k 시점 상위 25% 비율.
+                signal_indices = [t for t, d in enumerate(leader_eps) if d > leader_thr]
                 hits = 0
                 considered = 0
                 for t in signal_indices:
                     fi = t + k
-                    if fi >= len(f_deltas):
+                    if fi >= len(f_eps):
                         continue
                     considered += 1
-                    if f_deltas[fi] > f_thr:
+                    if f_eps[fi] > f_thr:
                         hits += 1
                 hit_rate = (hits / considered) if considered > 0 else 0.0
 
@@ -190,6 +342,7 @@ def compute_lead_lag_matrix(
         "lags": lags,
         "hit_threshold_percentile": hit_threshold_percentile,
         "leaders": leaders,
+        "method": "partial_spearman" if use_residuals else "raw_pearson",
     }
 
 

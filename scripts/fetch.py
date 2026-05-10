@@ -43,8 +43,9 @@ KOSDAQ_INDEX = "2001"
 # Phase 1 후행/선행 분리 plan — 시장 전체 vs 섹터 분리 detect 용. sector ETF 는 underlying micro 와
 # redundant 라 의도적으로 포함 안 함. 일별 변동률(%) 만 저장. follower 로는 사용 안 함.
 BROAD_MARKET_ETFS: dict[str, str] = {
-    "_market_kodex200": "069500",   # KODEX 200 — KOSPI 200 추종, 가장 큰 거래량
-    "_market_tiger200": "102110",   # TIGER 200 — 보조 reference
+    "_market_kodex200": "069500",   # KODEX 200 — KOSPI 200 추종 (large-cap factor)
+    "_market_kosdaq150": "229200",  # KODEX 코스닥150 — KOSDAQ 150 추종 (small/mid factor)
+    "_market_tiger200": "102110",   # TIGER 200 — 보조 reference (correlation 비교용)
 }
 
 
@@ -942,12 +943,29 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
     }
 
 
+_BROAD_MARKET_NAMES: dict[str, str] = {
+    "069500": "KODEX 200",
+    "229200": "KODEX 코스닥150",
+    "102110": "TIGER 200",
+}
+
+
 def build_compare_per_code(ohlcv_map: dict[str, pd.DataFrame]) -> dict[str, dict]:
     """종목별 120일 시계열을 rebased return 으로 가공.
-    frontend CompareScreen 의 5/10/15/30/60/120일 chip 모두 client-side slice 로 cover."""
+    frontend CompareScreen 의 5/10/15/30/60/120일 chip 모두 client-side slice 로 cover.
+    추가: broad market ETF (KODEX 200, KODEX 코스닥150) 도 emit — 잔차 corr 계산용 frontend fetch.
+    """
+    targets: list[dict] = list(ASSETS) + [
+        {"code": code, "name": _BROAD_MARKET_NAMES.get(code, code), "type": "etf"}
+        for code in BROAD_MARKET_ETFS.values()
+    ]
     out: dict[str, dict] = {}
-    for asset in ASSETS:
+    seen_codes: set[str] = set()
+    for asset in targets:
         code = asset["code"]
+        if code in seen_codes:
+            continue
+        seen_codes.add(code)
         df = ohlcv_map.get(code)
         if df is None or df.empty:
             continue
@@ -1340,6 +1358,19 @@ def main() -> int:
         return 1
 
     print(f"[INFO] collected {len(ohlcv_map)} / {len(ASSETS)} assets")
+
+    # broad market ETF (KODEX 200, KODEX 코스닥150 등) 의 ohlcv — 시장 효과 잔차 corr 계산용.
+    # ASSETS 에 없을 수 있어 별도 보강.
+    for label, code in BROAD_MARKET_ETFS.items():
+        if code in ohlcv_map:
+            continue
+        try:
+            df = fetch_ohlcv(code, start, end)
+            if not df.empty:
+                ohlcv_map[code] = df
+                print(f"[INFO] broad market {label} ({code}) fetched: {len(df)} rows")
+        except Exception as exc:  # noqa: BLE001
+            print(f"[WARN] broad market {label} ({code}) fetch fail: {exc}", file=sys.stderr)
 
     # health
     health = build_health(ohlcv_map)
