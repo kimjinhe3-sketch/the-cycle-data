@@ -943,14 +943,15 @@ def build_quotes(ohlcv_map: dict[str, pd.DataFrame], trade_date_str: str) -> dic
 
 
 def build_compare_per_code(ohlcv_map: dict[str, pd.DataFrame]) -> dict[str, dict]:
-    """종목별 60일 시계열을 rebased return 으로 가공."""
+    """종목별 120일 시계열을 rebased return 으로 가공.
+    frontend CompareScreen 의 5/10/15/30/60/120일 chip 모두 client-side slice 로 cover."""
     out: dict[str, dict] = {}
     for asset in ASSETS:
         code = asset["code"]
         df = ohlcv_map.get(code)
         if df is None or df.empty:
             continue
-        tail = df.tail(60).copy()
+        tail = df.tail(120).copy()
         if tail.empty:
             continue
         base = float(tail["종가"].iloc[0])
