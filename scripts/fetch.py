@@ -1031,6 +1031,17 @@ def backfill_score_history(
         existing = {"history": []}
     cur_len = len(existing.get("history", []))
     print(f"[INFO] backfill: existing history len={cur_len}, target_window={target_window}", file=sys.stderr)
+
+    # Broad market key 추가됐는지 체크 — 새 BROAD_MARKET_ETFS 키 (예: _market_kosdaq150) 가
+    # 옛 history entry 에 missing 이면 force rebuild. _residualize 가 모든 entry 에 같은
+    # market key 있어야 동작.
+    if cur_len > 0:
+        first_entry_scores = existing["history"][0].get("scores", {})
+        missing = [k for k in BROAD_MARKET_ETFS if k not in first_entry_scores]
+        if missing:
+            print(f"[INFO] backfill: missing market keys {missing} → force rebuild", file=sys.stderr)
+            cur_len = 0  # treat as empty
+
     if cur_len >= skip_if_history_at_least:
         print(f"[INFO] backfill: skip (history>={skip_if_history_at_least})", file=sys.stderr)
         return 0
