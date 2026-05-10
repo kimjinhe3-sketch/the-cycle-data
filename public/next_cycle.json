@@ -32,7 +32,32 @@
             }
           ],
           "lag_10d": [],
-          "lag_5d": [],
+          "lag_5d": [
+            {
+              "best_lag": 5,
+              "correlation": -0.332,
+              "hit_rate": 0.176,
+              "n_signals": 17,
+              "sector_id": "display",
+              "sector_name": "디스플레이"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.336,
+              "hit_rate": 0.0,
+              "n_signals": 17,
+              "sector_id": "trading",
+              "sector_name": "종합상사"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.368,
+              "hit_rate": 0.059,
+              "n_signals": 17,
+              "sector_id": "holdings",
+              "sector_name": "지주회사"
+            }
+          ],
           "n_observations": 74
         },
         "15": {
@@ -62,27 +87,11 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.89,
+              "correlation": -0.591,
               "hit_rate": 0.0,
               "n_signals": 5,
-              "sector_id": "transport",
-              "sector_name": "운송"
-            },
-            {
-              "best_lag": 10,
-              "correlation": -0.893,
-              "hit_rate": 0.2,
-              "n_signals": 5,
-              "sector_id": "display",
-              "sector_name": "디스플레이"
-            },
-            {
-              "best_lag": 10,
-              "correlation": -0.934,
-              "hit_rate": 0.4,
-              "n_signals": 5,
-              "sector_id": "telecom",
-              "sector_name": "통신"
+              "sector_id": "comm_equip",
+              "sector_name": "통신장비"
             }
           ],
           "lag_5d": [],
@@ -116,11 +125,27 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.769,
-              "hit_rate": 0.133,
+              "correlation": -0.345,
+              "hit_rate": 0.067,
               "n_signals": 15,
-              "sector_id": "construction",
-              "sector_name": "건설"
+              "sector_id": "food",
+              "sector_name": "식음료"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.373,
+              "hit_rate": 0.067,
+              "n_signals": 15,
+              "sector_id": "holdings",
+              "sector_name": "지주회사"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.385,
+              "hit_rate": 0.0,
+              "n_signals": 15,
+              "sector_id": "department",
+              "sector_name": "백화점"
             }
           ],
           "n_observations": 60
@@ -161,17 +186,33 @@
               "sector_name": "가구인테리어"
             }
           ],
-          "lag_10d": [
+          "lag_10d": [],
+          "lag_5d": [
             {
-              "best_lag": 10,
-              "correlation": 0.741,
-              "hit_rate": 0.286,
-              "n_signals": 14,
-              "sector_id": "oil",
-              "sector_name": "정유"
+              "best_lag": 5,
+              "correlation": -0.333,
+              "hit_rate": 0.133,
+              "n_signals": 15,
+              "sector_id": "holdings",
+              "sector_name": "지주회사"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.36,
+              "hit_rate": 0.133,
+              "n_signals": 15,
+              "sector_id": "agri_livestock",
+              "sector_name": "농축산"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.363,
+              "hit_rate": 0.133,
+              "n_signals": 15,
+              "sector_id": "environment",
+              "sector_name": "환경"
             }
           ],
-          "lag_5d": [],
           "n_observations": 74
         },
         "15": {
@@ -185,21 +226,21 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.597,
+              "correlation": 0.537,
               "hit_rate": 0.2,
               "n_signals": 5,
-              "sector_id": "liquid_cooling",
-              "sector_name": "액침냉각"
+              "sector_id": "defense",
+              "sector_name": "방산"
             }
           ],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.717,
+              "correlation": -0.502,
               "hit_rate": 0.0,
               "n_signals": 6,
-              "sector_id": "hotel_tourism",
-              "sector_name": "호텔관광"
+              "sector_id": "fashion",
+              "sector_name": "패션의류"
             }
           ],
           "n_observations": 30
@@ -228,25 +269,33 @@
               "sector_name": "가구인테리어"
             }
           ],
-          "lag_10d": [
+          "lag_10d": [],
+          "lag_5d": [
             {
-              "best_lag": 10,
-              "correlation": 0.657,
-              "hit_rate": 0.167,
-              "n_signals": 12,
-              "sector_id": "oil",
-              "sector_name": "정유"
+              "best_lag": 5,
+              "correlation": -0.367,
+              "hit_rate": 0.077,
+              "n_signals": 13,
+              "sector_id": "holdings",
+              "sector_name": "지주회사"
             },
             {
-              "best_lag": 10,
-              "correlation": -0.674,
-              "hit_rate": 0.083,
-              "n_signals": 12,
-              "sector_id": "hotel_tourism",
-              "sector_name": "호텔관광"
+              "best_lag": 5,
+              "correlation": -0.378,
+              "hit_rate": 0.154,
+              "n_signals": 13,
+              "sector_id": "agri_livestock",
+              "sector_name": "농축산"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.413,
+              "hit_rate": 0.077,
+              "n_signals": 13,
+              "sector_id": "fashion",
+              "sector_name": "패션의류"
             }
           ],
-          "lag_5d": [],
           "n_observations": 60
         }
       },
@@ -286,7 +335,24 @@
             }
           ],
           "lag_10d": [],
-          "lag_5d": [],
+          "lag_5d": [
+            {
+              "best_lag": 5,
+              "correlation": -0.337,
+              "hit_rate": 0.125,
+              "n_signals": 16,
+              "sector_id": "education",
+              "sector_name": "교육"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.347,
+              "hit_rate": 0.125,
+              "n_signals": 16,
+              "sector_id": "environment",
+              "sector_name": "환경"
+            }
+          ],
           "n_observations": 74
         },
         "15": {
@@ -316,23 +382,15 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.863,
+              "correlation": -0.427,
               "hit_rate": 0.0,
               "n_signals": 3,
-              "sector_id": "education",
-              "sector_name": "교육"
+              "sector_id": "agri_livestock",
+              "sector_name": "농축산"
             },
             {
               "best_lag": 10,
-              "correlation": -0.864,
-              "hit_rate": 0.0,
-              "n_signals": 3,
-              "sector_id": "cosmetics",
-              "sector_name": "화장품"
-            },
-            {
-              "best_lag": 10,
-              "correlation": -0.874,
+              "correlation": -0.565,
               "hit_rate": 0.0,
               "n_signals": 3,
               "sector_id": "display",
@@ -342,11 +400,19 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.891,
+              "correlation": 0.6,
               "hit_rate": 0.6,
               "n_signals": 5,
               "sector_id": "nuclear",
               "sector_name": "원전"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.577,
+              "hit_rate": 0.0,
+              "n_signals": 5,
+              "sector_id": "fashion",
+              "sector_name": "패션의류"
             }
           ],
           "n_observations": 30
@@ -376,7 +442,32 @@
             }
           ],
           "lag_10d": [],
-          "lag_5d": [],
+          "lag_5d": [
+            {
+              "best_lag": 5,
+              "correlation": -0.309,
+              "hit_rate": 0.231,
+              "n_signals": 13,
+              "sector_id": "environment",
+              "sector_name": "환경"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.315,
+              "hit_rate": 0.077,
+              "n_signals": 13,
+              "sector_id": "education",
+              "sector_name": "교육"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.353,
+              "hit_rate": 0.077,
+              "n_signals": 13,
+              "sector_id": "fashion",
+              "sector_name": "패션의류"
+            }
+          ],
           "n_observations": 60
         }
       },
