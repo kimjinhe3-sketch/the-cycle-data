@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-05-12T15:30:00+09:00",
+  "as_of": "2026-05-13T15:30:00+09:00",
   "candidates": [
     {
       "ai_summary": "자동차 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "high",
-      "probability": 70.0,
+      "probability": 69.8,
       "representative_assets": [
         {
           "code": "005380",
@@ -53,11 +53,11 @@
       "sector_name": "자동차",
       "signals": [
         {
-          "detail": "가격강도 70점",
+          "detail": "가격강도 76점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 184%",
+          "detail": "20일 평균 대비 160%",
           "label": "거래대금 확장"
         },
         {
@@ -70,7 +70,7 @@
     {
       "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "high",
-      "probability": 65.7,
+      "probability": 65.0,
       "representative_assets": [
         {
           "code": "066570",
@@ -109,11 +109,67 @@
       "sector_name": "가전",
       "signals": [
         {
-          "detail": "가격강도 81점",
+          "detail": "가격강도 80점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 476%",
+          "detail": "20일 평균 대비 134%",
+          "label": "거래대금 확장"
+        },
+        {
+          "detail": "외국인/기관 순매수 전환",
+          "label": "수급 전환"
+        }
+      ],
+      "state": "expanding"
+    },
+    {
+      "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "medium",
+      "probability": 60.8,
+      "representative_assets": [
+        {
+          "code": "023530",
+          "name": "롯데쇼핑",
+          "sectorIds": [
+            "department"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "069960",
+          "name": "현대백화점",
+          "sectorIds": [
+            "department"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "004170",
+          "name": "신세계",
+          "sectorIds": [
+            "department"
+          ],
+          "type": "stock"
+        }
+      ],
+      "risks": [
+        {
+          "label": "단기 변동성 확대"
+        },
+        {
+          "label": "글로벌 매크로 변수"
+        }
+      ],
+      "sector_id": "department",
+      "sector_name": "백화점",
+      "signals": [
+        {
+          "detail": "가격강도 80점",
+          "label": "가격강도 상위"
+        },
+        {
+          "detail": "20일 평균 대비 121%",
           "label": "거래대금 확장"
         },
         {
@@ -126,7 +182,7 @@
     {
       "ai_summary": "로보틱스 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "medium",
-      "probability": 57.8,
+      "probability": 52.7,
       "representative_assets": [
         {
           "code": "005380",
@@ -167,11 +223,11 @@
       "sector_name": "로보틱스",
       "signals": [
         {
-          "detail": "가격강도 75점",
+          "detail": "가격강도 82점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 236%",
+          "detail": "20일 평균 대비 166%",
           "label": "거래대금 확장"
         },
         {
@@ -182,91 +238,10 @@
       "state": "expanding"
     },
     {
-      "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "medium",
-      "probability": 50.8,
-      "representative_assets": [
-        {
-          "code": "010170",
-          "name": "대한광통신",
-          "sectorIds": [
-            "comm_equip"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "115440",
-          "name": "우리넷",
-          "sectorIds": [
-            "comm_equip"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "056360",
-          "name": "코위버",
-          "sectorIds": [
-            "comm_equip"
-          ],
-          "type": "stock"
-        }
-      ],
-      "risks": [
-        {
-          "label": "단기 변동성 확대"
-        },
-        {
-          "label": "글로벌 매크로 변수"
-        }
-      ],
-      "sector_id": "comm_equip",
-      "sector_name": "통신장비",
-      "signals": [
-        {
-          "detail": "가격강도 76점",
-          "label": "가격강도 상위"
-        },
-        {
-          "detail": "20일 평균 대비 77%",
-          "label": "거래대금 확장"
-        },
-        {
-          "detail": "외국인/기관 순매수 전환",
-          "label": "수급 전환"
-        }
-      ],
-      "state": "expanding"
-    },
-    {
-      "ai_summary": "의료기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "ai_summary": "기타 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "low",
-      "probability": 42.4,
-      "representative_assets": [
-        {
-          "code": "041830",
-          "name": "인바디",
-          "sectorIds": [
-            "medical_device"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "214150",
-          "name": "클래시스",
-          "sectorIds": [
-            "medical_device"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "100120",
-          "name": "뷰웍스",
-          "sectorIds": [
-            "medical_device"
-          ],
-          "type": "stock"
-        }
-      ],
+      "probability": 41,
+      "representative_assets": [],
       "risks": [
         {
           "label": "단기 변동성 확대"
@@ -275,15 +250,15 @@
           "label": "글로벌 매크로 변수"
         }
       ],
-      "sector_id": "medical_device",
-      "sector_name": "의료기기",
+      "sector_id": "etc",
+      "sector_name": "기타",
       "signals": [
         {
-          "detail": "가격강도 59점",
+          "detail": "가격강도 50점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 19%",
+          "detail": "20일 평균 대비 0%",
           "label": "거래대금 확장"
         },
         {
@@ -297,9 +272,57 @@
   "candidates_by_period": {
     "10": [
       {
+        "ai_summary": "디스플레이 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 73.8,
+        "representative_assets": [
+          {
+            "code": "034220",
+            "name": "LG디스플레이",
+            "sectorIds": [
+              "display"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "213420",
+            "name": "덕산네오룩스",
+            "sectorIds": [
+              "display"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "display",
+        "sector_name": "디스플레이",
+        "signals": [
+          {
+            "detail": "가격강도 72점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 305%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
         "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 73.6,
+        "probability": 69.0,
         "representative_assets": [
           {
             "code": "066570",
@@ -342,7 +365,63 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 476%",
+            "detail": "10일 평균 대비 134%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 59.1,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 78점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 121%",
             "label": "거래대금 확장"
           },
           {
@@ -354,8 +433,8 @@
       },
       {
         "ai_summary": "통신 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 65.4,
+        "confidence": "medium",
+        "probability": 52.8,
         "representative_assets": [
           {
             "code": "017670",
@@ -403,11 +482,11 @@
         "sector_name": "통신",
         "signals": [
           {
-            "detail": "가격강도 55점",
+            "detail": "가격강도 61점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 102%",
+            "detail": "10일 평균 대비 19%",
             "label": "거래대금 확장"
           },
           {
@@ -415,70 +494,12 @@
             "label": "수급 전환"
           }
         ],
-        "state": "early"
-      },
-      {
-        "ai_summary": "로보틱스 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 57.1,
-        "representative_assets": [
-          {
-            "code": "005380",
-            "name": "현대차",
-            "sectorIds": [
-              "auto",
-              "robotics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "307950",
-            "name": "현대오토에버",
-            "sectorIds": [
-              "auto",
-              "robotics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "108490",
-            "name": "로보티즈",
-            "sectorIds": [
-              "robotics"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "robotics",
-        "sector_name": "로보틱스",
-        "signals": [
-          {
-            "detail": "가격강도 84점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 236%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
+        "state": "neutral"
       },
       {
         "ai_summary": "자동차 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 52.0,
+        "probability": 48.5,
         "representative_assets": [
           {
             "code": "005380",
@@ -527,11 +548,11 @@
         "sector_name": "자동차",
         "signals": [
           {
-            "detail": "가격강도 81점",
+            "detail": "가격강도 83점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 184%",
+            "detail": "10일 평균 대비 160%",
             "label": "거래대금 확장"
           },
           {
@@ -539,70 +560,14 @@
             "label": "수급 전환"
           }
         ],
-        "state": "neutral"
-      },
-      {
-        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 47.4,
-        "representative_assets": [
-          {
-            "code": "010170",
-            "name": "대한광통신",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "115440",
-            "name": "우리넷",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "056360",
-            "name": "코위버",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "comm_equip",
-        "sector_name": "통신장비",
-        "signals": [
-          {
-            "detail": "가격강도 91점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 77%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
+        "state": "expanding"
       }
     ],
     "120": [
       {
         "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 80.1,
+        "probability": 79.3,
         "representative_assets": [
           {
             "code": "010170",
@@ -641,11 +606,11 @@
         "sector_name": "통신장비",
         "signals": [
           {
-            "detail": "가격강도 96점",
+            "detail": "가격강도 95점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 77%",
+            "detail": "120일 평균 대비 -25%",
             "label": "거래대금 확장"
           },
           {
@@ -658,7 +623,7 @@
       {
         "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 72.7,
+        "probability": 70.6,
         "representative_assets": [
           {
             "code": "000720",
@@ -705,11 +670,11 @@
         "sector_name": "건설",
         "signals": [
           {
-            "detail": "가격강도 92점",
+            "detail": "가격강도 90점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -45%",
+            "detail": "120일 평균 대비 -67%",
             "label": "거래대금 확장"
           },
           {
@@ -722,7 +687,7 @@
       {
         "ai_summary": "태양광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 67.2,
+        "probability": 65.7,
         "representative_assets": [
           {
             "code": "322000",
@@ -754,11 +719,67 @@
         "sector_name": "태양광",
         "signals": [
           {
-            "detail": "가격강도 90점",
+            "detail": "가격강도 89점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -7%",
+            "detail": "120일 평균 대비 -40%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 57.9,
+        "representative_assets": [
+          {
+            "code": "009150",
+            "name": "삼성전기",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "005070",
+            "name": "코스모신소재",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "001820",
+            "name": "삼화콘덴서",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "power_semi",
+        "sector_name": "전력반도체",
+        "signals": [
+          {
+            "detail": "가격강도 93점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "120일 평균 대비 43%",
             "label": "거래대금 확장"
           },
           {
@@ -771,7 +792,7 @@
       {
         "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 62.5,
+        "probability": 53.6,
         "representative_assets": [
           {
             "code": "001440",
@@ -814,7 +835,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 5%",
+            "detail": "120일 평균 대비 -37%",
             "label": "거래대금 확장"
           },
           {
@@ -823,125 +844,13 @@
           }
         ],
         "state": "overheated"
-      },
-      {
-        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 55.6,
-        "representative_assets": [
-          {
-            "code": "010120",
-            "name": "LS ELECTRIC",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "267260",
-            "name": "HD현대일렉트릭",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "298040",
-            "name": "효성중공업",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "power_equip",
-        "sector_name": "전력기기",
-        "signals": [
-          {
-            "detail": "가격강도 84점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 32%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
       }
     ],
     "15": [
       {
-        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 70.2,
-        "representative_assets": [
-          {
-            "code": "066570",
-            "name": "LG전자",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "021240",
-            "name": "코웨이",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "044340",
-            "name": "위닉스",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "home_appliance",
-        "sector_name": "가전",
-        "signals": [
-          {
-            "detail": "가격강도 82점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 476%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
         "ai_summary": "자동차 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 65.9,
+        "probability": 67.2,
         "representative_assets": [
           {
             "code": "005380",
@@ -990,11 +899,123 @@
         "sector_name": "자동차",
         "signals": [
           {
-            "detail": "가격강도 73점",
+            "detail": "가격강도 77점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 184%",
+            "detail": "15일 평균 대비 160%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 62.3,
+        "representative_assets": [
+          {
+            "code": "066570",
+            "name": "LG전자",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "021240",
+            "name": "코웨이",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "044340",
+            "name": "위닉스",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "home_appliance",
+        "sector_name": "가전",
+        "signals": [
+          {
+            "detail": "가격강도 84점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "15일 평균 대비 134%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 56.8,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 79점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "15일 평균 대비 121%",
             "label": "거래대금 확장"
           },
           {
@@ -1007,7 +1028,7 @@
       {
         "ai_summary": "로보틱스 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 61.5,
+        "probability": 50.0,
         "representative_assets": [
           {
             "code": "005380",
@@ -1048,11 +1069,11 @@
         "sector_name": "로보틱스",
         "signals": [
           {
-            "detail": "가격강도 77점",
+            "detail": "가격강도 82점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 236%",
+            "detail": "15일 평균 대비 166%",
             "label": "거래대금 확장"
           },
           {
@@ -1063,35 +1084,10 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "의료기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 51.8,
-        "representative_assets": [
-          {
-            "code": "041830",
-            "name": "인바디",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "214150",
-            "name": "클래시스",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "100120",
-            "name": "뷰웍스",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          }
-        ],
+        "ai_summary": "기타 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "low",
+        "probability": 41,
+        "representative_assets": [],
         "risks": [
           {
             "label": "단기 변동성 확대"
@@ -1100,63 +1096,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "medical_device",
-        "sector_name": "의료기기",
+        "sector_id": "etc",
+        "sector_name": "기타",
         "signals": [
           {
-            "detail": "가격강도 56점",
+            "detail": "가격강도 50점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 19%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
-      },
-      {
-        "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 45.2,
-        "representative_assets": [
-          {
-            "code": "030000",
-            "name": "제일기획",
-            "sectorIds": [
-              "media"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "214320",
-            "name": "이노션",
-            "sectorIds": [
-              "media"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "media",
-        "sector_name": "미디어광고",
-        "signals": [
-          {
-            "detail": "가격강도 55점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 80%",
+            "detail": "15일 평균 대비 0%",
             "label": "거래대금 확장"
           },
           {
@@ -1171,7 +1119,7 @@
       {
         "ai_summary": "자동차 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 70.0,
+        "probability": 69.8,
         "representative_assets": [
           {
             "code": "005380",
@@ -1220,11 +1168,11 @@
         "sector_name": "자동차",
         "signals": [
           {
-            "detail": "가격강도 70점",
+            "detail": "가격강도 76점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 184%",
+            "detail": "20일 평균 대비 160%",
             "label": "거래대금 확장"
           },
           {
@@ -1237,7 +1185,7 @@
       {
         "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 65.7,
+        "probability": 65.0,
         "representative_assets": [
           {
             "code": "066570",
@@ -1276,11 +1224,67 @@
         "sector_name": "가전",
         "signals": [
           {
-            "detail": "가격강도 81점",
+            "detail": "가격강도 80점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 476%",
+            "detail": "20일 평균 대비 134%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 60.8,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 80점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 121%",
             "label": "거래대금 확장"
           },
           {
@@ -1293,7 +1297,7 @@
       {
         "ai_summary": "로보틱스 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 57.8,
+        "probability": 52.7,
         "representative_assets": [
           {
             "code": "005380",
@@ -1334,11 +1338,11 @@
         "sector_name": "로보틱스",
         "signals": [
           {
-            "detail": "가격강도 75점",
+            "detail": "가격강도 82점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 236%",
+            "detail": "20일 평균 대비 166%",
             "label": "거래대금 확장"
           },
           {
@@ -1349,91 +1353,10 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 50.8,
-        "representative_assets": [
-          {
-            "code": "010170",
-            "name": "대한광통신",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "115440",
-            "name": "우리넷",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "056360",
-            "name": "코위버",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "comm_equip",
-        "sector_name": "통신장비",
-        "signals": [
-          {
-            "detail": "가격강도 76점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 77%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "의료기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "기타 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "low",
-        "probability": 42.4,
-        "representative_assets": [
-          {
-            "code": "041830",
-            "name": "인바디",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "214150",
-            "name": "클래시스",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "100120",
-            "name": "뷰웍스",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          }
-        ],
+        "probability": 41,
+        "representative_assets": [],
         "risks": [
           {
             "label": "단기 변동성 확대"
@@ -1442,15 +1365,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "medical_device",
-        "sector_name": "의료기기",
+        "sector_id": "etc",
+        "sector_name": "기타",
         "signals": [
           {
-            "detail": "가격강도 59점",
+            "detail": "가격강도 50점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 19%",
+            "detail": "20일 평균 대비 0%",
             "label": "거래대금 확장"
           },
           {
@@ -1463,121 +1386,9 @@
     ],
     "30": [
       {
-        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 69.9,
-        "representative_assets": [
-          {
-            "code": "066570",
-            "name": "LG전자",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "021240",
-            "name": "코웨이",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "044340",
-            "name": "위닉스",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "home_appliance",
-        "sector_name": "가전",
-        "signals": [
-          {
-            "detail": "가격강도 81점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "30일 평균 대비 476%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 65.5,
-        "representative_assets": [
-          {
-            "code": "010120",
-            "name": "LS ELECTRIC",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "267260",
-            "name": "HD현대일렉트릭",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "298040",
-            "name": "효성중공업",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "power_equip",
-        "sector_name": "전력기기",
-        "signals": [
-          {
-            "detail": "가격강도 91점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "30일 평균 대비 32%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
         "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 60.8,
+        "confidence": "high",
+        "probability": 70.0,
         "representative_assets": [
           {
             "code": "001440",
@@ -1620,7 +1431,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 5%",
+            "detail": "30일 평균 대비 -37%",
             "label": "거래대금 확장"
           },
           {
@@ -1631,9 +1442,65 @@
         "state": "overheated"
       },
       {
+        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 64.9,
+        "representative_assets": [
+          {
+            "code": "066570",
+            "name": "LG전자",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "021240",
+            "name": "코웨이",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "044340",
+            "name": "위닉스",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "home_appliance",
+        "sector_name": "가전",
+        "signals": [
+          {
+            "detail": "가격강도 79점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 134%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
         "ai_summary": "자동차 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 55.1,
+        "probability": 60.8,
         "representative_assets": [
           {
             "code": "005380",
@@ -1682,11 +1549,11 @@
         "sector_name": "자동차",
         "signals": [
           {
-            "detail": "가격강도 65점",
+            "detail": "가격강도 68점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 184%",
+            "detail": "30일 평균 대비 160%",
             "label": "거래대금 확장"
           },
           {
@@ -1694,12 +1561,68 @@
             "label": "수급 전환"
           }
         ],
-        "state": "neutral"
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 50.3,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 74점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 121%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
       },
       {
         "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 50.9,
+        "probability": 46.0,
         "representative_assets": [
           {
             "code": "010170",
@@ -1738,11 +1661,11 @@
         "sector_name": "통신장비",
         "signals": [
           {
-            "detail": "가격강도 87점",
+            "detail": "가격강도 85점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 77%",
+            "detail": "30일 평균 대비 -25%",
             "label": "거래대금 확장"
           },
           {
@@ -1757,7 +1680,7 @@
       {
         "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 72.3,
+        "probability": 73.6,
         "representative_assets": [
           {
             "code": "066570",
@@ -1796,11 +1719,11 @@
         "sector_name": "가전",
         "signals": [
           {
-            "detail": "가격강도 90점",
+            "detail": "가격강도 88점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 476%",
+            "detail": "5일 평균 대비 134%",
             "label": "거래대금 확장"
           },
           {
@@ -1811,9 +1734,57 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "통신 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "디스플레이 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 67.3,
+        "probability": 66.8,
+        "representative_assets": [
+          {
+            "code": "034220",
+            "name": "LG디스플레이",
+            "sectorIds": [
+              "display"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "213420",
+            "name": "덕산네오룩스",
+            "sectorIds": [
+              "display"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "display",
+        "sector_name": "디스플레이",
+        "signals": [
+          {
+            "detail": "가격강도 63점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 305%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "neutral"
+      },
+      {
+        "ai_summary": "통신 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 59.5,
         "representative_assets": [
           {
             "code": "017670",
@@ -1861,11 +1832,67 @@
         "sector_name": "통신",
         "signals": [
           {
-            "detail": "가격강도 71점",
+            "detail": "가격강도 79점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 102%",
+            "detail": "5일 평균 대비 19%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 53.9,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 89점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 121%",
             "label": "거래대금 확장"
           },
           {
@@ -1878,7 +1905,7 @@
       {
         "ai_summary": "태양광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 59.2,
+        "probability": 47.5,
         "representative_assets": [
           {
             "code": "322000",
@@ -1910,11 +1937,11 @@
         "sector_name": "태양광",
         "signals": [
           {
-            "detail": "가격강도 88점",
+            "detail": "가격강도 93점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 -7%",
+            "detail": "5일 평균 대비 -40%",
             "label": "거래대금 확장"
           },
           {
@@ -1923,239 +1950,13 @@
           }
         ],
         "state": "expanding"
-      },
-      {
-        "ai_summary": "로보틱스 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 51.5,
-        "representative_assets": [
-          {
-            "code": "005380",
-            "name": "현대차",
-            "sectorIds": [
-              "auto",
-              "robotics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "307950",
-            "name": "현대오토에버",
-            "sectorIds": [
-              "auto",
-              "robotics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "108490",
-            "name": "로보티즈",
-            "sectorIds": [
-              "robotics"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "robotics",
-        "sector_name": "로보틱스",
-        "signals": [
-          {
-            "detail": "가격강도 86점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 236%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "의료기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 45.0,
-        "representative_assets": [
-          {
-            "code": "041830",
-            "name": "인바디",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "214150",
-            "name": "클래시스",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "100120",
-            "name": "뷰웍스",
-            "sectorIds": [
-              "medical_device"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "medical_device",
-        "sector_name": "의료기기",
-        "signals": [
-          {
-            "detail": "가격강도 82점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 19%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
       }
     ],
     "60": [
       {
-        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 76.2,
-        "representative_assets": [
-          {
-            "code": "010120",
-            "name": "LS ELECTRIC",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "267260",
-            "name": "HD현대일렉트릭",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "298040",
-            "name": "효성중공업",
-            "sectorIds": [
-              "power_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "power_equip",
-        "sector_name": "전력기기",
-        "signals": [
-          {
-            "detail": "가격강도 90점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 32%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 69.2,
-        "representative_assets": [
-          {
-            "code": "010170",
-            "name": "대한광통신",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "115440",
-            "name": "우리넷",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "056360",
-            "name": "코위버",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "comm_equip",
-        "sector_name": "통신장비",
-        "signals": [
-          {
-            "detail": "가격강도 97점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 77%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
         "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 64.7,
+        "confidence": "high",
+        "probability": 71.3,
         "representative_assets": [
           {
             "code": "001440",
@@ -2194,11 +1995,11 @@
         "sector_name": "케이블",
         "signals": [
           {
-            "detail": "가격강도 99점",
+            "detail": "가격강도 98점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 5%",
+            "detail": "60일 평균 대비 -37%",
             "label": "거래대금 확장"
           },
           {
@@ -2210,8 +2011,8 @@
       },
       {
         "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 55.4,
+        "confidence": "high",
+        "probability": 67.3,
         "representative_assets": [
           {
             "code": "009150",
@@ -2254,7 +2055,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 156%",
+            "detail": "60일 평균 대비 43%",
             "label": "거래대금 확장"
           },
           {
@@ -2265,31 +2066,24 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "태양광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 48.5,
+        "probability": 61.6,
         "representative_assets": [
           {
-            "code": "066570",
-            "name": "LG전자",
+            "code": "322000",
+            "name": "HD현대에너지솔루션",
             "sectorIds": [
-              "home_appliance"
+              "ess",
+              "solar"
             ],
             "type": "stock"
           },
           {
-            "code": "021240",
-            "name": "코웨이",
+            "code": "010060",
+            "name": "OCI홀딩스",
             "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "044340",
-            "name": "위닉스",
-            "sectorIds": [
-              "home_appliance"
+              "solar"
             ],
             "type": "stock"
           }
@@ -2302,15 +2096,127 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "home_appliance",
-        "sector_name": "가전",
+        "sector_id": "solar",
+        "sector_name": "태양광",
         "signals": [
           {
-            "detail": "가격강도 74점",
+            "detail": "가격강도 91점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 476%",
+            "detail": "60일 평균 대비 -40%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 53.9,
+        "representative_assets": [
+          {
+            "code": "010170",
+            "name": "대한광통신",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "115440",
+            "name": "우리넷",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "056360",
+            "name": "코위버",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "comm_equip",
+        "sector_name": "통신장비",
+        "signals": [
+          {
+            "detail": "가격강도 97점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 -25%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 49.5,
+        "representative_assets": [
+          {
+            "code": "010120",
+            "name": "LS ELECTRIC",
+            "sectorIds": [
+              "power_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "267260",
+            "name": "HD현대일렉트릭",
+            "sectorIds": [
+              "power_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "298040",
+            "name": "효성중공업",
+            "sectorIds": [
+              "power_equip"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "power_equip",
+        "sector_name": "전력기기",
+        "signals": [
+          {
+            "detail": "가격강도 88점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 -25%",
             "label": "거래대금 확장"
           },
           {
