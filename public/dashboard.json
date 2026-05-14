@@ -3,38 +3,18 @@
     "지수 일별 변동과 섹터 자금유입을 KRX EOD 데이터 기준으로 산출했습니다.",
     "섹터 분류는 사용자 정의 17개 그룹이며, 점수는 종목별 가격강도/거래대금/RSI 를 합산한 0~100 척도입니다."
   ],
-  "as_of": "2026-05-13T15:30:00+09:00",
+  "as_of": "2026-05-14T15:30:00+09:00",
   "foreign_institution_shift": [
     {
-      "change1d": 3.81,
-      "rs5d": 15.88,
-      "scores": {
-        "breadth": 66.67,
-        "catalyst": 25.0,
-        "fatigue": 38.76,
-        "flow": 92.57,
-        "rs": 81.7,
-        "total": 57.67
-      },
-      "sector": {
-        "id": "robotics",
-        "name": "로보틱스",
-        "shortName": "로보틱스"
-      },
-      "state": "expanding",
-      "tradingValue": 5730587180030,
-      "tradingValueChangePct": 165.59
-    },
-    {
-      "change1d": 4.46,
-      "rs5d": 12.02,
+      "change1d": 0.43,
+      "rs5d": 10.81,
       "scores": {
         "breadth": 68.75,
-        "catalyst": 68.75,
-        "fatigue": 24.97,
-        "flow": 92.04,
-        "rs": 76.39,
-        "total": 62.81
+        "catalyst": 31.25,
+        "fatigue": 28.19,
+        "flow": 91.93,
+        "rs": 75.0,
+        "total": 58.13
       },
       "sector": {
         "id": "auto",
@@ -42,19 +22,39 @@
         "shortName": "자동차"
       },
       "state": "expanding",
-      "tradingValue": 5680446659810,
-      "tradingValueChangePct": 160.3
+      "tradingValue": 3510400879320,
+      "tradingValueChangePct": 51.4
     },
     {
-      "change1d": 1.57,
-      "rs5d": 10.98,
+      "change1d": -1.07,
+      "rs5d": 15.67,
       "scores": {
-        "breadth": 75.0,
-        "catalyst": 75.0,
-        "fatigue": 38.3,
-        "flow": 84.62,
-        "rs": 80.37,
-        "total": 62.02
+        "breadth": 83.33,
+        "catalyst": 8.33,
+        "fatigue": 37.43,
+        "flow": 91.93,
+        "rs": 78.39,
+        "total": 58.38
+      },
+      "sector": {
+        "id": "robotics",
+        "name": "로보틱스",
+        "shortName": "로보틱스"
+      },
+      "state": "expanding",
+      "tradingValue": 3536784966860,
+      "tradingValueChangePct": 54.98
+    },
+    {
+      "change1d": 8.29,
+      "rs5d": 21.74,
+      "scores": {
+        "breadth": 100.0,
+        "catalyst": 50.0,
+        "fatigue": 52.74,
+        "flow": 89.06,
+        "rs": 85.68,
+        "total": 65.06
       },
       "sector": {
         "id": "home_appliance",
@@ -62,19 +62,19 @@
         "shortName": "가전"
       },
       "state": "expanding",
-      "tradingValue": 912099996920,
-      "tradingValueChangePct": 133.98
+      "tradingValue": 1050733721000,
+      "tradingValueChangePct": 140.24
     },
     {
-      "change1d": -2.59,
-      "rs5d": 2.31,
+      "change1d": -0.48,
+      "rs5d": 4.87,
       "scores": {
-        "breadth": 33.33,
-        "catalyst": 33.33,
-        "fatigue": 0.0,
-        "flow": 84.08,
-        "rs": 45.89,
-        "total": 44.79
+        "breadth": 66.67,
+        "catalyst": 22.22,
+        "fatigue": 1.71,
+        "flow": 86.2,
+        "rs": 43.49,
+        "total": 49.89
       },
       "sector": {
         "id": "medical_device",
@@ -82,19 +82,19 @@
         "shortName": "의료기기"
       },
       "state": "early",
-      "tradingValue": 158910106800,
-      "tradingValueChangePct": 35.04
+      "tradingValue": 126430579160,
+      "tradingValueChangePct": 6.88
     },
     {
-      "change1d": 5.34,
-      "rs5d": 11.29,
+      "change1d": 8.0,
+      "rs5d": 15.9,
       "scores": {
-        "breadth": 85.71,
-        "catalyst": 71.43,
-        "fatigue": 49.21,
-        "flow": 83.29,
-        "rs": 80.37,
-        "total": 61.84
+        "breadth": 100.0,
+        "catalyst": 57.14,
+        "fatigue": 65.54,
+        "flow": 85.42,
+        "rs": 84.11,
+        "total": 62.47
       },
       "sector": {
         "id": "department",
@@ -102,48 +102,28 @@
         "shortName": "백화점"
       },
       "state": "expanding",
-      "tradingValue": 221222340400,
-      "tradingValueChangePct": 120.54
+      "tradingValue": 229694032300,
+      "tradingValueChangePct": 111.63
     }
   ],
   "market_session": "closed",
   "market_summary": {
-    "kosdaq_change_pct": -0.2,
-    "kosdaq_value": 1176.93,
-    "kospi_change_pct": 2.63,
-    "kospi_value": 7844.01
+    "kosdaq_change_pct": 1.2,
+    "kosdaq_value": 1191.09,
+    "kospi_change_pct": 1.75,
+    "kospi_value": 7981.41
   },
   "money_flow_sectors": [
     {
-      "change1d": 1.15,
-      "rs5d": -3.12,
+      "change1d": 4.57,
+      "rs5d": 6.68,
       "scores": {
-        "breadth": 20.0,
-        "catalyst": 20.0,
-        "fatigue": 0.0,
-        "flow": 33.42,
-        "rs": 37.93,
-        "total": 25.73
-      },
-      "sector": {
-        "id": "cement",
-        "name": "시멘트",
-        "shortName": "시멘트"
-      },
-      "state": "neutral",
-      "tradingValue": 436247422310,
-      "tradingValueChangePct": 457.49
-    },
-    {
-      "change1d": 4.78,
-      "rs5d": -0.81,
-      "scores": {
-        "breadth": 33.33,
+        "breadth": 66.67,
         "catalyst": 33.33,
-        "fatigue": 0.0,
-        "flow": 62.33,
-        "rs": 54.91,
-        "total": 42.06
+        "fatigue": 4.9,
+        "flow": 72.66,
+        "rs": 61.98,
+        "total": 52.69
       },
       "sector": {
         "id": "display",
@@ -151,59 +131,59 @@
         "shortName": "디스플레이"
       },
       "state": "neutral",
-      "tradingValue": 545737107150,
-      "tradingValueChangePct": 305.13
+      "tradingValue": 474091244180,
+      "tradingValueChangePct": 206.49
     },
     {
-      "change1d": 3.81,
-      "rs5d": 15.88,
-      "scores": {
-        "breadth": 66.67,
-        "catalyst": 25.0,
-        "fatigue": 38.76,
-        "flow": 92.57,
-        "rs": 81.7,
-        "total": 57.67
-      },
-      "sector": {
-        "id": "robotics",
-        "name": "로보틱스",
-        "shortName": "로보틱스"
-      },
-      "state": "expanding",
-      "tradingValue": 5730587180030,
-      "tradingValueChangePct": 165.59
-    },
-    {
-      "change1d": 4.46,
-      "rs5d": 12.02,
-      "scores": {
-        "breadth": 68.75,
-        "catalyst": 68.75,
-        "fatigue": 24.97,
-        "flow": 92.04,
-        "rs": 76.39,
-        "total": 62.81
-      },
-      "sector": {
-        "id": "auto",
-        "name": "자동차",
-        "shortName": "자동차"
-      },
-      "state": "expanding",
-      "tradingValue": 5680446659810,
-      "tradingValueChangePct": 160.3
-    },
-    {
-      "change1d": 1.57,
-      "rs5d": 10.98,
+      "change1d": 4.14,
+      "rs5d": 3.72,
       "scores": {
         "breadth": 75.0,
-        "catalyst": 75.0,
-        "fatigue": 38.3,
-        "flow": 84.62,
-        "rs": 80.37,
-        "total": 62.02
+        "catalyst": 37.5,
+        "fatigue": 0.0,
+        "flow": 72.4,
+        "rs": 57.29,
+        "total": 54.04
+      },
+      "sector": {
+        "id": "ai",
+        "name": "AI",
+        "shortName": "AI"
+      },
+      "state": "neutral",
+      "tradingValue": 1568808629650,
+      "tradingValueChangePct": 173.06
+    },
+    {
+      "change1d": 7.06,
+      "rs5d": 4.26,
+      "scores": {
+        "breadth": 88.89,
+        "catalyst": 77.78,
+        "fatigue": 10.2,
+        "flow": 77.08,
+        "rs": 44.79,
+        "total": 56.73
+      },
+      "sector": {
+        "id": "food",
+        "name": "식음료",
+        "shortName": "식음료"
+      },
+      "state": "early",
+      "tradingValue": 410481420100,
+      "tradingValueChangePct": 171.53
+    },
+    {
+      "change1d": 8.29,
+      "rs5d": 21.74,
+      "scores": {
+        "breadth": 100.0,
+        "catalyst": 50.0,
+        "fatigue": 52.74,
+        "flow": 89.06,
+        "rs": 85.68,
+        "total": 65.06
       },
       "sector": {
         "id": "home_appliance",
@@ -211,63 +191,19 @@
         "shortName": "가전"
       },
       "state": "expanding",
-      "tradingValue": 912099996920,
-      "tradingValueChangePct": 133.98
-    }
-  ],
-  "source": "pykrx",
-  "stale": false,
-  "top_sectors": [
-    {
-      "change1d": 4.46,
-      "rs5d": 12.02,
-      "scores": {
-        "breadth": 68.75,
-        "catalyst": 68.75,
-        "fatigue": 24.97,
-        "flow": 92.04,
-        "rs": 76.39,
-        "total": 62.81
-      },
-      "sector": {
-        "id": "auto",
-        "name": "자동차",
-        "shortName": "자동차"
-      },
-      "state": "expanding",
-      "tradingValue": 5680446659810,
-      "tradingValueChangePct": 160.3
+      "tradingValue": 1050733721000,
+      "tradingValueChangePct": 140.24
     },
     {
-      "change1d": 1.57,
-      "rs5d": 10.98,
+      "change1d": 8.0,
+      "rs5d": 15.9,
       "scores": {
-        "breadth": 75.0,
-        "catalyst": 75.0,
-        "fatigue": 38.3,
-        "flow": 84.62,
-        "rs": 80.37,
-        "total": 62.02
-      },
-      "sector": {
-        "id": "home_appliance",
-        "name": "가전",
-        "shortName": "가전"
-      },
-      "state": "expanding",
-      "tradingValue": 912099996920,
-      "tradingValueChangePct": 133.98
-    },
-    {
-      "change1d": 5.34,
-      "rs5d": 11.29,
-      "scores": {
-        "breadth": 85.71,
-        "catalyst": 71.43,
-        "fatigue": 49.21,
-        "flow": 83.29,
-        "rs": 80.37,
-        "total": 61.84
+        "breadth": 100.0,
+        "catalyst": 57.14,
+        "fatigue": 65.54,
+        "flow": 85.42,
+        "rs": 84.11,
+        "total": 62.47
       },
       "sector": {
         "id": "department",
@@ -275,19 +211,63 @@
         "shortName": "백화점"
       },
       "state": "expanding",
-      "tradingValue": 221222340400,
-      "tradingValueChangePct": 120.54
+      "tradingValue": 229694032300,
+      "tradingValueChangePct": 111.63
+    }
+  ],
+  "source": "pykrx",
+  "stale": false,
+  "top_sectors": [
+    {
+      "change1d": 8.29,
+      "rs5d": 21.74,
+      "scores": {
+        "breadth": 100.0,
+        "catalyst": 50.0,
+        "fatigue": 52.74,
+        "flow": 89.06,
+        "rs": 85.68,
+        "total": 65.06
+      },
+      "sector": {
+        "id": "home_appliance",
+        "name": "가전",
+        "shortName": "가전"
+      },
+      "state": "expanding",
+      "tradingValue": 1050733721000,
+      "tradingValueChangePct": 140.24
     },
     {
-      "change1d": 3.81,
-      "rs5d": 15.88,
+      "change1d": 8.0,
+      "rs5d": 15.9,
       "scores": {
-        "breadth": 66.67,
-        "catalyst": 25.0,
-        "fatigue": 38.76,
-        "flow": 92.57,
-        "rs": 81.7,
-        "total": 57.67
+        "breadth": 100.0,
+        "catalyst": 57.14,
+        "fatigue": 65.54,
+        "flow": 85.42,
+        "rs": 84.11,
+        "total": 62.47
+      },
+      "sector": {
+        "id": "department",
+        "name": "백화점",
+        "shortName": "백화점"
+      },
+      "state": "expanding",
+      "tradingValue": 229694032300,
+      "tradingValueChangePct": 111.63
+    },
+    {
+      "change1d": -1.07,
+      "rs5d": 15.67,
+      "scores": {
+        "breadth": 83.33,
+        "catalyst": 8.33,
+        "fatigue": 37.43,
+        "flow": 91.93,
+        "rs": 78.39,
+        "total": 58.38
       },
       "sector": {
         "id": "robotics",
@@ -295,41 +275,61 @@
         "shortName": "로보틱스"
       },
       "state": "expanding",
-      "tradingValue": 5730587180030,
-      "tradingValueChangePct": 165.59
+      "tradingValue": 3536784966860,
+      "tradingValueChangePct": 54.98
     },
     {
-      "change1d": 0.0,
-      "rs5d": 0.0,
+      "change1d": 0.43,
+      "rs5d": 10.81,
       "scores": {
-        "breadth": 50,
-        "catalyst": 50,
-        "fatigue": 50,
-        "flow": 50,
-        "rs": 50,
-        "total": 50
+        "breadth": 68.75,
+        "catalyst": 31.25,
+        "fatigue": 28.19,
+        "flow": 91.93,
+        "rs": 75.0,
+        "total": 58.13
       },
       "sector": {
-        "id": "etc",
-        "name": "기타",
-        "shortName": "기타"
+        "id": "auto",
+        "name": "자동차",
+        "shortName": "자동차"
       },
-      "state": "neutral",
-      "tradingValue": 0,
-      "tradingValueChangePct": 0.0
+      "state": "expanding",
+      "tradingValue": 3510400879320,
+      "tradingValueChangePct": 51.4
+    },
+    {
+      "change1d": 7.06,
+      "rs5d": 4.26,
+      "scores": {
+        "breadth": 88.89,
+        "catalyst": 77.78,
+        "fatigue": 10.2,
+        "flow": 77.08,
+        "rs": 44.79,
+        "total": 56.73
+      },
+      "sector": {
+        "id": "food",
+        "name": "식음료",
+        "shortName": "식음료"
+      },
+      "state": "early",
+      "tradingValue": 410481420100,
+      "tradingValueChangePct": 171.53
     }
   ],
   "weak_sectors": [
     {
-      "change1d": -1.21,
-      "rs5d": -5.48,
+      "change1d": 2.07,
+      "rs5d": -3.02,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 7.43,
-        "rs": 11.67,
-        "total": 5.36
+        "flow": 7.29,
+        "rs": 12.5,
+        "total": 5.57
       },
       "sector": {
         "id": "paper",
@@ -337,39 +337,19 @@
         "shortName": "종이"
       },
       "state": "watch",
-      "tradingValue": 2626400397,
-      "tradingValueChangePct": -65.96
+      "tradingValue": 1102367283,
+      "tradingValueChangePct": -85.54
     },
     {
-      "change1d": -0.88,
-      "rs5d": -10.89,
+      "change1d": 2.63,
+      "rs5d": -5.46,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 31.83,
-        "rs": 13.26,
-        "total": 11.94
-      },
-      "sector": {
-        "id": "defense",
-        "name": "방산",
-        "shortName": "방산"
-      },
-      "state": "watch",
-      "tradingValue": 646343386300,
-      "tradingValueChangePct": -43.17
-    },
-    {
-      "change1d": -3.74,
-      "rs5d": -7.14,
-      "scores": {
-        "breadth": 0.0,
-        "catalyst": 20.0,
-        "fatigue": 0.0,
-        "flow": 34.75,
-        "rs": 7.43,
-        "total": 12.92
+        "flow": 28.39,
+        "rs": 7.29,
+        "total": 9.28
       },
       "sector": {
         "id": "real_estate",
@@ -377,39 +357,39 @@
         "shortName": "리츠"
       },
       "state": "watch",
-      "tradingValue": 11028283642,
-      "tradingValueChangePct": -6.84
+      "tradingValue": 10357156744,
+      "tradingValueChangePct": -11.9
     },
     {
-      "change1d": -0.6,
-      "rs5d": -4.14,
+      "change1d": 1.1,
+      "rs5d": -2.12,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 8.75,
-        "rs": 41.11,
-        "total": 14.52
+        "flow": 11.2,
+        "rs": 34.11,
+        "total": 13.03
       },
       "sector": {
         "id": "environment",
         "name": "환경",
         "shortName": "환경"
       },
-      "state": "neutral",
-      "tradingValue": 982230800,
-      "tradingValueChangePct": -36.17
+      "state": "watch",
+      "tradingValue": 1258060910,
+      "tradingValueChangePct": -16.55
     },
     {
-      "change1d": -1.28,
-      "rs5d": -8.01,
+      "change1d": -1.17,
+      "rs5d": -5.3,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 40.32,
-        "rs": 16.71,
-        "total": 15.09
+        "flow": 43.49,
+        "rs": 15.62,
+        "total": 15.56
       },
       "sector": {
         "id": "oil",
@@ -417,8 +397,28 @@
         "shortName": "정유"
       },
       "state": "neutral",
-      "tradingValue": 191875882700,
-      "tradingValueChangePct": -17.57
+      "tradingValue": 188788874900,
+      "tradingValueChangePct": -19.88
+    },
+    {
+      "change1d": 1.43,
+      "rs5d": -1.11,
+      "scores": {
+        "breadth": 20.0,
+        "catalyst": 0.0,
+        "fatigue": 0.0,
+        "flow": 17.19,
+        "rs": 31.51,
+        "total": 17.75
+      },
+      "sector": {
+        "id": "security",
+        "name": "보안",
+        "shortName": "보안"
+      },
+      "state": "watch",
+      "tradingValue": 57294493165,
+      "tradingValueChangePct": -39.96
     }
   ]
 }
