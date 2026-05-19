@@ -18,7 +18,7 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": 0.24,
+              "correlation": 0.245,
               "hit_rate": 0.36,
               "n_signals": 25,
               "sector_id": "shipbuilding",
@@ -26,7 +26,7 @@
             }
           ],
           "lag_5d": [],
-          "n_observations": 115
+          "n_observations": 116
         },
         "15": {
           "co_movement": [],
@@ -39,22 +39,23 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": 0.546,
+              "correlation": 0.568,
               "hit_rate": 0.75,
               "n_signals": 4,
               "sector_id": "oil",
               "sector_name": "정유"
-            },
-            {
-              "best_lag": 10,
-              "correlation": 0.533,
-              "hit_rate": 0.75,
-              "n_signals": 4,
-              "sector_id": "construction",
-              "sector_name": "건설"
             }
           ],
-          "lag_5d": [],
+          "lag_5d": [
+            {
+              "best_lag": 5,
+              "correlation": 0.594,
+              "hit_rate": 0.4,
+              "n_signals": 5,
+              "sector_id": "memory_semi",
+              "sector_name": "메모리반도체"
+            }
+          ],
           "n_observations": 30
         },
         "5": {
@@ -69,19 +70,27 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.44,
-              "hit_rate": 0.417,
-              "n_signals": 12,
+              "correlation": 0.419,
+              "hit_rate": 0.385,
+              "n_signals": 13,
               "sector_id": "cosmetics",
               "sector_name": "화장품"
             },
             {
               "best_lag": 5,
-              "correlation": 0.377,
-              "hit_rate": 0.417,
-              "n_signals": 12,
-              "sector_id": "trading",
-              "sector_name": "종합상사"
+              "correlation": 0.366,
+              "hit_rate": 0.538,
+              "n_signals": 13,
+              "sector_id": "entertainment",
+              "sector_name": "엔터테인먼트"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.354,
+              "hit_rate": 0.0,
+              "n_signals": 13,
+              "sector_id": "oil",
+              "sector_name": "정유"
             }
           ],
           "n_observations": 60
@@ -89,124 +98,7 @@
       },
       "sector_id": "media",
       "sector_name": "미디어광고",
-      "today_score": 61.39
-    },
-    {
-      "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
-      "macro": "general",
-      "macro_name": "일반산업",
-      "meso": "gen_industrial",
-      "meso_name": "기타 산업·서비스",
-      "predictions_by_window": {
-        "10": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 10
-        },
-        "120": {
-          "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": -0.197,
-              "hit_rate": 0.185,
-              "n_signals": 27,
-              "sector_id": "cement",
-              "sector_name": "시멘트"
-            }
-          ],
-          "lag_5d": [],
-          "n_observations": 115
-        },
-        "15": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 15
-        },
-        "30": {
-          "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": 0.688,
-              "hit_rate": 0.4,
-              "n_signals": 5,
-              "sector_id": "agri_livestock",
-              "sector_name": "농축산"
-            },
-            {
-              "best_lag": 10,
-              "correlation": 0.542,
-              "hit_rate": 0.2,
-              "n_signals": 5,
-              "sector_id": "food",
-              "sector_name": "식음료"
-            }
-          ],
-          "lag_5d": [
-            {
-              "best_lag": 5,
-              "correlation": 0.527,
-              "hit_rate": 0.333,
-              "n_signals": 6,
-              "sector_id": "cement",
-              "sector_name": "시멘트"
-            },
-            {
-              "best_lag": 5,
-              "correlation": -0.538,
-              "hit_rate": 0.0,
-              "n_signals": 6,
-              "sector_id": "bio",
-              "sector_name": "바이오"
-            }
-          ],
-          "n_observations": 30
-        },
-        "5": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 5
-        },
-        "60": {
-          "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": 0.369,
-              "hit_rate": 0.462,
-              "n_signals": 13,
-              "sector_id": "nuclear",
-              "sector_name": "원전"
-            },
-            {
-              "best_lag": 10,
-              "correlation": -0.347,
-              "hit_rate": 0.0,
-              "n_signals": 13,
-              "sector_id": "cement",
-              "sector_name": "시멘트"
-            }
-          ],
-          "lag_5d": [
-            {
-              "best_lag": 5,
-              "correlation": 0.348,
-              "hit_rate": 0.429,
-              "n_signals": 14,
-              "sector_id": "cosmetics",
-              "sector_name": "화장품"
-            }
-          ],
-          "n_observations": 60
-        }
-      },
-      "sector_id": "home_appliance",
-      "sector_name": "가전",
-      "today_score": 59.71
+      "today_score": 63.24
     },
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
@@ -226,7 +118,7 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.26,
+              "correlation": -0.263,
               "hit_rate": 0.154,
               "n_signals": 26,
               "sector_id": "food",
@@ -234,7 +126,7 @@
             }
           ],
           "lag_5d": [],
-          "n_observations": 115
+          "n_observations": 116
         },
         "15": {
           "co_movement": [],
@@ -247,7 +139,23 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.64,
+              "correlation": 0.54,
+              "hit_rate": 0.6,
+              "n_signals": 5,
+              "sector_id": "lng",
+              "sector_name": "LNG에너지"
+            },
+            {
+              "best_lag": 10,
+              "correlation": -0.567,
+              "hit_rate": 0.0,
+              "n_signals": 5,
+              "sector_id": "cosmetics",
+              "sector_name": "화장품"
+            },
+            {
+              "best_lag": 10,
+              "correlation": -0.623,
               "hit_rate": 0.0,
               "n_signals": 5,
               "sector_id": "display",
@@ -265,11 +173,20 @@
         },
         "60": {
           "co_movement": [],
-          "lag_10d": [],
+          "lag_10d": [
+            {
+              "best_lag": 10,
+              "correlation": -0.386,
+              "hit_rate": 0.077,
+              "n_signals": 13,
+              "sector_id": "cosmetics",
+              "sector_name": "화장품"
+            }
+          ],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.343,
+              "correlation": 0.382,
               "hit_rate": 0.5,
               "n_signals": 14,
               "sector_id": "auto",
@@ -281,13 +198,88 @@
       },
       "sector_id": "department",
       "sector_name": "백화점",
-      "today_score": 56.22
+      "today_score": 57.5
+    },
+    {
+      "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
+      "macro": "k_cmr",
+      "macro_name": "K밸류업",
+      "meso": "cmr_food",
+      "meso_name": "F&B·식음료",
+      "predictions_by_window": {
+        "10": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 10
+        },
+        "120": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [
+            {
+              "best_lag": 5,
+              "correlation": -0.239,
+              "hit_rate": 0.148,
+              "n_signals": 27,
+              "sector_id": "wind",
+              "sector_name": "풍력"
+            }
+          ],
+          "n_observations": 116
+        },
+        "15": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 15
+        },
+        "30": {
+          "co_movement": [],
+          "lag_10d": [
+            {
+              "best_lag": 10,
+              "correlation": -0.577,
+              "hit_rate": 0.0,
+              "n_signals": 4,
+              "sector_id": "chemical",
+              "sector_name": "화학"
+            }
+          ],
+          "lag_5d": [],
+          "n_observations": 30
+        },
+        "5": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 5
+        },
+        "60": {
+          "co_movement": [],
+          "lag_10d": [
+            {
+              "best_lag": 10,
+              "correlation": 0.364,
+              "hit_rate": 0.417,
+              "n_signals": 12,
+              "sector_id": "lng",
+              "sector_name": "LNG에너지"
+            }
+          ],
+          "lag_5d": [],
+          "n_observations": 60
+        }
+      },
+      "sector_id": "food",
+      "sector_name": "식음료",
+      "today_score": 53.82
     }
   ],
-  "as_of": "2026-05-18T15:30:00+09:00",
+  "as_of": "2026-05-19T15:30:00+09:00",
   "market_session": "closed",
-  "n_observations": 115,
-  "note": "데이터 모으는 중 (115/120일). 윈도우별로 점차 의미 있는 신호.",
+  "n_observations": 116,
+  "note": "데이터 모으는 중 (116/120일). 윈도우별로 점차 의미 있는 신호.",
   "source": "pykrx",
   "stale": false,
   "windows": [
