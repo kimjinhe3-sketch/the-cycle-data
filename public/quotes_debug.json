@@ -33,19 +33,25 @@
   ],
   "etf_count": 0,
   "fail_reasons": [
-    "fdr StockListing fail: Failed to load data from http://data.krx.co.kr/comm/bldAttendant/executeForResourceBundle.cmd?baseName=krx.mdc.i18n.component&key=B128.bld",
     "by_ticker KOSPI: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\"",
     "wrapper KOSPI: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\"",
     "by_ticker KOSDAQ: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\"",
     "wrapper KOSDAQ: \"None of [Index(['시가', '고가', '저가', '종가'], dtype='object')] are in the [columns]\""
   ],
-  "fdr_error": "ValueError('Failed to load data from http://data.krx.co.kr/comm/bldAttendant/executeForResourceBundle.cmd?baseName=krx.mdc.i18n.component&key=B128.bld')",
+  "fdr_added": 2877,
+  "fdr_cols": {
+    "close": "Close",
+    "code": "Code",
+    "mcap": "Marcap",
+    "pct": "ChagesRatio",
+    "vol": "Volume"
+  },
   "pykrx_funcs_present": {
     "get_etf_ohlcv_by_ticker": true,
     "get_market_ohlcv": true,
     "get_market_ohlcv_by_date": true,
     "get_market_ohlcv_by_ticker": true
   },
-  "quotes_count": 215,
-  "trade_date": "2026-06-04"
+  "quotes_count": 2890,
+  "trade_date": "2026-06-05"
 }
