@@ -1,122 +1,10 @@
 {
-  "as_of": "2026-06-11T15:30:00+09:00",
+  "as_of": "2026-06-12T15:30:00+09:00",
   "candidates": [
     {
-      "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "high",
-      "probability": 75.7,
-      "representative_assets": [
-        {
-          "code": "395400",
-          "name": "SK리츠",
-          "sectorIds": [
-            "real_estate"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "330590",
-          "name": "롯데리츠",
-          "sectorIds": [
-            "real_estate"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "432320",
-          "name": "KB스타리츠",
-          "sectorIds": [
-            "real_estate"
-          ],
-          "type": "stock"
-        }
-      ],
-      "risks": [
-        {
-          "label": "단기 변동성 확대"
-        },
-        {
-          "label": "글로벌 매크로 변수"
-        }
-      ],
-      "sector_id": "real_estate",
-      "sector_name": "리츠",
-      "signals": [
-        {
-          "detail": "가격강도 66점",
-          "label": "가격강도 상위"
-        },
-        {
-          "detail": "20일 평균 대비 183%",
-          "label": "거래대금 확장"
-        },
-        {
-          "detail": "외국인/기관 순매수 전환",
-          "label": "수급 전환"
-        }
-      ],
-      "state": "expanding"
-    },
-    {
-      "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "high",
-      "probability": 71.3,
-      "representative_assets": [
-        {
-          "code": "023530",
-          "name": "롯데쇼핑",
-          "sectorIds": [
-            "department"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "069960",
-          "name": "현대백화점",
-          "sectorIds": [
-            "department"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "004170",
-          "name": "신세계",
-          "sectorIds": [
-            "department"
-          ],
-          "type": "stock"
-        }
-      ],
-      "risks": [
-        {
-          "label": "단기 변동성 확대"
-        },
-        {
-          "label": "글로벌 매크로 변수"
-        }
-      ],
-      "sector_id": "department",
-      "sector_name": "백화점",
-      "signals": [
-        {
-          "detail": "가격강도 94점",
-          "label": "가격강도 상위"
-        },
-        {
-          "detail": "20일 평균 대비 97%",
-          "label": "거래대금 확장"
-        },
-        {
-          "detail": "외국인/기관 순매수 전환",
-          "label": "수급 전환"
-        }
-      ],
-      "state": "expanding"
-    },
-    {
       "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "medium",
-      "probability": 61.8,
+      "confidence": "high",
+      "probability": 77.6,
       "representative_assets": [
         {
           "code": "005930",
@@ -155,11 +43,11 @@
       "sector_name": "메모리반도체",
       "signals": [
         {
-          "detail": "가격강도 87점",
+          "detail": "가격강도 85점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 6%",
+          "detail": "20일 평균 대비 12%",
           "label": "거래대금 확장"
         },
         {
@@ -167,34 +55,34 @@
           "label": "수급 전환"
         }
       ],
-      "state": "neutral"
+      "state": "expanding"
     },
     {
-      "ai_summary": "호텔관광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "medium",
-      "probability": 55.8,
+      "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "high",
+      "probability": 71.5,
       "representative_assets": [
         {
-          "code": "008770",
-          "name": "호텔신라",
+          "code": "395400",
+          "name": "SK리츠",
           "sectorIds": [
-            "hotel_tourism"
+            "real_estate"
           ],
           "type": "stock"
         },
         {
-          "code": "035250",
-          "name": "강원랜드",
+          "code": "330590",
+          "name": "롯데리츠",
           "sectorIds": [
-            "hotel_tourism"
+            "real_estate"
           ],
           "type": "stock"
         },
         {
-          "code": "114090",
-          "name": "GKL",
+          "code": "432320",
+          "name": "KB스타리츠",
           "sectorIds": [
-            "hotel_tourism"
+            "real_estate"
           ],
           "type": "stock"
         }
@@ -207,15 +95,71 @@
           "label": "글로벌 매크로 변수"
         }
       ],
-      "sector_id": "hotel_tourism",
-      "sector_name": "호텔관광",
+      "sector_id": "real_estate",
+      "sector_name": "리츠",
       "signals": [
         {
-          "detail": "가격강도 77점",
+          "detail": "가격강도 63점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 18%",
+          "detail": "20일 평균 대비 82%",
+          "label": "거래대금 확장"
+        },
+        {
+          "detail": "외국인/기관 순매수 전환",
+          "label": "수급 전환"
+        }
+      ],
+      "state": "neutral"
+    },
+    {
+      "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "high",
+      "probability": 66.7,
+      "representative_assets": [
+        {
+          "code": "023530",
+          "name": "롯데쇼핑",
+          "sectorIds": [
+            "department"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "069960",
+          "name": "현대백화점",
+          "sectorIds": [
+            "department"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "004170",
+          "name": "신세계",
+          "sectorIds": [
+            "department"
+          ],
+          "type": "stock"
+        }
+      ],
+      "risks": [
+        {
+          "label": "단기 변동성 확대"
+        },
+        {
+          "label": "글로벌 매크로 변수"
+        }
+      ],
+      "sector_id": "department",
+      "sector_name": "백화점",
+      "signals": [
+        {
+          "detail": "가격강도 91점",
+          "label": "가격강도 상위"
+        },
+        {
+          "detail": "20일 평균 대비 55%",
           "label": "거래대금 확장"
         },
         {
@@ -228,7 +172,7 @@
     {
       "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "medium",
-      "probability": 48.8,
+      "probability": 59.8,
       "representative_assets": [
         {
           "code": "030000",
@@ -259,11 +203,67 @@
       "sector_name": "미디어광고",
       "signals": [
         {
-          "detail": "가격강도 83점",
+          "detail": "가격강도 85점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 15%",
+          "detail": "20일 평균 대비 218%",
+          "label": "거래대금 확장"
+        },
+        {
+          "detail": "외국인/기관 순매수 전환",
+          "label": "수급 전환"
+        }
+      ],
+      "state": "expanding"
+    },
+    {
+      "ai_summary": "패션의류 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "medium",
+      "probability": 53.8,
+      "representative_assets": [
+        {
+          "code": "383220",
+          "name": "F&F",
+          "sectorIds": [
+            "fashion"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "093050",
+          "name": "LF",
+          "sectorIds": [
+            "fashion"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "020000",
+          "name": "한섬",
+          "sectorIds": [
+            "fashion"
+          ],
+          "type": "stock"
+        }
+      ],
+      "risks": [
+        {
+          "label": "단기 변동성 확대"
+        },
+        {
+          "label": "글로벌 매크로 변수"
+        }
+      ],
+      "sector_id": "fashion",
+      "sector_name": "패션의류",
+      "signals": [
+        {
+          "detail": "가격강도 70점",
+          "label": "가격강도 상위"
+        },
+        {
+          "detail": "20일 평균 대비 32%",
           "label": "거래대금 확장"
         },
         {
@@ -277,121 +277,9 @@
   "candidates_by_period": {
     "10": [
       {
-        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 82.2,
-        "representative_assets": [
-          {
-            "code": "395400",
-            "name": "SK리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "330590",
-            "name": "롯데리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "432320",
-            "name": "KB스타리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "real_estate",
-        "sector_name": "리츠",
-        "signals": [
-          {
-            "detail": "가격강도 72점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 183%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 75.7,
-        "representative_assets": [
-          {
-            "code": "023530",
-            "name": "롯데쇼핑",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "069960",
-            "name": "현대백화점",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "004170",
-            "name": "신세계",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "department",
-        "sector_name": "백화점",
-        "signals": [
-          {
-            "detail": "가격강도 97점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 97%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
         "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 63.8,
+        "confidence": "high",
+        "probability": 81.1,
         "representative_assets": [
           {
             "code": "005930",
@@ -430,7 +318,167 @@
         "sector_name": "메모리반도체",
         "signals": [
           {
-            "detail": "가격강도 82점",
+            "detail": "가격강도 92점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 12%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 73.5,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 95점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 55%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 65.1,
+        "representative_assets": [
+          {
+            "code": "030000",
+            "name": "제일기획",
+            "sectorIds": [
+              "media"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "214320",
+            "name": "이노션",
+            "sectorIds": [
+              "media"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "media",
+        "sector_name": "미디어광고",
+        "signals": [
+          {
+            "detail": "가격강도 83점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 218%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "금융 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 56.7,
+        "representative_assets": [
+          {
+            "code": "105560",
+            "name": "KB금융",
+            "sectorIds": [
+              "finance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "055550",
+            "name": "신한지주",
+            "sectorIds": [
+              "finance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "086790",
+            "name": "하나금융지주",
+            "sectorIds": [
+              "finance"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "finance",
+        "sector_name": "금융",
+        "signals": [
+          {
+            "detail": "가격강도 93점",
             "label": "가격강도 상위"
           },
           {
@@ -445,33 +493,41 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "패션의류 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 59.4,
+        "probability": 51.3,
         "representative_assets": [
           {
-            "code": "383220",
-            "name": "F&F",
+            "code": "000720",
+            "name": "현대건설",
             "sectorIds": [
-              "fashion"
+              "construction"
             ],
             "type": "stock"
           },
           {
-            "code": "093050",
-            "name": "LF",
+            "code": "028050",
+            "name": "삼성E&A",
             "sectorIds": [
-              "fashion"
+              "construction"
             ],
             "type": "stock"
           },
           {
-            "code": "020000",
-            "name": "한섬",
+            "code": "047040",
+            "name": "대우건설",
             "sectorIds": [
-              "fashion"
+              "construction"
             ],
             "type": "stock"
+          },
+          {
+            "code": "139250",
+            "name": "TIGER 200건설",
+            "sectorIds": [
+              "construction"
+            ],
+            "type": "etf"
           }
         ],
         "risks": [
@@ -482,15 +538,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "fashion",
-        "sector_name": "패션의류",
+        "sector_id": "construction",
+        "sector_name": "건설",
         "signals": [
           {
-            "detail": "가격강도 76점",
+            "detail": "가격강도 53점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 68%",
+            "detail": "10일 평균 대비 35%",
             "label": "거래대금 확장"
           },
           {
@@ -498,70 +554,14 @@
             "label": "수급 전환"
           }
         ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "엔터테인먼트 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 54.5,
-        "representative_assets": [
-          {
-            "code": "352820",
-            "name": "하이브",
-            "sectorIds": [
-              "entertainment"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "035900",
-            "name": "JYP Ent.",
-            "sectorIds": [
-              "entertainment"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "041510",
-            "name": "에스엠",
-            "sectorIds": [
-              "entertainment"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "entertainment",
-        "sector_name": "엔터테인먼트",
-        "signals": [
-          {
-            "detail": "가격강도 60점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 59%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
+        "state": "early"
       }
     ],
     "120": [
       {
         "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 73.2,
+        "probability": 74.6,
         "representative_assets": [
           {
             "code": "009150",
@@ -604,7 +604,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -8%",
+            "detail": "120일 평균 대비 39%",
             "label": "거래대금 확장"
           },
           {
@@ -617,345 +617,7 @@
       {
         "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 63.1,
-        "representative_assets": [
-          {
-            "code": "005930",
-            "name": "삼성전자",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000660",
-            "name": "SK하이닉스",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "091160",
-            "name": "KODEX 반도체",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "etf"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "memory_semi",
-        "sector_name": "메모리반도체",
-        "signals": [
-          {
-            "detail": "가격강도 90점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 6%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
-      },
-      {
-        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 58.4,
-        "representative_assets": [
-          {
-            "code": "066570",
-            "name": "LG전자",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "021240",
-            "name": "코웨이",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "044340",
-            "name": "위닉스",
-            "sectorIds": [
-              "home_appliance"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "home_appliance",
-        "sector_name": "가전",
-        "signals": [
-          {
-            "detail": "가격강도 71점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 -42%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 52.8,
-        "representative_assets": [
-          {
-            "code": "001440",
-            "name": "대한전선",
-            "sectorIds": [
-              "cable"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "103590",
-            "name": "일진전기",
-            "sectorIds": [
-              "cable"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000500",
-            "name": "가온전선",
-            "sectorIds": [
-              "cable"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "cable",
-        "sector_name": "케이블",
-        "signals": [
-          {
-            "detail": "가격강도 92점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 -68%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
-      },
-      {
-        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 46.9,
-        "representative_assets": [
-          {
-            "code": "023530",
-            "name": "롯데쇼핑",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "069960",
-            "name": "현대백화점",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "004170",
-            "name": "신세계",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "department",
-        "sector_name": "백화점",
-        "signals": [
-          {
-            "detail": "가격강도 84점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 97%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
-      }
-    ],
-    "15": [
-      {
-        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 79.9,
-        "representative_assets": [
-          {
-            "code": "023530",
-            "name": "롯데쇼핑",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "069960",
-            "name": "현대백화점",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "004170",
-            "name": "신세계",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "department",
-        "sector_name": "백화점",
-        "signals": [
-          {
-            "detail": "가격강도 93점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 97%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 75.0,
-        "representative_assets": [
-          {
-            "code": "395400",
-            "name": "SK리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "330590",
-            "name": "롯데리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "432320",
-            "name": "KB스타리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "real_estate",
-        "sector_name": "리츠",
-        "signals": [
-          {
-            "detail": "가격강도 66점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 183%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 70.9,
+        "probability": 63.0,
         "representative_assets": [
           {
             "code": "005930",
@@ -998,7 +660,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 6%",
+            "detail": "120일 평균 대비 12%",
             "label": "거래대금 확장"
           },
           {
@@ -1006,182 +668,12 @@
             "label": "수급 전환"
           }
         ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "보안 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 56.3,
-        "representative_assets": [
-          {
-            "code": "053800",
-            "name": "안랩",
-            "sectorIds": [
-              "security"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "136540",
-            "name": "윈스테크넷",
-            "sectorIds": [
-              "security"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "131090",
-            "name": "시큐브",
-            "sectorIds": [
-              "security"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "security",
-        "sector_name": "보안",
-        "signals": [
-          {
-            "detail": "가격강도 74점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 25%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "식음료 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 51.0,
-        "representative_assets": [
-          {
-            "code": "097950",
-            "name": "CJ제일제당",
-            "sectorIds": [
-              "food"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "004370",
-            "name": "농심",
-            "sectorIds": [
-              "food"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "271560",
-            "name": "오리온",
-            "sectorIds": [
-              "food"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "food",
-        "sector_name": "식음료",
-        "signals": [
-          {
-            "detail": "가격강도 48점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 27%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "early"
-      }
-    ],
-    "20": [
-      {
-        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 75.7,
-        "representative_assets": [
-          {
-            "code": "395400",
-            "name": "SK리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "330590",
-            "name": "롯데리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "432320",
-            "name": "KB스타리츠",
-            "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "real_estate",
-        "sector_name": "리츠",
-        "signals": [
-          {
-            "detail": "가격강도 66점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 183%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
+        "state": "neutral"
       },
       {
         "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 71.3,
+        "confidence": "medium",
+        "probability": 58.4,
         "representative_assets": [
           {
             "code": "023530",
@@ -1220,11 +712,11 @@
         "sector_name": "백화점",
         "signals": [
           {
-            "detail": "가격강도 94점",
+            "detail": "가격강도 81점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 97%",
+            "detail": "120일 평균 대비 55%",
             "label": "거래대금 확장"
           },
           {
@@ -1235,9 +727,123 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 61.8,
+        "probability": 54.1,
+        "representative_assets": [
+          {
+            "code": "001440",
+            "name": "대한전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "103590",
+            "name": "일진전기",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000500",
+            "name": "가온전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "cable",
+        "sector_name": "케이블",
+        "signals": [
+          {
+            "detail": "가격강도 85점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "120일 평균 대비 3%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "neutral"
+      },
+      {
+        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 49.8,
+        "representative_assets": [
+          {
+            "code": "066570",
+            "name": "LG전자",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "021240",
+            "name": "코웨이",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "044340",
+            "name": "위닉스",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "home_appliance",
+        "sector_name": "가전",
+        "signals": [
+          {
+            "detail": "가격강도 69점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "120일 평균 대비 -50%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      }
+    ],
+    "15": [
+      {
+        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 78.8,
         "representative_assets": [
           {
             "code": "005930",
@@ -1276,67 +882,11 @@
         "sector_name": "메모리반도체",
         "signals": [
           {
-            "detail": "가격강도 87점",
+            "detail": "가격강도 88점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 6%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
-      },
-      {
-        "ai_summary": "호텔관광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 55.8,
-        "representative_assets": [
-          {
-            "code": "008770",
-            "name": "호텔신라",
-            "sectorIds": [
-              "hotel_tourism"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "035250",
-            "name": "강원랜드",
-            "sectorIds": [
-              "hotel_tourism"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "114090",
-            "name": "GKL",
-            "sectorIds": [
-              "hotel_tourism"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "hotel_tourism",
-        "sector_name": "호텔관광",
-        "signals": [
-          {
-            "detail": "가격강도 77점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 18%",
+            "detail": "15일 평균 대비 12%",
             "label": "거래대금 확장"
           },
           {
@@ -1346,60 +896,10 @@
         ],
         "state": "expanding"
       },
-      {
-        "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 48.8,
-        "representative_assets": [
-          {
-            "code": "030000",
-            "name": "제일기획",
-            "sectorIds": [
-              "media"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "214320",
-            "name": "이노션",
-            "sectorIds": [
-              "media"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "media",
-        "sector_name": "미디어광고",
-        "signals": [
-          {
-            "detail": "가격강도 83점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 15%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      }
-    ],
-    "30": [
       {
         "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 77.8,
+        "probability": 73.1,
         "representative_assets": [
           {
             "code": "023530",
@@ -1438,11 +938,11 @@
         "sector_name": "백화점",
         "signals": [
           {
-            "detail": "가격강도 91점",
+            "detail": "가격강도 90점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 97%",
+            "detail": "15일 평균 대비 55%",
             "label": "거래대금 확장"
           },
           {
@@ -1453,9 +953,171 @@
         "state": "expanding"
       },
       {
+        "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 62.7,
+        "representative_assets": [
+          {
+            "code": "030000",
+            "name": "제일기획",
+            "sectorIds": [
+              "media"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "214320",
+            "name": "이노션",
+            "sectorIds": [
+              "media"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "media",
+        "sector_name": "미디어광고",
+        "signals": [
+          {
+            "detail": "가격강도 74점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "15일 평균 대비 218%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 57.5,
+        "representative_assets": [
+          {
+            "code": "395400",
+            "name": "SK리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "330590",
+            "name": "롯데리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "432320",
+            "name": "KB스타리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "real_estate",
+        "sector_name": "리츠",
+        "signals": [
+          {
+            "detail": "가격강도 46점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "15일 평균 대비 82%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "early"
+      },
+      {
+        "ai_summary": "보안 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 50.7,
+        "representative_assets": [
+          {
+            "code": "053800",
+            "name": "안랩",
+            "sectorIds": [
+              "security"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "136540",
+            "name": "윈스테크넷",
+            "sectorIds": [
+              "security"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "131090",
+            "name": "시큐브",
+            "sectorIds": [
+              "security"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "security",
+        "sector_name": "보안",
+        "signals": [
+          {
+            "detail": "가격강도 77점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "15일 평균 대비 114%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      }
+    ],
+    "20": [
+      {
         "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 65.2,
+        "probability": 77.6,
         "representative_assets": [
           {
             "code": "005930",
@@ -1498,7 +1160,119 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 6%",
+            "detail": "20일 평균 대비 12%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 71.5,
+        "representative_assets": [
+          {
+            "code": "395400",
+            "name": "SK리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "330590",
+            "name": "롯데리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "432320",
+            "name": "KB스타리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "real_estate",
+        "sector_name": "리츠",
+        "signals": [
+          {
+            "detail": "가격강도 63점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 82%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "neutral"
+      },
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 66.7,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 91점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 55%",
             "label": "거래대금 확장"
           },
           {
@@ -1511,7 +1285,7 @@
       {
         "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 59.2,
+        "probability": 59.8,
         "representative_assets": [
           {
             "code": "030000",
@@ -1542,11 +1316,181 @@
         "sector_name": "미디어광고",
         "signals": [
           {
-            "detail": "가격강도 81점",
+            "detail": "가격강도 85점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 15%",
+            "detail": "20일 평균 대비 218%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "패션의류 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 53.8,
+        "representative_assets": [
+          {
+            "code": "383220",
+            "name": "F&F",
+            "sectorIds": [
+              "fashion"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "093050",
+            "name": "LF",
+            "sectorIds": [
+              "fashion"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "020000",
+            "name": "한섬",
+            "sectorIds": [
+              "fashion"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "fashion",
+        "sector_name": "패션의류",
+        "signals": [
+          {
+            "detail": "가격강도 70점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 32%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      }
+    ],
+    "30": [
+      {
+        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 75.1,
+        "representative_assets": [
+          {
+            "code": "023530",
+            "name": "롯데쇼핑",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "069960",
+            "name": "현대백화점",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004170",
+            "name": "신세계",
+            "sectorIds": [
+              "department"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "department",
+        "sector_name": "백화점",
+        "signals": [
+          {
+            "detail": "가격강도 88점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 55%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 70.8,
+        "representative_assets": [
+          {
+            "code": "005930",
+            "name": "삼성전자",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000660",
+            "name": "SK하이닉스",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "091160",
+            "name": "KODEX 반도체",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "etf"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "memory_semi",
+        "sector_name": "메모리반도체",
+        "signals": [
+          {
+            "detail": "가격강도 86점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 12%",
             "label": "거래대금 확장"
           },
           {
@@ -1559,7 +1503,7 @@
       {
         "ai_summary": "금융 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 54.8,
+        "probability": 64.4,
         "representative_assets": [
           {
             "code": "105560",
@@ -1602,7 +1546,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 26%",
+            "detail": "30일 평균 대비 6%",
             "label": "거래대금 확장"
           },
           {
@@ -1613,31 +1557,23 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "호텔관광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 47.0,
+        "probability": 59.5,
         "representative_assets": [
           {
-            "code": "008770",
-            "name": "호텔신라",
+            "code": "030000",
+            "name": "제일기획",
             "sectorIds": [
-              "hotel_tourism"
+              "media"
             ],
             "type": "stock"
           },
           {
-            "code": "035250",
-            "name": "강원랜드",
+            "code": "214320",
+            "name": "이노션",
             "sectorIds": [
-              "hotel_tourism"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "114090",
-            "name": "GKL",
-            "sectorIds": [
-              "hotel_tourism"
+              "media"
             ],
             "type": "stock"
           }
@@ -1650,15 +1586,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "hotel_tourism",
-        "sector_name": "호텔관광",
+        "sector_id": "media",
+        "sector_name": "미디어광고",
         "signals": [
           {
-            "detail": "가격강도 65점",
+            "detail": "가격강도 81점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 18%",
+            "detail": "30일 평균 대비 218%",
             "label": "거래대금 확장"
           },
           {
@@ -1667,35 +1603,83 @@
           }
         ],
         "state": "expanding"
+      },
+      {
+        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 48.1,
+        "representative_assets": [
+          {
+            "code": "009150",
+            "name": "삼성전기",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "005070",
+            "name": "코스모신소재",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "001820",
+            "name": "삼화콘덴서",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "power_semi",
+        "sector_name": "전력반도체",
+        "signals": [
+          {
+            "detail": "가격강도 90점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 39%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "neutral"
       }
     ],
     "5": [
       {
-        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "미디어광고 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 86.9,
+        "probability": 79.7,
         "representative_assets": [
           {
-            "code": "395400",
-            "name": "SK리츠",
+            "code": "030000",
+            "name": "제일기획",
             "sectorIds": [
-              "real_estate"
+              "media"
             ],
             "type": "stock"
           },
           {
-            "code": "330590",
-            "name": "롯데리츠",
+            "code": "214320",
+            "name": "이노션",
             "sectorIds": [
-              "real_estate"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "432320",
-            "name": "KB스타리츠",
-            "sectorIds": [
-              "real_estate"
+              "media"
             ],
             "type": "stock"
           }
@@ -1708,183 +1692,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "real_estate",
-        "sector_name": "리츠",
+        "sector_id": "media",
+        "sector_name": "미디어광고",
         "signals": [
           {
-            "detail": "가격강도 94점",
+            "detail": "가격강도 83점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 183%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 74.7,
-        "representative_assets": [
-          {
-            "code": "023530",
-            "name": "롯데쇼핑",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "069960",
-            "name": "현대백화점",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "004170",
-            "name": "신세계",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "department",
-        "sector_name": "백화점",
-        "signals": [
-          {
-            "detail": "가격강도 93점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 97%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "엔터테인먼트 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 70.5,
-        "representative_assets": [
-          {
-            "code": "352820",
-            "name": "하이브",
-            "sectorIds": [
-              "entertainment"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "035900",
-            "name": "JYP Ent.",
-            "sectorIds": [
-              "entertainment"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "041510",
-            "name": "에스엠",
-            "sectorIds": [
-              "entertainment"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "entertainment",
-        "sector_name": "엔터테인먼트",
-        "signals": [
-          {
-            "detail": "가격강도 78점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 59%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "패션의류 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 59.7,
-        "representative_assets": [
-          {
-            "code": "383220",
-            "name": "F&F",
-            "sectorIds": [
-              "fashion"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "093050",
-            "name": "LF",
-            "sectorIds": [
-              "fashion"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "020000",
-            "name": "한섬",
-            "sectorIds": [
-              "fashion"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "fashion",
-        "sector_name": "패션의류",
-        "signals": [
-          {
-            "detail": "가격강도 82점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 68%",
+            "detail": "5일 평균 대비 218%",
             "label": "거래대금 확장"
           },
           {
@@ -1896,8 +1712,8 @@
       },
       {
         "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 55.1,
+        "confidence": "high",
+        "probability": 74.7,
         "representative_assets": [
           {
             "code": "005930",
@@ -1936,11 +1752,11 @@
         "sector_name": "메모리반도체",
         "signals": [
           {
-            "detail": "가격강도 83점",
+            "detail": "가격강도 91점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 6%",
+            "detail": "5일 평균 대비 12%",
             "label": "거래대금 확장"
           },
           {
@@ -1949,35 +1765,34 @@
           }
         ],
         "state": "expanding"
-      }
-    ],
-    "60": [
+      },
       {
-        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 72.9,
+        "probability": 66.7,
         "representative_assets": [
           {
-            "code": "066570",
-            "name": "LG전자",
+            "code": "034020",
+            "name": "두산에너빌리티",
             "sectorIds": [
-              "home_appliance"
+              "nuclear",
+              "lng"
             ],
             "type": "stock"
           },
           {
-            "code": "021240",
-            "name": "코웨이",
+            "code": "083650",
+            "name": "비에이치아이",
             "sectorIds": [
-              "home_appliance"
+              "nuclear"
             ],
             "type": "stock"
           },
           {
-            "code": "044340",
-            "name": "위닉스",
+            "code": "105840",
+            "name": "우진",
             "sectorIds": [
-              "home_appliance"
+              "nuclear"
             ],
             "type": "stock"
           }
@@ -1990,15 +1805,185 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "home_appliance",
-        "sector_name": "가전",
+        "sector_id": "nuclear",
+        "sector_name": "원전",
         "signals": [
           {
-            "detail": "가격강도 84점",
+            "detail": "가격강도 76점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 -42%",
+            "detail": "5일 평균 대비 0%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "엔터테인먼트 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 61.4,
+        "representative_assets": [
+          {
+            "code": "352820",
+            "name": "하이브",
+            "sectorIds": [
+              "entertainment"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "035900",
+            "name": "JYP Ent.",
+            "sectorIds": [
+              "entertainment"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "041510",
+            "name": "에스엠",
+            "sectorIds": [
+              "entertainment"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "entertainment",
+        "sector_name": "엔터테인먼트",
+        "signals": [
+          {
+            "detail": "가격강도 82점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 8%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "가구인테리어 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 56.3,
+        "representative_assets": [
+          {
+            "code": "009240",
+            "name": "한샘",
+            "sectorIds": [
+              "furniture"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "108670",
+            "name": "LX하우시스",
+            "sectorIds": [
+              "furniture"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "079430",
+            "name": "현대리바트",
+            "sectorIds": [
+              "furniture"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "furniture",
+        "sector_name": "가구인테리어",
+        "signals": [
+          {
+            "detail": "가격강도 74점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 -22%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      }
+    ],
+    "60": [
+      {
+        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 76.0,
+        "representative_assets": [
+          {
+            "code": "009150",
+            "name": "삼성전기",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "005070",
+            "name": "코스모신소재",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "001820",
+            "name": "삼화콘덴서",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "power_semi",
+        "sector_name": "전력반도체",
+        "signals": [
+          {
+            "detail": "가격강도 95점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 39%",
             "label": "거래대금 확장"
           },
           {
@@ -2011,7 +1996,7 @@
       {
         "ai_summary": "AI 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 65.8,
+        "probability": 69.6,
         "representative_assets": [
           {
             "code": "017670",
@@ -2060,11 +2045,11 @@
         "sector_name": "AI",
         "signals": [
           {
-            "detail": "가격강도 73점",
+            "detail": "가격강도 72점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 -45%",
+            "detail": "60일 평균 대비 -4%",
             "label": "거래대금 확장"
           },
           {
@@ -2073,123 +2058,11 @@
           }
         ],
         "state": "expanding"
-      },
-      {
-        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 60.3,
-        "representative_assets": [
-          {
-            "code": "005930",
-            "name": "삼성전자",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000660",
-            "name": "SK하이닉스",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "091160",
-            "name": "KODEX 반도체",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "etf"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "memory_semi",
-        "sector_name": "메모리반도체",
-        "signals": [
-          {
-            "detail": "가격강도 88점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 6%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 55.4,
-        "representative_assets": [
-          {
-            "code": "009150",
-            "name": "삼성전기",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "005070",
-            "name": "코스모신소재",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "001820",
-            "name": "삼화콘덴서",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "power_semi",
-        "sector_name": "전력반도체",
-        "signals": [
-          {
-            "detail": "가격강도 95점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 -8%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
       },
       {
         "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 51.3,
+        "probability": 65.0,
         "representative_assets": [
           {
             "code": "023530",
@@ -2228,11 +2101,11 @@
         "sector_name": "백화점",
         "signals": [
           {
-            "detail": "가격강도 91점",
+            "detail": "가격강도 88점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 97%",
+            "detail": "60일 평균 대비 55%",
             "label": "거래대금 확장"
           },
           {
@@ -2240,7 +2113,119 @@
             "label": "수급 전환"
           }
         ],
-        "state": "neutral"
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 60.5,
+        "representative_assets": [
+          {
+            "code": "005930",
+            "name": "삼성전자",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000660",
+            "name": "SK하이닉스",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "091160",
+            "name": "KODEX 반도체",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "etf"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "memory_semi",
+        "sector_name": "메모리반도체",
+        "signals": [
+          {
+            "detail": "가격강도 86점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 12%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 53.4,
+        "representative_assets": [
+          {
+            "code": "066570",
+            "name": "LG전자",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "021240",
+            "name": "코웨이",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "044340",
+            "name": "위닉스",
+            "sectorIds": [
+              "home_appliance"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "home_appliance",
+        "sector_name": "가전",
+        "signals": [
+          {
+            "detail": "가격강도 81점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 -50%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
       }
     ]
   },
