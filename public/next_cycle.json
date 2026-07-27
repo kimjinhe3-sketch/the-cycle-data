@@ -2,10 +2,10 @@
   "anchor_sectors": [
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
-      "macro": "ai_infra",
-      "macro_name": "AI 인프라",
-      "meso": "ai_energy",
-      "meso_name": "에너지 (원전·LNG·신재생)",
+      "macro": "k_cmr",
+      "macro_name": "K밸류업",
+      "meso": "cmr_content",
+      "meso_name": "K-콘텐츠 (음악·미디어·게임·캐릭터)",
       "predictions_by_window": {
         "10": {
           "co_movement": [],
@@ -18,37 +18,106 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.253,
-              "hit_rate": 0.148,
+              "correlation": 0.302,
+              "hit_rate": 0.296,
               "n_signals": 27,
-              "sector_id": "agri_livestock",
-              "sector_name": "농축산"
+              "sector_id": "securities",
+              "sector_name": "증권"
             },
             {
               "best_lag": 10,
-              "correlation": -0.258,
-              "hit_rate": 0.148,
+              "correlation": 0.277,
+              "hit_rate": 0.333,
               "n_signals": 27,
-              "sector_id": "environment",
-              "sector_name": "환경"
+              "sector_id": "finance",
+              "sector_name": "금융"
             }
           ],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.29,
-              "hit_rate": 0.429,
+              "correlation": 0.275,
+              "hit_rate": 0.393,
               "n_signals": 28,
-              "sector_id": "comm_equip",
-              "sector_name": "통신장비"
+              "sector_id": "security",
+              "sector_name": "보안"
+            }
+          ],
+          "n_observations": 120
+        },
+        "15": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 15
+        },
+        "30": {
+          "co_movement": [
+            {
+              "correlation": 0.615,
+              "sector_id": "trading",
+              "sector_name": "종합상사"
             },
             {
+              "correlation": 0.611,
+              "sector_id": "education",
+              "sector_name": "교육"
+            }
+          ],
+          "lag_10d": [
+            {
+              "best_lag": 10,
+              "correlation": -0.549,
+              "hit_rate": 0.0,
+              "n_signals": 4,
+              "sector_id": "food",
+              "sector_name": "식음료"
+            }
+          ],
+          "lag_5d": [],
+          "n_observations": 30
+        },
+        "5": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 5
+        },
+        "60": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 60
+        }
+      },
+      "sector_id": "game",
+      "sector_name": "게임",
+      "today_score": 68.2
+    },
+    {
+      "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
+      "macro": "general",
+      "macro_name": "일반산업",
+      "meso": "gen_industrial",
+      "meso_name": "기타 산업·서비스",
+      "predictions_by_window": {
+        "10": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 10
+        },
+        "120": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [
+            {
               "best_lag": 5,
-              "correlation": 0.274,
-              "hit_rate": 0.429,
-              "n_signals": 28,
-              "sector_id": "auto",
-              "sector_name": "자동차"
+              "correlation": 0.225,
+              "hit_rate": 0.276,
+              "n_signals": 29,
+              "sector_id": "defense",
+              "sector_name": "방산"
             }
           ],
           "n_observations": 120
@@ -61,15 +130,32 @@
         },
         "30": {
           "co_movement": [],
-          "lag_10d": [],
+          "lag_10d": [
+            {
+              "best_lag": 10,
+              "correlation": -0.468,
+              "hit_rate": 0.0,
+              "n_signals": 4,
+              "sector_id": "transport",
+              "sector_name": "운송"
+            },
+            {
+              "best_lag": 10,
+              "correlation": -0.47,
+              "hit_rate": 0.25,
+              "n_signals": 4,
+              "sector_id": "defense",
+              "sector_name": "방산"
+            }
+          ],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.593,
-              "hit_rate": 0.0,
-              "n_signals": 5,
-              "sector_id": "cement",
-              "sector_name": "시멘트"
+              "correlation": -0.45,
+              "hit_rate": 0.333,
+              "n_signals": 6,
+              "sector_id": "agri_livestock",
+              "sector_name": "농축산"
             }
           ],
           "n_observations": 30
@@ -86,27 +172,19 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.34,
-              "hit_rate": 0.308,
-              "n_signals": 13,
-              "sector_id": "comm_equip",
-              "sector_name": "통신장비"
-            },
-            {
-              "best_lag": 5,
-              "correlation": -0.348,
-              "hit_rate": 0.0,
-              "n_signals": 13,
-              "sector_id": "hotel_tourism",
-              "sector_name": "호텔관광"
+              "correlation": 0.343,
+              "hit_rate": 0.357,
+              "n_signals": 14,
+              "sector_id": "liquid_cooling",
+              "sector_name": "액침냉각"
             }
           ],
           "n_observations": 60
         }
       },
-      "sector_id": "lng",
-      "sector_name": "LNG에너지",
-      "today_score": 67.69
+      "sector_id": "home_appliance",
+      "sector_name": "가전",
+      "today_score": 65.24
     },
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
@@ -123,107 +201,15 @@
         },
         "120": {
           "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": -0.227,
-              "hit_rate": 0.214,
-              "n_signals": 28,
-              "sector_id": "entertainment",
-              "sector_name": "엔터테인먼트"
-            }
-          ],
-          "lag_5d": [],
-          "n_observations": 120
-        },
-        "15": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 15
-        },
-        "30": {
-          "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": 0.561,
-              "hit_rate": 0.4,
-              "n_signals": 5,
-              "sector_id": "chemical",
-              "sector_name": "화학"
-            }
-          ],
-          "lag_5d": [],
-          "n_observations": 30
-        },
-        "5": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 5
-        },
-        "60": {
-          "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": 0.334,
-              "hit_rate": 0.462,
-              "n_signals": 13,
-              "sector_id": "auto",
-              "sector_name": "자동차"
-            },
-            {
-              "best_lag": 10,
-              "correlation": 0.328,
-              "hit_rate": 0.308,
-              "n_signals": 13,
-              "sector_id": "liquid_cooling",
-              "sector_name": "액침냉각"
-            }
-          ],
-          "lag_5d": [
-            {
-              "best_lag": 5,
-              "correlation": -0.342,
-              "hit_rate": 0.071,
-              "n_signals": 14,
-              "sector_id": "display",
-              "sector_name": "디스플레이"
-            }
-          ],
-          "n_observations": 60
-        }
-      },
-      "sector_id": "telecom",
-      "sector_name": "통신",
-      "today_score": 66.06
-    },
-    {
-      "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
-      "macro": "ai_infra",
-      "macro_name": "AI 인프라",
-      "meso": "ai_energy",
-      "meso_name": "에너지 (원전·LNG·신재생)",
-      "predictions_by_window": {
-        "10": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 10
-        },
-        "120": {
-          "co_movement": [],
           "lag_10d": [],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.239,
-              "hit_rate": 0.433,
-              "n_signals": 30,
-              "sector_id": "comm_equip",
-              "sector_name": "통신장비"
+              "correlation": -0.243,
+              "hit_rate": 0.154,
+              "n_signals": 26,
+              "sector_id": "etc",
+              "sector_name": "기타"
             }
           ],
           "n_observations": 120
@@ -237,20 +223,38 @@
         "30": {
           "co_movement": [
             {
-              "correlation": 0.641,
-              "sector_id": "fintech",
-              "sector_name": "핀테크"
+              "correlation": 0.772,
+              "sector_id": "real_estate",
+              "sector_name": "리츠"
+            },
+            {
+              "correlation": 0.686,
+              "sector_id": "comm_equip",
+              "sector_name": "통신장비"
+            },
+            {
+              "correlation": 0.607,
+              "sector_id": "steel",
+              "sector_name": "철강"
             }
           ],
           "lag_10d": [],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.518,
-              "hit_rate": 0.429,
-              "n_signals": 7,
-              "sector_id": "security",
-              "sector_name": "보안"
+              "correlation": -0.56,
+              "hit_rate": 0.0,
+              "n_signals": 4,
+              "sector_id": "department",
+              "sector_name": "백화점"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.606,
+              "hit_rate": 0.0,
+              "n_signals": 4,
+              "sector_id": "cosmetics",
+              "sector_name": "화장품"
             }
           ],
           "n_observations": 30
@@ -267,30 +271,22 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.33,
-              "hit_rate": 0.333,
-              "n_signals": 15,
-              "sector_id": "agri_livestock",
-              "sector_name": "농축산"
-            },
-            {
-              "best_lag": 5,
-              "correlation": 0.329,
-              "hit_rate": 0.533,
-              "n_signals": 15,
-              "sector_id": "security",
-              "sector_name": "보안"
+              "correlation": -0.314,
+              "hit_rate": 0.083,
+              "n_signals": 12,
+              "sector_id": "cosmetics",
+              "sector_name": "화장품"
             }
           ],
           "n_observations": 60
         }
       },
-      "sector_id": "oil",
-      "sector_name": "정유",
-      "today_score": 65.79
+      "sector_id": "ai",
+      "sector_name": "AI",
+      "today_score": 64.85
     }
   ],
-  "as_of": "2026-07-24T15:30:00+09:00",
+  "as_of": "2026-07-27T15:30:00+09:00",
   "market_session": "closed",
   "n_observations": 120,
   "note": "데이터 모으는 중 (120/120일). 윈도우별로 점차 의미 있는 신호.",
