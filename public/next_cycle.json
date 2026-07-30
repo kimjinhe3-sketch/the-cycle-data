@@ -18,7 +18,7 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.223,
+              "correlation": -0.231,
               "hit_rate": 0.16,
               "n_signals": 25,
               "sector_id": "environment",
@@ -28,9 +28,9 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.219,
-              "hit_rate": 0.185,
-              "n_signals": 27,
+              "correlation": -0.234,
+              "hit_rate": 0.179,
+              "n_signals": 28,
               "sector_id": "fintech",
               "sector_name": "핀테크"
             }
@@ -45,22 +45,13 @@
         },
         "30": {
           "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": -0.575,
-              "hit_rate": 0.0,
-              "n_signals": 2,
-              "sector_id": "environment",
-              "sector_name": "환경"
-            }
-          ],
+          "lag_10d": [],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.588,
+              "correlation": -0.57,
               "hit_rate": 0.0,
-              "n_signals": 4,
+              "n_signals": 5,
               "sector_id": "cosmetics",
               "sector_name": "화장품"
             }
@@ -79,11 +70,19 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.366,
+              "correlation": -0.371,
               "hit_rate": 0.0,
-              "n_signals": 12,
+              "n_signals": 13,
               "sector_id": "department",
               "sector_name": "백화점"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.4,
+              "hit_rate": 0.0,
+              "n_signals": 13,
+              "sector_id": "fintech",
+              "sector_name": "핀테크"
             }
           ],
           "n_observations": 60
@@ -91,7 +90,7 @@
       },
       "sector_id": "media",
       "sector_name": "미디어광고",
-      "today_score": 73.39
+      "today_score": 68.86
     },
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
@@ -112,9 +111,9 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.265,
-              "hit_rate": 0.148,
-              "n_signals": 27,
+              "correlation": -0.263,
+              "hit_rate": 0.143,
+              "n_signals": 28,
               "sector_id": "wind",
               "sector_name": "풍력"
             }
@@ -129,17 +128,25 @@
         },
         "30": {
           "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [
+          "lag_10d": [
             {
-              "best_lag": 5,
-              "correlation": -0.509,
-              "hit_rate": 0.0,
+              "best_lag": 10,
+              "correlation": 0.553,
+              "hit_rate": 0.6,
+              "n_signals": 5,
+              "sector_id": "finance",
+              "sector_name": "금융"
+            },
+            {
+              "best_lag": 10,
+              "correlation": 0.544,
+              "hit_rate": 0.6,
               "n_signals": 5,
               "sector_id": "fintech",
               "sector_name": "핀테크"
             }
           ],
+          "lag_5d": [],
           "n_observations": 30
         },
         "5": {
@@ -154,11 +161,11 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.351,
-              "hit_rate": 0.083,
-              "n_signals": 12,
-              "sector_id": "cosmetics",
-              "sector_name": "화장품"
+              "correlation": -0.339,
+              "hit_rate": 0.077,
+              "n_signals": 13,
+              "sector_id": "department",
+              "sector_name": "백화점"
             }
           ],
           "n_observations": 60
@@ -166,7 +173,7 @@
       },
       "sector_id": "food",
       "sector_name": "식음료",
-      "today_score": 72.73
+      "today_score": 64.75
     },
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
@@ -187,7 +194,7 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.256,
+              "correlation": -0.255,
               "hit_rate": 0.143,
               "n_signals": 28,
               "sector_id": "real_estate",
@@ -213,12 +220,21 @@
         "30": {
           "co_movement": [
             {
-              "correlation": 0.732,
+              "correlation": 0.681,
               "sector_id": "fashion",
               "sector_name": "패션의류"
             }
           ],
-          "lag_10d": [],
+          "lag_10d": [
+            {
+              "best_lag": 10,
+              "correlation": 0.544,
+              "hit_rate": 0.75,
+              "n_signals": 4,
+              "sector_id": "fintech",
+              "sector_name": "핀테크"
+            }
+          ],
           "lag_5d": [],
           "n_observations": 30
         },
@@ -234,7 +250,7 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.357,
+              "correlation": -0.337,
               "hit_rate": 0.077,
               "n_signals": 13,
               "sector_id": "fintech",
@@ -246,10 +262,10 @@
       },
       "sector_id": "cosmetics",
       "sector_name": "화장품",
-      "today_score": 64.21
+      "today_score": 63.33
     }
   ],
-  "as_of": "2026-07-29T15:30:00+09:00",
+  "as_of": "2026-07-30T15:30:00+09:00",
   "market_session": "closed",
   "n_observations": 120,
   "note": "데이터 모으는 중 (120/120일). 윈도우별로 점차 의미 있는 신호.",
