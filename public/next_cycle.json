@@ -4,8 +4,8 @@
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
       "macro": "k_cmr",
       "macro_name": "K밸류업",
-      "meso": "cmr_content",
-      "meso_name": "K-콘텐츠 (음악·미디어·게임·캐릭터)",
+      "meso": "cmr_beauty_fashion",
+      "meso_name": "뷰티·패션·럭셔리",
       "predictions_by_window": {
         "10": {
           "co_movement": [],
@@ -15,21 +15,12 @@
         },
         "120": {
           "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": -0.231,
-              "hit_rate": 0.16,
-              "n_signals": 25,
-              "sector_id": "environment",
-              "sector_name": "환경"
-            }
-          ],
+          "lag_10d": [],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.234,
-              "hit_rate": 0.179,
+              "correlation": -0.312,
+              "hit_rate": 0.071,
               "n_signals": 28,
               "sector_id": "fintech",
               "sector_name": "핀테크"
@@ -44,18 +35,15 @@
           "n_observations": 15
         },
         "30": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [
+          "co_movement": [
             {
-              "best_lag": 5,
-              "correlation": -0.57,
-              "hit_rate": 0.0,
-              "n_signals": 5,
-              "sector_id": "cosmetics",
-              "sector_name": "화장품"
+              "correlation": 0.697,
+              "sector_id": "fashion",
+              "sector_name": "패션의류"
             }
           ],
+          "lag_10d": [],
+          "lag_5d": [],
           "n_observations": 30
         },
         "5": {
@@ -70,16 +58,8 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.371,
-              "hit_rate": 0.0,
-              "n_signals": 13,
-              "sector_id": "department",
-              "sector_name": "백화점"
-            },
-            {
-              "best_lag": 5,
-              "correlation": -0.4,
-              "hit_rate": 0.0,
+              "correlation": -0.365,
+              "hit_rate": 0.077,
               "n_signals": 13,
               "sector_id": "fintech",
               "sector_name": "핀테크"
@@ -88,9 +68,66 @@
           "n_observations": 60
         }
       },
-      "sector_id": "media",
-      "sector_name": "미디어광고",
-      "today_score": 68.86
+      "sector_id": "cosmetics",
+      "sector_name": "화장품",
+      "today_score": 64.41
+    },
+    {
+      "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
+      "macro": "general",
+      "macro_name": "일반산업",
+      "meso": "gen_industrial",
+      "meso_name": "기타 산업·서비스",
+      "predictions_by_window": {
+        "10": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 10
+        },
+        "120": {
+          "co_movement": [],
+          "lag_10d": [
+            {
+              "best_lag": 10,
+              "correlation": -0.242,
+              "hit_rate": 0.214,
+              "n_signals": 28,
+              "sector_id": "securities",
+              "sector_name": "증권"
+            }
+          ],
+          "lag_5d": [],
+          "n_observations": 120
+        },
+        "15": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 15
+        },
+        "30": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 30
+        },
+        "5": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 5
+        },
+        "60": {
+          "co_movement": [],
+          "lag_10d": [],
+          "lag_5d": [],
+          "n_observations": 60
+        }
+      },
+      "sector_id": "furniture",
+      "sector_name": "가구인테리어",
+      "today_score": 58.63
     },
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
@@ -111,9 +148,9 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.263,
-              "hit_rate": 0.143,
-              "n_signals": 28,
+              "correlation": -0.286,
+              "hit_rate": 0.103,
+              "n_signals": 29,
               "sector_id": "wind",
               "sector_name": "풍력"
             }
@@ -131,7 +168,7 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": 0.553,
+              "correlation": 0.618,
               "hit_rate": 0.6,
               "n_signals": 5,
               "sector_id": "finance",
@@ -139,11 +176,11 @@
             },
             {
               "best_lag": 10,
-              "correlation": 0.544,
+              "correlation": 0.582,
               "hit_rate": 0.6,
               "n_signals": 5,
-              "sector_id": "fintech",
-              "sector_name": "핀테크"
+              "sector_id": "shipbuilding",
+              "sector_name": "조선"
             }
           ],
           "lag_5d": [],
@@ -161,9 +198,9 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.339,
-              "hit_rate": 0.077,
-              "n_signals": 13,
+              "correlation": -0.368,
+              "hit_rate": 0.071,
+              "n_signals": 14,
               "sector_id": "department",
               "sector_name": "백화점"
             }
@@ -173,99 +210,10 @@
       },
       "sector_id": "food",
       "sector_name": "식음료",
-      "today_score": 64.75
-    },
-    {
-      "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
-      "macro": "k_cmr",
-      "macro_name": "K밸류업",
-      "meso": "cmr_beauty_fashion",
-      "meso_name": "뷰티·패션·럭셔리",
-      "predictions_by_window": {
-        "10": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 10
-        },
-        "120": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [
-            {
-              "best_lag": 5,
-              "correlation": -0.255,
-              "hit_rate": 0.143,
-              "n_signals": 28,
-              "sector_id": "real_estate",
-              "sector_name": "리츠"
-            },
-            {
-              "best_lag": 5,
-              "correlation": -0.309,
-              "hit_rate": 0.071,
-              "n_signals": 28,
-              "sector_id": "fintech",
-              "sector_name": "핀테크"
-            }
-          ],
-          "n_observations": 120
-        },
-        "15": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 15
-        },
-        "30": {
-          "co_movement": [
-            {
-              "correlation": 0.681,
-              "sector_id": "fashion",
-              "sector_name": "패션의류"
-            }
-          ],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": 0.544,
-              "hit_rate": 0.75,
-              "n_signals": 4,
-              "sector_id": "fintech",
-              "sector_name": "핀테크"
-            }
-          ],
-          "lag_5d": [],
-          "n_observations": 30
-        },
-        "5": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [],
-          "n_observations": 5
-        },
-        "60": {
-          "co_movement": [],
-          "lag_10d": [],
-          "lag_5d": [
-            {
-              "best_lag": 5,
-              "correlation": -0.337,
-              "hit_rate": 0.077,
-              "n_signals": 13,
-              "sector_id": "fintech",
-              "sector_name": "핀테크"
-            }
-          ],
-          "n_observations": 60
-        }
-      },
-      "sector_id": "cosmetics",
-      "sector_name": "화장품",
-      "today_score": 63.33
+      "today_score": 57.4
     }
   ],
-  "as_of": "2026-07-30T15:30:00+09:00",
+  "as_of": "2026-07-31T15:30:00+09:00",
   "market_session": "closed",
   "n_observations": 120,
   "note": "데이터 모으는 중 (120/120일). 윈도우별로 점차 의미 있는 신호.",
