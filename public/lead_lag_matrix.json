@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-03T15:30:00+09:00",
+  "as_of": "2026-08-04T15:30:00+09:00",
   "hit_threshold_percentile": 0.75,
   "lags": [
     1,
@@ -13,37 +13,37 @@
       "followers": [
         {
           "best_lag": 1,
-          "correlation": 0.414,
-          "hit_rate": 0.6,
-          "n_signals": 15,
+          "correlation": 0.425,
+          "hit_rate": 0.643,
+          "n_signals": 14,
           "sector_id": "construction"
         },
         {
           "best_lag": 10,
-          "correlation": 0.399,
-          "hit_rate": 0.5,
-          "n_signals": 14,
+          "correlation": 0.417,
+          "hit_rate": 0.615,
+          "n_signals": 13,
           "sector_id": "furniture"
         },
         {
           "best_lag": 10,
-          "correlation": -0.37,
-          "hit_rate": 0.143,
-          "n_signals": 14,
-          "sector_id": "environment"
-        },
-        {
-          "best_lag": 10,
-          "correlation": 0.332,
-          "hit_rate": 0.5,
-          "n_signals": 14,
+          "correlation": 0.349,
+          "hit_rate": 0.538,
+          "n_signals": 13,
           "sector_id": "trading"
         },
         {
           "best_lag": 5,
-          "correlation": -0.32,
-          "hit_rate": 0.267,
-          "n_signals": 15,
+          "correlation": -0.334,
+          "hit_rate": 0.077,
+          "n_signals": 13,
+          "sector_id": "shipbuilding"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.316,
+          "hit_rate": 0.231,
+          "n_signals": 13,
           "sector_id": "mining"
         }
       ]
@@ -52,38 +52,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.371,
-          "hit_rate": 0.2,
-          "n_signals": 10,
+          "correlation": -0.383,
+          "hit_rate": 0.111,
+          "n_signals": 9,
           "sector_id": "trading"
         },
         {
-          "best_lag": 1,
-          "correlation": 0.359,
-          "hit_rate": 0.6,
-          "n_signals": 15,
-          "sector_id": "etc"
-        },
-        {
           "best_lag": 3,
-          "correlation": -0.34,
-          "hit_rate": 0.143,
-          "n_signals": 14,
+          "correlation": -0.37,
+          "hit_rate": 0.154,
+          "n_signals": 13,
           "sector_id": "furniture"
         },
         {
           "best_lag": 5,
-          "correlation": -0.319,
-          "hit_rate": 0.071,
-          "n_signals": 14,
+          "correlation": -0.364,
+          "hit_rate": 0.077,
+          "n_signals": 13,
           "sector_id": "cosmetics"
         },
         {
-          "best_lag": 10,
-          "correlation": 0.319,
-          "hit_rate": 0.455,
-          "n_signals": 11,
-          "sector_id": "liquid_cooling"
+          "best_lag": 1,
+          "correlation": 0.352,
+          "hit_rate": 0.643,
+          "n_signals": 14,
+          "sector_id": "etc"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.339,
+          "hit_rate": 0.077,
+          "n_signals": 13,
+          "sector_id": "display"
         }
       ]
     },
@@ -91,77 +91,77 @@
       "followers": [
         {
           "best_lag": 10,
-          "correlation": 0.478,
-          "hit_rate": 0.455,
+          "correlation": 0.459,
+          "hit_rate": 0.364,
           "n_signals": 11,
           "sector_id": "furniture"
         },
         {
           "best_lag": 1,
-          "correlation": -0.42,
+          "correlation": -0.417,
           "hit_rate": 0.133,
           "n_signals": 15,
           "sector_id": "education"
         },
         {
           "best_lag": 1,
-          "correlation": -0.374,
-          "hit_rate": 0.133,
+          "correlation": -0.379,
+          "hit_rate": 0.067,
           "n_signals": 15,
           "sector_id": "memory_semi"
         },
         {
           "best_lag": 1,
-          "correlation": -0.356,
-          "hit_rate": 0.267,
+          "correlation": -0.341,
+          "hit_rate": 0.2,
           "n_signals": 15,
           "sector_id": "environment"
         },
         {
-          "best_lag": 15,
-          "correlation": -0.355,
-          "hit_rate": 0.111,
-          "n_signals": 9,
-          "sector_id": "agri_livestock"
+          "best_lag": 3,
+          "correlation": -0.34,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "medical_device"
         }
       ]
     },
     "bio": {
       "followers": [
         {
-          "best_lag": 5,
-          "correlation": -0.394,
-          "hit_rate": 0.071,
-          "n_signals": 14,
-          "sector_id": "chemical"
-        },
-        {
-          "best_lag": 10,
-          "correlation": -0.387,
-          "hit_rate": 0.077,
-          "n_signals": 13,
-          "sector_id": "environment"
-        },
-        {
           "best_lag": 1,
-          "correlation": 0.375,
+          "correlation": 0.414,
           "hit_rate": 0.429,
           "n_signals": 14,
           "sector_id": "auto"
         },
         {
-          "best_lag": 15,
-          "correlation": 0.339,
-          "hit_rate": 0.417,
+          "best_lag": 5,
+          "correlation": -0.35,
+          "hit_rate": 0.077,
+          "n_signals": 13,
+          "sector_id": "chemical"
+        },
+        {
+          "best_lag": 10,
+          "correlation": -0.324,
+          "hit_rate": 0.0,
           "n_signals": 12,
-          "sector_id": "finance"
+          "sector_id": "environment"
         },
         {
           "best_lag": 15,
-          "correlation": 0.33,
-          "hit_rate": 0.417,
-          "n_signals": 12,
-          "sector_id": "power_semi"
+          "correlation": 0.32,
+          "hit_rate": 0.364,
+          "n_signals": 11,
+          "sector_id": "finance"
+        },
+        {
+          "best_lag": 1,
+          "correlation": 0.315,
+          "hit_rate": 0.5,
+          "n_signals": 14,
+          "sector_id": "ess"
         }
       ]
     },
@@ -169,38 +169,38 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": -0.515,
-          "hit_rate": 0.067,
-          "n_signals": 15,
+          "correlation": -0.519,
+          "hit_rate": 0.0,
+          "n_signals": 14,
           "sector_id": "defense"
         },
         {
           "best_lag": 5,
-          "correlation": -0.425,
-          "hit_rate": 0.2,
-          "n_signals": 15,
+          "correlation": -0.454,
+          "hit_rate": 0.071,
+          "n_signals": 14,
           "sector_id": "nuclear"
         },
         {
-          "best_lag": 10,
-          "correlation": 0.337,
-          "hit_rate": 0.462,
-          "n_signals": 13,
-          "sector_id": "hotel_tourism"
+          "best_lag": 15,
+          "correlation": 0.332,
+          "hit_rate": 0.333,
+          "n_signals": 12,
+          "sector_id": "lng"
         },
         {
-          "best_lag": 3,
+          "best_lag": 15,
+          "correlation": -0.327,
+          "hit_rate": 0.167,
+          "n_signals": 12,
+          "sector_id": "etc"
+        },
+        {
+          "best_lag": 5,
           "correlation": -0.325,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "wind"
-        },
-        {
-          "best_lag": 10,
-          "correlation": 0.322,
-          "hit_rate": 0.615,
-          "n_signals": 13,
-          "sector_id": "liquid_cooling"
         }
       ]
     },
@@ -208,37 +208,37 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.464,
-          "hit_rate": 0.462,
+          "correlation": 0.423,
+          "hit_rate": 0.385,
           "n_signals": 13,
           "sector_id": "lng"
         },
         {
           "best_lag": 10,
-          "correlation": 0.419,
-          "hit_rate": 0.286,
-          "n_signals": 14,
+          "correlation": 0.402,
+          "hit_rate": 0.231,
+          "n_signals": 13,
           "sector_id": "game"
         },
         {
           "best_lag": 3,
-          "correlation": 0.396,
-          "hit_rate": 0.4,
-          "n_signals": 15,
+          "correlation": 0.39,
+          "hit_rate": 0.357,
+          "n_signals": 14,
           "sector_id": "cable"
         },
         {
-          "best_lag": 3,
-          "correlation": 0.334,
-          "hit_rate": 0.467,
-          "n_signals": 15,
-          "sector_id": "shipbuilding"
+          "best_lag": 5,
+          "correlation": -0.352,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "solar"
         },
         {
           "best_lag": 5,
-          "correlation": -0.323,
-          "hit_rate": 0.2,
-          "n_signals": 15,
+          "correlation": -0.345,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "wind"
         }
       ]
@@ -247,76 +247,76 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.389,
-          "hit_rate": 0.0,
+          "correlation": -0.422,
+          "hit_rate": 0.111,
           "n_signals": 9,
           "sector_id": "oil"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.351,
-          "hit_rate": 0.273,
-          "n_signals": 11,
-          "sector_id": "environment"
-        },
-        {
-          "best_lag": 1,
-          "correlation": -0.343,
-          "hit_rate": 0.2,
-          "n_signals": 15,
-          "sector_id": "cosmetics"
-        },
-        {
-          "best_lag": 1,
-          "correlation": -0.339,
-          "hit_rate": 0.2,
-          "n_signals": 15,
-          "sector_id": "fashion"
+          "best_lag": 3,
+          "correlation": 0.324,
+          "hit_rate": 0.571,
+          "n_signals": 14,
+          "sector_id": "finance"
         },
         {
           "best_lag": 15,
-          "correlation": -0.323,
-          "hit_rate": 0.0,
+          "correlation": -0.308,
+          "hit_rate": 0.111,
           "n_signals": 9,
           "sector_id": "security"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.301,
+          "hit_rate": 0.556,
+          "n_signals": 9,
+          "sector_id": "cosmetics"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.297,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "auto"
         }
       ]
     },
     "comm_equip": {
       "followers": [
         {
-          "best_lag": 15,
-          "correlation": 0.498,
-          "hit_rate": 0.455,
+          "best_lag": 10,
+          "correlation": 0.446,
+          "hit_rate": 0.364,
           "n_signals": 11,
+          "sector_id": "real_estate"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.445,
+          "hit_rate": 0.4,
+          "n_signals": 10,
           "sector_id": "robotics"
         },
         {
           "best_lag": 15,
-          "correlation": 0.443,
-          "hit_rate": 0.636,
-          "n_signals": 11,
-          "sector_id": "securities"
-        },
-        {
-          "best_lag": 15,
-          "correlation": -0.426,
-          "hit_rate": 0.091,
-          "n_signals": 11,
-          "sector_id": "food"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.41,
-          "hit_rate": 0.364,
-          "n_signals": 11,
+          "correlation": 0.435,
+          "hit_rate": 0.4,
+          "n_signals": 10,
           "sector_id": "auto"
         },
         {
+          "best_lag": 15,
+          "correlation": -0.431,
+          "hit_rate": 0.1,
+          "n_signals": 10,
+          "sector_id": "food"
+        },
+        {
           "best_lag": 3,
-          "correlation": -0.402,
-          "hit_rate": 0.071,
-          "n_signals": 14,
+          "correlation": -0.376,
+          "hit_rate": 0.077,
+          "n_signals": 13,
           "sector_id": "paper"
         }
       ]
@@ -325,77 +325,77 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.391,
-          "hit_rate": 0.5,
-          "n_signals": 12,
+          "correlation": 0.386,
+          "hit_rate": 0.455,
+          "n_signals": 11,
           "sector_id": "auto"
         },
         {
           "best_lag": 15,
-          "correlation": 0.384,
-          "hit_rate": 0.417,
-          "n_signals": 12,
+          "correlation": 0.361,
+          "hit_rate": 0.455,
+          "n_signals": 11,
           "sector_id": "ai"
         },
         {
-          "best_lag": 3,
-          "correlation": 0.356,
-          "hit_rate": 0.333,
-          "n_signals": 15,
-          "sector_id": "shipbuilding"
-        },
-        {
           "best_lag": 5,
-          "correlation": -0.343,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.349,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "liquid_cooling"
         },
         {
           "best_lag": 5,
-          "correlation": -0.325,
-          "hit_rate": 0.2,
-          "n_signals": 15,
+          "correlation": -0.344,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "memory_semi"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.344,
+          "hit_rate": 0.636,
+          "n_signals": 11,
+          "sector_id": "shipbuilding"
         }
       ]
     },
     "cosmetics": {
       "followers": [
         {
+          "best_lag": 5,
+          "correlation": -0.411,
+          "hit_rate": 0.0,
+          "n_signals": 13,
+          "sector_id": "fintech"
+        },
+        {
           "best_lag": 15,
-          "correlation": 0.401,
+          "correlation": 0.371,
           "hit_rate": 0.3,
           "n_signals": 10,
           "sector_id": "bio"
         },
         {
-          "best_lag": 5,
-          "correlation": -0.395,
-          "hit_rate": 0.0,
-          "n_signals": 14,
-          "sector_id": "fintech"
-        },
-        {
           "best_lag": 3,
-          "correlation": 0.351,
-          "hit_rate": 0.6,
-          "n_signals": 15,
+          "correlation": 0.339,
+          "hit_rate": 0.571,
+          "n_signals": 14,
           "sector_id": "game"
         },
         {
           "best_lag": 5,
-          "correlation": -0.338,
-          "hit_rate": 0.071,
-          "n_signals": 14,
+          "correlation": -0.32,
+          "hit_rate": 0.077,
+          "n_signals": 13,
           "sector_id": "real_estate"
         },
         {
-          "best_lag": 1,
-          "correlation": 0.325,
-          "hit_rate": 0.4,
-          "n_signals": 15,
-          "sector_id": "oil"
+          "best_lag": 3,
+          "correlation": 0.317,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "finance"
         }
       ]
     },
@@ -403,37 +403,37 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.493,
-          "hit_rate": 0.727,
-          "n_signals": 11,
+          "correlation": 0.418,
+          "hit_rate": 0.7,
+          "n_signals": 10,
           "sector_id": "entertainment"
         },
         {
           "best_lag": 1,
-          "correlation": 0.375,
-          "hit_rate": 0.467,
-          "n_signals": 15,
+          "correlation": 0.402,
+          "hit_rate": 0.429,
+          "n_signals": 14,
           "sector_id": "paper"
         },
         {
-          "best_lag": 5,
-          "correlation": -0.371,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "memory_semi"
-        },
-        {
           "best_lag": 1,
-          "correlation": 0.363,
-          "hit_rate": 0.467,
-          "n_signals": 15,
+          "correlation": 0.39,
+          "hit_rate": 0.5,
+          "n_signals": 14,
           "sector_id": "home_appliance"
         },
         {
+          "best_lag": 1,
+          "correlation": 0.369,
+          "hit_rate": 0.5,
+          "n_signals": 14,
+          "sector_id": "steel"
+        },
+        {
           "best_lag": 5,
-          "correlation": -0.356,
-          "hit_rate": 0.067,
-          "n_signals": 15,
+          "correlation": -0.336,
+          "hit_rate": 0.071,
+          "n_signals": 14,
           "sector_id": "hotel_tourism"
         }
       ]
@@ -442,77 +442,77 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": 0.431,
+          "correlation": 0.404,
           "hit_rate": 0.429,
           "n_signals": 14,
           "sector_id": "media"
         },
         {
-          "best_lag": 15,
-          "correlation": -0.346,
-          "hit_rate": 0.182,
-          "n_signals": 11,
-          "sector_id": "power_semi"
-        },
-        {
           "best_lag": 10,
-          "correlation": -0.335,
-          "hit_rate": 0.083,
+          "correlation": -0.33,
+          "hit_rate": 0.167,
           "n_signals": 12,
-          "sector_id": "food"
-        },
-        {
-          "best_lag": 3,
-          "correlation": 0.314,
-          "hit_rate": 0.467,
-          "n_signals": 15,
-          "sector_id": "finance"
+          "sector_id": "lng"
         },
         {
           "best_lag": 1,
-          "correlation": 0.311,
-          "hit_rate": 0.333,
+          "correlation": 0.321,
+          "hit_rate": 0.4,
           "n_signals": 15,
           "sector_id": "hotel_tourism"
+        },
+        {
+          "best_lag": 3,
+          "correlation": 0.316,
+          "hit_rate": 0.4,
+          "n_signals": 15,
+          "sector_id": "power_equip"
+        },
+        {
+          "best_lag": 5,
+          "correlation": 0.315,
+          "hit_rate": 0.5,
+          "n_signals": 14,
+          "sector_id": "etc"
         }
       ]
     },
     "display": {
       "followers": [
         {
-          "best_lag": 1,
-          "correlation": -0.39,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "food"
-        },
-        {
           "best_lag": 5,
-          "correlation": -0.389,
+          "correlation": -0.401,
           "hit_rate": 0.0,
-          "n_signals": 14,
+          "n_signals": 13,
           "sector_id": "cosmetics"
         },
         {
-          "best_lag": 15,
-          "correlation": -0.388,
-          "hit_rate": 0.2,
-          "n_signals": 10,
-          "sector_id": "security"
+          "best_lag": 1,
+          "correlation": -0.395,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "food"
         },
         {
           "best_lag": 3,
-          "correlation": -0.369,
-          "hit_rate": 0.071,
-          "n_signals": 14,
+          "correlation": -0.386,
+          "hit_rate": 0.0,
+          "n_signals": 13,
           "sector_id": "furniture"
         },
         {
           "best_lag": 3,
-          "correlation": 0.365,
-          "hit_rate": 0.286,
-          "n_signals": 14,
+          "correlation": 0.355,
+          "hit_rate": 0.231,
+          "n_signals": 13,
           "sector_id": "liquid_cooling"
+        },
+        {
+          "best_lag": 15,
+          "correlation": -0.353,
+          "hit_rate": 0.2,
+          "n_signals": 10,
+          "sector_id": "security"
         }
       ]
     },
@@ -520,76 +520,76 @@
       "followers": [
         {
           "best_lag": 10,
-          "correlation": -0.398,
-          "hit_rate": 0.091,
-          "n_signals": 11,
+          "correlation": -0.367,
+          "hit_rate": 0.167,
+          "n_signals": 12,
           "sector_id": "media"
         },
         {
-          "best_lag": 1,
-          "correlation": -0.343,
-          "hit_rate": 0.2,
-          "n_signals": 15,
-          "sector_id": "auto"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.341,
-          "hit_rate": 0.7,
-          "n_signals": 10,
-          "sector_id": "wind"
-        },
-        {
           "best_lag": 3,
-          "correlation": 0.334,
+          "correlation": 0.358,
           "hit_rate": 0.333,
           "n_signals": 15,
           "sector_id": "real_estate"
         },
         {
+          "best_lag": 15,
+          "correlation": 0.338,
+          "hit_rate": 0.6,
+          "n_signals": 10,
+          "sector_id": "wind"
+        },
+        {
           "best_lag": 5,
-          "correlation": -0.324,
+          "correlation": -0.327,
           "hit_rate": 0.143,
           "n_signals": 14,
           "sector_id": "robotics"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.316,
+          "hit_rate": 0.2,
+          "n_signals": 10,
+          "sector_id": "bio"
         }
       ]
     },
     "entertainment": {
       "followers": [
         {
+          "best_lag": 1,
+          "correlation": 0.395,
+          "hit_rate": 0.5,
+          "n_signals": 14,
+          "sector_id": "steel"
+        },
+        {
           "best_lag": 15,
-          "correlation": 0.455,
-          "hit_rate": 0.333,
-          "n_signals": 12,
+          "correlation": 0.381,
+          "hit_rate": 0.364,
+          "n_signals": 11,
           "sector_id": "media"
         },
         {
           "best_lag": 15,
-          "correlation": 0.421,
-          "hit_rate": 0.583,
-          "n_signals": 12,
-          "sector_id": "lng"
+          "correlation": -0.37,
+          "hit_rate": 0.182,
+          "n_signals": 11,
+          "sector_id": "securities"
         },
         {
           "best_lag": 1,
-          "correlation": 0.375,
-          "hit_rate": 0.467,
-          "n_signals": 15,
-          "sector_id": "steel"
-        },
-        {
-          "best_lag": 1,
-          "correlation": 0.346,
-          "hit_rate": 0.333,
-          "n_signals": 15,
+          "correlation": 0.36,
+          "hit_rate": 0.357,
+          "n_signals": 14,
           "sector_id": "finance"
         },
         {
           "best_lag": 5,
-          "correlation": -0.307,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.36,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "food"
         }
       ]
@@ -597,39 +597,39 @@
     "environment": {
       "followers": [
         {
-          "best_lag": 10,
-          "correlation": 0.451,
-          "hit_rate": 0.545,
-          "n_signals": 11,
+          "best_lag": 15,
+          "correlation": -0.437,
+          "hit_rate": 0.0,
+          "n_signals": 9,
           "sector_id": "fashion"
         },
         {
+          "best_lag": 15,
+          "correlation": -0.388,
+          "hit_rate": 0.0,
+          "n_signals": 9,
+          "sector_id": "game"
+        },
+        {
+          "best_lag": 15,
+          "correlation": -0.366,
+          "hit_rate": 0.0,
+          "n_signals": 9,
+          "sector_id": "food"
+        },
+        {
           "best_lag": 10,
-          "correlation": 0.358,
-          "hit_rate": 0.455,
+          "correlation": 0.352,
+          "hit_rate": 0.364,
           "n_signals": 11,
           "sector_id": "cosmetics"
         },
         {
           "best_lag": 15,
-          "correlation": -0.338,
-          "hit_rate": 0.2,
-          "n_signals": 10,
+          "correlation": -0.336,
+          "hit_rate": 0.111,
+          "n_signals": 9,
           "sector_id": "education"
-        },
-        {
-          "best_lag": 1,
-          "correlation": 0.338,
-          "hit_rate": 0.357,
-          "n_signals": 14,
-          "sector_id": "ess"
-        },
-        {
-          "best_lag": 15,
-          "correlation": -0.311,
-          "hit_rate": 0.1,
-          "n_signals": 10,
-          "sector_id": "game"
         }
       ]
     },
@@ -637,38 +637,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.397,
-          "hit_rate": 0.111,
+          "correlation": -0.436,
+          "hit_rate": 0.0,
           "n_signals": 9,
           "sector_id": "etc"
         },
         {
           "best_lag": 3,
-          "correlation": -0.374,
-          "hit_rate": 0.143,
+          "correlation": -0.373,
+          "hit_rate": 0.071,
           "n_signals": 14,
           "sector_id": "construction"
         },
         {
           "best_lag": 5,
-          "correlation": -0.365,
-          "hit_rate": 0.143,
-          "n_signals": 14,
+          "correlation": -0.369,
+          "hit_rate": 0.154,
+          "n_signals": 13,
           "sector_id": "liquid_cooling"
         },
         {
           "best_lag": 10,
-          "correlation": 0.363,
-          "hit_rate": 0.364,
-          "n_signals": 11,
+          "correlation": 0.305,
+          "hit_rate": 0.3,
+          "n_signals": 10,
           "sector_id": "fintech"
         },
         {
-          "best_lag": 5,
-          "correlation": -0.289,
-          "hit_rate": 0.143,
+          "best_lag": 3,
+          "correlation": 0.296,
+          "hit_rate": 0.286,
           "n_signals": 14,
-          "sector_id": "hotel_tourism"
+          "sector_id": "home_appliance"
         }
       ]
     },
@@ -676,38 +676,38 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": 0.442,
-          "hit_rate": 0.462,
-          "n_signals": 13,
+          "correlation": 0.467,
+          "hit_rate": 0.5,
+          "n_signals": 14,
           "sector_id": "transport"
         },
         {
+          "best_lag": 5,
+          "correlation": 0.438,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "display"
+        },
+        {
+          "best_lag": 5,
+          "correlation": 0.437,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "chemical"
+        },
+        {
           "best_lag": 10,
-          "correlation": 0.428,
-          "hit_rate": 0.5,
+          "correlation": 0.412,
+          "hit_rate": 0.583,
           "n_signals": 12,
           "sector_id": "game"
         },
         {
-          "best_lag": 5,
-          "correlation": 0.385,
-          "hit_rate": 0.308,
-          "n_signals": 13,
-          "sector_id": "chemical"
-        },
-        {
-          "best_lag": 5,
-          "correlation": 0.384,
-          "hit_rate": 0.385,
-          "n_signals": 13,
-          "sector_id": "display"
-        },
-        {
-          "best_lag": 10,
-          "correlation": -0.371,
-          "hit_rate": 0.167,
-          "n_signals": 12,
-          "sector_id": "finance"
+          "best_lag": 15,
+          "correlation": 0.34,
+          "hit_rate": 0.545,
+          "n_signals": 11,
+          "sector_id": "lng"
         }
       ]
     },
@@ -715,77 +715,77 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": -0.457,
-          "hit_rate": 0.143,
+          "correlation": -0.465,
+          "hit_rate": 0.071,
           "n_signals": 14,
           "sector_id": "fintech"
         },
         {
           "best_lag": 1,
-          "correlation": 0.438,
-          "hit_rate": 0.467,
+          "correlation": 0.434,
+          "hit_rate": 0.4,
           "n_signals": 15,
           "sector_id": "oil"
         },
         {
-          "best_lag": 10,
-          "correlation": 0.372,
-          "hit_rate": 0.5,
-          "n_signals": 12,
-          "sector_id": "game"
-        },
-        {
           "best_lag": 15,
-          "correlation": 0.349,
+          "correlation": 0.396,
           "hit_rate": 0.364,
           "n_signals": 11,
           "sector_id": "bio"
         },
         {
           "best_lag": 5,
-          "correlation": -0.348,
+          "correlation": -0.384,
           "hit_rate": 0.071,
           "n_signals": 14,
           "sector_id": "cosmetics"
+        },
+        {
+          "best_lag": 10,
+          "correlation": 0.378,
+          "hit_rate": 0.417,
+          "n_signals": 12,
+          "sector_id": "game"
         }
       ]
     },
     "finance": {
       "followers": [
         {
-          "best_lag": 5,
-          "correlation": 0.386,
-          "hit_rate": 0.429,
-          "n_signals": 14,
-          "sector_id": "security"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.385,
-          "hit_rate": 0.364,
-          "n_signals": 11,
-          "sector_id": "comm_equip"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.352,
-          "hit_rate": 0.545,
-          "n_signals": 11,
-          "sector_id": "memory_semi"
-        },
-        {
           "best_lag": 1,
-          "correlation": -0.346,
+          "correlation": -0.355,
           "hit_rate": 0.067,
           "n_signals": 15,
           "sector_id": "bio"
         },
         {
           "best_lag": 15,
-          "correlation": 0.342,
-          "hit_rate": 0.182,
+          "correlation": 0.352,
+          "hit_rate": 0.364,
           "n_signals": 11,
-          "sector_id": "power_semi"
+          "sector_id": "comm_equip"
+        },
+        {
+          "best_lag": 5,
+          "correlation": 0.352,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "security"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.344,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "shipbuilding"
+        },
+        {
+          "best_lag": 1,
+          "correlation": -0.342,
+          "hit_rate": 0.2,
+          "n_signals": 15,
+          "sector_id": "environment"
         }
       ]
     },
@@ -793,38 +793,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.46,
-          "hit_rate": 0.0,
+          "correlation": -0.426,
+          "hit_rate": 0.091,
           "n_signals": 11,
           "sector_id": "game"
         },
         {
-          "best_lag": 3,
-          "correlation": 0.436,
-          "hit_rate": 0.429,
-          "n_signals": 14,
-          "sector_id": "finance"
-        },
-        {
           "best_lag": 1,
-          "correlation": -0.401,
-          "hit_rate": 0.067,
-          "n_signals": 15,
+          "correlation": -0.418,
+          "hit_rate": 0.0,
+          "n_signals": 14,
           "sector_id": "cosmetics"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.38,
-          "hit_rate": 0.154,
+          "best_lag": 3,
+          "correlation": 0.417,
+          "hit_rate": 0.462,
           "n_signals": 13,
-          "sector_id": "transport"
+          "sector_id": "finance"
         },
         {
           "best_lag": 3,
-          "correlation": 0.356,
-          "hit_rate": 0.357,
-          "n_signals": 14,
+          "correlation": 0.367,
+          "hit_rate": 0.385,
+          "n_signals": 13,
           "sector_id": "real_estate"
+        },
+        {
+          "best_lag": 10,
+          "correlation": -0.365,
+          "hit_rate": 0.167,
+          "n_signals": 12,
+          "sector_id": "transport"
         }
       ]
     },
@@ -832,38 +832,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.361,
-          "hit_rate": 0.417,
-          "n_signals": 12,
+          "correlation": 0.378,
+          "hit_rate": 0.455,
+          "n_signals": 11,
           "sector_id": "bio"
         },
         {
-          "best_lag": 1,
-          "correlation": 0.361,
-          "hit_rate": 0.267,
-          "n_signals": 15,
-          "sector_id": "media"
-        },
-        {
           "best_lag": 5,
-          "correlation": -0.336,
-          "hit_rate": 0.071,
-          "n_signals": 14,
+          "correlation": -0.343,
+          "hit_rate": 0.077,
+          "n_signals": 13,
           "sector_id": "cosmetics"
         },
         {
           "best_lag": 1,
-          "correlation": 0.323,
-          "hit_rate": 0.467,
-          "n_signals": 15,
-          "sector_id": "finance"
+          "correlation": 0.313,
+          "hit_rate": 0.286,
+          "n_signals": 14,
+          "sector_id": "media"
         },
         {
-          "best_lag": 1,
-          "correlation": 0.314,
-          "hit_rate": 0.4,
-          "n_signals": 15,
-          "sector_id": "liquid_cooling"
+          "best_lag": 10,
+          "correlation": 0.307,
+          "hit_rate": 0.455,
+          "n_signals": 11,
+          "sector_id": "telecom"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.304,
+          "hit_rate": 0.273,
+          "n_signals": 11,
+          "sector_id": "lng"
         }
       ]
     },
@@ -871,38 +871,38 @@
       "followers": [
         {
           "best_lag": 3,
-          "correlation": 0.384,
-          "hit_rate": 0.4,
-          "n_signals": 15,
+          "correlation": 0.349,
+          "hit_rate": 0.357,
+          "n_signals": 14,
           "sector_id": "cable"
         },
         {
           "best_lag": 3,
-          "correlation": -0.345,
+          "correlation": -0.33,
           "hit_rate": 0.0,
-          "n_signals": 15,
+          "n_signals": 14,
           "sector_id": "education"
         },
         {
-          "best_lag": 3,
-          "correlation": -0.31,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "department"
-        },
-        {
           "best_lag": 15,
-          "correlation": -0.301,
-          "hit_rate": 0.091,
-          "n_signals": 11,
+          "correlation": -0.313,
+          "hit_rate": 0.0,
+          "n_signals": 10,
           "sector_id": "fashion"
         },
         {
-          "best_lag": 5,
-          "correlation": -0.291,
-          "hit_rate": 0.0,
-          "n_signals": 15,
-          "sector_id": "liquid_cooling"
+          "best_lag": 10,
+          "correlation": -0.31,
+          "hit_rate": 0.167,
+          "n_signals": 12,
+          "sector_id": "securities"
+        },
+        {
+          "best_lag": 3,
+          "correlation": -0.298,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "department"
         }
       ]
     },
@@ -910,77 +910,77 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": -0.347,
-          "hit_rate": 0.067,
-          "n_signals": 15,
+          "correlation": -0.365,
+          "hit_rate": 0.071,
+          "n_signals": 14,
           "sector_id": "auto"
         },
         {
           "best_lag": 5,
-          "correlation": -0.336,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.322,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "display"
         },
         {
+          "best_lag": 10,
+          "correlation": -0.321,
+          "hit_rate": 0.0,
+          "n_signals": 12,
+          "sector_id": "food"
+        },
+        {
           "best_lag": 1,
-          "correlation": -0.324,
-          "hit_rate": 0.2,
-          "n_signals": 15,
+          "correlation": -0.316,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "fashion"
         },
         {
-          "best_lag": 3,
-          "correlation": -0.322,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "home_appliance"
-        },
-        {
-          "best_lag": 1,
-          "correlation": 0.303,
-          "hit_rate": 0.267,
-          "n_signals": 15,
-          "sector_id": "oil"
+          "best_lag": 10,
+          "correlation": -0.307,
+          "hit_rate": 0.083,
+          "n_signals": 12,
+          "sector_id": "hotel_tourism"
         }
       ]
     },
     "holdings": {
       "followers": [
         {
-          "best_lag": 15,
-          "correlation": -0.358,
-          "hit_rate": 0.091,
-          "n_signals": 11,
-          "sector_id": "display"
-        },
-        {
           "best_lag": 5,
-          "correlation": -0.345,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.394,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "cement"
         },
         {
           "best_lag": 15,
-          "correlation": -0.307,
-          "hit_rate": 0.0,
-          "n_signals": 11,
-          "sector_id": "medical_device"
+          "correlation": -0.351,
+          "hit_rate": 0.1,
+          "n_signals": 10,
+          "sector_id": "display"
         },
         {
           "best_lag": 5,
-          "correlation": -0.293,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.323,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "cable"
         },
         {
-          "best_lag": 3,
-          "correlation": -0.289,
-          "hit_rate": 0.067,
-          "n_signals": 15,
-          "sector_id": "fintech"
+          "best_lag": 5,
+          "correlation": -0.323,
+          "hit_rate": 0.357,
+          "n_signals": 14,
+          "sector_id": "construction"
+        },
+        {
+          "best_lag": 15,
+          "correlation": -0.29,
+          "hit_rate": 0.0,
+          "n_signals": 10,
+          "sector_id": "hotel_tourism"
         }
       ]
     },
@@ -988,76 +988,76 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.411,
-          "hit_rate": 0.091,
+          "correlation": -0.372,
+          "hit_rate": 0.182,
           "n_signals": 11,
           "sector_id": "ai"
         },
         {
+          "best_lag": 10,
+          "correlation": -0.324,
+          "hit_rate": 0.167,
+          "n_signals": 12,
+          "sector_id": "defense"
+        },
+        {
           "best_lag": 15,
-          "correlation": -0.375,
+          "correlation": 0.317,
+          "hit_rate": 0.455,
+          "n_signals": 11,
+          "sector_id": "securities"
+        },
+        {
+          "best_lag": 15,
+          "correlation": -0.316,
           "hit_rate": 0.182,
           "n_signals": 11,
           "sector_id": "fintech"
         },
         {
-          "best_lag": 1,
-          "correlation": -0.339,
-          "hit_rate": 0.214,
-          "n_signals": 14,
-          "sector_id": "power_semi"
-        },
-        {
-          "best_lag": 15,
-          "correlation": -0.331,
-          "hit_rate": 0.091,
-          "n_signals": 11,
-          "sector_id": "trading"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.329,
-          "hit_rate": 0.545,
-          "n_signals": 11,
-          "sector_id": "etc"
+          "best_lag": 5,
+          "correlation": -0.313,
+          "hit_rate": 0.231,
+          "n_signals": 13,
+          "sector_id": "cosmetics"
         }
       ]
     },
     "hotel_tourism": {
       "followers": [
         {
-          "best_lag": 10,
-          "correlation": -0.398,
-          "hit_rate": 0.071,
-          "n_signals": 14,
-          "sector_id": "ai"
-        },
-        {
           "best_lag": 15,
-          "correlation": 0.38,
+          "correlation": 0.4,
           "hit_rate": 0.5,
           "n_signals": 12,
           "sector_id": "transport"
         },
         {
           "best_lag": 3,
-          "correlation": 0.358,
-          "hit_rate": 0.4,
-          "n_signals": 15,
+          "correlation": 0.379,
+          "hit_rate": 0.357,
+          "n_signals": 14,
           "sector_id": "real_estate"
         },
         {
-          "best_lag": 3,
-          "correlation": 0.356,
-          "hit_rate": 0.467,
-          "n_signals": 15,
-          "sector_id": "steel"
+          "best_lag": 10,
+          "correlation": -0.36,
+          "hit_rate": 0.077,
+          "n_signals": 13,
+          "sector_id": "ai"
         },
         {
           "best_lag": 1,
-          "correlation": 0.347,
-          "hit_rate": 0.467,
-          "n_signals": 15,
+          "correlation": 0.329,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "media"
+        },
+        {
+          "best_lag": 1,
+          "correlation": 0.328,
+          "hit_rate": 0.429,
+          "n_signals": 14,
           "sector_id": "lng"
         }
       ]
@@ -1066,38 +1066,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.476,
+          "correlation": 0.484,
           "hit_rate": 0.5,
           "n_signals": 10,
           "sector_id": "cable"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.401,
-          "hit_rate": 0.154,
-          "n_signals": 13,
-          "sector_id": "chemical"
+          "best_lag": 15,
+          "correlation": 0.358,
+          "hit_rate": 0.4,
+          "n_signals": 10,
+          "sector_id": "nuclear"
         },
         {
           "best_lag": 3,
-          "correlation": 0.353,
-          "hit_rate": 0.467,
-          "n_signals": 15,
+          "correlation": 0.338,
+          "hit_rate": 0.429,
+          "n_signals": 14,
           "sector_id": "finance"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.349,
-          "hit_rate": 0.154,
-          "n_signals": 13,
-          "sector_id": "transport"
+          "best_lag": 15,
+          "correlation": 0.334,
+          "hit_rate": 0.4,
+          "n_signals": 10,
+          "sector_id": "shipbuilding"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.348,
-          "hit_rate": 0.0,
-          "n_signals": 13,
-          "sector_id": "mining"
+          "best_lag": 15,
+          "correlation": 0.333,
+          "hit_rate": 0.3,
+          "n_signals": 10,
+          "sector_id": "holdings"
         }
       ]
     },
@@ -1105,38 +1105,38 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": -0.458,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.468,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "hotel_tourism"
         },
         {
           "best_lag": 1,
-          "correlation": 0.41,
-          "hit_rate": 0.467,
-          "n_signals": 15,
+          "correlation": 0.348,
+          "hit_rate": 0.5,
+          "n_signals": 14,
           "sector_id": "ess"
         },
         {
-          "best_lag": 1,
-          "correlation": 0.337,
-          "hit_rate": 0.333,
-          "n_signals": 15,
-          "sector_id": "steel"
+          "best_lag": 3,
+          "correlation": -0.317,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "mining"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.312,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "cement"
         },
         {
           "best_lag": 1,
-          "correlation": 0.324,
-          "hit_rate": 0.467,
-          "n_signals": 15,
+          "correlation": 0.306,
+          "hit_rate": 0.357,
+          "n_signals": 14,
           "sector_id": "defense"
-        },
-        {
-          "best_lag": 1,
-          "correlation": 0.324,
-          "hit_rate": 0.4,
-          "n_signals": 15,
-          "sector_id": "furniture"
         }
       ]
     },
@@ -1144,77 +1144,77 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.457,
+          "correlation": 0.465,
           "hit_rate": 0.556,
           "n_signals": 9,
           "sector_id": "fashion"
         },
         {
-          "best_lag": 5,
-          "correlation": -0.37,
-          "hit_rate": 0.0,
-          "n_signals": 13,
-          "sector_id": "department"
+          "best_lag": 15,
+          "correlation": 0.407,
+          "hit_rate": 0.333,
+          "n_signals": 9,
+          "sector_id": "transport"
         },
         {
           "best_lag": 15,
-          "correlation": 0.368,
-          "hit_rate": 0.444,
+          "correlation": 0.393,
+          "hit_rate": 0.556,
           "n_signals": 9,
           "sector_id": "mining"
         },
         {
-          "best_lag": 5,
-          "correlation": -0.358,
-          "hit_rate": 0.0,
-          "n_signals": 13,
-          "sector_id": "fintech"
+          "best_lag": 15,
+          "correlation": 0.38,
+          "hit_rate": 0.556,
+          "n_signals": 9,
+          "sector_id": "cement"
         },
         {
           "best_lag": 3,
-          "correlation": 0.345,
-          "hit_rate": 0.4,
-          "n_signals": 15,
-          "sector_id": "etc"
+          "correlation": -0.361,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "telecom"
         }
       ]
     },
     "medical_device": {
       "followers": [
         {
+          "best_lag": 1,
+          "correlation": 0.431,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "auto"
+        },
+        {
           "best_lag": 15,
-          "correlation": 0.461,
+          "correlation": 0.425,
           "hit_rate": 0.5,
           "n_signals": 10,
           "sector_id": "finance"
         },
         {
-          "best_lag": 1,
-          "correlation": 0.416,
-          "hit_rate": 0.5,
-          "n_signals": 14,
-          "sector_id": "auto"
-        },
-        {
-          "best_lag": 5,
-          "correlation": 0.413,
-          "hit_rate": 0.357,
-          "n_signals": 14,
-          "sector_id": "entertainment"
-        },
-        {
-          "best_lag": 3,
-          "correlation": 0.384,
-          "hit_rate": 0.571,
-          "n_signals": 14,
+          "best_lag": 10,
+          "correlation": -0.396,
+          "hit_rate": 0.0,
+          "n_signals": 12,
           "sector_id": "food"
         },
         {
-          "best_lag": 1,
-          "correlation": 0.377,
-          "hit_rate": 0.357,
-          "n_signals": 14,
-          "sector_id": "power_semi"
+          "best_lag": 5,
+          "correlation": -0.392,
+          "hit_rate": 0.231,
+          "n_signals": 13,
+          "sector_id": "wind"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.389,
+          "hit_rate": 0.231,
+          "n_signals": 13,
+          "sector_id": "solar"
         }
       ]
     },
@@ -1222,38 +1222,38 @@
       "followers": [
         {
           "best_lag": 1,
-          "correlation": 0.387,
-          "hit_rate": 0.533,
-          "n_signals": 15,
+          "correlation": 0.416,
+          "hit_rate": 0.429,
+          "n_signals": 14,
           "sector_id": "furniture"
         },
         {
           "best_lag": 10,
-          "correlation": -0.345,
-          "hit_rate": 0.077,
-          "n_signals": 13,
-          "sector_id": "solar"
-        },
-        {
-          "best_lag": 10,
-          "correlation": -0.338,
+          "correlation": -0.357,
           "hit_rate": 0.0,
-          "n_signals": 13,
+          "n_signals": 12,
           "sector_id": "oil"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.33,
-          "hit_rate": 0.231,
+          "best_lag": 3,
+          "correlation": -0.349,
+          "hit_rate": 0.0,
           "n_signals": 13,
-          "sector_id": "defense"
+          "sector_id": "food"
         },
         {
-          "best_lag": 3,
-          "correlation": -0.329,
+          "best_lag": 15,
+          "correlation": 0.348,
+          "hit_rate": 0.545,
+          "n_signals": 11,
+          "sector_id": "shipbuilding"
+        },
+        {
+          "best_lag": 10,
+          "correlation": -0.348,
           "hit_rate": 0.0,
-          "n_signals": 14,
-          "sector_id": "food"
+          "n_signals": 12,
+          "sector_id": "solar"
         }
       ]
     },
@@ -1261,77 +1261,77 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.45,
-          "hit_rate": 0.364,
-          "n_signals": 11,
+          "correlation": 0.438,
+          "hit_rate": 0.4,
+          "n_signals": 10,
           "sector_id": "ai"
         },
         {
           "best_lag": 15,
-          "correlation": -0.395,
+          "correlation": -0.403,
           "hit_rate": 0.0,
-          "n_signals": 11,
+          "n_signals": 10,
           "sector_id": "etc"
         },
         {
-          "best_lag": 1,
-          "correlation": -0.344,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "chemical"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.339,
-          "hit_rate": 0.455,
-          "n_signals": 11,
-          "sector_id": "auto"
+          "best_lag": 5,
+          "correlation": -0.351,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "nuclear"
         },
         {
           "best_lag": 5,
-          "correlation": -0.33,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.335,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "hotel_tourism"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.329,
+          "hit_rate": 0.5,
+          "n_signals": 10,
+          "sector_id": "auto"
         }
       ]
     },
     "nuclear": {
       "followers": [
         {
-          "best_lag": 10,
-          "correlation": -0.441,
-          "hit_rate": 0.083,
-          "n_signals": 12,
-          "sector_id": "chemical"
+          "best_lag": 15,
+          "correlation": 0.445,
+          "hit_rate": 0.556,
+          "n_signals": 9,
+          "sector_id": "lng"
+        },
+        {
+          "best_lag": 15,
+          "correlation": -0.433,
+          "hit_rate": 0.111,
+          "n_signals": 9,
+          "sector_id": "etc"
         },
         {
           "best_lag": 10,
-          "correlation": -0.426,
-          "hit_rate": 0.167,
-          "n_signals": 12,
+          "correlation": -0.416,
+          "hit_rate": 0.182,
+          "n_signals": 11,
           "sector_id": "auto"
         },
         {
           "best_lag": 3,
-          "correlation": -0.417,
-          "hit_rate": 0.067,
-          "n_signals": 15,
-          "sector_id": "construction"
+          "correlation": -0.408,
+          "hit_rate": 0.154,
+          "n_signals": 13,
+          "sector_id": "trading"
         },
         {
           "best_lag": 15,
-          "correlation": -0.392,
-          "hit_rate": 0.1,
-          "n_signals": 10,
-          "sector_id": "etc"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.391,
-          "hit_rate": 0.4,
-          "n_signals": 10,
-          "sector_id": "lng"
+          "correlation": 0.407,
+          "hit_rate": 0.556,
+          "n_signals": 9,
+          "sector_id": "shipbuilding"
         }
       ]
     },
@@ -1339,38 +1339,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.365,
-          "hit_rate": 0.071,
-          "n_signals": 14,
-          "sector_id": "steel"
-        },
-        {
-          "best_lag": 15,
-          "correlation": -0.315,
-          "hit_rate": 0.214,
+          "correlation": -0.339,
+          "hit_rate": 0.143,
           "n_signals": 14,
           "sector_id": "etc"
         },
         {
           "best_lag": 15,
-          "correlation": 0.314,
+          "correlation": -0.337,
           "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "steel"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.325,
+          "hit_rate": 0.214,
           "n_signals": 14,
           "sector_id": "power_semi"
         },
         {
-          "best_lag": 3,
-          "correlation": 0.308,
-          "hit_rate": 0.333,
-          "n_signals": 15,
-          "sector_id": "fintech"
+          "best_lag": 15,
+          "correlation": 0.307,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "power_equip"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.301,
-          "hit_rate": 0.067,
-          "n_signals": 15,
-          "sector_id": "mining"
+          "best_lag": 5,
+          "correlation": 0.307,
+          "hit_rate": 0.571,
+          "n_signals": 14,
+          "sector_id": "security"
         }
       ]
     },
@@ -1378,38 +1378,38 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": 0.487,
-          "hit_rate": 0.5,
-          "n_signals": 14,
+          "correlation": 0.475,
+          "hit_rate": 0.462,
+          "n_signals": 13,
           "sector_id": "oil"
         },
         {
           "best_lag": 3,
-          "correlation": -0.378,
-          "hit_rate": 0.071,
-          "n_signals": 14,
+          "correlation": -0.386,
+          "hit_rate": 0.077,
+          "n_signals": 13,
           "sector_id": "fashion"
         },
         {
           "best_lag": 5,
-          "correlation": 0.377,
-          "hit_rate": 0.571,
-          "n_signals": 14,
+          "correlation": 0.379,
+          "hit_rate": 0.538,
+          "n_signals": 13,
           "sector_id": "finance"
         },
         {
-          "best_lag": 10,
-          "correlation": 0.377,
-          "hit_rate": 0.462,
+          "best_lag": 3,
+          "correlation": -0.36,
+          "hit_rate": 0.154,
           "n_signals": 13,
-          "sector_id": "memory_semi"
+          "sector_id": "mining"
         },
         {
-          "best_lag": 15,
-          "correlation": 0.338,
-          "hit_rate": 0.364,
-          "n_signals": 11,
-          "sector_id": "bio"
+          "best_lag": 10,
+          "correlation": 0.328,
+          "hit_rate": 0.417,
+          "n_signals": 12,
+          "sector_id": "memory_semi"
         }
       ]
     },
@@ -1417,37 +1417,37 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.493,
-          "hit_rate": 0.6,
-          "n_signals": 10,
+          "correlation": 0.494,
+          "hit_rate": 0.556,
+          "n_signals": 9,
           "sector_id": "shipbuilding"
         },
         {
           "best_lag": 15,
-          "correlation": 0.425,
-          "hit_rate": 0.5,
-          "n_signals": 10,
+          "correlation": 0.442,
+          "hit_rate": 0.556,
+          "n_signals": 9,
           "sector_id": "lng"
         },
         {
           "best_lag": 3,
-          "correlation": 0.412,
-          "hit_rate": 0.467,
-          "n_signals": 15,
+          "correlation": 0.409,
+          "hit_rate": 0.429,
+          "n_signals": 14,
           "sector_id": "environment"
         },
         {
           "best_lag": 5,
-          "correlation": -0.387,
-          "hit_rate": 0.267,
-          "n_signals": 15,
+          "correlation": -0.406,
+          "hit_rate": 0.357,
+          "n_signals": 14,
           "sector_id": "nuclear"
         },
         {
           "best_lag": 15,
-          "correlation": 0.368,
-          "hit_rate": 0.5,
-          "n_signals": 10,
+          "correlation": 0.374,
+          "hit_rate": 0.556,
+          "n_signals": 9,
           "sector_id": "cable"
         }
       ]
@@ -1456,38 +1456,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.405,
-          "hit_rate": 0.182,
-          "n_signals": 11,
+          "correlation": -0.43,
+          "hit_rate": 0.1,
+          "n_signals": 10,
           "sector_id": "food"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.343,
-          "hit_rate": 0.083,
-          "n_signals": 12,
-          "sector_id": "solar"
+          "best_lag": 15,
+          "correlation": -0.386,
+          "hit_rate": 0.2,
+          "n_signals": 10,
+          "sector_id": "medical_device"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.384,
+          "hit_rate": 0.077,
+          "n_signals": 13,
+          "sector_id": "securities"
         },
         {
           "best_lag": 1,
-          "correlation": 0.341,
-          "hit_rate": 0.357,
+          "correlation": 0.353,
+          "hit_rate": 0.429,
           "n_signals": 14,
           "sector_id": "holdings"
         },
         {
           "best_lag": 15,
-          "correlation": -0.333,
-          "hit_rate": 0.182,
-          "n_signals": 11,
-          "sector_id": "medical_device"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.331,
-          "hit_rate": 0.545,
-          "n_signals": 11,
-          "sector_id": "shipbuilding"
+          "correlation": -0.344,
+          "hit_rate": 0.3,
+          "n_signals": 10,
+          "sector_id": "environment"
         }
       ]
     },
@@ -1495,38 +1495,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.391,
-          "hit_rate": 0.545,
-          "n_signals": 11,
-          "sector_id": "cable"
-        },
-        {
-          "best_lag": 15,
-          "correlation": 0.387,
-          "hit_rate": 0.455,
+          "correlation": 0.393,
+          "hit_rate": 0.364,
           "n_signals": 11,
           "sector_id": "power_equip"
         },
         {
           "best_lag": 3,
-          "correlation": 0.382,
+          "correlation": 0.372,
           "hit_rate": 0.467,
           "n_signals": 15,
           "sector_id": "liquid_cooling"
         },
         {
           "best_lag": 15,
-          "correlation": 0.319,
+          "correlation": 0.371,
           "hit_rate": 0.545,
           "n_signals": 11,
-          "sector_id": "shipbuilding"
+          "sector_id": "cable"
+        },
+        {
+          "best_lag": 3,
+          "correlation": -0.317,
+          "hit_rate": 0.133,
+          "n_signals": 15,
+          "sector_id": "paper"
         },
         {
           "best_lag": 1,
-          "correlation": 0.317,
-          "hit_rate": 0.467,
+          "correlation": -0.311,
+          "hit_rate": 0.133,
           "n_signals": 15,
-          "sector_id": "media"
+          "sector_id": "finance"
         }
       ]
     },
@@ -1534,38 +1534,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": -0.438,
+          "correlation": -0.412,
           "hit_rate": 0.0,
           "n_signals": 9,
           "sector_id": "media"
         },
         {
-          "best_lag": 15,
-          "correlation": -0.373,
-          "hit_rate": 0.222,
-          "n_signals": 9,
-          "sector_id": "solar"
-        },
-        {
           "best_lag": 5,
-          "correlation": 0.368,
+          "correlation": 0.365,
           "hit_rate": 0.385,
           "n_signals": 13,
           "sector_id": "education"
         },
         {
           "best_lag": 15,
-          "correlation": -0.362,
+          "correlation": -0.346,
           "hit_rate": 0.222,
           "n_signals": 9,
-          "sector_id": "ai"
+          "sector_id": "solar"
         },
         {
           "best_lag": 5,
-          "correlation": 0.346,
+          "correlation": 0.323,
           "hit_rate": 0.308,
           "n_signals": 13,
           "sector_id": "hotel_tourism"
+        },
+        {
+          "best_lag": 15,
+          "correlation": -0.314,
+          "hit_rate": 0.222,
+          "n_signals": 9,
+          "sector_id": "ai"
         }
       ]
     },
@@ -1573,38 +1573,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.426,
-          "hit_rate": 0.167,
-          "n_signals": 12,
+          "correlation": 0.39,
+          "hit_rate": 0.182,
+          "n_signals": 11,
           "sector_id": "furniture"
         },
         {
           "best_lag": 3,
-          "correlation": -0.37,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.363,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "food"
         },
         {
           "best_lag": 15,
-          "correlation": 0.343,
-          "hit_rate": 0.417,
-          "n_signals": 12,
-          "sector_id": "game"
-        },
-        {
-          "best_lag": 15,
-          "correlation": -0.321,
-          "hit_rate": 0.083,
-          "n_signals": 12,
-          "sector_id": "liquid_cooling"
-        },
-        {
-          "best_lag": 15,
-          "correlation": -0.312,
-          "hit_rate": 0.083,
-          "n_signals": 12,
+          "correlation": -0.335,
+          "hit_rate": 0.091,
+          "n_signals": 11,
           "sector_id": "solar"
+        },
+        {
+          "best_lag": 1,
+          "correlation": -0.324,
+          "hit_rate": 0.214,
+          "n_signals": 14,
+          "sector_id": "oil"
+        },
+        {
+          "best_lag": 15,
+          "correlation": 0.316,
+          "hit_rate": 0.273,
+          "n_signals": 11,
+          "sector_id": "game"
         }
       ]
     },
@@ -1612,38 +1612,38 @@
       "followers": [
         {
           "best_lag": 1,
-          "correlation": 0.443,
+          "correlation": 0.464,
           "hit_rate": 0.5,
           "n_signals": 14,
           "sector_id": "shipbuilding"
         },
         {
           "best_lag": 15,
-          "correlation": -0.432,
-          "hit_rate": 0.1,
-          "n_signals": 10,
+          "correlation": -0.423,
+          "hit_rate": 0.111,
+          "n_signals": 9,
           "sector_id": "telecom"
         },
         {
           "best_lag": 15,
-          "correlation": 0.412,
-          "hit_rate": 0.4,
-          "n_signals": 10,
-          "sector_id": "comm_equip"
+          "correlation": 0.421,
+          "hit_rate": 0.444,
+          "n_signals": 9,
+          "sector_id": "robotics"
         },
         {
           "best_lag": 1,
-          "correlation": 0.409,
+          "correlation": 0.42,
           "hit_rate": 0.5,
           "n_signals": 14,
           "sector_id": "auto"
         },
         {
-          "best_lag": 15,
-          "correlation": 0.409,
-          "hit_rate": 0.5,
-          "n_signals": 10,
-          "sector_id": "robotics"
+          "best_lag": 3,
+          "correlation": -0.374,
+          "hit_rate": 0.231,
+          "n_signals": 13,
+          "sector_id": "furniture"
         }
       ]
     },
@@ -1651,77 +1651,77 @@
       "followers": [
         {
           "best_lag": 3,
-          "correlation": -0.404,
-          "hit_rate": 0.2,
-          "n_signals": 15,
+          "correlation": -0.386,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "cement"
         },
         {
           "best_lag": 5,
-          "correlation": -0.373,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.379,
+          "hit_rate": 0.071,
+          "n_signals": 14,
           "sector_id": "furniture"
         },
         {
-          "best_lag": 3,
-          "correlation": -0.347,
-          "hit_rate": 0.067,
-          "n_signals": 15,
+          "best_lag": 15,
+          "correlation": -0.357,
+          "hit_rate": 0.1,
+          "n_signals": 10,
           "sector_id": "security"
         },
         {
-          "best_lag": 3,
-          "correlation": -0.312,
-          "hit_rate": 0.067,
-          "n_signals": 15,
-          "sector_id": "paper"
+          "best_lag": 5,
+          "correlation": -0.327,
+          "hit_rate": 0.0,
+          "n_signals": 14,
+          "sector_id": "construction"
         },
         {
-          "best_lag": 10,
-          "correlation": -0.301,
-          "hit_rate": 0.333,
-          "n_signals": 12,
-          "sector_id": "etc"
+          "best_lag": 5,
+          "correlation": -0.319,
+          "hit_rate": 0.0,
+          "n_signals": 14,
+          "sector_id": "wind"
         }
       ]
     },
     "solar": {
       "followers": [
         {
-          "best_lag": 15,
-          "correlation": -0.418,
-          "hit_rate": 0.111,
-          "n_signals": 9,
-          "sector_id": "medical_device"
-        },
-        {
           "best_lag": 5,
-          "correlation": -0.41,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.449,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "construction"
         },
         {
           "best_lag": 5,
-          "correlation": -0.398,
+          "correlation": -0.418,
           "hit_rate": 0.0,
-          "n_signals": 15,
+          "n_signals": 14,
           "sector_id": "securities"
         },
         {
-          "best_lag": 15,
-          "correlation": -0.355,
-          "hit_rate": 0.222,
-          "n_signals": 9,
-          "sector_id": "agri_livestock"
+          "best_lag": 5,
+          "correlation": -0.371,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "defense"
         },
         {
           "best_lag": 5,
-          "correlation": -0.345,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "defense"
+          "correlation": -0.356,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "memory_semi"
+        },
+        {
+          "best_lag": 1,
+          "correlation": 0.344,
+          "hit_rate": 0.429,
+          "n_signals": 14,
+          "sector_id": "lng"
         }
       ]
     },
@@ -1729,38 +1729,38 @@
       "followers": [
         {
           "best_lag": 3,
-          "correlation": -0.355,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.385,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "furniture"
         },
         {
           "best_lag": 10,
-          "correlation": 0.353,
-          "hit_rate": 0.385,
-          "n_signals": 13,
+          "correlation": 0.336,
+          "hit_rate": 0.333,
+          "n_signals": 12,
           "sector_id": "cement"
         },
         {
           "best_lag": 5,
-          "correlation": -0.333,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.336,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "department"
         },
         {
-          "best_lag": 15,
-          "correlation": 0.333,
-          "hit_rate": 0.273,
-          "n_signals": 11,
-          "sector_id": "power_semi"
+          "best_lag": 1,
+          "correlation": -0.32,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "game"
         },
         {
-          "best_lag": 1,
-          "correlation": -0.328,
-          "hit_rate": 0.067,
-          "n_signals": 15,
-          "sector_id": "game"
+          "best_lag": 5,
+          "correlation": -0.314,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "media"
         }
       ]
     },
@@ -1768,38 +1768,38 @@
       "followers": [
         {
           "best_lag": 3,
-          "correlation": 0.387,
-          "hit_rate": 0.5,
-          "n_signals": 14,
+          "correlation": 0.417,
+          "hit_rate": 0.533,
+          "n_signals": 15,
           "sector_id": "hotel_tourism"
         },
         {
+          "best_lag": 3,
+          "correlation": 0.365,
+          "hit_rate": 0.333,
+          "n_signals": 15,
+          "sector_id": "department"
+        },
+        {
           "best_lag": 10,
-          "correlation": 0.371,
+          "correlation": 0.33,
           "hit_rate": 0.538,
           "n_signals": 13,
           "sector_id": "ess"
         },
         {
-          "best_lag": 3,
-          "correlation": 0.35,
-          "hit_rate": 0.357,
+          "best_lag": 5,
+          "correlation": -0.328,
+          "hit_rate": 0.071,
           "n_signals": 14,
-          "sector_id": "department"
+          "sector_id": "display"
         },
         {
           "best_lag": 10,
-          "correlation": 0.348,
-          "hit_rate": 0.385,
+          "correlation": 0.322,
+          "hit_rate": 0.462,
           "n_signals": 13,
-          "sector_id": "liquid_cooling"
-        },
-        {
-          "best_lag": 1,
-          "correlation": 0.34,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "fintech"
+          "sector_id": "auto"
         }
       ]
     },
@@ -1807,38 +1807,38 @@
       "followers": [
         {
           "best_lag": 15,
-          "correlation": 0.387,
-          "hit_rate": 0.222,
-          "n_signals": 9,
+          "correlation": 0.411,
+          "hit_rate": 0.25,
+          "n_signals": 8,
           "sector_id": "transport"
         },
         {
           "best_lag": 10,
-          "correlation": -0.374,
+          "correlation": -0.358,
           "hit_rate": 0.091,
           "n_signals": 11,
           "sector_id": "food"
         },
         {
-          "best_lag": 5,
-          "correlation": 0.368,
-          "hit_rate": 0.357,
-          "n_signals": 14,
-          "sector_id": "bio"
+          "best_lag": 10,
+          "correlation": 0.342,
+          "hit_rate": 0.455,
+          "n_signals": 11,
+          "sector_id": "securities"
         },
         {
           "best_lag": 15,
-          "correlation": 0.32,
-          "hit_rate": 0.444,
-          "n_signals": 9,
+          "correlation": 0.338,
+          "hit_rate": 0.5,
+          "n_signals": 8,
           "sector_id": "cosmetics"
         },
         {
-          "best_lag": 5,
-          "correlation": 0.319,
-          "hit_rate": 0.286,
-          "n_signals": 14,
-          "sector_id": "game"
+          "best_lag": 10,
+          "correlation": 0.335,
+          "hit_rate": 0.364,
+          "n_signals": 11,
+          "sector_id": "memory_semi"
         }
       ]
     },
@@ -1846,38 +1846,38 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": -0.411,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "auto"
-        },
-        {
-          "best_lag": 5,
-          "correlation": -0.401,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "securities"
+          "correlation": -0.438,
+          "hit_rate": 0.071,
+          "n_signals": 14,
+          "sector_id": "ess"
         },
         {
           "best_lag": 15,
-          "correlation": -0.399,
-          "hit_rate": 0.143,
-          "n_signals": 14,
-          "sector_id": "furniture"
-        },
-        {
-          "best_lag": 3,
-          "correlation": 0.395,
-          "hit_rate": 0.533,
-          "n_signals": 15,
-          "sector_id": "oil"
+          "correlation": -0.427,
+          "hit_rate": 0.154,
+          "n_signals": 13,
+          "sector_id": "fintech"
         },
         {
           "best_lag": 5,
-          "correlation": -0.394,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "ess"
+          "correlation": -0.421,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "securities"
+        },
+        {
+          "best_lag": 5,
+          "correlation": -0.397,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "auto"
+        },
+        {
+          "best_lag": 15,
+          "correlation": -0.392,
+          "hit_rate": 0.154,
+          "n_signals": 13,
+          "sector_id": "furniture"
         }
       ]
     },
@@ -1885,37 +1885,37 @@
       "followers": [
         {
           "best_lag": 5,
-          "correlation": -0.426,
-          "hit_rate": 0.267,
-          "n_signals": 15,
+          "correlation": -0.427,
+          "hit_rate": 0.286,
+          "n_signals": 14,
           "sector_id": "nuclear"
         },
         {
           "best_lag": 5,
-          "correlation": -0.4,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.42,
+          "hit_rate": 0.143,
+          "n_signals": 14,
           "sector_id": "construction"
         },
         {
+          "best_lag": 5,
+          "correlation": -0.38,
+          "hit_rate": 0.143,
+          "n_signals": 14,
+          "sector_id": "securities"
+        },
+        {
           "best_lag": 15,
-          "correlation": 0.396,
-          "hit_rate": 0.4,
+          "correlation": 0.377,
+          "hit_rate": 0.3,
           "n_signals": 10,
           "sector_id": "auto"
         },
         {
           "best_lag": 5,
-          "correlation": -0.364,
-          "hit_rate": 0.133,
-          "n_signals": 15,
-          "sector_id": "securities"
-        },
-        {
-          "best_lag": 5,
-          "correlation": -0.363,
-          "hit_rate": 0.133,
-          "n_signals": 15,
+          "correlation": -0.371,
+          "hit_rate": 0.071,
+          "n_signals": 14,
           "sector_id": "memory_semi"
         }
       ]
