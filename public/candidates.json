@@ -1,33 +1,32 @@
 {
-  "as_of": "2026-08-26T15:30:00+09:00",
+  "as_of": "2026-08-27T15:30:00+09:00",
   "candidates": [
     {
-      "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "high",
-      "probability": 75.7,
+      "probability": 73.7,
       "representative_assets": [
         {
-          "code": "034020",
-          "name": "두산에너빌리티",
+          "code": "010120",
+          "name": "LS ELECTRIC",
           "sectorIds": [
-            "nuclear",
-            "lng"
+            "power_equip"
           ],
           "type": "stock"
         },
         {
-          "code": "083650",
-          "name": "비에이치아이",
+          "code": "267260",
+          "name": "HD현대일렉트릭",
           "sectorIds": [
-            "nuclear"
+            "power_equip"
           ],
           "type": "stock"
         },
         {
-          "code": "105840",
-          "name": "우진",
+          "code": "298040",
+          "name": "효성중공업",
           "sectorIds": [
-            "nuclear"
+            "power_equip"
           ],
           "type": "stock"
         }
@@ -40,15 +39,15 @@
           "label": "글로벌 매크로 변수"
         }
       ],
-      "sector_id": "nuclear",
-      "sector_name": "원전",
+      "sector_id": "power_equip",
+      "sector_name": "전력기기",
       "signals": [
         {
-          "detail": "가격강도 77점",
+          "detail": "가격강도 82점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 125%",
+          "detail": "20일 평균 대비 68%",
           "label": "거래대금 확장"
         },
         {
@@ -61,7 +60,7 @@
     {
       "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "high",
-      "probability": 71.3,
+      "probability": 69.4,
       "representative_assets": [
         {
           "code": "000720",
@@ -112,119 +111,7 @@
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 104%",
-          "label": "거래대금 확장"
-        },
-        {
-          "detail": "외국인/기관 순매수 전환",
-          "label": "수급 전환"
-        }
-      ],
-      "state": "expanding"
-    },
-    {
-      "ai_summary": "비철금속 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "medium",
-      "probability": 59.8,
-      "representative_assets": [
-        {
-          "code": "010130",
-          "name": "고려아연",
-          "sectorIds": [
-            "mining"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "000670",
-          "name": "영풍",
-          "sectorIds": [
-            "mining"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "006260",
-          "name": "LS",
-          "sectorIds": [
-            "mining"
-          ],
-          "type": "stock"
-        }
-      ],
-      "risks": [
-        {
-          "label": "단기 변동성 확대"
-        },
-        {
-          "label": "글로벌 매크로 변수"
-        }
-      ],
-      "sector_id": "mining",
-      "sector_name": "비철금속",
-      "signals": [
-        {
-          "detail": "가격강도 78점",
-          "label": "가격강도 상위"
-        },
-        {
-          "detail": "20일 평균 대비 -31%",
-          "label": "거래대금 확장"
-        },
-        {
-          "detail": "외국인/기관 순매수 전환",
-          "label": "수급 전환"
-        }
-      ],
-      "state": "expanding"
-    },
-    {
-      "ai_summary": "식음료 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "medium",
-      "probability": 52.5,
-      "representative_assets": [
-        {
-          "code": "097950",
-          "name": "CJ제일제당",
-          "sectorIds": [
-            "food"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "004370",
-          "name": "농심",
-          "sectorIds": [
-            "food"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "271560",
-          "name": "오리온",
-          "sectorIds": [
-            "food"
-          ],
-          "type": "stock"
-        }
-      ],
-      "risks": [
-        {
-          "label": "단기 변동성 확대"
-        },
-        {
-          "label": "글로벌 매크로 변수"
-        }
-      ],
-      "sector_id": "food",
-      "sector_name": "식음료",
-      "signals": [
-        {
-          "detail": "가격강도 66점",
-          "label": "가격강도 상위"
-        },
-        {
-          "detail": "20일 평균 대비 10%",
+          "detail": "20일 평균 대비 49%",
           "label": "거래대금 확장"
         },
         {
@@ -236,8 +123,8 @@
     },
     {
       "ai_summary": "ESS 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "medium",
-      "probability": 46.6,
+      "confidence": "high",
+      "probability": 65.1,
       "representative_assets": [
         {
           "code": "006400",
@@ -276,11 +163,124 @@
       "sector_name": "ESS",
       "signals": [
         {
-          "detail": "가격강도 81점",
+          "detail": "가격강도 86점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 -35%",
+          "detail": "20일 평균 대비 80%",
+          "label": "거래대금 확장"
+        },
+        {
+          "detail": "외국인/기관 순매수 전환",
+          "label": "수급 전환"
+        }
+      ],
+      "state": "expanding"
+    },
+    {
+      "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "medium",
+      "probability": 59.7,
+      "representative_assets": [
+        {
+          "code": "001440",
+          "name": "대한전선",
+          "sectorIds": [
+            "cable"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "103590",
+          "name": "일진전기",
+          "sectorIds": [
+            "cable"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "000500",
+          "name": "가온전선",
+          "sectorIds": [
+            "cable"
+          ],
+          "type": "stock"
+        }
+      ],
+      "risks": [
+        {
+          "label": "단기 변동성 확대"
+        },
+        {
+          "label": "글로벌 매크로 변수"
+        }
+      ],
+      "sector_id": "cable",
+      "sector_name": "케이블",
+      "signals": [
+        {
+          "detail": "가격강도 90점",
+          "label": "가격강도 상위"
+        },
+        {
+          "detail": "20일 평균 대비 163%",
+          "label": "거래대금 확장"
+        },
+        {
+          "detail": "외국인/기관 순매수 전환",
+          "label": "수급 전환"
+        }
+      ],
+      "state": "expanding"
+    },
+    {
+      "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "medium",
+      "probability": 53.8,
+      "representative_assets": [
+        {
+          "code": "034020",
+          "name": "두산에너빌리티",
+          "sectorIds": [
+            "nuclear",
+            "lng"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "083650",
+          "name": "비에이치아이",
+          "sectorIds": [
+            "nuclear"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "105840",
+          "name": "우진",
+          "sectorIds": [
+            "nuclear"
+          ],
+          "type": "stock"
+        }
+      ],
+      "risks": [
+        {
+          "label": "단기 변동성 확대"
+        },
+        {
+          "label": "글로벌 매크로 변수"
+        }
+      ],
+      "sector_id": "nuclear",
+      "sector_name": "원전",
+      "signals": [
+        {
+          "detail": "가격강도 79점",
+          "label": "가격강도 상위"
+        },
+        {
+          "detail": "20일 평균 대비 28%",
           "label": "거래대금 확장"
         },
         {
@@ -294,32 +294,31 @@
   "candidates_by_period": {
     "10": [
       {
-        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 78.6,
+        "probability": 79.0,
         "representative_assets": [
           {
-            "code": "034020",
-            "name": "두산에너빌리티",
+            "code": "001440",
+            "name": "대한전선",
             "sectorIds": [
-              "nuclear",
-              "lng"
+              "cable"
             ],
             "type": "stock"
           },
           {
-            "code": "083650",
-            "name": "비에이치아이",
+            "code": "103590",
+            "name": "일진전기",
             "sectorIds": [
-              "nuclear"
+              "cable"
             ],
             "type": "stock"
           },
           {
-            "code": "105840",
-            "name": "우진",
+            "code": "000500",
+            "name": "가온전선",
             "sectorIds": [
-              "nuclear"
+              "cable"
             ],
             "type": "stock"
           }
@@ -332,15 +331,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "nuclear",
-        "sector_name": "원전",
+        "sector_id": "cable",
+        "sector_name": "케이블",
         "signals": [
           {
-            "detail": "가격강도 77점",
+            "detail": "가격강도 86점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 125%",
+            "detail": "10일 평균 대비 163%",
             "label": "거래대금 확장"
           },
           {
@@ -351,39 +350,87 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 74.5,
+        "probability": 72.7,
         "representative_assets": [
           {
-            "code": "000720",
-            "name": "현대건설",
+            "code": "010120",
+            "name": "LS ELECTRIC",
             "sectorIds": [
-              "construction"
+              "power_equip"
             ],
             "type": "stock"
           },
           {
-            "code": "028050",
-            "name": "삼성E&A",
+            "code": "267260",
+            "name": "HD현대일렉트릭",
             "sectorIds": [
-              "construction"
+              "power_equip"
             ],
             "type": "stock"
           },
           {
-            "code": "047040",
-            "name": "대우건설",
+            "code": "298040",
+            "name": "효성중공업",
             "sectorIds": [
-              "construction"
+              "power_equip"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "power_equip",
+        "sector_name": "전력기기",
+        "signals": [
+          {
+            "detail": "가격강도 74점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 68%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "ESS 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 67.3,
+        "representative_assets": [
+          {
+            "code": "006400",
+            "name": "삼성SDI",
+            "sectorIds": [
+              "ess"
             ],
             "type": "stock"
           },
           {
-            "code": "139250",
-            "name": "TIGER 200건설",
+            "code": "066970",
+            "name": "엘앤에프",
             "sectorIds": [
-              "construction"
+              "ess"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "305720",
+            "name": "KODEX 2차전지산업",
+            "sectorIds": [
+              "ess"
             ],
             "type": "etf"
           }
@@ -396,15 +443,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "construction",
-        "sector_name": "건설",
+        "sector_id": "ess",
+        "sector_name": "ESS",
         "signals": [
           {
-            "detail": "가격강도 84점",
+            "detail": "가격강도 86점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 104%",
+            "detail": "10일 평균 대비 80%",
             "label": "거래대금 확장"
           },
           {
@@ -415,31 +462,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "환경 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "풍력 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 60.4,
+        "probability": 63.0,
         "representative_assets": [
           {
-            "code": "060150",
-            "name": "인선이엔티",
+            "code": "112610",
+            "name": "씨에스윈드",
             "sectorIds": [
-              "environment"
+              "wind"
             ],
             "type": "stock"
           },
           {
-            "code": "067900",
-            "name": "와이엔텍",
+            "code": "475150",
+            "name": "SK이터닉스",
             "sectorIds": [
-              "environment"
+              "wind"
             ],
             "type": "stock"
           },
           {
-            "code": "043910",
-            "name": "자연과환경",
+            "code": "100090",
+            "name": "SK오션플랜트",
             "sectorIds": [
-              "environment"
+              "wind"
             ],
             "type": "stock"
           }
@@ -452,15 +499,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "environment",
-        "sector_name": "환경",
+        "sector_id": "wind",
+        "sector_name": "풍력",
         "signals": [
           {
-            "detail": "가격강도 70점",
+            "detail": "가격강도 86점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 755%",
+            "detail": "10일 평균 대비 -55%",
             "label": "거래대금 확장"
           },
           {
@@ -471,31 +518,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "운송 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "철강 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 54.6,
+        "probability": 55.9,
         "representative_assets": [
           {
-            "code": "003490",
-            "name": "대한항공",
+            "code": "005490",
+            "name": "POSCO홀딩스",
             "sectorIds": [
-              "transport"
+              "steel"
             ],
             "type": "stock"
           },
           {
-            "code": "011200",
-            "name": "HMM",
+            "code": "004020",
+            "name": "현대제철",
             "sectorIds": [
-              "transport"
+              "steel"
             ],
             "type": "stock"
           },
           {
-            "code": "086280",
-            "name": "현대글로비스",
+            "code": "002240",
+            "name": "고려제강",
             "sectorIds": [
-              "transport"
+              "steel"
             ],
             "type": "stock"
           }
@@ -508,72 +555,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "transport",
-        "sector_name": "운송",
+        "sector_id": "steel",
+        "sector_name": "철강",
         "signals": [
           {
-            "detail": "가격강도 62점",
+            "detail": "가격강도 77점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 81%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
-      },
-      {
-        "ai_summary": "LNG에너지 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 50.2,
-        "representative_assets": [
-          {
-            "code": "034020",
-            "name": "두산에너빌리티",
-            "sectorIds": [
-              "nuclear",
-              "lng"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "036460",
-            "name": "한국가스공사",
-            "sectorIds": [
-              "lng"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "018670",
-            "name": "SK가스",
-            "sectorIds": [
-              "lng"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "lng",
-        "sector_name": "LNG에너지",
-        "signals": [
-          {
-            "detail": "가격강도 74점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 171%",
+            "detail": "10일 평균 대비 79%",
             "label": "거래대금 확장"
           },
           {
@@ -586,9 +576,65 @@
     ],
     "120": [
       {
-        "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "화장품 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 71.2,
+        "probability": 70.5,
+        "representative_assets": [
+          {
+            "code": "090430",
+            "name": "아모레퍼시픽",
+            "sectorIds": [
+              "cosmetics"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "051900",
+            "name": "LG생활건강",
+            "sectorIds": [
+              "cosmetics"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "161890",
+            "name": "한국콜마",
+            "sectorIds": [
+              "cosmetics"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "cosmetics",
+        "sector_name": "화장품",
+        "signals": [
+          {
+            "detail": "가격강도 89점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "120일 평균 대비 -35%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 64.9,
         "representative_assets": [
           {
             "code": "000720",
@@ -639,63 +685,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 104%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "화장품 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 65.7,
-        "representative_assets": [
-          {
-            "code": "090430",
-            "name": "아모레퍼시픽",
-            "sectorIds": [
-              "cosmetics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "051900",
-            "name": "LG생활건강",
-            "sectorIds": [
-              "cosmetics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "161890",
-            "name": "한국콜마",
-            "sectorIds": [
-              "cosmetics"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "cosmetics",
-        "sector_name": "화장품",
-        "signals": [
-          {
-            "detail": "가격강도 91점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 -26%",
+            "detail": "120일 평균 대비 49%",
             "label": "거래대금 확장"
           },
           {
@@ -708,7 +698,7 @@
       {
         "ai_summary": "가전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 60.8,
+        "probability": 59.7,
         "representative_assets": [
           {
             "code": "066570",
@@ -747,11 +737,11 @@
         "sector_name": "가전",
         "signals": [
           {
-            "detail": "가격강도 81점",
+            "detail": "가격강도 79점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -51%",
+            "detail": "120일 평균 대비 -52%",
             "label": "거래대금 확장"
           },
           {
@@ -762,9 +752,65 @@
         "state": "expanding"
       },
       {
+        "ai_summary": "식음료 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 54.9,
+        "representative_assets": [
+          {
+            "code": "097950",
+            "name": "CJ제일제당",
+            "sectorIds": [
+              "food"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004370",
+            "name": "농심",
+            "sectorIds": [
+              "food"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "271560",
+            "name": "오리온",
+            "sectorIds": [
+              "food"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "food",
+        "sector_name": "식음료",
+        "signals": [
+          {
+            "detail": "가격강도 62점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "120일 평균 대비 -15%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "neutral"
+      },
+      {
         "ai_summary": "통신 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 54.6,
+        "probability": 50.8,
         "representative_assets": [
           {
             "code": "017670",
@@ -812,11 +858,11 @@
         "sector_name": "통신",
         "signals": [
           {
-            "detail": "가격강도 69점",
+            "detail": "가격강도 67점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -46%",
+            "detail": "120일 평균 대비 -34%",
             "label": "거래대금 확장"
           },
           {
@@ -825,79 +871,13 @@
           }
         ],
         "state": "expanding"
-      },
-      {
-        "ai_summary": "AI 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 50.2,
-        "representative_assets": [
-          {
-            "code": "017670",
-            "name": "SK텔레콤",
-            "sectorIds": [
-              "telecom",
-              "ai"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "064400",
-            "name": "LG씨엔에스",
-            "sectorIds": [
-              "ai"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "035420",
-            "name": "NAVER",
-            "sectorIds": [
-              "ai"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "139260",
-            "name": "TIGER 200IT",
-            "sectorIds": [
-              "memory_semi",
-              "ai"
-            ],
-            "type": "etf"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "ai",
-        "sector_name": "AI",
-        "signals": [
-          {
-            "detail": "가격강도 63점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 -48%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
       }
     ],
     "15": [
       {
         "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 77.9,
+        "probability": 75.4,
         "representative_assets": [
           {
             "code": "000720",
@@ -944,11 +924,123 @@
         "sector_name": "건설",
         "signals": [
           {
+            "detail": "가격강도 84점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "15일 평균 대비 49%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 70.5,
+        "representative_assets": [
+          {
+            "code": "001440",
+            "name": "대한전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "103590",
+            "name": "일진전기",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000500",
+            "name": "가온전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "cable",
+        "sector_name": "케이블",
+        "signals": [
+          {
+            "detail": "가격강도 86점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "15일 평균 대비 163%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "ESS 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 65.7,
+        "representative_assets": [
+          {
+            "code": "006400",
+            "name": "삼성SDI",
+            "sectorIds": [
+              "ess"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "066970",
+            "name": "엘앤에프",
+            "sectorIds": [
+              "ess"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "305720",
+            "name": "KODEX 2차전지산업",
+            "sectorIds": [
+              "ess"
+            ],
+            "type": "etf"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "ess",
+        "sector_name": "ESS",
+        "signals": [
+          {
             "detail": "가격강도 88점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 104%",
+            "detail": "15일 평균 대비 80%",
             "label": "거래대금 확장"
           },
           {
@@ -959,88 +1051,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 72.3,
-        "representative_assets": [
-          {
-            "code": "034020",
-            "name": "두산에너빌리티",
-            "sectorIds": [
-              "nuclear",
-              "lng"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "083650",
-            "name": "비에이치아이",
-            "sectorIds": [
-              "nuclear"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "105840",
-            "name": "우진",
-            "sectorIds": [
-              "nuclear"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "nuclear",
-        "sector_name": "원전",
-        "signals": [
-          {
-            "detail": "가격강도 71점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 125%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "환경 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "철강 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 60.6,
+        "probability": 59.3,
         "representative_assets": [
           {
-            "code": "060150",
-            "name": "인선이엔티",
+            "code": "005490",
+            "name": "POSCO홀딩스",
             "sectorIds": [
-              "environment"
+              "steel"
             ],
             "type": "stock"
           },
           {
-            "code": "067900",
-            "name": "와이엔텍",
+            "code": "004020",
+            "name": "현대제철",
             "sectorIds": [
-              "environment"
+              "steel"
             ],
             "type": "stock"
           },
           {
-            "code": "043910",
-            "name": "자연과환경",
+            "code": "002240",
+            "name": "고려제강",
             "sectorIds": [
-              "environment"
+              "steel"
             ],
             "type": "stock"
           }
@@ -1053,15 +1088,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "environment",
-        "sector_name": "환경",
+        "sector_id": "steel",
+        "sector_name": "철강",
         "signals": [
           {
-            "detail": "가격강도 70점",
+            "detail": "가격강도 72점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 755%",
+            "detail": "15일 평균 대비 79%",
             "label": "거래대금 확장"
           },
           {
@@ -1072,31 +1107,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "식음료 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "풍력 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 56.4,
+        "probability": 55.0,
         "representative_assets": [
           {
-            "code": "097950",
-            "name": "CJ제일제당",
+            "code": "112610",
+            "name": "씨에스윈드",
             "sectorIds": [
-              "food"
+              "wind"
             ],
             "type": "stock"
           },
           {
-            "code": "004370",
-            "name": "농심",
+            "code": "475150",
+            "name": "SK이터닉스",
             "sectorIds": [
-              "food"
+              "wind"
             ],
             "type": "stock"
           },
           {
-            "code": "271560",
-            "name": "오리온",
+            "code": "100090",
+            "name": "SK오션플랜트",
             "sectorIds": [
-              "food"
+              "wind"
             ],
             "type": "stock"
           }
@@ -1109,71 +1144,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "food",
-        "sector_name": "식음료",
+        "sector_id": "wind",
+        "sector_name": "풍력",
         "signals": [
           {
-            "detail": "가격강도 80점",
+            "detail": "가격강도 78점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 10%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "비철금속 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 51.7,
-        "representative_assets": [
-          {
-            "code": "010130",
-            "name": "고려아연",
-            "sectorIds": [
-              "mining"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000670",
-            "name": "영풍",
-            "sectorIds": [
-              "mining"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "006260",
-            "name": "LS",
-            "sectorIds": [
-              "mining"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "mining",
-        "sector_name": "비철금속",
-        "signals": [
-          {
-            "detail": "가격강도 77점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 -31%",
+            "detail": "15일 평균 대비 -55%",
             "label": "거래대금 확장"
           },
           {
@@ -1186,32 +1165,31 @@
     ],
     "20": [
       {
-        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 75.7,
+        "probability": 73.7,
         "representative_assets": [
           {
-            "code": "034020",
-            "name": "두산에너빌리티",
+            "code": "010120",
+            "name": "LS ELECTRIC",
             "sectorIds": [
-              "nuclear",
-              "lng"
+              "power_equip"
             ],
             "type": "stock"
           },
           {
-            "code": "083650",
-            "name": "비에이치아이",
+            "code": "267260",
+            "name": "HD현대일렉트릭",
             "sectorIds": [
-              "nuclear"
+              "power_equip"
             ],
             "type": "stock"
           },
           {
-            "code": "105840",
-            "name": "우진",
+            "code": "298040",
+            "name": "효성중공업",
             "sectorIds": [
-              "nuclear"
+              "power_equip"
             ],
             "type": "stock"
           }
@@ -1224,15 +1202,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "nuclear",
-        "sector_name": "원전",
+        "sector_id": "power_equip",
+        "sector_name": "전력기기",
         "signals": [
           {
-            "detail": "가격강도 77점",
+            "detail": "가격강도 82점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 125%",
+            "detail": "20일 평균 대비 68%",
             "label": "거래대금 확장"
           },
           {
@@ -1245,7 +1223,7 @@
       {
         "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 71.3,
+        "probability": 69.4,
         "representative_assets": [
           {
             "code": "000720",
@@ -1296,119 +1274,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 104%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "비철금속 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 59.8,
-        "representative_assets": [
-          {
-            "code": "010130",
-            "name": "고려아연",
-            "sectorIds": [
-              "mining"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000670",
-            "name": "영풍",
-            "sectorIds": [
-              "mining"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "006260",
-            "name": "LS",
-            "sectorIds": [
-              "mining"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "mining",
-        "sector_name": "비철금속",
-        "signals": [
-          {
-            "detail": "가격강도 78점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 -31%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "식음료 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 52.5,
-        "representative_assets": [
-          {
-            "code": "097950",
-            "name": "CJ제일제당",
-            "sectorIds": [
-              "food"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "004370",
-            "name": "농심",
-            "sectorIds": [
-              "food"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "271560",
-            "name": "오리온",
-            "sectorIds": [
-              "food"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "food",
-        "sector_name": "식음료",
-        "signals": [
-          {
-            "detail": "가격강도 66점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 10%",
+            "detail": "20일 평균 대비 49%",
             "label": "거래대금 확장"
           },
           {
@@ -1420,8 +1286,8 @@
       },
       {
         "ai_summary": "ESS 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 46.6,
+        "confidence": "high",
+        "probability": 65.1,
         "representative_assets": [
           {
             "code": "006400",
@@ -1460,11 +1326,11 @@
         "sector_name": "ESS",
         "signals": [
           {
-            "detail": "가격강도 81점",
+            "detail": "가격강도 86점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 -35%",
+            "detail": "20일 평균 대비 80%",
             "label": "거래대금 확장"
           },
           {
@@ -1473,13 +1339,67 @@
           }
         ],
         "state": "expanding"
-      }
-    ],
-    "30": [
+      },
+      {
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 59.7,
+        "representative_assets": [
+          {
+            "code": "001440",
+            "name": "대한전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "103590",
+            "name": "일진전기",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000500",
+            "name": "가온전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "cable",
+        "sector_name": "케이블",
+        "signals": [
+          {
+            "detail": "가격강도 90점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 163%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
       {
         "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 74.6,
+        "confidence": "medium",
+        "probability": 53.8,
         "representative_assets": [
           {
             "code": "034020",
@@ -1519,11 +1439,70 @@
         "sector_name": "원전",
         "signals": [
           {
-            "detail": "가격강도 85점",
+            "detail": "가격강도 79점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 125%",
+            "detail": "20일 평균 대비 28%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      }
+    ],
+    "30": [
+      {
+        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 74.7,
+        "representative_assets": [
+          {
+            "code": "034020",
+            "name": "두산에너빌리티",
+            "sectorIds": [
+              "nuclear",
+              "lng"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "083650",
+            "name": "비에이치아이",
+            "sectorIds": [
+              "nuclear"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "105840",
+            "name": "우진",
+            "sectorIds": [
+              "nuclear"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "nuclear",
+        "sector_name": "원전",
+        "signals": [
+          {
+            "detail": "가격강도 80점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 28%",
             "label": "거래대금 확장"
           },
           {
@@ -1535,8 +1514,8 @@
       },
       {
         "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 64.4,
+        "confidence": "high",
+        "probability": 69.1,
         "representative_assets": [
           {
             "code": "000720",
@@ -1583,11 +1562,11 @@
         "sector_name": "건설",
         "signals": [
           {
-            "detail": "가격강도 86점",
+            "detail": "가격강도 85점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 104%",
+            "detail": "30일 평균 대비 49%",
             "label": "거래대금 확장"
           },
           {
@@ -1598,31 +1577,87 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "비철금속 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "ESS 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 59.5,
+        "probability": 64.7,
         "representative_assets": [
           {
-            "code": "010130",
-            "name": "고려아연",
+            "code": "006400",
+            "name": "삼성SDI",
             "sectorIds": [
-              "mining"
+              "ess"
             ],
             "type": "stock"
           },
           {
-            "code": "000670",
-            "name": "영풍",
+            "code": "066970",
+            "name": "엘앤에프",
             "sectorIds": [
-              "mining"
+              "ess"
             ],
             "type": "stock"
           },
           {
-            "code": "006260",
-            "name": "LS",
+            "code": "305720",
+            "name": "KODEX 2차전지산업",
             "sectorIds": [
-              "mining"
+              "ess"
+            ],
+            "type": "etf"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "ess",
+        "sector_name": "ESS",
+        "signals": [
+          {
+            "detail": "가격강도 84점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 80%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "철강 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 54.0,
+        "representative_assets": [
+          {
+            "code": "005490",
+            "name": "POSCO홀딩스",
+            "sectorIds": [
+              "steel"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "004020",
+            "name": "현대제철",
+            "sectorIds": [
+              "steel"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "002240",
+            "name": "고려제강",
+            "sectorIds": [
+              "steel"
             ],
             "type": "stock"
           }
@@ -1635,15 +1670,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "mining",
-        "sector_name": "비철금속",
+        "sector_id": "steel",
+        "sector_name": "철강",
         "signals": [
           {
-            "detail": "가격강도 77점",
+            "detail": "가격강도 78점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 -31%",
+            "detail": "30일 평균 대비 79%",
             "label": "거래대금 확장"
           },
           {
@@ -1654,31 +1689,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "식음료 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 54.7,
+        "probability": 48.9,
         "representative_assets": [
           {
-            "code": "097950",
-            "name": "CJ제일제당",
+            "code": "010120",
+            "name": "LS ELECTRIC",
             "sectorIds": [
-              "food"
+              "power_equip"
             ],
             "type": "stock"
           },
           {
-            "code": "004370",
-            "name": "농심",
+            "code": "267260",
+            "name": "HD현대일렉트릭",
             "sectorIds": [
-              "food"
+              "power_equip"
             ],
             "type": "stock"
           },
           {
-            "code": "271560",
-            "name": "오리온",
+            "code": "298040",
+            "name": "효성중공업",
             "sectorIds": [
-              "food"
+              "power_equip"
             ],
             "type": "stock"
           }
@@ -1691,15 +1726,73 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "food",
-        "sector_name": "식음료",
+        "sector_id": "power_equip",
+        "sector_name": "전력기기",
         "signals": [
           {
-            "detail": "가격강도 86점",
+            "detail": "가격강도 63점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 10%",
+            "detail": "30일 평균 대비 68%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "neutral"
+      }
+    ],
+    "5": [
+      {
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 81.5,
+        "representative_assets": [
+          {
+            "code": "001440",
+            "name": "대한전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "103590",
+            "name": "일진전기",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000500",
+            "name": "가온전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "cable",
+        "sector_name": "케이블",
+        "signals": [
+          {
+            "detail": "가격강도 94점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 163%",
             "label": "거래대금 확장"
           },
           {
@@ -1709,10 +1802,245 @@
         ],
         "state": "expanding"
       },
+      {
+        "ai_summary": "전력기기 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 76.4,
+        "representative_assets": [
+          {
+            "code": "010120",
+            "name": "LS ELECTRIC",
+            "sectorIds": [
+              "power_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "267260",
+            "name": "HD현대일렉트릭",
+            "sectorIds": [
+              "power_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "298040",
+            "name": "효성중공업",
+            "sectorIds": [
+              "power_equip"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "power_equip",
+        "sector_name": "전력기기",
+        "signals": [
+          {
+            "detail": "가격강도 89점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 68%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 68.6,
+        "representative_assets": [
+          {
+            "code": "034020",
+            "name": "두산에너빌리티",
+            "sectorIds": [
+              "nuclear",
+              "lng"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "083650",
+            "name": "비에이치아이",
+            "sectorIds": [
+              "nuclear"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "105840",
+            "name": "우진",
+            "sectorIds": [
+              "nuclear"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "nuclear",
+        "sector_name": "원전",
+        "signals": [
+          {
+            "detail": "가격강도 92점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 28%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "풍력 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 62.9,
+        "representative_assets": [
+          {
+            "code": "112610",
+            "name": "씨에스윈드",
+            "sectorIds": [
+              "wind"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "475150",
+            "name": "SK이터닉스",
+            "sectorIds": [
+              "wind"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "100090",
+            "name": "SK오션플랜트",
+            "sectorIds": [
+              "wind"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "wind",
+        "sector_name": "풍력",
+        "signals": [
+          {
+            "detail": "가격강도 81점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 -55%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 56.9,
+        "representative_assets": [
+          {
+            "code": "000720",
+            "name": "현대건설",
+            "sectorIds": [
+              "construction"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "028050",
+            "name": "삼성E&A",
+            "sectorIds": [
+              "construction"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "047040",
+            "name": "대우건설",
+            "sectorIds": [
+              "construction"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "139250",
+            "name": "TIGER 200건설",
+            "sectorIds": [
+              "construction"
+            ],
+            "type": "etf"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "construction",
+        "sector_name": "건설",
+        "signals": [
+          {
+            "detail": "가격강도 88점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 49%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      }
+    ],
+    "60": [
       {
         "ai_summary": "화장품 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 46.9,
+        "confidence": "high",
+        "probability": 73.5,
         "representative_assets": [
           {
             "code": "090430",
@@ -1751,70 +2079,11 @@
         "sector_name": "화장품",
         "signals": [
           {
-            "detail": "가격강도 96점",
+            "detail": "가격강도 98점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 -26%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      }
-    ],
-    "5": [
-      {
-        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 82.2,
-        "representative_assets": [
-          {
-            "code": "034020",
-            "name": "두산에너빌리티",
-            "sectorIds": [
-              "nuclear",
-              "lng"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "083650",
-            "name": "비에이치아이",
-            "sectorIds": [
-              "nuclear"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "105840",
-            "name": "우진",
-            "sectorIds": [
-              "nuclear"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "nuclear",
-        "sector_name": "원전",
-        "signals": [
-          {
-            "detail": "가격강도 89점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 125%",
+            "detail": "60일 평균 대비 -35%",
             "label": "거래대금 확장"
           },
           {
@@ -1827,241 +2096,7 @@
       {
         "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 74.7,
-        "representative_assets": [
-          {
-            "code": "000720",
-            "name": "현대건설",
-            "sectorIds": [
-              "construction"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "028050",
-            "name": "삼성E&A",
-            "sectorIds": [
-              "construction"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "047040",
-            "name": "대우건설",
-            "sectorIds": [
-              "construction"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "139250",
-            "name": "TIGER 200건설",
-            "sectorIds": [
-              "construction"
-            ],
-            "type": "etf"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "construction",
-        "sector_name": "건설",
-        "signals": [
-          {
-            "detail": "가격강도 87점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 104%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "농축산 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 60.9,
-        "representative_assets": [
-          {
-            "code": "036580",
-            "name": "팜스코",
-            "sectorIds": [
-              "agri_livestock"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "027740",
-            "name": "마니커",
-            "sectorIds": [
-              "agri_livestock"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "003960",
-            "name": "사조대림",
-            "sectorIds": [
-              "agri_livestock"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "agri_livestock",
-        "sector_name": "농축산",
-        "signals": [
-          {
-            "detail": "가격강도 84점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 -19%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "백화점 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 56.8,
-        "representative_assets": [
-          {
-            "code": "023530",
-            "name": "롯데쇼핑",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "069960",
-            "name": "현대백화점",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "004170",
-            "name": "신세계",
-            "sectorIds": [
-              "department"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "department",
-        "sector_name": "백화점",
-        "signals": [
-          {
-            "detail": "가격강도 64점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 9%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "neutral"
-      },
-      {
-        "ai_summary": "환경 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 51.5,
-        "representative_assets": [
-          {
-            "code": "060150",
-            "name": "인선이엔티",
-            "sectorIds": [
-              "environment"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "067900",
-            "name": "와이엔텍",
-            "sectorIds": [
-              "environment"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "043910",
-            "name": "자연과환경",
-            "sectorIds": [
-              "environment"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "environment",
-        "sector_name": "환경",
-        "signals": [
-          {
-            "detail": "가격강도 72점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 755%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      }
-    ],
-    "60": [
-      {
-        "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 75.3,
+        "probability": 66.3,
         "representative_assets": [
           {
             "code": "000720",
@@ -2112,7 +2147,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 104%",
+            "detail": "60일 평균 대비 49%",
             "label": "거래대금 확장"
           },
           {
@@ -2123,87 +2158,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "화장품 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 68.1,
-        "representative_assets": [
-          {
-            "code": "090430",
-            "name": "아모레퍼시픽",
-            "sectorIds": [
-              "cosmetics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "051900",
-            "name": "LG생활건강",
-            "sectorIds": [
-              "cosmetics"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "161890",
-            "name": "한국콜마",
-            "sectorIds": [
-              "cosmetics"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "cosmetics",
-        "sector_name": "화장품",
-        "signals": [
-          {
-            "detail": "가격강도 98점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 -26%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "식음료 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "핀테크 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 62.3,
+        "probability": 58.1,
         "representative_assets": [
           {
-            "code": "097950",
-            "name": "CJ제일제당",
+            "code": "323410",
+            "name": "카카오뱅크",
             "sectorIds": [
-              "food"
+              "fintech"
             ],
             "type": "stock"
           },
           {
-            "code": "004370",
-            "name": "농심",
+            "code": "377300",
+            "name": "카카오페이",
             "sectorIds": [
-              "food"
+              "fintech"
             ],
             "type": "stock"
           },
           {
-            "code": "271560",
-            "name": "오리온",
+            "code": "030190",
+            "name": "NICE평가정보",
             "sectorIds": [
-              "food"
+              "fintech"
             ],
             "type": "stock"
           }
@@ -2216,71 +2195,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "food",
-        "sector_name": "식음료",
-        "signals": [
-          {
-            "detail": "가격강도 87점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 10%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "운송 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 53.2,
-        "representative_assets": [
-          {
-            "code": "003490",
-            "name": "대한항공",
-            "sectorIds": [
-              "transport"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "011200",
-            "name": "HMM",
-            "sectorIds": [
-              "transport"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "086280",
-            "name": "현대글로비스",
-            "sectorIds": [
-              "transport"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "transport",
-        "sector_name": "운송",
+        "sector_id": "fintech",
+        "sector_name": "핀테크",
         "signals": [
           {
             "detail": "가격강도 74점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 81%",
+            "detail": "60일 평균 대비 -2%",
             "label": "거래대금 확장"
           },
           {
@@ -2293,7 +2216,7 @@
       {
         "ai_summary": "가구인테리어 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 48.7,
+        "probability": 53.5,
         "representative_assets": [
           {
             "code": "009240",
@@ -2332,11 +2255,67 @@
         "sector_name": "가구인테리어",
         "signals": [
           {
-            "detail": "가격강도 84점",
+            "detail": "가격강도 83점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 -39%",
+            "detail": "60일 평균 대비 -25%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "환경 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 48.9,
+        "representative_assets": [
+          {
+            "code": "060150",
+            "name": "인선이엔티",
+            "sectorIds": [
+              "environment"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "067900",
+            "name": "와이엔텍",
+            "sectorIds": [
+              "environment"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "043910",
+            "name": "자연과환경",
+            "sectorIds": [
+              "environment"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "environment",
+        "sector_name": "환경",
+        "signals": [
+          {
+            "detail": "가격강도 68점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 -0%",
             "label": "거래대금 확장"
           },
           {
