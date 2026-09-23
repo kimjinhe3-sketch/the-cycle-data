@@ -19,15 +19,7 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.309,
-              "hit_rate": 0.185,
-              "n_signals": 27,
-              "sector_id": "ess",
-              "sector_name": "ESS"
-            },
-            {
-              "best_lag": 5,
-              "correlation": -0.321,
+              "correlation": -0.296,
               "hit_rate": 0.222,
               "n_signals": 27,
               "sector_id": "wind",
@@ -35,7 +27,15 @@
             },
             {
               "best_lag": 5,
-              "correlation": -0.359,
+              "correlation": -0.321,
+              "hit_rate": 0.185,
+              "n_signals": 27,
+              "sector_id": "ess",
+              "sector_name": "ESS"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.341,
               "hit_rate": 0.074,
               "n_signals": 27,
               "sector_id": "nuclear",
@@ -53,19 +53,19 @@
         "30": {
           "co_movement": [
             {
-              "correlation": 0.616,
-              "sector_id": "ess",
-              "sector_name": "ESS"
+              "correlation": 0.64,
+              "sector_id": "power_equip",
+              "sector_name": "전력기기"
             }
           ],
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": 0.637,
-              "hit_rate": 0.667,
-              "n_signals": 3,
-              "sector_id": "cement",
-              "sector_name": "시멘트"
+              "correlation": 0.618,
+              "hit_rate": 0.75,
+              "n_signals": 4,
+              "sector_id": "ai",
+              "sector_name": "AI"
             }
           ],
           "lag_5d": [],
@@ -80,7 +80,7 @@
         "60": {
           "co_movement": [
             {
-              "correlation": 0.651,
+              "correlation": 0.622,
               "sector_id": "power_equip",
               "sector_name": "전력기기"
             }
@@ -89,27 +89,27 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.427,
+              "correlation": -0.391,
+              "hit_rate": 0.083,
+              "n_signals": 12,
+              "sector_id": "wind",
+              "sector_name": "풍력"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.407,
+              "hit_rate": 0.0,
+              "n_signals": 12,
+              "sector_id": "defense",
+              "sector_name": "방산"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.42,
               "hit_rate": 0.25,
               "n_signals": 12,
               "sector_id": "ess",
               "sector_name": "ESS"
-            },
-            {
-              "best_lag": 5,
-              "correlation": -0.434,
-              "hit_rate": 0.0,
-              "n_signals": 12,
-              "sector_id": "nuclear",
-              "sector_name": "원전"
-            },
-            {
-              "best_lag": 5,
-              "correlation": -0.446,
-              "hit_rate": 0.0,
-              "n_signals": 12,
-              "sector_id": "solar",
-              "sector_name": "태양광"
             }
           ],
           "n_observations": 60
@@ -117,7 +117,7 @@
       },
       "sector_id": "cable",
       "sector_name": "케이블",
-      "today_score": 71.64
+      "today_score": 68.4
     },
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
@@ -149,9 +149,9 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.754,
-              "hit_rate": 0.0,
-              "n_signals": 5,
+              "correlation": -0.533,
+              "hit_rate": 0.167,
+              "n_signals": 6,
               "sector_id": "paper",
               "sector_name": "종이"
             }
@@ -159,15 +159,15 @@
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.487,
-              "hit_rate": 0.167,
+              "correlation": -0.537,
+              "hit_rate": 0.0,
               "n_signals": 6,
-              "sector_id": "steel",
-              "sector_name": "철강"
+              "sector_id": "lng",
+              "sector_name": "LNG에너지"
             },
             {
               "best_lag": 5,
-              "correlation": -0.59,
+              "correlation": -0.598,
               "hit_rate": 0.0,
               "n_signals": 6,
               "sector_id": "construction",
@@ -187,43 +187,52 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": -0.395,
-              "hit_rate": 0.154,
-              "n_signals": 13,
+              "correlation": -0.368,
+              "hit_rate": 0.214,
+              "n_signals": 14,
               "sector_id": "transport",
               "sector_name": "운송"
             },
             {
               "best_lag": 10,
-              "correlation": -0.411,
-              "hit_rate": 0.154,
-              "n_signals": 13,
+              "correlation": -0.387,
+              "hit_rate": 0.143,
+              "n_signals": 14,
               "sector_id": "etc",
               "sector_name": "기타"
             },
             {
               "best_lag": 10,
-              "correlation": -0.488,
-              "hit_rate": 0.077,
-              "n_signals": 13,
+              "correlation": -0.46,
+              "hit_rate": 0.071,
+              "n_signals": 14,
               "sector_id": "paper",
               "sector_name": "종이"
             }
           ],
-          "lag_5d": [],
+          "lag_5d": [
+            {
+              "best_lag": 5,
+              "correlation": -0.371,
+              "hit_rate": 0.214,
+              "n_signals": 14,
+              "sector_id": "steel",
+              "sector_name": "철강"
+            }
+          ],
           "n_observations": 60
         }
       },
       "sector_id": "comm_equip",
       "sector_name": "통신장비",
-      "today_score": 63.34
+      "today_score": 63.62
     },
     {
       "confidence_note": "과거 패턴 기반 가능성 표시. 미래를 보장하지 않습니다.",
       "macro": "ai_infra",
       "macro_name": "AI 인프라",
-      "meso": "ai_semi_main",
-      "meso_name": "반도체 (메모리·HBM)",
+      "meso": "ai_semi_power",
+      "meso_name": "전력반도체",
       "predictions_by_window": {
         "10": {
           "co_movement": [],
@@ -233,24 +242,31 @@
         },
         "120": {
           "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": -0.239,
-              "hit_rate": 0.154,
-              "n_signals": 26,
-              "sector_id": "bio",
-              "sector_name": "바이오"
-            }
-          ],
+          "lag_10d": [],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": -0.22,
-              "hit_rate": 0.214,
-              "n_signals": 28,
-              "sector_id": "liquid_cooling",
-              "sector_name": "액침냉각"
+              "correlation": -0.242,
+              "hit_rate": 0.103,
+              "n_signals": 29,
+              "sector_id": "solar",
+              "sector_name": "태양광"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.248,
+              "hit_rate": 0.138,
+              "n_signals": 29,
+              "sector_id": "ess",
+              "sector_name": "ESS"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.3,
+              "hit_rate": 0.103,
+              "n_signals": 29,
+              "sector_id": "nuclear",
+              "sector_name": "원전"
             }
           ],
           "n_observations": 120
@@ -266,21 +282,37 @@
           "lag_10d": [
             {
               "best_lag": 10,
-              "correlation": 0.546,
-              "hit_rate": 0.4,
-              "n_signals": 5,
-              "sector_id": "department",
-              "sector_name": "백화점"
+              "correlation": 0.514,
+              "hit_rate": 0.5,
+              "n_signals": 6,
+              "sector_id": "chemical",
+              "sector_name": "화학"
+            },
+            {
+              "best_lag": 10,
+              "correlation": 0.514,
+              "hit_rate": 0.333,
+              "n_signals": 6,
+              "sector_id": "ess",
+              "sector_name": "ESS"
             }
           ],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.563,
-              "hit_rate": 0.667,
+              "correlation": -0.52,
+              "hit_rate": 0.167,
               "n_signals": 6,
-              "sector_id": "shipbuilding",
-              "sector_name": "조선"
+              "sector_id": "solar",
+              "sector_name": "태양광"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.543,
+              "hit_rate": 0.0,
+              "n_signals": 6,
+              "sector_id": "nuclear",
+              "sector_name": "원전"
             }
           ],
           "n_observations": 30
@@ -293,43 +325,42 @@
         },
         "60": {
           "co_movement": [],
-          "lag_10d": [
-            {
-              "best_lag": 10,
-              "correlation": 0.36,
-              "hit_rate": 0.091,
-              "n_signals": 11,
-              "sector_id": "securities",
-              "sector_name": "증권"
-            },
-            {
-              "best_lag": 10,
-              "correlation": -0.335,
-              "hit_rate": 0.0,
-              "n_signals": 11,
-              "sector_id": "chemical",
-              "sector_name": "화학"
-            }
-          ],
+          "lag_10d": [],
           "lag_5d": [
             {
               "best_lag": 5,
-              "correlation": 0.334,
-              "hit_rate": 0.308,
-              "n_signals": 13,
-              "sector_id": "media",
-              "sector_name": "미디어광고"
+              "correlation": -0.353,
+              "hit_rate": 0.143,
+              "n_signals": 14,
+              "sector_id": "steel",
+              "sector_name": "철강"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.38,
+              "hit_rate": 0.071,
+              "n_signals": 14,
+              "sector_id": "nuclear",
+              "sector_name": "원전"
+            },
+            {
+              "best_lag": 5,
+              "correlation": -0.387,
+              "hit_rate": 0.071,
+              "n_signals": 14,
+              "sector_id": "solar",
+              "sector_name": "태양광"
             }
           ],
           "n_observations": 60
         }
       },
-      "sector_id": "memory_semi",
-      "sector_name": "메모리반도체",
-      "today_score": 62.01
+      "sector_id": "power_semi",
+      "sector_name": "전력반도체",
+      "today_score": 60.89
     }
   ],
-  "as_of": "2026-09-22T15:30:00+09:00",
+  "as_of": "2026-09-23T15:30:00+09:00",
   "market_session": "closed",
   "n_observations": 120,
   "note": "데이터 모으는 중 (120/120일). 윈도우별로 점차 의미 있는 신호.",

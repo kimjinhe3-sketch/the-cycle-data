@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-09-22T15:30:00+09:00",
+  "as_of": "2026-09-23T15:30:00+09:00",
   "candidates": [
     {
       "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "high",
-      "probability": 78.6,
+      "probability": 75.4,
       "representative_assets": [
         {
           "code": "001440",
@@ -43,11 +43,11 @@
       "sector_name": "케이블",
       "signals": [
         {
-          "detail": "가격강도 99점",
+          "detail": "가격강도 97점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 159%",
+          "detail": "20일 평균 대비 15%",
           "label": "거래대금 확장"
         },
         {
@@ -60,7 +60,7 @@
     {
       "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "high",
-      "probability": 66.3,
+      "probability": 66.6,
       "representative_assets": [
         {
           "code": "010170",
@@ -99,67 +99,11 @@
       "sector_name": "통신장비",
       "signals": [
         {
-          "detail": "가격강도 90점",
+          "detail": "가격강도 93점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 -3%",
-          "label": "거래대금 확장"
-        },
-        {
-          "detail": "외국인/기관 순매수 전환",
-          "label": "수급 전환"
-        }
-      ],
-      "state": "expanding"
-    },
-    {
-      "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-      "confidence": "medium",
-      "probability": 61.0,
-      "representative_assets": [
-        {
-          "code": "005930",
-          "name": "삼성전자",
-          "sectorIds": [
-            "memory_semi"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "000660",
-          "name": "SK하이닉스",
-          "sectorIds": [
-            "memory_semi"
-          ],
-          "type": "stock"
-        },
-        {
-          "code": "091160",
-          "name": "KODEX 반도체",
-          "sectorIds": [
-            "memory_semi"
-          ],
-          "type": "etf"
-        }
-      ],
-      "risks": [
-        {
-          "label": "단기 변동성 확대"
-        },
-        {
-          "label": "글로벌 매크로 변수"
-        }
-      ],
-      "sector_id": "memory_semi",
-      "sector_name": "메모리반도체",
-      "signals": [
-        {
-          "detail": "가격강도 86점",
-          "label": "가격강도 상위"
-        },
-        {
-          "detail": "20일 평균 대비 15%",
+          "detail": "20일 평균 대비 3%",
           "label": "거래대금 확장"
         },
         {
@@ -172,7 +116,7 @@
     {
       "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "medium",
-      "probability": 56.8,
+      "probability": 59.9,
       "representative_assets": [
         {
           "code": "009150",
@@ -211,11 +155,67 @@
       "sector_name": "전력반도체",
       "signals": [
         {
+          "detail": "가격강도 92점",
+          "label": "가격강도 상위"
+        },
+        {
+          "detail": "20일 평균 대비 -16%",
+          "label": "거래대금 확장"
+        },
+        {
+          "detail": "외국인/기관 순매수 전환",
+          "label": "수급 전환"
+        }
+      ],
+      "state": "expanding"
+    },
+    {
+      "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+      "confidence": "medium",
+      "probability": 55.6,
+      "representative_assets": [
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "sectorIds": [
+            "memory_semi"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "000660",
+          "name": "SK하이닉스",
+          "sectorIds": [
+            "memory_semi"
+          ],
+          "type": "stock"
+        },
+        {
+          "code": "091160",
+          "name": "KODEX 반도체",
+          "sectorIds": [
+            "memory_semi"
+          ],
+          "type": "etf"
+        }
+      ],
+      "risks": [
+        {
+          "label": "단기 변동성 확대"
+        },
+        {
+          "label": "글로벌 매크로 변수"
+        }
+      ],
+      "sector_id": "memory_semi",
+      "sector_name": "메모리반도체",
+      "signals": [
+        {
           "detail": "가격강도 91점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 56%",
+          "detail": "20일 평균 대비 15%",
           "label": "거래대금 확장"
         },
         {
@@ -228,7 +228,7 @@
     {
       "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
       "confidence": "medium",
-      "probability": 50.0,
+      "probability": 50.8,
       "representative_assets": [
         {
           "code": "395400",
@@ -267,11 +267,11 @@
       "sector_name": "리츠",
       "signals": [
         {
-          "detail": "가격강도 65점",
+          "detail": "가격강도 66점",
           "label": "가격강도 상위"
         },
         {
-          "detail": "20일 평균 대비 24%",
+          "detail": "20일 평균 대비 14%",
           "label": "거래대금 확장"
         },
         {
@@ -279,15 +279,120 @@
           "label": "수급 전환"
         }
       ],
-      "state": "neutral"
+      "state": "expanding"
     }
   ],
   "candidates_by_period": {
     "10": [
       {
-        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "태양광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 77.4,
+        "probability": 66.4,
+        "representative_assets": [
+          {
+            "code": "322000",
+            "name": "HD현대에너지솔루션",
+            "sectorIds": [
+              "ess",
+              "solar"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "010060",
+            "name": "OCI홀딩스",
+            "sectorIds": [
+              "solar"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "solar",
+        "sector_name": "태양광",
+        "signals": [
+          {
+            "detail": "가격강도 45점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 64%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "early"
+      },
+      {
+        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 61.8,
+        "representative_assets": [
+          {
+            "code": "395400",
+            "name": "SK리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "330590",
+            "name": "롯데리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "432320",
+            "name": "KB스타리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "real_estate",
+        "sector_name": "리츠",
+        "signals": [
+          {
+            "detail": "가격강도 78점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "10일 평균 대비 14%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 57.6,
         "representative_assets": [
           {
             "code": "001440",
@@ -326,67 +431,11 @@
         "sector_name": "케이블",
         "signals": [
           {
-            "detail": "가격강도 95점",
+            "detail": "가격강도 88점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 159%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "보안 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 66.1,
-        "representative_assets": [
-          {
-            "code": "053800",
-            "name": "안랩",
-            "sectorIds": [
-              "security"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "136540",
-            "name": "윈스테크넷",
-            "sectorIds": [
-              "security"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "131090",
-            "name": "시큐브",
-            "sectorIds": [
-              "security"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "security",
-        "sector_name": "보안",
-        "signals": [
-          {
-            "detail": "가격강도 82점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 64%",
+            "detail": "10일 평균 대비 15%",
             "label": "거래대금 확장"
           },
           {
@@ -399,7 +448,7 @@
       {
         "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 61.7,
+        "probability": 52.3,
         "representative_assets": [
           {
             "code": "005930",
@@ -438,7 +487,7 @@
         "sector_name": "메모리반도체",
         "signals": [
           {
-            "detail": "가격강도 90점",
+            "detail": "가격강도 92점",
             "label": "가격강도 상위"
           },
           {
@@ -453,31 +502,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "보안 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 55.1,
+        "probability": 47.2,
         "representative_assets": [
           {
-            "code": "009150",
-            "name": "삼성전기",
+            "code": "053800",
+            "name": "안랩",
             "sectorIds": [
-              "power_semi"
+              "security"
             ],
             "type": "stock"
           },
           {
-            "code": "005070",
-            "name": "코스모신소재",
+            "code": "136540",
+            "name": "윈스테크넷",
             "sectorIds": [
-              "power_semi"
+              "security"
             ],
             "type": "stock"
           },
           {
-            "code": "001820",
-            "name": "삼화콘덴서",
+            "code": "131090",
+            "name": "시큐브",
             "sectorIds": [
-              "power_semi"
+              "security"
             ],
             "type": "stock"
           }
@@ -490,15 +539,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "power_semi",
-        "sector_name": "전력반도체",
+        "sector_id": "security",
+        "sector_name": "보안",
         "signals": [
           {
-            "detail": "가격강도 93점",
+            "detail": "가격강도 85점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "10일 평균 대비 56%",
+            "detail": "10일 평균 대비 34%",
             "label": "거래대금 확장"
           },
           {
@@ -507,69 +556,13 @@
           }
         ],
         "state": "expanding"
-      },
-      {
-        "ai_summary": "증권 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "low",
-        "probability": 43.2,
-        "representative_assets": [
-          {
-            "code": "006800",
-            "name": "미래에셋증권",
-            "sectorIds": [
-              "securities"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "071050",
-            "name": "한국금융지주",
-            "sectorIds": [
-              "securities"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "016360",
-            "name": "삼성증권",
-            "sectorIds": [
-              "securities"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "securities",
-        "sector_name": "증권",
-        "signals": [
-          {
-            "detail": "가격강도 46점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "10일 평균 대비 42%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "early"
       }
     ],
     "120": [
       {
         "ai_summary": "화장품 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 73.0,
+        "probability": 72.4,
         "representative_assets": [
           {
             "code": "090430",
@@ -608,59 +601,11 @@
         "sector_name": "화장품",
         "signals": [
           {
-            "detail": "가격강도 87점",
+            "detail": "가격강도 86점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -29%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "정유 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 64.3,
-        "representative_assets": [
-          {
-            "code": "096770",
-            "name": "SK이노베이션",
-            "sectorIds": [
-              "oil"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "010950",
-            "name": "S-Oil",
-            "sectorIds": [
-              "oil"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "oil",
-        "sector_name": "정유",
-        "signals": [
-          {
-            "detail": "가격강도 69점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "120일 평균 대비 -40%",
+            "detail": "120일 평균 대비 -36%",
             "label": "거래대금 확장"
           },
           {
@@ -672,8 +617,8 @@
       },
       {
         "ai_summary": "금융 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 58.6,
+        "confidence": "high",
+        "probability": 65.6,
         "representative_assets": [
           {
             "code": "105560",
@@ -716,7 +661,55 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -37%",
+            "detail": "120일 평균 대비 -34%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "정유 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 59.0,
+        "representative_assets": [
+          {
+            "code": "096770",
+            "name": "SK이노베이션",
+            "sectorIds": [
+              "oil"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "010950",
+            "name": "S-Oil",
+            "sectorIds": [
+              "oil"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "oil",
+        "sector_name": "정유",
+        "signals": [
+          {
+            "detail": "가격강도 73점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "120일 평균 대비 -26%",
             "label": "거래대금 확장"
           },
           {
@@ -729,7 +722,7 @@
       {
         "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 54.4,
+        "probability": 50.7,
         "representative_assets": [
           {
             "code": "001440",
@@ -772,7 +765,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 159%",
+            "detail": "120일 평균 대비 15%",
             "label": "거래대금 확장"
           },
           {
@@ -783,33 +776,33 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "지주회사 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "low",
-        "probability": 44.6,
+        "probability": 43.3,
         "representative_assets": [
           {
-            "code": "034730",
-            "name": "SK",
+            "code": "005930",
+            "name": "삼성전자",
             "sectorIds": [
-              "holdings"
+              "memory_semi"
             ],
             "type": "stock"
           },
           {
-            "code": "003550",
-            "name": "LG",
+            "code": "000660",
+            "name": "SK하이닉스",
             "sectorIds": [
-              "holdings"
+              "memory_semi"
             ],
             "type": "stock"
           },
           {
-            "code": "078930",
-            "name": "GS",
+            "code": "091160",
+            "name": "KODEX 반도체",
             "sectorIds": [
-              "holdings"
+              "memory_semi"
             ],
-            "type": "stock"
+            "type": "etf"
           }
         ],
         "risks": [
@@ -820,15 +813,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "holdings",
-        "sector_name": "지주회사",
+        "sector_id": "memory_semi",
+        "sector_name": "메모리반도체",
         "signals": [
           {
-            "detail": "가격강도 74점",
+            "detail": "가격강도 89점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "120일 평균 대비 -11%",
+            "detail": "120일 평균 대비 15%",
             "label": "거래대금 확장"
           },
           {
@@ -841,33 +834,33 @@
     ],
     "15": [
       {
-        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 78.2,
+        "probability": 70.7,
         "representative_assets": [
           {
-            "code": "001440",
-            "name": "대한전선",
+            "code": "005930",
+            "name": "삼성전자",
             "sectorIds": [
-              "cable"
+              "memory_semi"
             ],
             "type": "stock"
           },
           {
-            "code": "103590",
-            "name": "일진전기",
+            "code": "000660",
+            "name": "SK하이닉스",
             "sectorIds": [
-              "cable"
+              "memory_semi"
             ],
             "type": "stock"
           },
           {
-            "code": "000500",
-            "name": "가온전선",
+            "code": "091160",
+            "name": "KODEX 반도체",
             "sectorIds": [
-              "cable"
+              "memory_semi"
             ],
-            "type": "stock"
+            "type": "etf"
           }
         ],
         "risks": [
@@ -878,15 +871,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "cable",
-        "sector_name": "케이블",
+        "sector_id": "memory_semi",
+        "sector_name": "메모리반도체",
         "signals": [
           {
-            "detail": "가격강도 94점",
+            "detail": "가격강도 91점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 159%",
+            "detail": "15일 평균 대비 15%",
             "label": "거래대금 확장"
           },
           {
@@ -899,7 +892,7 @@
       {
         "ai_summary": "보안 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 64.7,
+        "probability": 62.3,
         "representative_assets": [
           {
             "code": "053800",
@@ -938,67 +931,11 @@
         "sector_name": "보안",
         "signals": [
           {
-            "detail": "가격강도 74점",
+            "detail": "가격강도 70점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 64%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 59.8,
-        "representative_assets": [
-          {
-            "code": "005930",
-            "name": "삼성전자",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000660",
-            "name": "SK하이닉스",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "091160",
-            "name": "KODEX 반도체",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "etf"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "memory_semi",
-        "sector_name": "메모리반도체",
-        "signals": [
-          {
-            "detail": "가격강도 89점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 15%",
+            "detail": "15일 평균 대비 34%",
             "label": "거래대금 확장"
           },
           {
@@ -1011,7 +948,7 @@
       {
         "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 55.7,
+        "probability": 56.2,
         "representative_assets": [
           {
             "code": "009150",
@@ -1050,11 +987,11 @@
         "sector_name": "전력반도체",
         "signals": [
           {
-            "detail": "가격강도 89점",
+            "detail": "가격강도 88점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "15일 평균 대비 56%",
+            "detail": "15일 평균 대비 -16%",
             "label": "거래대금 확장"
           },
           {
@@ -1065,67 +1002,9 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 50.6,
-        "representative_assets": [
-          {
-            "code": "010170",
-            "name": "대한광통신",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "115440",
-            "name": "우리넷",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "056360",
-            "name": "코위버",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "comm_equip",
-        "sector_name": "통신장비",
-        "signals": [
-          {
-            "detail": "가격강도 91점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "15일 평균 대비 -3%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      }
-    ],
-    "20": [
-      {
         "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 78.6,
+        "confidence": "medium",
+        "probability": 49.3,
         "representative_assets": [
           {
             "code": "001440",
@@ -1164,11 +1043,11 @@
         "sector_name": "케이블",
         "signals": [
           {
-            "detail": "가격강도 99점",
+            "detail": "가격강도 96점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 159%",
+            "detail": "15일 평균 대비 15%",
             "label": "거래대금 확장"
           },
           {
@@ -1176,180 +1055,12 @@
             "label": "수급 전환"
           }
         ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 66.3,
-        "representative_assets": [
-          {
-            "code": "010170",
-            "name": "대한광통신",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "115440",
-            "name": "우리넷",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "056360",
-            "name": "코위버",
-            "sectorIds": [
-              "comm_equip"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "comm_equip",
-        "sector_name": "통신장비",
-        "signals": [
-          {
-            "detail": "가격강도 90점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 -3%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 61.0,
-        "representative_assets": [
-          {
-            "code": "005930",
-            "name": "삼성전자",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000660",
-            "name": "SK하이닉스",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "091160",
-            "name": "KODEX 반도체",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "etf"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "memory_semi",
-        "sector_name": "메모리반도체",
-        "signals": [
-          {
-            "detail": "가격강도 86점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 15%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 56.8,
-        "representative_assets": [
-          {
-            "code": "009150",
-            "name": "삼성전기",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "005070",
-            "name": "코스모신소재",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "001820",
-            "name": "삼화콘덴서",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "power_semi",
-        "sector_name": "전력반도체",
-        "signals": [
-          {
-            "detail": "가격강도 91점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "20일 평균 대비 56%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
+        "state": "neutral"
       },
       {
         "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 50.0,
+        "confidence": "low",
+        "probability": 43.8,
         "representative_assets": [
           {
             "code": "395400",
@@ -1388,11 +1099,11 @@
         "sector_name": "리츠",
         "signals": [
           {
-            "detail": "가격강도 65점",
+            "detail": "가격강도 67점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "20일 평균 대비 24%",
+            "detail": "15일 평균 대비 14%",
             "label": "거래대금 확장"
           },
           {
@@ -1400,14 +1111,14 @@
             "label": "수급 전환"
           }
         ],
-        "state": "neutral"
+        "state": "expanding"
       }
     ],
-    "30": [
+    "20": [
       {
         "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 78.3,
+        "probability": 75.4,
         "representative_assets": [
           {
             "code": "001440",
@@ -1446,11 +1157,67 @@
         "sector_name": "케이블",
         "signals": [
           {
-            "detail": "가격강도 98점",
+            "detail": "가격강도 97점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 159%",
+            "detail": "20일 평균 대비 15%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 66.6,
+        "representative_assets": [
+          {
+            "code": "010170",
+            "name": "대한광통신",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "115440",
+            "name": "우리넷",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "056360",
+            "name": "코위버",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "comm_equip",
+        "sector_name": "통신장비",
+        "signals": [
+          {
+            "detail": "가격강도 93점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 3%",
             "label": "거래대금 확장"
           },
           {
@@ -1462,8 +1229,8 @@
       },
       {
         "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 68.3,
+        "confidence": "medium",
+        "probability": 59.9,
         "representative_assets": [
           {
             "code": "009150",
@@ -1506,7 +1273,7 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 56%",
+            "detail": "20일 평균 대비 -16%",
             "label": "거래대금 확장"
           },
           {
@@ -1519,7 +1286,289 @@
       {
         "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 61.6,
+        "probability": 55.6,
+        "representative_assets": [
+          {
+            "code": "005930",
+            "name": "삼성전자",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000660",
+            "name": "SK하이닉스",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "091160",
+            "name": "KODEX 반도체",
+            "sectorIds": [
+              "memory_semi"
+            ],
+            "type": "etf"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "memory_semi",
+        "sector_name": "메모리반도체",
+        "signals": [
+          {
+            "detail": "가격강도 91점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 15%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 50.8,
+        "representative_assets": [
+          {
+            "code": "395400",
+            "name": "SK리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "330590",
+            "name": "롯데리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "432320",
+            "name": "KB스타리츠",
+            "sectorIds": [
+              "real_estate"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "real_estate",
+        "sector_name": "리츠",
+        "signals": [
+          {
+            "detail": "가격강도 66점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "20일 평균 대비 14%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      }
+    ],
+    "30": [
+      {
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 74.8,
+        "representative_assets": [
+          {
+            "code": "001440",
+            "name": "대한전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "103590",
+            "name": "일진전기",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000500",
+            "name": "가온전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "cable",
+        "sector_name": "케이블",
+        "signals": [
+          {
+            "detail": "가격강도 98점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 15%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 66.1,
+        "representative_assets": [
+          {
+            "code": "010170",
+            "name": "대한광통신",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "115440",
+            "name": "우리넷",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "056360",
+            "name": "코위버",
+            "sectorIds": [
+              "comm_equip"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "comm_equip",
+        "sector_name": "통신장비",
+        "signals": [
+          {
+            "detail": "가격강도 87점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 3%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 61.4,
+        "representative_assets": [
+          {
+            "code": "009150",
+            "name": "삼성전기",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "005070",
+            "name": "코스모신소재",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "001820",
+            "name": "삼화콘덴서",
+            "sectorIds": [
+              "power_semi"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "power_semi",
+        "sector_name": "전력반도체",
+        "signals": [
+          {
+            "detail": "가격강도 92점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "30일 평균 대비 -16%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 56.3,
         "representative_assets": [
           {
             "code": "005930",
@@ -1573,31 +1622,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "리츠 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 55.6,
+        "probability": 48.4,
         "representative_assets": [
           {
-            "code": "010170",
-            "name": "대한광통신",
+            "code": "395400",
+            "name": "SK리츠",
             "sectorIds": [
-              "comm_equip"
+              "real_estate"
             ],
             "type": "stock"
           },
           {
-            "code": "115440",
-            "name": "우리넷",
+            "code": "330590",
+            "name": "롯데리츠",
             "sectorIds": [
-              "comm_equip"
+              "real_estate"
             ],
             "type": "stock"
           },
           {
-            "code": "056360",
-            "name": "코위버",
+            "code": "432320",
+            "name": "KB스타리츠",
             "sectorIds": [
-              "comm_equip"
+              "real_estate"
             ],
             "type": "stock"
           }
@@ -1610,15 +1659,66 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "comm_equip",
-        "sector_name": "통신장비",
+        "sector_id": "real_estate",
+        "sector_name": "리츠",
         "signals": [
           {
-            "detail": "가격강도 78점",
+            "detail": "가격강도 60점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 -3%",
+            "detail": "30일 평균 대비 14%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "neutral"
+      }
+    ],
+    "5": [
+      {
+        "ai_summary": "태양광 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "high",
+        "probability": 72.1,
+        "representative_assets": [
+          {
+            "code": "322000",
+            "name": "HD현대에너지솔루션",
+            "sectorIds": [
+              "ess",
+              "solar"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "010060",
+            "name": "OCI홀딩스",
+            "sectorIds": [
+              "solar"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "solar",
+        "sector_name": "태양광",
+        "signals": [
+          {
+            "detail": "가격강도 74점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "5일 평균 대비 64%",
             "label": "거래대금 확장"
           },
           {
@@ -1629,33 +1729,33 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "보안 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 51.1,
+        "probability": 62.3,
         "representative_assets": [
           {
-            "code": "053800",
-            "name": "안랩",
+            "code": "005930",
+            "name": "삼성전자",
             "sectorIds": [
-              "security"
+              "memory_semi"
             ],
             "type": "stock"
           },
           {
-            "code": "136540",
-            "name": "윈스테크넷",
+            "code": "000660",
+            "name": "SK하이닉스",
             "sectorIds": [
-              "security"
+              "memory_semi"
             ],
             "type": "stock"
           },
           {
-            "code": "131090",
-            "name": "시큐브",
+            "code": "091160",
+            "name": "KODEX 반도체",
             "sectorIds": [
-              "security"
+              "memory_semi"
             ],
-            "type": "stock"
+            "type": "etf"
           }
         ],
         "risks": [
@@ -1666,15 +1766,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "security",
-        "sector_name": "보안",
+        "sector_id": "memory_semi",
+        "sector_name": "메모리반도체",
         "signals": [
           {
-            "detail": "가격강도 67점",
+            "detail": "가격강도 92점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "30일 평균 대비 64%",
+            "detail": "5일 평균 대비 15%",
             "label": "거래대금 확장"
           },
           {
@@ -1683,13 +1783,11 @@
           }
         ],
         "state": "expanding"
-      }
-    ],
-    "5": [
+      },
       {
         "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 72.7,
+        "confidence": "medium",
+        "probability": 53.0,
         "representative_assets": [
           {
             "code": "001440",
@@ -1732,62 +1830,6 @@
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 159%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "메모리반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 67.4,
-        "representative_assets": [
-          {
-            "code": "005930",
-            "name": "삼성전자",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000660",
-            "name": "SK하이닉스",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "091160",
-            "name": "KODEX 반도체",
-            "sectorIds": [
-              "memory_semi"
-            ],
-            "type": "etf"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "memory_semi",
-        "sector_name": "메모리반도체",
-        "signals": [
-          {
-            "detail": "가격강도 91점",
-            "label": "가격강도 상위"
-          },
-          {
             "detail": "5일 평균 대비 15%",
             "label": "거래대금 확장"
           },
@@ -1799,31 +1841,31 @@
         "state": "expanding"
       },
       {
-        "ai_summary": "보안 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "종이 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 57.6,
+        "probability": 47.3,
         "representative_assets": [
           {
-            "code": "053800",
-            "name": "안랩",
+            "code": "009200",
+            "name": "무림페이퍼",
             "sectorIds": [
-              "security"
+              "paper"
             ],
             "type": "stock"
           },
           {
-            "code": "136540",
-            "name": "윈스테크넷",
+            "code": "002310",
+            "name": "아세아제지",
             "sectorIds": [
-              "security"
+              "paper"
             ],
             "type": "stock"
           },
           {
-            "code": "131090",
-            "name": "시큐브",
+            "code": "004540",
+            "name": "깨끗한나라",
             "sectorIds": [
-              "security"
+              "paper"
             ],
             "type": "stock"
           }
@@ -1836,15 +1878,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "security",
-        "sector_name": "보안",
+        "sector_id": "paper",
+        "sector_name": "종이",
         "signals": [
           {
-            "detail": "가격강도 79점",
+            "detail": "가격강도 52점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 64%",
+            "detail": "5일 평균 대비 -20%",
             "label": "거래대금 확장"
           },
           {
@@ -1852,94 +1894,13 @@
             "label": "수급 전환"
           }
         ],
-        "state": "expanding"
+        "state": "early"
       },
       {
-        "ai_summary": "전력반도체 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 50.6,
-        "representative_assets": [
-          {
-            "code": "009150",
-            "name": "삼성전기",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "005070",
-            "name": "코스모신소재",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "001820",
-            "name": "삼화콘덴서",
-            "sectorIds": [
-              "power_semi"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "power_semi",
-        "sector_name": "전력반도체",
-        "signals": [
-          {
-            "detail": "가격강도 82점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "5일 평균 대비 56%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "증권 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "ai_summary": "기타 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "low",
-        "probability": 44.7,
-        "representative_assets": [
-          {
-            "code": "006800",
-            "name": "미래에셋증권",
-            "sectorIds": [
-              "securities"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "071050",
-            "name": "한국금융지주",
-            "sectorIds": [
-              "securities"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "016360",
-            "name": "삼성증권",
-            "sectorIds": [
-              "securities"
-            ],
-            "type": "stock"
-          }
-        ],
+        "probability": 41,
+        "representative_assets": [],
         "risks": [
           {
             "label": "단기 변동성 확대"
@@ -1948,15 +1909,15 @@
             "label": "글로벌 매크로 변수"
           }
         ],
-        "sector_id": "securities",
-        "sector_name": "증권",
+        "sector_id": "etc",
+        "sector_name": "기타",
         "signals": [
           {
-            "detail": "가격강도 56점",
+            "detail": "가격강도 50점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "5일 평균 대비 42%",
+            "detail": "5일 평균 대비 0%",
             "label": "거래대금 확장"
           },
           {
@@ -1969,65 +1930,9 @@
     ],
     "60": [
       {
-        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "high",
-        "probability": 77.8,
-        "representative_assets": [
-          {
-            "code": "001440",
-            "name": "대한전선",
-            "sectorIds": [
-              "cable"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "103590",
-            "name": "일진전기",
-            "sectorIds": [
-              "cable"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "000500",
-            "name": "가온전선",
-            "sectorIds": [
-              "cable"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "cable",
-        "sector_name": "케이블",
-        "signals": [
-          {
-            "detail": "가격강도 90점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 159%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
         "ai_summary": "정유 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "high",
-        "probability": 71.9,
+        "probability": 73.1,
         "representative_assets": [
           {
             "code": "096770",
@@ -2058,68 +1963,11 @@
         "sector_name": "정유",
         "signals": [
           {
-            "detail": "가격강도 96점",
+            "detail": "가격강도 95점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 -40%",
-            "label": "거래대금 확장"
-          },
-          {
-            "detail": "외국인/기관 순매수 전환",
-            "label": "수급 전환"
-          }
-        ],
-        "state": "expanding"
-      },
-      {
-        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 59.8,
-        "representative_assets": [
-          {
-            "code": "034020",
-            "name": "두산에너빌리티",
-            "sectorIds": [
-              "nuclear",
-              "lng"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "083650",
-            "name": "비에이치아이",
-            "sectorIds": [
-              "nuclear"
-            ],
-            "type": "stock"
-          },
-          {
-            "code": "105840",
-            "name": "우진",
-            "sectorIds": [
-              "nuclear"
-            ],
-            "type": "stock"
-          }
-        ],
-        "risks": [
-          {
-            "label": "단기 변동성 확대"
-          },
-          {
-            "label": "글로벌 매크로 변수"
-          }
-        ],
-        "sector_id": "nuclear",
-        "sector_name": "원전",
-        "signals": [
-          {
-            "detail": "가격강도 75점",
-            "label": "가격강도 상위"
-          },
-          {
-            "detail": "60일 평균 대비 40%",
+            "detail": "60일 평균 대비 -26%",
             "label": "거래대금 확장"
           },
           {
@@ -2131,8 +1979,8 @@
       },
       {
         "ai_summary": "건설 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
-        "confidence": "medium",
-        "probability": 55.5,
+        "confidence": "high",
+        "probability": 67.1,
         "representative_assets": [
           {
             "code": "000720",
@@ -2179,11 +2027,67 @@
         "sector_name": "건설",
         "signals": [
           {
+            "detail": "가격강도 76점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 26%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "케이블 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 62.8,
+        "representative_assets": [
+          {
+            "code": "001440",
+            "name": "대한전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "103590",
+            "name": "일진전기",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "000500",
+            "name": "가온전선",
+            "sectorIds": [
+              "cable"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "cable",
+        "sector_name": "케이블",
+        "signals": [
+          {
             "detail": "가격강도 89점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 0%",
+            "detail": "60일 평균 대비 15%",
             "label": "거래대금 확장"
           },
           {
@@ -2196,7 +2100,7 @@
       {
         "ai_summary": "통신장비 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
         "confidence": "medium",
-        "probability": 47.7,
+        "probability": 54.5,
         "representative_assets": [
           {
             "code": "010170",
@@ -2235,11 +2139,68 @@
         "sector_name": "통신장비",
         "signals": [
           {
-            "detail": "가격강도 65점",
+            "detail": "가격강도 74점",
             "label": "가격강도 상위"
           },
           {
-            "detail": "60일 평균 대비 -3%",
+            "detail": "60일 평균 대비 3%",
+            "label": "거래대금 확장"
+          },
+          {
+            "detail": "외국인/기관 순매수 전환",
+            "label": "수급 전환"
+          }
+        ],
+        "state": "expanding"
+      },
+      {
+        "ai_summary": "원전 섹터가 최근 거래대금/가격강도 측면에서 강세 국면.",
+        "confidence": "medium",
+        "probability": 49.0,
+        "representative_assets": [
+          {
+            "code": "034020",
+            "name": "두산에너빌리티",
+            "sectorIds": [
+              "nuclear",
+              "lng"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "083650",
+            "name": "비에이치아이",
+            "sectorIds": [
+              "nuclear"
+            ],
+            "type": "stock"
+          },
+          {
+            "code": "105840",
+            "name": "우진",
+            "sectorIds": [
+              "nuclear"
+            ],
+            "type": "stock"
+          }
+        ],
+        "risks": [
+          {
+            "label": "단기 변동성 확대"
+          },
+          {
+            "label": "글로벌 매크로 변수"
+          }
+        ],
+        "sector_id": "nuclear",
+        "sector_name": "원전",
+        "signals": [
+          {
+            "detail": "가격강도 64점",
+            "label": "가격강도 상위"
+          },
+          {
+            "detail": "60일 평균 대비 12%",
             "label": "거래대금 확장"
           },
           {
