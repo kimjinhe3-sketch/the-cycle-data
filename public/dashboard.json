@@ -3,18 +3,18 @@
     "지수 일별 변동과 섹터 자금유입을 KRX EOD 데이터 기준으로 산출했습니다.",
     "섹터 분류는 사용자 정의 17개 그룹이며, 점수는 종목별 가격강도/거래대금/RSI 를 합산한 0~100 척도입니다."
   ],
-  "as_of": "2026-10-12T15:30:00+09:00",
+  "as_of": "2026-10-13T15:30:00+09:00",
   "foreign_institution_shift": [
     {
-      "change1d": -0.85,
-      "rs5d": -0.14,
+      "change1d": -2.62,
+      "rs5d": -3.7,
       "scores": {
-        "breadth": 40.0,
+        "breadth": 20.0,
         "catalyst": 40.0,
-        "fatigue": 12.43,
-        "flow": 94.52,
-        "rs": 61.29,
-        "total": 52.15
+        "fatigue": 0.0,
+        "flow": 93.63,
+        "rs": 65.29,
+        "total": 50.99
       },
       "sector": {
         "id": "medical_device",
@@ -22,19 +22,19 @@
         "shortName": "의료기기"
       },
       "state": "neutral",
-      "tradingValue": 64173595890,
-      "tradingValueChangePct": 255.31
+      "tradingValue": 25098805180,
+      "tradingValueChangePct": 49.93
     },
     {
-      "change1d": 0.22,
-      "rs5d": -1.45,
+      "change1d": 2.72,
+      "rs5d": 0.46,
       "scores": {
-        "breadth": 60.0,
-        "catalyst": 20.0,
-        "fatigue": 19.58,
-        "flow": 88.06,
-        "rs": 78.71,
-        "total": 56.69
+        "breadth": 75.0,
+        "catalyst": 25.0,
+        "fatigue": 25.74,
+        "flow": 92.68,
+        "rs": 87.9,
+        "total": 63.18
       },
       "sector": {
         "id": "security",
@@ -42,59 +42,39 @@
         "shortName": "보안"
       },
       "state": "expanding",
-      "tradingValue": 24702583895,
-      "tradingValueChangePct": -2.74
+      "tradingValue": 52465228170,
+      "tradingValueChangePct": 142.83
     },
     {
-      "change1d": 0.5,
-      "rs5d": -0.84,
+      "change1d": 0.14,
+      "rs5d": -1.32,
       "scores": {
-        "breadth": 40.0,
-        "catalyst": 40.0,
+        "breadth": 20.0,
+        "catalyst": 20.0,
         "fatigue": 0.0,
-        "flow": 87.42,
-        "rs": 47.74,
-        "total": 48.18
+        "flow": 92.36,
+        "rs": 55.41,
+        "total": 45.71
       },
       "sector": {
         "id": "cement",
         "name": "시멘트",
         "shortName": "시멘트"
       },
-      "state": "early",
-      "tradingValue": 133903050470,
-      "tradingValueChangePct": 502.62
-    },
-    {
-      "change1d": -3.88,
-      "rs5d": -2.59,
-      "scores": {
-        "breadth": 0.0,
-        "catalyst": 0.0,
-        "fatigue": 43.18,
-        "flow": 85.81,
-        "rs": 78.06,
-        "total": 38.39
-      },
-      "sector": {
-        "id": "liquid_cooling",
-        "name": "액침냉각",
-        "shortName": "액침냉각"
-      },
       "state": "neutral",
-      "tradingValue": 43285480530,
-      "tradingValueChangePct": 40.33
+      "tradingValue": 71461345840,
+      "tradingValueChangePct": 179.62
     },
     {
-      "change1d": -5.83,
-      "rs5d": 1.53,
+      "change1d": 0.97,
+      "rs5d": -0.56,
       "scores": {
-        "breadth": 50.0,
+        "breadth": 37.5,
         "catalyst": 37.5,
-        "fatigue": 10.33,
-        "flow": 83.87,
-        "rs": 70.97,
-        "total": 54.46
+        "fatigue": 13.85,
+        "flow": 85.35,
+        "rs": 59.55,
+        "total": 48.38
       },
       "sector": {
         "id": "ess",
@@ -102,88 +82,19 @@
         "shortName": "ESS"
       },
       "state": "neutral",
-      "tradingValue": 876174595200,
-      "tradingValueChangePct": 44.56
-    }
-  ],
-  "market_session": "closed",
-  "market_summary": {
-    "kosdaq_change_pct": 0.7,
-    "kosdaq_value": 821.67,
-    "kospi_change_pct": 0.09,
-    "kospi_value": 6724.34
-  },
-  "money_flow_sectors": [
-    {
-      "change1d": 0.5,
-      "rs5d": -0.84,
-      "scores": {
-        "breadth": 40.0,
-        "catalyst": 40.0,
-        "fatigue": 0.0,
-        "flow": 87.42,
-        "rs": 47.74,
-        "total": 48.18
-      },
-      "sector": {
-        "id": "cement",
-        "name": "시멘트",
-        "shortName": "시멘트"
-      },
-      "state": "early",
-      "tradingValue": 133903050470,
-      "tradingValueChangePct": 502.62
+      "tradingValue": 998285292900,
+      "tradingValueChangePct": 63.72
     },
     {
-      "change1d": -0.85,
-      "rs5d": -0.14,
-      "scores": {
-        "breadth": 40.0,
-        "catalyst": 40.0,
-        "fatigue": 12.43,
-        "flow": 94.52,
-        "rs": 61.29,
-        "total": 52.15
-      },
-      "sector": {
-        "id": "medical_device",
-        "name": "의료기기",
-        "shortName": "의료기기"
-      },
-      "state": "neutral",
-      "tradingValue": 64173595890,
-      "tradingValueChangePct": 255.31
-    },
-    {
-      "change1d": 2.27,
-      "rs5d": 0.6,
-      "scores": {
-        "breadth": 28.57,
-        "catalyst": 42.86,
-        "fatigue": 0.0,
-        "flow": 67.74,
-        "rs": 58.06,
-        "total": 44.35
-      },
-      "sector": {
-        "id": "transport",
-        "name": "운송",
-        "shortName": "운송"
-      },
-      "state": "neutral",
-      "tradingValue": 267087755320,
-      "tradingValueChangePct": 68.11
-    },
-    {
-      "change1d": -8.03,
-      "rs5d": -15.56,
+      "change1d": -2.16,
+      "rs5d": -17.8,
       "scores": {
         "breadth": 0.0,
         "catalyst": 33.33,
         "fatigue": 0.0,
-        "flow": 81.94,
-        "rs": 11.94,
-        "total": 27.4
+        "flow": 85.03,
+        "rs": 7.96,
+        "total": 26.98
       },
       "sector": {
         "id": "power_equip",
@@ -191,43 +102,48 @@
         "shortName": "전력기기"
       },
       "state": "early",
-      "tradingValue": 461804393400,
-      "tradingValueChangePct": 58.92
-    },
-    {
-      "change1d": -1.18,
-      "rs5d": 0.32,
-      "scores": {
-        "breadth": 33.33,
-        "catalyst": 33.33,
-        "fatigue": 18.19,
-        "flow": 26.13,
-        "rs": 58.06,
-        "total": 31.22
-      },
-      "sector": {
-        "id": "education",
-        "name": "교육",
-        "shortName": "교육"
-      },
-      "state": "neutral",
-      "tradingValue": 2267404390,
-      "tradingValueChangePct": 52.47
+      "tradingValue": 364641749000,
+      "tradingValueChangePct": 23.52
     }
   ],
-  "source": "pykrx",
-  "stale": false,
-  "top_sectors": [
+  "market_session": "closed",
+  "market_summary": {
+    "kosdaq_change_pct": -1.43,
+    "kosdaq_value": 837.03,
+    "kospi_change_pct": -5.46,
+    "kospi_value": 6035.35
+  },
+  "money_flow_sectors": [
     {
-      "change1d": 0.22,
-      "rs5d": -1.45,
+      "change1d": 0.14,
+      "rs5d": -1.32,
       "scores": {
-        "breadth": 60.0,
+        "breadth": 20.0,
         "catalyst": 20.0,
-        "fatigue": 19.58,
-        "flow": 88.06,
-        "rs": 78.71,
-        "total": 56.69
+        "fatigue": 0.0,
+        "flow": 92.36,
+        "rs": 55.41,
+        "total": 45.71
+      },
+      "sector": {
+        "id": "cement",
+        "name": "시멘트",
+        "shortName": "시멘트"
+      },
+      "state": "neutral",
+      "tradingValue": 71461345840,
+      "tradingValueChangePct": 179.62
+    },
+    {
+      "change1d": 2.72,
+      "rs5d": 0.46,
+      "scores": {
+        "breadth": 75.0,
+        "catalyst": 25.0,
+        "fatigue": 25.74,
+        "flow": 92.68,
+        "rs": 87.9,
+        "total": 63.18
       },
       "sector": {
         "id": "security",
@@ -235,141 +151,19 @@
         "shortName": "보안"
       },
       "state": "expanding",
-      "tradingValue": 24702583895,
-      "tradingValueChangePct": -2.74
+      "tradingValue": 52465228170,
+      "tradingValueChangePct": 142.83
     },
     {
-      "change1d": -5.83,
-      "rs5d": 1.53,
-      "scores": {
-        "breadth": 50.0,
-        "catalyst": 37.5,
-        "fatigue": 10.33,
-        "flow": 83.87,
-        "rs": 70.97,
-        "total": 54.46
-      },
-      "sector": {
-        "id": "ess",
-        "name": "ESS",
-        "shortName": "ESS"
-      },
-      "state": "neutral",
-      "tradingValue": 876174595200,
-      "tradingValueChangePct": 44.56
-    },
-    {
-      "change1d": -4.05,
-      "rs5d": -2.17,
-      "scores": {
-        "breadth": 33.33,
-        "catalyst": 33.33,
-        "fatigue": 0.0,
-        "flow": 82.26,
-        "rs": 71.94,
-        "total": 52.15
-      },
-      "sector": {
-        "id": "display",
-        "name": "디스플레이",
-        "shortName": "디스플레이"
-      },
-      "state": "neutral",
-      "tradingValue": 41640431100,
-      "tradingValueChangePct": 22.04
-    },
-    {
-      "change1d": -0.85,
-      "rs5d": -0.14,
-      "scores": {
-        "breadth": 40.0,
-        "catalyst": 40.0,
-        "fatigue": 12.43,
-        "flow": 94.52,
-        "rs": 61.29,
-        "total": 52.15
-      },
-      "sector": {
-        "id": "medical_device",
-        "name": "의료기기",
-        "shortName": "의료기기"
-      },
-      "state": "neutral",
-      "tradingValue": 64173595890,
-      "tradingValueChangePct": 255.31
-    },
-    {
-      "change1d": -0.5,
-      "rs5d": 1.68,
-      "scores": {
-        "breadth": 60.0,
-        "catalyst": 40.0,
-        "fatigue": 26.34,
-        "flow": 66.77,
-        "rs": 76.77,
-        "total": 51.78
-      },
-      "sector": {
-        "id": "fashion",
-        "name": "패션의류",
-        "shortName": "패션"
-      },
-      "state": "expanding",
-      "tradingValue": 17493509920,
-      "tradingValueChangePct": 47.53
-    }
-  ],
-  "weak_sectors": [
-    {
-      "change1d": -7.31,
-      "rs5d": -13.16,
+      "change1d": -1.45,
+      "rs5d": -5.28,
       "scores": {
         "breadth": 0.0,
-        "catalyst": 0.0,
+        "catalyst": 60.0,
         "fatigue": 0.0,
-        "flow": 13.55,
-        "rs": 6.45,
-        "total": 5.32
-      },
-      "sector": {
-        "id": "nuclear",
-        "name": "원전",
-        "shortName": "원전"
-      },
-      "state": "watch",
-      "tradingValue": 318758513630,
-      "tradingValueChangePct": -20.6
-    },
-    {
-      "change1d": -5.2,
-      "rs5d": -11.6,
-      "scores": {
-        "breadth": 0.0,
-        "catalyst": 0.0,
-        "fatigue": 0.0,
-        "flow": 19.68,
-        "rs": 9.03,
-        "total": 7.63
-      },
-      "sector": {
-        "id": "construction",
-        "name": "건설",
-        "shortName": "건설"
-      },
-      "state": "watch",
-      "tradingValue": 304744713240,
-      "tradingValueChangePct": -25.76
-    },
-    {
-      "change1d": -0.3,
-      "rs5d": -3.54,
-      "scores": {
-        "breadth": 20.0,
-        "catalyst": 20.0,
-        "fatigue": 0.0,
-        "flow": 7.42,
-        "rs": 21.94,
-        "total": 14.44
+        "flow": 18.47,
+        "rs": 33.44,
+        "total": 20.65
       },
       "sector": {
         "id": "department",
@@ -377,48 +171,254 @@
         "shortName": "백화점"
       },
       "state": "watch",
-      "tradingValue": 40293805700,
-      "tradingValueChangePct": -27.53
+      "tradingValue": 96385575700,
+      "tradingValueChangePct": 69.62
     },
     {
-      "change1d": -5.04,
-      "rs5d": -9.16,
+      "change1d": 0.97,
+      "rs5d": -0.56,
+      "scores": {
+        "breadth": 37.5,
+        "catalyst": 37.5,
+        "fatigue": 13.85,
+        "flow": 85.35,
+        "rs": 59.55,
+        "total": 48.38
+      },
+      "sector": {
+        "id": "ess",
+        "name": "ESS",
+        "shortName": "ESS"
+      },
+      "state": "neutral",
+      "tradingValue": 998285292900,
+      "tradingValueChangePct": 63.72
+    },
+    {
+      "change1d": -2.62,
+      "rs5d": -3.7,
+      "scores": {
+        "breadth": 20.0,
+        "catalyst": 40.0,
+        "fatigue": 0.0,
+        "flow": 93.63,
+        "rs": 65.29,
+        "total": 50.99
+      },
+      "sector": {
+        "id": "medical_device",
+        "name": "의료기기",
+        "shortName": "의료기기"
+      },
+      "state": "neutral",
+      "tradingValue": 25098805180,
+      "tradingValueChangePct": 49.93
+    }
+  ],
+  "source": "pykrx",
+  "stale": false,
+  "top_sectors": [
+    {
+      "change1d": 2.72,
+      "rs5d": 0.46,
+      "scores": {
+        "breadth": 75.0,
+        "catalyst": 25.0,
+        "fatigue": 25.74,
+        "flow": 92.68,
+        "rs": 87.9,
+        "total": 63.18
+      },
+      "sector": {
+        "id": "security",
+        "name": "보안",
+        "shortName": "보안"
+      },
+      "state": "expanding",
+      "tradingValue": 52465228170,
+      "tradingValueChangePct": 142.83
+    },
+    {
+      "change1d": -2.62,
+      "rs5d": -3.7,
+      "scores": {
+        "breadth": 20.0,
+        "catalyst": 40.0,
+        "fatigue": 0.0,
+        "flow": 93.63,
+        "rs": 65.29,
+        "total": 50.99
+      },
+      "sector": {
+        "id": "medical_device",
+        "name": "의료기기",
+        "shortName": "의료기기"
+      },
+      "state": "neutral",
+      "tradingValue": 25098805180,
+      "tradingValueChangePct": 49.93
+    },
+    {
+      "change1d": -0.08,
+      "rs5d": 0.68,
+      "scores": {
+        "breadth": 40.0,
+        "catalyst": 40.0,
+        "fatigue": 22.37,
+        "flow": 67.52,
+        "rs": 84.39,
+        "total": 50.84
+      },
+      "sector": {
+        "id": "fashion",
+        "name": "패션의류",
+        "shortName": "패션"
+      },
+      "state": "neutral",
+      "tradingValue": 16922798970,
+      "tradingValueChangePct": 38.37
+    },
+    {
+      "change1d": 0.0,
+      "rs5d": 0.0,
+      "scores": {
+        "breadth": 50,
+        "catalyst": 50,
+        "fatigue": 50,
+        "flow": 50,
+        "rs": 50,
+        "total": 50
+      },
+      "sector": {
+        "id": "etc",
+        "name": "기타",
+        "shortName": "기타"
+      },
+      "state": "neutral",
+      "tradingValue": 0,
+      "tradingValueChangePct": 0.0
+    },
+    {
+      "change1d": 0.97,
+      "rs5d": -0.56,
+      "scores": {
+        "breadth": 37.5,
+        "catalyst": 37.5,
+        "fatigue": 13.85,
+        "flow": 85.35,
+        "rs": 59.55,
+        "total": 48.38
+      },
+      "sector": {
+        "id": "ess",
+        "name": "ESS",
+        "shortName": "ESS"
+      },
+      "state": "neutral",
+      "tradingValue": 998285292900,
+      "tradingValueChangePct": 63.72
+    }
+  ],
+  "weak_sectors": [
+    {
+      "change1d": -0.68,
+      "rs5d": -14.06,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 31.94,
-        "rs": 21.94,
-        "total": 14.56
+        "flow": 14.65,
+        "rs": 7.96,
+        "total": 6.05
+      },
+      "sector": {
+        "id": "nuclear",
+        "name": "원전",
+        "shortName": "원전"
+      },
+      "state": "watch",
+      "tradingValue": 324685381180,
+      "tradingValueChangePct": -15.53
+    },
+    {
+      "change1d": -1.38,
+      "rs5d": -12.23,
+      "scores": {
+        "breadth": 0.0,
+        "catalyst": 0.0,
+        "fatigue": 0.0,
+        "flow": 18.79,
+        "rs": 8.6,
+        "total": 7.28
+      },
+      "sector": {
+        "id": "construction",
+        "name": "건설",
+        "shortName": "건설"
+      },
+      "state": "watch",
+      "tradingValue": 323529746150,
+      "tradingValueChangePct": -18.24
+    },
+    {
+      "change1d": -1.78,
+      "rs5d": -11.46,
+      "scores": {
+        "breadth": 0.0,
+        "catalyst": 33.33,
+        "fatigue": 0.0,
+        "flow": 36.94,
+        "rs": 14.01,
+        "total": 16.77
       },
       "sector": {
         "id": "mining",
         "name": "비철금속",
         "shortName": "비철"
       },
-      "state": "watch",
-      "tradingValue": 73004144100,
-      "tradingValueChangePct": 14.52
+      "state": "neutral",
+      "tradingValue": 76113513400,
+      "tradingValueChangePct": 21.78
     },
     {
-      "change1d": -2.32,
-      "rs5d": -2.26,
+      "change1d": -0.6,
+      "rs5d": -3.68,
       "scores": {
         "breadth": 0.0,
-        "catalyst": 25.0,
+        "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 29.03,
-        "rs": 20.0,
-        "total": 15.76
+        "flow": 14.01,
+        "rs": 51.91,
+        "total": 19.08
       },
       "sector": {
-        "id": "agri_livestock",
-        "name": "농축산",
-        "shortName": "농축산"
+        "id": "paper",
+        "name": "종이",
+        "shortName": "종이"
+      },
+      "state": "neutral",
+      "tradingValue": 534421084,
+      "tradingValueChangePct": -24.42
+    },
+    {
+      "change1d": -1.45,
+      "rs5d": -5.28,
+      "scores": {
+        "breadth": 0.0,
+        "catalyst": 60.0,
+        "fatigue": 0.0,
+        "flow": 18.47,
+        "rs": 33.44,
+        "total": 20.65
+      },
+      "sector": {
+        "id": "department",
+        "name": "백화점",
+        "shortName": "백화점"
       },
       "state": "watch",
-      "tradingValue": 346235424,
-      "tradingValueChangePct": -4.8
+      "tradingValue": 96385575700,
+      "tradingValueChangePct": 69.62
     }
   ]
 }
