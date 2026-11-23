@@ -3,18 +3,18 @@
     "지수 일별 변동과 섹터 자금유입을 KRX EOD 데이터 기준으로 산출했습니다.",
     "섹터 분류는 사용자 정의 17개 그룹이며, 점수는 종목별 가격강도/거래대금/RSI 를 합산한 0~100 척도입니다."
   ],
-  "as_of": "2026-11-20T15:30:00+09:00",
+  "as_of": "2026-11-23T15:30:00+09:00",
   "foreign_institution_shift": [
     {
-      "change1d": -1.04,
-      "rs5d": 17.57,
+      "change1d": -1.51,
+      "rs5d": 18.42,
       "scores": {
         "breadth": 100.0,
-        "catalyst": 33.33,
-        "fatigue": 42.19,
-        "flow": 98.31,
-        "rs": 95.59,
-        "total": 70.26
+        "catalyst": 16.67,
+        "fatigue": 36.29,
+        "flow": 98.96,
+        "rs": 95.5,
+        "total": 69.61
       },
       "sector": {
         "id": "entertainment",
@@ -22,39 +22,39 @@
         "shortName": "엔터"
       },
       "state": "expanding",
-      "tradingValue": 261386958150,
-      "tradingValueChangePct": 90.09
+      "tradingValue": 184866947550,
+      "tradingValueChangePct": 29.12
     },
     {
       "change1d": -3.64,
-      "rs5d": 5.44,
+      "rs5d": 2.29,
       "scores": {
-        "breadth": 83.33,
+        "breadth": 50.0,
         "catalyst": 0.0,
-        "fatigue": 15.72,
-        "flow": 95.93,
-        "rs": 86.44,
-        "total": 64.22
+        "fatigue": 0.0,
+        "flow": 93.43,
+        "rs": 79.58,
+        "total": 57.23
       },
       "sector": {
         "id": "hotel_tourism",
         "name": "호텔관광",
         "shortName": "호텔"
       },
-      "state": "expanding",
-      "tradingValue": 50105711760,
-      "tradingValueChangePct": 68.12
+      "state": "neutral",
+      "tradingValue": 23978856080,
+      "tradingValueChangePct": 7.87
     },
     {
-      "change1d": -3.74,
-      "rs5d": -3.28,
+      "change1d": -0.99,
+      "rs5d": -1.65,
       "scores": {
         "breadth": 25.0,
         "catalyst": 50.0,
-        "fatigue": 12.03,
-        "flow": 88.14,
-        "rs": 64.41,
-        "total": 49.55
+        "fatigue": 14.8,
+        "flow": 92.04,
+        "rs": 67.47,
+        "total": 51.03
       },
       "sector": {
         "id": "liquid_cooling",
@@ -62,39 +62,39 @@
         "shortName": "액침냉각"
       },
       "state": "neutral",
-      "tradingValue": 27701549805,
-      "tradingValueChangePct": 35.09
+      "tradingValue": 26025268860,
+      "tradingValueChangePct": 22.55
     },
     {
-      "change1d": -5.09,
-      "rs5d": -6.9,
+      "change1d": 4.62,
+      "rs5d": 4.32,
       "scores": {
-        "breadth": 0.0,
-        "catalyst": 0.0,
+        "breadth": 50.0,
+        "catalyst": 50.0,
         "fatigue": 0.0,
-        "flow": 85.76,
-        "rs": 46.44,
-        "total": 35.37
+        "flow": 88.24,
+        "rs": 72.66,
+        "total": 58.86
       },
       "sector": {
-        "id": "securities",
-        "name": "증권",
-        "shortName": "증권"
+        "id": "robotics",
+        "name": "로보틱스",
+        "shortName": "로보틱스"
       },
-      "state": "early",
-      "tradingValue": 114163177370,
-      "tradingValueChangePct": -6.27
+      "state": "neutral",
+      "tradingValue": 445254454970,
+      "tradingValueChangePct": 17.04
     },
     {
-      "change1d": -2.76,
-      "rs5d": -9.36,
+      "change1d": -1.78,
+      "rs5d": -7.84,
       "scores": {
         "breadth": 0.0,
         "catalyst": 33.33,
         "fatigue": 0.0,
-        "flow": 85.76,
-        "rs": 50.51,
-        "total": 39.93
+        "flow": 85.47,
+        "rs": 46.37,
+        "total": 38.61
       },
       "sector": {
         "id": "paper",
@@ -102,28 +102,68 @@
         "shortName": "종이"
       },
       "state": "early",
-      "tradingValue": 1452127136,
-      "tradingValueChangePct": -70.14
+      "tradingValue": 906680981,
+      "tradingValueChangePct": -81.44
     }
   ],
   "market_session": "closed",
   "market_summary": {
-    "kosdaq_change_pct": -5.71,
-    "kosdaq_value": 645.68,
-    "kospi_change_pct": -5.21,
-    "kospi_value": 4869.96
+    "kosdaq_change_pct": -1.58,
+    "kosdaq_value": 635.45,
+    "kospi_change_pct": -3.31,
+    "kospi_value": 4708.54
   },
   "money_flow_sectors": [
     {
-      "change1d": -1.04,
-      "rs5d": 17.57,
+      "change1d": -0.41,
+      "rs5d": -3.51,
+      "scores": {
+        "breadth": 25.0,
+        "catalyst": 25.0,
+        "fatigue": 0.0,
+        "flow": 67.47,
+        "rs": 51.21,
+        "total": 39.73
+      },
+      "sector": {
+        "id": "agri_livestock",
+        "name": "농축산",
+        "shortName": "농축산"
+      },
+      "state": "early",
+      "tradingValue": 1225973501,
+      "tradingValueChangePct": 188.23
+    },
+    {
+      "change1d": -5.25,
+      "rs5d": -12.68,
+      "scores": {
+        "breadth": 0.0,
+        "catalyst": 37.5,
+        "fatigue": 0.0,
+        "flow": 66.44,
+        "rs": 43.94,
+        "total": 33.54
+      },
+      "sector": {
+        "id": "ai",
+        "name": "AI",
+        "shortName": "AI"
+      },
+      "state": "early",
+      "tradingValue": 690917915210,
+      "tradingValueChangePct": 46.1
+    },
+    {
+      "change1d": -1.51,
+      "rs5d": 18.42,
       "scores": {
         "breadth": 100.0,
-        "catalyst": 33.33,
-        "fatigue": 42.19,
-        "flow": 98.31,
-        "rs": 95.59,
-        "total": 70.26
+        "catalyst": 16.67,
+        "fatigue": 36.29,
+        "flow": 98.96,
+        "rs": 95.5,
+        "total": 69.61
       },
       "sector": {
         "id": "entertainment",
@@ -131,59 +171,39 @@
         "shortName": "엔터"
       },
       "state": "expanding",
-      "tradingValue": 261386958150,
-      "tradingValueChangePct": 90.09
+      "tradingValue": 184866947550,
+      "tradingValueChangePct": 29.12
     },
     {
-      "change1d": -3.64,
-      "rs5d": 5.44,
-      "scores": {
-        "breadth": 83.33,
-        "catalyst": 0.0,
-        "fatigue": 15.72,
-        "flow": 95.93,
-        "rs": 86.44,
-        "total": 64.22
-      },
-      "sector": {
-        "id": "hotel_tourism",
-        "name": "호텔관광",
-        "shortName": "호텔"
-      },
-      "state": "expanding",
-      "tradingValue": 50105711760,
-      "tradingValueChangePct": 68.12
-    },
-    {
-      "change1d": -7.09,
-      "rs5d": -10.61,
+      "change1d": -3.82,
+      "rs5d": -8.54,
       "scores": {
         "breadth": 0.0,
-        "catalyst": 33.33,
+        "catalyst": 50.0,
         "fatigue": 0.0,
-        "flow": 68.81,
-        "rs": 75.25,
-        "total": 43.11
+        "flow": 44.29,
+        "rs": 25.26,
+        "total": 23.65
       },
       "sector": {
-        "id": "telecom",
-        "name": "통신",
-        "shortName": "통신"
+        "id": "display",
+        "name": "디스플레이",
+        "shortName": "디스플레이"
       },
       "state": "neutral",
-      "tradingValue": 179955264480,
-      "tradingValueChangePct": 46.79
+      "tradingValue": 23055218900,
+      "tradingValueChangePct": 27.09
     },
     {
-      "change1d": -3.74,
-      "rs5d": -3.28,
+      "change1d": -0.99,
+      "rs5d": -1.65,
       "scores": {
         "breadth": 25.0,
         "catalyst": 50.0,
-        "fatigue": 12.03,
-        "flow": 88.14,
-        "rs": 64.41,
-        "total": 49.55
+        "fatigue": 14.8,
+        "flow": 92.04,
+        "rs": 67.47,
+        "total": 51.03
       },
       "sector": {
         "id": "liquid_cooling",
@@ -191,43 +211,23 @@
         "shortName": "액침냉각"
       },
       "state": "neutral",
-      "tradingValue": 27701549805,
-      "tradingValueChangePct": 35.09
-    },
-    {
-      "change1d": -0.8,
-      "rs5d": -0.22,
-      "scores": {
-        "breadth": 66.67,
-        "catalyst": 33.33,
-        "fatigue": 8.55,
-        "flow": 45.76,
-        "rs": 81.02,
-        "total": 51.13
-      },
-      "sector": {
-        "id": "fintech",
-        "name": "핀테크",
-        "shortName": "핀테크"
-      },
-      "state": "expanding",
-      "tradingValue": 23700895750,
-      "tradingValueChangePct": 30.55
+      "tradingValue": 26025268860,
+      "tradingValueChangePct": 22.55
     }
   ],
   "source": "pykrx",
   "stale": false,
   "top_sectors": [
     {
-      "change1d": -1.04,
-      "rs5d": 17.57,
+      "change1d": -1.51,
+      "rs5d": 18.42,
       "scores": {
         "breadth": 100.0,
-        "catalyst": 33.33,
-        "fatigue": 42.19,
-        "flow": 98.31,
-        "rs": 95.59,
-        "total": 70.26
+        "catalyst": 16.67,
+        "fatigue": 36.29,
+        "flow": 98.96,
+        "rs": 95.5,
+        "total": 69.61
       },
       "sector": {
         "id": "entertainment",
@@ -235,39 +235,19 @@
         "shortName": "엔터"
       },
       "state": "expanding",
-      "tradingValue": 261386958150,
-      "tradingValueChangePct": 90.09
+      "tradingValue": 184866947550,
+      "tradingValueChangePct": 29.12
     },
     {
-      "change1d": -3.64,
-      "rs5d": 5.44,
+      "change1d": 0.68,
+      "rs5d": 7.12,
       "scores": {
-        "breadth": 83.33,
-        "catalyst": 0.0,
-        "fatigue": 15.72,
-        "flow": 95.93,
-        "rs": 86.44,
-        "total": 64.22
-      },
-      "sector": {
-        "id": "hotel_tourism",
-        "name": "호텔관광",
-        "shortName": "호텔"
-      },
-      "state": "expanding",
-      "tradingValue": 50105711760,
-      "tradingValueChangePct": 68.12
-    },
-    {
-      "change1d": -1.96,
-      "rs5d": 9.62,
-      "scores": {
-        "breadth": 100.0,
-        "catalyst": 0.0,
-        "fatigue": 8.33,
-        "flow": 80.68,
-        "rs": 78.64,
-        "total": 62.51
+        "breadth": 80.0,
+        "catalyst": 20.0,
+        "fatigue": 13.46,
+        "flow": 81.31,
+        "rs": 81.31,
+        "total": 60.7
       },
       "sector": {
         "id": "cosmetics",
@@ -275,81 +255,81 @@
         "shortName": "화장품"
       },
       "state": "expanding",
-      "tradingValue": 76834770000,
-      "tradingValueChangePct": -21.81
+      "tradingValue": 86220492700,
+      "tradingValueChangePct": -13.42
     },
     {
-      "change1d": -1.16,
-      "rs5d": 1.96,
+      "change1d": 4.62,
+      "rs5d": 4.32,
       "scores": {
-        "breadth": 66.67,
-        "catalyst": 16.67,
-        "fatigue": 2.3,
-        "flow": 78.31,
-        "rs": 80.68,
-        "total": 58.44
+        "breadth": 50.0,
+        "catalyst": 50.0,
+        "fatigue": 0.0,
+        "flow": 88.24,
+        "rs": 72.66,
+        "total": 58.86
       },
       "sector": {
-        "id": "food",
-        "name": "식음료",
-        "shortName": "식음료"
+        "id": "robotics",
+        "name": "로보틱스",
+        "shortName": "로보틱스"
       },
-      "state": "expanding",
-      "tradingValue": 59495994300,
-      "tradingValueChangePct": -33.14
+      "state": "neutral",
+      "tradingValue": 445254454970,
+      "tradingValueChangePct": 17.04
     },
     {
-      "change1d": -0.7,
-      "rs5d": 6.26,
+      "change1d": -3.64,
+      "rs5d": 2.29,
       "scores": {
-        "breadth": 57.14,
+        "breadth": 50.0,
         "catalyst": 0.0,
-        "fatigue": 15.18,
-        "flow": 66.78,
-        "rs": 97.29,
-        "total": 55.03
+        "fatigue": 0.0,
+        "flow": 93.43,
+        "rs": 79.58,
+        "total": 57.23
       },
       "sector": {
-        "id": "transport",
-        "name": "운송",
-        "shortName": "운송"
+        "id": "hotel_tourism",
+        "name": "호텔관광",
+        "shortName": "호텔"
       },
-      "state": "expanding",
-      "tradingValue": 275983073930,
-      "tradingValueChangePct": -10.17
+      "state": "neutral",
+      "tradingValue": 23978856080,
+      "tradingValueChangePct": 7.87
+    },
+    {
+      "change1d": -0.99,
+      "rs5d": -1.65,
+      "scores": {
+        "breadth": 25.0,
+        "catalyst": 50.0,
+        "fatigue": 14.8,
+        "flow": 92.04,
+        "rs": 67.47,
+        "total": 51.03
+      },
+      "sector": {
+        "id": "liquid_cooling",
+        "name": "액침냉각",
+        "shortName": "액침냉각"
+      },
+      "state": "neutral",
+      "tradingValue": 26025268860,
+      "tradingValueChangePct": 22.55
     }
   ],
   "weak_sectors": [
     {
-      "change1d": -9.55,
-      "rs5d": -20.51,
+      "change1d": -4.02,
+      "rs5d": -10.53,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 13.9,
-        "rs": 6.1,
-        "total": 5.31
-      },
-      "sector": {
-        "id": "solar",
-        "name": "태양광",
-        "shortName": "태양광"
-      },
-      "state": "watch",
-      "tradingValue": 97880207740,
-      "tradingValueChangePct": -61.86
-    },
-    {
-      "change1d": -3.53,
-      "rs5d": -8.54,
-      "scores": {
-        "breadth": 0.0,
-        "catalyst": 0.0,
-        "fatigue": 0.0,
-        "flow": 8.14,
-        "rs": 13.9,
-        "total": 6.2
+        "flow": 6.57,
+        "rs": 9.0,
+        "total": 4.34
       },
       "sector": {
         "id": "oil",
@@ -357,19 +337,39 @@
         "shortName": "정유"
       },
       "state": "watch",
-      "tradingValue": 96545026550,
-      "tradingValueChangePct": -20.92
+      "tradingValue": 88430606040,
+      "tradingValueChangePct": -26.54
     },
     {
-      "change1d": -6.84,
-      "rs5d": -12.83,
+      "change1d": -1.64,
+      "rs5d": -15.96,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 25.08,
-        "rs": 13.56,
-        "total": 10.34
+        "flow": 9.69,
+        "rs": 7.96,
+        "total": 4.81
+      },
+      "sector": {
+        "id": "solar",
+        "name": "태양광",
+        "shortName": "태양광"
+      },
+      "state": "watch",
+      "tradingValue": 101584061680,
+      "tradingValueChangePct": -60.09
+    },
+    {
+      "change1d": -0.77,
+      "rs5d": -7.81,
+      "scores": {
+        "breadth": 0.0,
+        "catalyst": 0.0,
+        "fatigue": 0.0,
+        "flow": 21.11,
+        "rs": 11.42,
+        "total": 8.7
       },
       "sector": {
         "id": "nuclear",
@@ -377,48 +377,48 @@
         "shortName": "원전"
       },
       "state": "watch",
-      "tradingValue": 147883109440,
-      "tradingValueChangePct": -34.01
+      "tradingValue": 159668827990,
+      "tradingValueChangePct": -28.96
     },
     {
-      "change1d": -6.29,
-      "rs5d": -12.67,
+      "change1d": 0.61,
+      "rs5d": -5.85,
+      "scores": {
+        "breadth": 14.29,
+        "catalyst": 0.0,
+        "fatigue": 0.0,
+        "flow": 27.34,
+        "rs": 10.38,
+        "total": 12.81
+      },
+      "sector": {
+        "id": "power_semi",
+        "name": "전력반도체",
+        "shortName": "전력반도체"
+      },
+      "state": "watch",
+      "tradingValue": 790965472225,
+      "tradingValueChangePct": -20.91
+    },
+    {
+      "change1d": -1.48,
+      "rs5d": -10.12,
       "scores": {
         "breadth": 0.0,
         "catalyst": 0.0,
         "fatigue": 0.0,
-        "flow": 12.2,
-        "rs": 31.53,
-        "total": 12.51
+        "flow": 10.73,
+        "rs": 35.29,
+        "total": 13.27
       },
       "sector": {
         "id": "ess",
         "name": "ESS",
         "shortName": "ESS"
       },
-      "state": "watch",
-      "tradingValue": 392039949600,
-      "tradingValueChangePct": -45.22
-    },
-    {
-      "change1d": -8.48,
-      "rs5d": -10.43,
-      "scores": {
-        "breadth": 0.0,
-        "catalyst": 0.0,
-        "fatigue": 0.0,
-        "flow": 20.34,
-        "rs": 25.42,
-        "total": 12.71
-      },
-      "sector": {
-        "id": "power_equip",
-        "name": "전력기기",
-        "shortName": "전력기기"
-      },
-      "state": "watch",
-      "tradingValue": 163232053800,
-      "tradingValueChangePct": -37.67
+      "state": "neutral",
+      "tradingValue": 439858682100,
+      "tradingValueChangePct": -38.02
     }
   ]
 }
